@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>CovenantSQL Docs Blog</title>
+        <link>https://covenantsql.github.io/docs/blog</link>
+        <description>The best place to stay up-to-date with the latest CovenantSQL Docs news and events.</description>
+        <lastBuildDate>Wed, 19 Dec 2018 06:00:00 GMT</lastBuildDate>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <generator>Feed for Node.js</generator>
+        <image>
+            <title>CovenantSQL Docs Blog</title>
+            <url>https://covenantsql.github.io/docs/img/docusaurus.svg</url>
+            <link>https://covenantsql.github.io/docs/blog</link>
+        </image>
+        <copyright>Copyright © 2018 Covenant Labs</copyright>
+        <item>
+            <title><![CDATA[First blog for CovenantSQL]]></title>
+            <link>https://covenantsql.github.io/docs/blog/2018/12/19/test.html</link>
+            <guid>https://covenantsql.github.io/docs/blog/2018/12/19/test.html</guid>
+            <pubDate>Wed, 19 Dec 2018 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>This blog post will test CovenantSQL docs site.</p> ]]></description>
+        </item>
+    </channel>
+</rss>
