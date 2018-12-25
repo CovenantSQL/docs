@@ -1,7 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [JSON RPC API](#json-rpc-api)
   - [Javascript API](#javascript-api)
@@ -11,7 +10,7 @@
       - [Parameters](#parameters)
       - [Returns](#returns)
       - [Example](#example)
-    - [bp_getBlockHeight](#bp_getblockheight)
+    - [bp_getRunningStatus](#bp_getrunningstatus)
       - [Parameters](#parameters-1)
       - [Returns](#returns-1)
       - [Example](#example-1)
@@ -152,7 +151,7 @@ Returns a list of the blocks.
 
 #### Returns
 
-- array: list of the blocks, the object in the list is a [Block](#s-block), but **without** transaction details
+- array: list of the blocks, the object in the list is a [Block](#block), but **without** transaction details
 
 #### Example
 
@@ -167,7 +166,7 @@ Request:
 }
 ```
 
-Response: [Block](#s-block) array
+Response: [Block](#block) array
 
 ```json
 {
@@ -196,7 +195,7 @@ Returns information about the block specified by its height.
 
 #### Returns
 
-- object: block information object, it's a [Block](#s-block)
+- object: block information object, it's a [Block](#block)
 
 #### Example
 
@@ -211,7 +210,7 @@ Request:
 }
 ```
 
-Response: [Block](#s-block)
+Response: [Block](#block)
 
 ```json
 {
@@ -236,7 +235,7 @@ Returns information about the block specified by its hash.
 
 #### Returns
 
-- object: block information object, it's a [Block](#s-block)
+- object: block information object, it's a [Block](#block)
 
 #### Example
 
@@ -251,7 +250,7 @@ Request:
 }
 ```
 
-Response: [Block](#s-block)
+Response: [Block](#block)
 
 ```json
 {
@@ -275,7 +274,7 @@ Returns information about the transaction specified by its hash.
 
 #### Returns
 
-- object: transaction information object, it's a [Transaction](#s-transaction)
+- object: transaction information object, it's a [Transaction](#transaction)
 
 #### Example
 
@@ -290,7 +289,7 @@ Request:
 }
 ```
 
-Response: [Transaction](#s-transaction)
+Response: [Transaction](#transaction)
 
 ```json
 {
@@ -326,7 +325,7 @@ KhytGjS0xjw5CJvcJYpsNg ← since (paging mark)
 
 #### Returns
 
-- array: list of the transactions, the object in the list is a [Transaction](#s-transaction)
+- array: list of the transactions, the object in the list is a [Transaction](#transaction)
 
 #### Example
 
@@ -341,7 +340,7 @@ Request:
 }
 ```
 
-Response: [Transaction](#s-transaction) array
+Response: [Transaction](#transaction) array
 
 ```json
 {
@@ -356,8 +355,6 @@ Response: [Transaction](#s-transaction) array
 ## Structure Reference
 
 Here are some common structure definitions used in the API.
-
-<span id="s-block"></span>
 
 ### Block
 
@@ -375,7 +372,7 @@ The block generated in the CovenantSQL blockchain network.
 | signature          | string  | Signature for the this block                 |
 | height             | integer | Height of the block                          |
 | count_tranasctions | integer | Count of the transactions in this block      |
-| transactions       | array   | Array of [Transaction](#s-transaction)       |
+| transactions       | array   | Array of [Transaction](#transaction)         |
 
 Sample in JSON format:
 
@@ -400,23 +397,21 @@ Sample in JSON format:
 }
 ```
 
-<span id="s-transaction"></span>
-
 ### Transaction
 
-| Field        | Type    | Description                                                                                   |
-| ------------ | ------- | --------------------------------------------------------------------------------------------- |
-| hash         | string  | Hash of the transaction data                                                                  |
-| signee       | string  | Public key of the account who signed this transaction                                         |
-| address      | string  | Account address who signed this transaction                                                   |
-| signature    | string  | Signature of this transaction                                                                 |
-| timestamp    | string  | Create time of the transaction                                                                |
-| tx_type      | integer | Type of the transaction                                                                       |
-| raw          | string  | Raw content of the transaction data, in JSON format                                           |
-| tx           | object  | Concrete transaction object, see supported [transaction types](#s-transaction-types) for more |
-| block_height | integer | Height of the block this transaction belongs to                                               |
-| block_hash   | string  | Hash of the block this transaction belongs to                                                 |
-| index        | integer | Index of the transaction in the block                                                         |
+| Field        | Type    | Description                                                                                 |
+| ------------ | ------- | ------------------------------------------------------------------------------------------- |
+| hash         | string  | Hash of the transaction data                                                                |
+| signee       | string  | Public key of the account who signed this transaction                                       |
+| address      | string  | Account address who signed this transaction                                                 |
+| signature    | string  | Signature of this transaction                                                               |
+| timestamp    | string  | Create time of the transaction                                                              |
+| tx_type      | integer | Type of the transaction                                                                     |
+| raw          | string  | Raw content of the transaction data, in JSON format                                         |
+| tx           | object  | Concrete transaction object, see supported [transaction types](#transaction-types) for more |
+| block_height | integer | Height of the block this transaction belongs to                                             |
+| block_hash   | string  | Hash of the block this transaction belongs to                                               |
+| index        | integer | Index of the transaction in the block                                                       |
 
 Sample in JSON format:
 
@@ -437,15 +432,11 @@ Sample in JSON format:
 }
 ```
 
-<span id="s-transaction-types"></span>
-
 **Supported Transaction Types:**
 
-- [CreateDatabase](#s-transaction-create-database)
+- [CreateDatabase](#transaction-createdatabase)
 
 TODO: more types
-
-<span id="s-transaction-create-database"></span>
 
 ### Transaction: CreateDatabase
 
