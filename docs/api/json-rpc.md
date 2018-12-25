@@ -27,11 +27,11 @@
       - [Parameters](#parameters-4)
       - [Returns](#returns-4)
       - [Example](#example-4)
-    - [bp_getTransactionByHash](#bp_gettransactionbyhash)
+    - [bp_getTransactionList](#bp_gettransactionlist)
       - [Parameters](#parameters-5)
       - [Returns](#returns-5)
       - [Example](#example-5)
-    - [bp_getTransactionList](#bp_gettransactionlist)
+    - [bp_getTransactionByHash](#bp_gettransactionbyhash)
       - [Parameters](#parameters-6)
       - [Returns](#returns-6)
       - [Example](#example-6)
@@ -262,45 +262,6 @@ Response: [Block](#s-block)
 }
 ```
 
-### bp_getTransactionByHash
-
-Returns information about the transaction specified by its hash.
-
-#### Parameters
-
-| Position | Name | type   | Description             | Sample |
-| -------- | ---- | ------ | ----------------------- | ------ |
-| 0        | hash | string | hash of the transaction | "TODO" |
-
-#### Returns
-
-- object: transaction information object, it's a [Transaction](#s-transaction)
-
-#### Example
-
-Request:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "method": "bp_getTransactionByHash",
-  "params": ["TODO", true]
-}
-```
-
-Response: [Transaction](#s-transaction)
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "result": {
-    TODO: transaction object
-  }
-}
-```
-
 ### bp_getTransactionList
 
 Returns a list of the transactions. Traverse page by page by using a transaction hash as the mark for paging.
@@ -349,6 +310,45 @@ Response: [Transaction](#s-transaction) array
   "result": [
     { TODO: transaction object }
   ]
+}
+```
+
+### bp_getTransactionByHash
+
+Returns information about the transaction specified by its hash.
+
+#### Parameters
+
+| Position | Name | type   | Description             | Sample |
+| -------- | ---- | ------ | ----------------------- | ------ |
+| 0        | hash | string | hash of the transaction | "TODO" |
+
+#### Returns
+
+- object: transaction information object, it's a [Transaction](#s-transaction)
+
+#### Example
+
+Request:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "bp_getTransactionByHash",
+  "params": ["TODO", true]
+}
+```
+
+Response: [Transaction](#s-transaction)
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    TODO: transaction object
+  }
 }
 ```
 
