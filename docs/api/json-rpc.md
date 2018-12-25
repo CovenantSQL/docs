@@ -151,7 +151,7 @@ Returns a list of the blocks.
 
 #### Returns
 
-- array: list of the blocks, the object in the list is a [Block](#block), but **without** transaction details
+- array: list of the blocks, the object in the list is a [Block](#s-block), but **without** transaction details
 
 #### Example
 
@@ -166,7 +166,7 @@ Request:
 }
 ```
 
-Response: [Block](#block) array
+Response: [Block](#s-block) array
 
 ```json
 {
@@ -195,7 +195,7 @@ Returns information about the block specified by its height.
 
 #### Returns
 
-- object: block information object, it's a [Block](#block)
+- object: block information object, it's a [Block](#s-block)
 
 #### Example
 
@@ -210,7 +210,7 @@ Request:
 }
 ```
 
-Response: [Block](#block)
+Response: [Block](#s-block)
 
 ```json
 {
@@ -235,7 +235,7 @@ Returns information about the block specified by its hash.
 
 #### Returns
 
-- object: block information object, it's a [Block](#block)
+- object: block information object, it's a [Block](#s-block)
 
 #### Example
 
@@ -250,7 +250,7 @@ Request:
 }
 ```
 
-Response: [Block](#block)
+Response: [Block](#s-block)
 
 ```json
 {
@@ -274,7 +274,7 @@ Returns information about the transaction specified by its hash.
 
 #### Returns
 
-- object: transaction information object, it's a [Transaction](#transaction)
+- object: transaction information object, it's a [Transaction](#s-transaction)
 
 #### Example
 
@@ -289,7 +289,7 @@ Request:
 }
 ```
 
-Response: [Transaction](#transaction)
+Response: [Transaction](#s-transaction)
 
 ```json
 {
@@ -325,7 +325,7 @@ KhytGjS0xjw5CJvcJYpsNg ← since (paging mark)
 
 #### Returns
 
-- array: list of the transactions, the object in the list is a [Transaction](#transaction)
+- array: list of the transactions, the object in the list is a [Transaction](#s-transaction)
 
 #### Example
 
@@ -340,7 +340,7 @@ Request:
 }
 ```
 
-Response: [Transaction](#transaction) array
+Response: [Transaction](#s-transaction) array
 
 ```json
 {
@@ -355,6 +355,8 @@ Response: [Transaction](#transaction) array
 ## Structure Reference
 
 Here are some common structure definitions used in the API.
+
+<a id="s-block"></a>
 
 ### Block
 
@@ -372,7 +374,7 @@ The block generated in the CovenantSQL blockchain network.
 | signature          | string  | Signature for the this block                 |
 | height             | integer | Height of the block                          |
 | count_tranasctions | integer | Count of the transactions in this block      |
-| transactions       | array   | Array of [Transaction](#transaction)         |
+| transactions       | array   | Array of [Transaction](#s-transaction)       |
 
 Sample in JSON format:
 
@@ -396,6 +398,8 @@ Sample in JSON format:
   ]
 }
 ```
+
+<a id="s-transaction"></a>
 
 ### Transaction
 
@@ -432,11 +436,13 @@ Sample in JSON format:
 }
 ```
 
-**Supported Transaction Types:**
+<a id="transaction-types"></a>**Supported Transaction Types:**
 
-- [CreateDatabase](#transaction-createdatabase)
+- [CreateDatabase](#s-transaction-createdatabase)
 
 TODO: more types
+
+<a id="s-transaction-createdatabase"></a>
 
 ### Transaction: CreateDatabase
 
