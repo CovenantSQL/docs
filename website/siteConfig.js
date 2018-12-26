@@ -25,6 +25,7 @@ const siteConfig = {
   tagline: 'A website for testing',
   url: 'http://docs.covenantsql.io', // Your website URL
   baseUrl: '/', // Base URL for your project */
+  cname: 'docs.covenantsql.io',
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
