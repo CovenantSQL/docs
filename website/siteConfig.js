@@ -39,8 +39,8 @@ const siteConfig = {
 
   // docs search
   algolia: {
-    apiKey: '23cd85d461f21a16bc07d9c2aa4dd788',
-    indexName: 'covenantsql-docs',
+    apiKey: '1b47865e3d00b7996a988bbc155a68e4',
+    indexName: 'covenantsql',
     algoliaOptions: {} // Optional, if provided by Algolia
   },
 
