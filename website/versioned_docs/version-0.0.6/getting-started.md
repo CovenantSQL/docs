@@ -1,7 +1,7 @@
 ---
-id: version-0.0.6-quick-start
+id: version-0.0.6-getting-started
 title: CovenantSQL 一键开箱使用
-original_id: quick-start
+original_id: getting-started
 ---
 
 ## 一键部署

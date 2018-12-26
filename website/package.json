@@ -11,5 +11,6 @@
   "devDependencies": {
     "docusaurus": "^1.6.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "version": "0.0.6"
 }

@@ -1,5 +1,5 @@
 ---
-id: quick-start
+id: getting-started
 title: CovenantSQL 一键开箱使用
 ---
 

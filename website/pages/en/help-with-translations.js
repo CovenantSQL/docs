@@ -63,7 +63,7 @@ class Help extends React.Component {
 }
 
 Help.defaultProps = {
-  language: 'zh-CN',
+  language: 'en',
 };
 
 module.exports = Help;

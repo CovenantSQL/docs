@@ -1,19 +1,10 @@
 {
   "version-0.0.6-docs": {
-    "Docusaurus": [
-      "version-0.0.6-quick-start"
+    "Getting Started": [
+      "version-0.0.6-getting-started"
     ],
-    "First Category": [
-      "version-0.0.6-doc2"
-    ],
-    "Second Category": [
-      "version-0.0.6-doc3"
-    ]
-  },
-  "version-0.0.6-docs-other": {
-    "First Category": [
-      "version-0.0.6-doc4",
-      "version-0.0.6-doc5"
+    "API": [
+      "version-0.0.6-api-json-rpc"
     ]
   }
 }
