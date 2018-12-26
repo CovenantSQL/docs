@@ -4,51 +4,7 @@ title: JSON RPC API
 original_id: api-json-rpc
 ---
 
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [JSON RPC API](#json-rpc-api)
-  - [Javascript API](#javascript-api)
-  - [JSON RPC Endpoint](#json-rpc-endpoint)
-  - [JSON RPC API Reference](#json-rpc-api-reference)
-    - [bp_getProtocolVersion](#bp_getprotocolversion)
-      - [Parameters](#parameters)
-      - [Returns](#returns)
-      - [Example](#example)
-    - [bp_getRunningStatus](#bp_getrunningstatus)
-      - [Parameters](#parameters-1)
-      - [Returns](#returns-1)
-      - [Example](#example-1)
-    - [bp_getBlockList](#bp_getblocklist)
-      - [Parameters](#parameters-2)
-      - [Returns](#returns-2)
-      - [Example](#example-2)
-    - [bp_getBlockListByTimestampRange](#bp_getblocklistbytimestamprange)
-    - [bp_getBlockByHeight](#bp_getblockbyheight)
-      - [Parameters](#parameters-3)
-      - [Returns](#returns-3)
-      - [Example](#example-3)
-    - [bp_getBlockByHash](#bp_getblockbyhash)
-      - [Parameters](#parameters-4)
-      - [Returns](#returns-4)
-      - [Example](#example-4)
-    - [bp_getTransactionList](#bp_gettransactionlist)
-      - [Parameters](#parameters-5)
-      - [Returns](#returns-5)
-      - [Example](#example-5)
-    - [bp_getTransactionByHash](#bp_gettransactionbyhash)
-      - [Parameters](#parameters-6)
-      - [Returns](#returns-6)
-      - [Example](#example-6)
-  - [Structure Reference](#structure-reference)
-    - [Block](#block)
-    - [Transaction](#transaction)
-    - [Transaction: CreateDatabase](#transaction-createdatabase)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# JSON RPC API
-
-> > JSON-RPC is a stateless, light-weight remote procedure call (RPC) protocol.
+> JSON-RPC is a stateless, light-weight remote procedure call (RPC) protocol.
 
 CovenantSQL provides a suite of RPC methods in [JSON-RPC 2.0](https://www.jsonrpc.org/specification) for easily accessing to CovenantSQL networks.
 
