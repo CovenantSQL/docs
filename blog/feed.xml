@@ -9,7 +9,7 @@
         <generator>Feed for Node.js</generator>
         <image>
             <title>CovenantSQL Docs Blog</title>
-            <url>http://developers.covenantsql.io/img/docusaurus.svg</url>
+            <url>http://developers.covenantsql.io/img/logo.svg</url>
             <link>http://developers.covenantsql.io/blog</link>
         </image>
         <copyright>Copyright © 2018 Covenant Labs</copyright>
