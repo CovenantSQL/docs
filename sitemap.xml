@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>http://docs.covenantsql.io/help</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="http://docs.covenantsql.io/en/help" /> </url>
-<url> <loc>http://docs.covenantsql.io/users</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="http://docs.covenantsql.io/en/users" /> </url>
-<url> <loc>http://docs.covenantsql.io/versions</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="http://docs.covenantsql.io/en/versions" /> </url>
-<url> <loc>http://docs.covenantsql.io/blog/2018/12/19/test</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>http://docs.covenantsql.io/docs/next/api-json-rpc</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://docs.covenantsql.io/docs/next/api-json-rpc" /> </url>
-<url> <loc>http://docs.covenantsql.io/docs/next/getting-started</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://docs.covenantsql.io/docs/next/getting-started" /> </url>
-<url> <loc>http://docs.covenantsql.io/docs/api-json-rpc</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://docs.covenantsql.io/docs/api-json-rpc" /> </url>
-<url> <loc>http://docs.covenantsql.io/docs/getting-started</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://docs.covenantsql.io/docs/getting-started" /> </url>
+<url> <loc>http://developers.covenantsql.io/help</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/en/help" /> </url>
+<url> <loc>http://developers.covenantsql.io/users</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/en/users" /> </url>
+<url> <loc>http://developers.covenantsql.io/versions</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/en/versions" /> </url>
+<url> <loc>http://developers.covenantsql.io/blog/2018/12/19/test</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>http://developers.covenantsql.io/docs/next/api-json-rpc</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/next/api-json-rpc" /> </url>
+<url> <loc>http://developers.covenantsql.io/docs/next/getting-started</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/next/getting-started" /> </url>
+<url> <loc>http://developers.covenantsql.io/docs/api-json-rpc</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/api-json-rpc" /> </url>
+<url> <loc>http://developers.covenantsql.io/docs/getting-started</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/getting-started" /> </url>
 </urlset>
