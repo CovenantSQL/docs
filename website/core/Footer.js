@@ -46,11 +46,8 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>Community</h5>
-            <a href={this.pageUrl("users.html", "")}>
-              User Showcase
-            </a>
             <a
-              href="http://stackoverflow.com/questions/tagged/"
+              href="https://stackoverflow.com/search?q=covenantsql"
               target="_blank"
               rel="noreferrer noopener">
               Stack Overflow
