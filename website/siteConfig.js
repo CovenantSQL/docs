@@ -13,8 +13,8 @@
 //   {
 //     caption: 'User1',
 //     // You will need to prepend the image path with your baseUrl
-//     // if it is not '/', like: '/test-site/img/docusaurus.svg'.
-//     image: '/img/docusaurus.svg',
+//     // if it is not '/', like: '/test-site/img/logo.svg'.
+//     image: '/img/logo.svg',
 //     infoLink: 'https://www.facebook.com',
 //     pinned: true,
 //   },
@@ -55,9 +55,9 @@ const siteConfig = {
   // users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
-  favicon: 'img/favicon.png',
+  headerIcon: 'img/logo.svg',
+  footerIcon: 'img/logo.svg',
+  favicon: 'img/favicon.ico',
 
   /* Colors for website */
   colors: {
@@ -107,7 +107,7 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  //   repoUrl: 'https://github.com/facebook/test-site',
+  repoUrl: 'https://github.com/CovenantSQL/CovenantSQL',
 };
 
 module.exports = siteConfig;
