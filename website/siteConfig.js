@@ -23,8 +23,8 @@
 const siteConfig = {
   title: 'CovenantSQL Docs', // Title for your website.
   tagline: 'A website for testing',
-  url: 'https://covenantsql.github.io', // Your website URL
-  baseUrl: '/docs/', // Base URL for your project */
+  url: 'http://docs.covenantsql.io', // Your website URL
+  baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
