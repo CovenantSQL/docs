@@ -1,6 +1,6 @@
 # CovenantSQL 测试网快速入门
 
-[CovenantSQL](https://github.com/CovenantSQL/CovenantSQL/blob/develop/README.md) 是一个基于区块链技术的去中心化众筹式 SQL 数据库，并具备以下特点：
+[CovenantSQL](https://github.com/CovenantSQL/CovenantSQL/blob/develop/README-zh.md) 是一个基于区块链技术的去中心化众筹式 SQL 数据库，并具备以下特点：
 
 1. **SQL**: 支持 SQL-92 标准
 2. **去中心化**: 基于独有的高效共识算法 DH-RPC 和 Kayak 实现的中心化
@@ -75,8 +75,8 @@ INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a7
 
 创建好数据库后，您可以参考以下文档和示例，以便更快的使用CovenantSQL来开发应用。
 
-- [CLI 文档](https://github.com/CovenantSQL/CovenantSQL/tree/develop/cmd/cql/README.md)
-- [SDK 文档](https://github.com/CovenantSQL/CovenantSQL/tree/develop/client/README.md)
+- [CLI 文档](https://github.com/CovenantSQL/CovenantSQL/tree/develop/cmd/cql/README-zh.md)
+- [SDK 文档](https://github.com/CovenantSQL/CovenantSQL/tree/develop/client/README-zh.md)
 - [SDK 示例](https://github.com/CovenantSQL/CovenantSQL/tree/develop/client/_example)
 
 ## 6. SQLChain 浏览器
@@ -85,4 +85,4 @@ INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a7
 
 更多的测试网技术支持，请访问:
 
-> [TestNet 发行日志](https://github.com/CovenantSQL/CovenantSQL/wiki/Release-Notes)
+> [TestNet 发行日志](https://github.com/CovenantSQL/CovenantSQL/wiki/Release-Notes-zh)

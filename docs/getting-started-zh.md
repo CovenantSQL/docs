@@ -2,6 +2,7 @@
 id: getting-started
 title: CovenantSQL 一键开箱使用
 ---
+# CovenantSQL 一键开箱使用
 
 ## 一键部署
 
@@ -20,10 +21,11 @@ Docker-Compose：https://docs.docker.com/compose/install/
 ```shell
 $ git clone https://github.com/CovenantSQL/CovenantSQL
 $ cd CovenantSQL
+$ make docker
 $ make start
 ```
 
-后续的所有命令，wd 都是在 clone 的 CovenantSQL 源码目录中
+后续的所有命令，工作目录默认都是在 clone 的 CovenantSQL 源码目录中，可以执行`export COVENANTSQL_ROOT=$PWD`存为环境变量
 
 ### 检查运行状态
 
@@ -50,6 +52,8 @@ covenantsql_observer        ./docker-entry.sh -listen  ...   Up      4661/tcp, 0
 
 ## 使用 CovenantSQL
 
+注：cql 命令暂时只支持linux环境执行
+
 ### 创建数据库
 
 创建一个单节点的数据库实例，可以将 create 的参数调整为 2 或者最多至 3（当前一键部署只部署了 3 个miner 节点，只能支持最多 3 节点的实例）
@@ -75,7 +79,7 @@ $ ./cql -config ./test/service/node_c/config.yaml -dsn covenantsql://0a255f13652
 
 ```shell
 INFO[0000] connecting to "covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4"
-Connected with driver covenantsql (feature/kayakPerformance-a6e183ed-20181107003651)
+Connected with driver covenantsql (develop)
 Type "help" for help.
 
 co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=>
@@ -94,51 +98,12 @@ co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> show table
 
 co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> \q
 
-$
+$ 
 ```
 
-## 使用 Java/Python Driver 操作 CovenantSQL
+## 使用 Python Driver 操作 CovenantSQL
 
-当前 Java/Python Driver 需要依赖  ```covenantsql_adapter``` 服务使用，使用前确保 `covenantsql_adapter` 服务运行正常
-
-### Java JDBC Driver 使用
-
-**需要使用 maven 编译 java-connector
-
-```shell
-$ git clone https://github.com/CovenantSQL/covenant-connector
-$ cd covenant-connector/covenantsql-java-connector
-$ mvn package -Dmaven.test.skip=true
-```
-
-编译后将会得到 3 个编译 jar 结果
-
-```shell
-$ ls -l target/*.jar
-target/covenantsql-java-connector-1.0-SNAPSHOT-jar-with-dependencies.jar
-target/covenantsql-java-connector-1.0-SNAPSHOT-shaded.jar
-target/covenantsql-java-connector-1.0-SNAPSHOT.jar
-```
-
-Driver 提供了一个简单的 Example 测试
-
-Example 源码在 `./src/main/java/io/covenantsql/connector/example/Example.java`
-
-使用 dsn 串中的 host 部分 ```0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4``` 设置为 `COVENANTSQL_DATABASE` 这个 property 来测试 example
-
-```shell
-$ java -DCOVENANTSQL_DATABASE=0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4 -cp target/covenantsql-java-connector-1.0-SNAPSHOT-jar-with-dependencies.jar io.covenantsql.connector.example.Example
-```
-
-可以看到插入和查询的结果
-
-```shell
-[main] INFO io.covenantsql.connector.CovenantDriver - covenantsql driver registered
-Build url: jdbc:covenantsql://127.0.0.1:11105/0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
-Connecting to database...
-Creating statement...
-ID: 1, Email: Apple, Password: appleisdelicious, Time: 00:01:17
-```
+当前 Python Driver 需要依赖  ```covenantsql_adapter``` 服务使用，使用前确保 `covenantsql_adapter` 服务运行正常
 
 ### Python Driver 使用
 
@@ -171,27 +136,26 @@ COVENANTSQL_PRIVATE_KEY=${COVENANTSQL_ROOT}/test/service/node_c/admin.test.coven
 COVENANTSQL_PROXY_PEM=${COVENANTSQL_ROOT}/test/service/node_c/admin.test.covenantsql.io.pem ./main.py
 ```
 
-执行结果如下（因为使用了 Java JDBC Driver插入了一行数据，这里可以看到两行数据）
+执行结果如下
 
 ```shell
 create table
 insert sample data
-affected rows: 1, lastrowid: 2
+affected rows: 1, lastrowid: 1
 select data from the table
-(1, '2018-11-07T16:01:17Z', 'Apple', 'appleisdelicious')
-(2, '2018-11-07T16:10:29Z', 'Apple', 'appleisdelicious')
+(1, '2018-12-27T07:05:33Z', 'Apple', 'appleisdelicious')
 ```
 
 退出 pipenv
 
 ```shell
-(python-demos-d0igWVYT) $ deactive
+(python-demos-d0igWVYT) $ deactivate
 $
 ```
 
 ## 使用 MySQL Client（version <=5.7）操作 CovenantSQL
 
-**当前只支持 version <=5.7 的 MySQL Client 访问，且依赖 `covenantsql_mysql_adapter` 服务使用，使用前确保 `covenantsql_mysql_adapter` 服务运行正常
+**当前只支持 version <=5.7** 的 MySQL Client 访问，且依赖 `covenantsql_mysql_adapter` 服务使用，使用前确保 `covenantsql_mysql_adapter` 服务运行正常
 
 ```shell
 $ mysql -h127.0.0.1 -P11107 -uroot -pcalvin -D0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
@@ -227,3 +191,8 @@ mysql> show tables;
 
 mysql>
 ```
+## SQLChain Explorer
+
+我们在`:11108`端口提供了一个 SQLChain 的 Explorer 可以看到 SQL 语句在链上的情况
+
+
