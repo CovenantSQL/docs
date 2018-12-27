@@ -44,7 +44,7 @@ INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a7
 
 ## 通过区块浏览器查看您的数据库操作记录
 
-CovenantSQL 有一个特性是**其操作记录是不可变且可跟踪的**，您可以通过 [区块浏览器](https://explorer.dbhub.org/) 来查询某个数据库的操作记录。
+CovenantSQL 有一个特性是**其操作记录是不可变且可跟踪的**，您可以通过 [区块浏览器](https://explorer.dbhub.org/) 来查询某个数据库的操作记录。
 
 ## 创建账号和数据库
 
