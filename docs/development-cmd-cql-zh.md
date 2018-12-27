@@ -1,3 +1,8 @@
+---
+id: cql
+title: 使用命令行客户端 cql 创建数据库
+---
+
 本文档主要介绍 CovenantSQL 命令行客户端 `cql` 的使用。`cql` 是一个用于批量进行 SQLChain 上数据库的创建、查询、更新或删除操作的命令行工具。
 
 ## 安装
@@ -20,7 +25,7 @@ $ go get github.com/CovenantSQL/CovenantSQL/cmd/cql
 使用 `cql` 命令来检查钱包余额：
 ```bash
 $ cql -config conf/config.yaml -get-balance
-INFO[0000] 
+INFO[0000]
 ### Public Key ###
 0388954cf083bb6bb2b9c7248849b57c76326296fcc0d69764fc61eedb5b8d820c
 ### Public Key ###

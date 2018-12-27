@@ -1,6 +1,6 @@
 ---
 id: api-json-rpc
-title: JSON RPC API
+title: JSON RPC
 ---
 
 > JSON-RPC is a stateless, light-weight remote procedure call (RPC) protocol.

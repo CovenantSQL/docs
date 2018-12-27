@@ -1,6 +1,10 @@
+---
+id: intro
+title: 简介
+---
+
 <p align="center">
-    <img src="https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/logo/covenantsql_horizontal.png"
-        height="130">
+    <img src="https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/logo/covenantsql_horizontal.png" height="auto" width="100%">
 </p>
 <p align="center">
     <a href="https://goreportcard.com/report/github.com/CovenantSQL/CovenantSQL">
@@ -41,7 +45,7 @@ CovenantSQL 是一个基于区块链技术的去中心化众筹式 SQL 数据库
 sql.Open("CovenantSQL", dbURI)
 ```
 
-## 
+##
 
 ![CovenantSQL 3 Layer design](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/logo/arch.png)
 

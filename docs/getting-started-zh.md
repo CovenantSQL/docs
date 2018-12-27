@@ -1,8 +1,7 @@
 ---
-id: getting-started
+id: local-deployment
 title: CovenantSQL 一键开箱使用
 ---
-# CovenantSQL 一键开箱使用
 
 ## 一键部署
 
@@ -98,7 +97,7 @@ co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> show table
 
 co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> \q
 
-$ 
+$
 ```
 
 ## 使用 Python Driver 操作 CovenantSQL
@@ -194,5 +193,3 @@ mysql>
 ## SQLChain Explorer
 
 我们在`:11108`端口提供了一个 SQLChain 的 Explorer 可以看到 SQL 语句在链上的情况
-
-

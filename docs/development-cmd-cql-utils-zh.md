@@ -1,4 +1,9 @@
-cql-utils 是 CovenantSQL 的一个命令行工具，具体用法如下。
+---
+id: keygen
+title: 使用 cql-utils 生成密钥与钱包
+---
+
+`cql-utils` 是 CovenantSQL 的一个命令行工具，具体用法如下。
 
 ## 安装
 下载 [最新发布版本](https://github.com/CovenantSQL/CovenantSQL/releases) 或直接从源码编译：
@@ -12,7 +17,7 @@ $ go get github.com/CovenantSQL/CovenantSQL/cmd/cql-utils
 
 ```
 $ cql-utils -tool keygen
-Enter master key(press Enter for default: ""): 
+Enter master key(press Enter for default: ""):
 ⏎
 Private key file: private.key
 Public key's hex: 03bc9e90e3301a2f5ae52bfa1f9e033cde81b6b6e7188b11831562bf5847bff4c0
