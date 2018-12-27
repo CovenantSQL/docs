@@ -421,56 +421,6 @@ func main() {
 
 
 
-## Python 使用 CovenantSQL
-
-当前 Python Driver 需要依赖  ```covenantsql_adapter``` 服务使用，使用前确保 `covenantsql_adapter` 服务运行正常
-
-**当前支持 `python3` 下使用 Python Driver，`python2` 将会在兼容性测试后提供
-
-Demo 依赖 `python3` 和 `pipenv`
-
-Python3: https://www.python.org/download/releases/3.0/
-
-Pipenv: https://github.com/pypa/pipenv
-
-安装依赖完成后，clone demo 并安装依赖到 pipenv
-
-```shell
-$ git clone https://github.com/CovenantSQL/python-demos.git
-$ cd python-demos
-$ pipenv install
-```
-
-使用 dsn 串中的 host 部分 `0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4`设置为 `COVENANTSQL_DATABASE` env 变量来执行测试
-
-`COVENANTSQL_ROOT` 环境变量为开始 clone 的 CovenantSQL 代码目录
-
-```shell
-$ pipenv shell
-(python-demos-d0igWVYT) $ cd hello-covenantsql
-(python-demos-d0igWVYT) $ chmod u+x main.py
-(python-demos-d0igWVYT) $ COVENANTSQL_DATABASE=0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4 \
-COVENANTSQL_PRIVATE_KEY=${COVENANTSQL_ROOT}/test/service/node_c/admin.test.covenantsql.io-key.pem \
-COVENANTSQL_PROXY_PEM=${COVENANTSQL_ROOT}/test/service/node_c/admin.test.covenantsql.io.pem ./main.py
-```
-
-执行结果如下
-
-```shell
-create table
-insert sample data
-affected rows: 1, lastrowid: 1
-select data from the table
-(1, '2018-12-27T07:05:33Z', 'Apple', 'appleisdelicious')
-```
-
-退出 pipenv
-
-```shell
-(python-demos-d0igWVYT) $ deactivate
-$
-```
-
 
 # CovenantSQL API
 
