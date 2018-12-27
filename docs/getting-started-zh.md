@@ -471,45 +471,6 @@ select data from the table
 $
 ```
 
-## 使用 MySQL Client（version <=5.7）操作 CovenantSQL
-
-**当前只支持 version <=5.7** 的 MySQL Client 访问，且依赖 `covenantsql_mysql_adapter` 服务使用，使用前确保 `covenantsql_mysql_adapter` 服务运行正常
-
-```shell
-$ mysql -h127.0.0.1 -P11107 -uroot -pcalvin -D0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
-```
-
-可以执行任何常见 SQL 命令进行测试
-
-```shell
-Reading table information for completion of table and column names
-You can turn off this feature to get a quicker startup with -A
-
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 10001
-Server version: 5.7.0
-
-Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-mysql> show tables;
-+-----------------+
-| name            |
-+-----------------+
-| test            |
-| users           |
-| sqlite_sequence |
-+-----------------+
-3 rows in set (0.02 sec)
-
-mysql>
-```
-
 
 # CovenantSQL API
 
