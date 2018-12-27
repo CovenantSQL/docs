@@ -1,6 +1,7 @@
 ---
-id: install
-title: 安装 CovenantSQL 客户端
+id: version-0.0.6-quickstart
+title: 快速开始
+original_id: quickstart
 ---
 
 ## 下载 CovenantSQL 工具包
@@ -37,7 +38,7 @@ INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a7
 
 ### 使用数据库驱动访问数据库
 
-- [Go](./development-golang-client-zh.md)
+- [Go](./development)
 - [Java](https://github.com/CovenantSQL/covenant-connector)
 - [Python](https://github.com/CovenantSQL/python-driver)
 - [NodeJS](https://github.com/CovenantSQL/node-covenantsql)
@@ -112,7 +113,7 @@ INFO[0000] covenant coin balance is: 0                   caller="main.go:247 mai
 
 如果您是企业用户，希望在自己的网络搭建 CovenantSQL 数据库服务，请参考：
 
-- [Docker 一键部署 CovenantSQL 测试网](./getting-started-zh.md)
+- [Docker 一键部署 CovenantSQL 测试网](./deployment)
 
 ## CovenantSQL 联盟链解决方案
 

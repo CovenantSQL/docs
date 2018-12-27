@@ -2,7 +2,7 @@
   "docs": {
     "CovanantSQL": [
       "intro",
-      "install",
+      "quickstart",
       "deployment",
       "development",
       "api",

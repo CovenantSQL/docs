@@ -2,7 +2,7 @@
   "version-0.0.6-docs": {
     "CovanantSQL": [
       "version-0.0.6-intro",
-      "version-0.0.6-install",
+      "version-0.0.6-quickstart",
       "version-0.0.6-deployment",
       "version-0.0.6-development",
       "version-0.0.6-api",
