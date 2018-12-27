@@ -10,7 +10,7 @@ CovenantSQL provides a suite of RPC methods in [JSON-RPC 2.0](https://www.jsonrp
 
 ## Javascript API
 
-[cql.js](https://github.com/covenantsql/cql.js) is a Javascript SDK which has encapsulated the RPC methods in order to give a much more convenient way to talk to the CovenantSQL networks. See the [Javascript API](./cql-js.md) for more.
+[cql.js](https://github.com/covenantsql/cql.js) is a Javascript SDK which has encapsulated the RPC methods in order to give a much more convenient way to talk to the CovenantSQL networks. See the [Javascript API](cql-js.md) for more.
 
 ## JSON RPC Endpoint
 
