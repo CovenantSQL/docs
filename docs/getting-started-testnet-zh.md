@@ -35,7 +35,7 @@ Generated nonce.
 
 ## 2. 用私钥生成钱包地址
 
-私钥可以再上一步的`./conf`目录中找到，文件名为`private.key`
+私钥可以再上一步的 `./conf` 目录中找到，文件名为 `private.key`
 
 ```bash
 $ cql-utils -tool addrgen -private ./conf/private.key
@@ -43,12 +43,12 @@ Enter master key(default: ""):
 ⏎
 wallet address: 4jXvNvPHKNPU8Sncz5u5F5WSGcgXmzC1g8RuAXTCJzLsbF9Dsf9
 ```
-上述`4jXvNvPHKNPU8Sncz5u5F5WSGcgXmzC1g8RuAXTCJzLsbF9Dsf9`就是钱包地址
-## 3. 在水龙头(Faucet)获取Particle(PTC)
+上述 `4jXvNvPHKNPU8Sncz5u5F5WSGcgXmzC1g8RuAXTCJzLsbF9Dsf9` 就是钱包地址
+## 3. 在水龙头(Faucet)获取 Particle(PTC)
 
 水龙头(Faucet)的地址为: [CovenantSQL 测试网 Particle(PTC) 水龙头](https://testnet.covenantsql.io/)。
 
-完成教程之后，用`cql`命令来检查钱包地址的余额：
+完成教程之后，用 `cql` 命令来检查钱包地址的余额：
 
 ```bash
 $ cql -config conf/config.yaml -get-balance
@@ -56,22 +56,22 @@ INFO[0000] stable coin balance is: 100                   caller="main.go:246 mai
 INFO[0000] covenant coin balance is: 0                   caller="main.go:247 main.main"
 ```
 
-当看到**"stable coin balance is: 100"**时，表明余额已经为100。
+当看到 **"stable coin balance is: 100"** 时，表明余额已经为 100。
 
-如果您需要更多的PTC作为长期测试使用，请联系[webmaster@covenantsql.io](mailto:webmaster@covenantsql.io)。
+如果您需要更多的 PTC 作为长期测试使用，请联系 [webmaster@covenantsql.io](mailto:webmaster@covenantsql.io)。
 
-对于有合作的商业伙伴，我们将直接发给您PTC。
+对于有合作的商业伙伴，我们将直接提供 PTC 以供使用。
 
-## 4. 使用`CLI`创建数据库
+## 4. 使用 `CLI` 创建数据库
 
 ```bash
 $ cql -config conf/config.yaml -create 1
 INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872?use_follower=false&use_leader=true"
 ```
 
-第一行命令中的`1`表示申请几个矿工为你的数据库服务。`covenantsql://...` 开头的这个字符串就是创建的数据库访问地址，在SDK和CLI命令中都需要用此地址，在整个区块链中找到这个数据库。
+第一行命令中的 `1` 表示申请几个矿工为你的数据库服务。`covenantsql://...` 开头的这个字符串就是创建的数据库访问地址，在 SDK 和 CLI 命令中都需要用此地址，在整个区块链中找到这个数据库。
 
-## 5. CLI和SDK的详细文档
+## 5. CLI 和 SDK 的详细文档
 
 创建好数据库后，您可以参考以下文档和示例，以便更快的使用CovenantSQL来开发应用。
 
