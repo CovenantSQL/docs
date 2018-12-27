@@ -81,50 +81,125 @@ CovenantSQL 是一个运行在 Internet 上的开放网络，主要有以下三�
 
 # 安装 CovenantSQL 客户端
 
-`cql-utils` 是 CovenantSQL 的一个命令行工具，具体用法如下。
+下载 CovenantSQL 工具包
 
-## 安装
+请 [下载最新版 CovenantSQL 工具包](https://github.com/CovenantSQL/CovenantSQL/releases)。您将得到以下命令行工具：`cql`、`cql-utils`。
 
-下载 [最新发布版本](https://github.com/CovenantSQL/CovenantSQL/releases) 或直接从源码编译：
+## 创建并访问 CovenantSQL 数据库
 
-```bash
-$ go get github.com/CovenantSQL/CovenantSQL/cmd/cql-utils
+我们已经上线了 CovenantSQL 测试网，也为您准备了一个公共的测试账号，请下载账号配置文件和私钥：[config.yaml](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/feature/chainBus-SQLChain/test/service/node_c/config.yaml)、[private.key](https://github.com/CovenantSQL/CovenantSQL/raw/feature/chainBus-SQLChain/test/service/node_c/private.key) 用于测试。
+
+**注**：该账号是公共的且只供测试使用，请不要在该账号创建的数据库中存放您的应用信息，我们会不定期清理数据库数据。
+
+### 使用 cql 命令行工具创建数据库
+
+```shell
+./cql -config config.yaml -create 1
 ```
 
-*保证 Golang 环境变量 `$GOPATH/bin` 已在 `$PATH` 中*
-
-## 使用
-
-### 生成公私钥对
+输出：
 
 ```
-$ cql-utils -tool keygen
+INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872?use_follower=false&use_leader=true"
+```
+
+这里表示您创建了 `0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` 这个数据库。
+
+### 使用 cql 命令行工具访问数据库
+
+```shell
+./cql -config config.yaml -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+```
+
+连接上数据库后，您可以按您操作数据库的习惯来操作 CovenantSQL 上的数据库。比如执行 `CREATE TABLE` 创建表、`SELECT` 查询数据等操作。
+
+### 使用数据库驱动访问数据库
+
+- [Go](./development-golang-client-zh.md)
+- [Java](https://github.com/CovenantSQL/covenant-connector)
+- [Python](https://github.com/CovenantSQL/python-driver)
+- [Javascript（开发中）](https://github.com/CovenantSQL/cql.js)
+
+## 通过区块浏览器查看您的数据库操作记录
+
+CovenantSQL 有一个特性是**其操作记录是不可变且可跟踪的**，您可以通过 [测试网区块浏览器](https://explorer.dbhub.org/) 来查询某个数据库的操作记录。查询时，请在其页面右上角填入您的数据库地址。
+
+## 创建账号和数据库
+
+我们的测试网支持您创建自己的的账号和数据库。
+
+### 创建账号
+
+在我们的测试网创建数据库前我们需要先在测试网创建账号，运行命令：
+
+```shell
+./cql-utils -tool confgen
+```
+
+输入您的账号主密码，输出：
+
+```
+Generating key pair...
 Enter master key(press Enter for default: ""):
-⏎
-Private key file: private.key
-Public key's hex: 03bc9e90e3301a2f5ae52bfa1f9e033cde81b6b6e7188b11831562bf5847bff4c0
+Private key file: conf/private.key
+Public key's hex: 027af3584b8b4736d6ba1e78ace5f0fdefe561f08749c5cac39d23668c3030fe39
+Generated key pair.
+Generating nonce...
+INFO[0075] cpu: 4
+INFO[0075] position: 3, shift: 0x0, i: 3
+INFO[0075] position: 1, shift: 0x0, i: 1
+INFO[0075] position: 0, shift: 0x0, i: 0
+INFO[0075] position: 2, shift: 0x0, i: 2
+nonce: {{1056388 0 0 1424219234} 25 000000737633a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01}
+node id: 000000737633a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01
+Generated nonce.
+Generating config file...
+Generated nonce.
 ```
 
-生成的 private.key 文件即是使用主密码加密过的私钥文件，而输出到屏幕上的字符串就是使用十六进制进行编码的公钥。
+该命令会为你创建一个 `conf` 目录：
 
-### 使用私钥文件或公钥生成钱包地址
+- `conf/private.key`: 为您生成的私钥通过主密码加密保存在该文件中，您的账号地址需要使用该文件创建；
+- `conf/config.yaml`: 为您生成的配置，cql 可以通过读取该配置来访问 CovenantSQL 测试网。
 
-```
-$ cql-utils -tool addrgen -private private.key
-Enter master key(default: ""):
-⏎
-wallet address: 4jXvNvPHKNPU8Sncz5u5F5WSGcgXmzC1g8RuAXTCJzLsbF9Dsf9
-$ cql-utils -tool addrgen -public 02f2707c1c6955a9019cd9d02ade37b931fbfa286a1163dfc1de965ec01a5c4ff8
-wallet address: 4jXvNvPHKNPU8Sncz5u5F5WSGcgXmzC1g8RuAXTCJzLsbF9Dsf9
+再运行命令用来生成账号地址（也叫钱包地址、CovenantSQL 地址）：
+
+```shell
+./cql-utils -tool addrgen -private conf/private.key
 ```
 
-你可以通过指定私钥文件，或者把上述的公钥十六进制编码字符串作为命令行参数来直接生成钱包地址。
+输出：
+
+```
+wallet address: 4kcCg4niPjWURuFyT633V8TF9Xb9PvUR5Xbf6aTvGxFZkJFQaS9
+```
+
+您可以在我们的 [CovenantSQL 测试网](https://testnet.covenantsql.io/) 输入您生成的钱包地址，通过发微博、推特等社交媒体来帮助我们推广我们的项目，我们会为您的钱包充值。
+
+使用 cql 命令行工具查询余额：
+
+```shell
+./cql -config conf/config.yaml -get-balance
+```
+
+输出：
+
+```
+INFO[0000] stable coin balance is: 100                   caller="main.go:246 main.main"
+INFO[0000] covenant coin balance is: 0                   caller="main.go:247 main.main"
+```
+
+## 部署私有 CovenantSQL 数据库（搭建私链）
+
+如果您是企业用户，希望在自己的网络搭建 CovenantSQL 数据库服务，请参考：
+
+- [Docker 一键部署 CovenantSQL 测试网](./getting-started-zh.md)
+
+## CovenantSQL 联盟链解决方案
+
+正在建设中，如需咨询请邮件至 webmaster@covenantsql.io。
 
 #部署 CovenantSQL
-
-## 使用 CovenantSQL 测试网
-
-补充
 
 ## 使用 CovenantSQL Docker 部署
 
