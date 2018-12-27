@@ -1,6 +1,6 @@
 ---
 id: version-0.0.6-api-json-rpc
-title: JSON RPC API
+title: JSON RPC
 original_id: api-json-rpc
 ---
 
@@ -138,7 +138,7 @@ Response: [Block](#s-block) array
 }
 ```
 
-### bp_getBlockListByTimestampRange
+### bp_getBlockListByTimeRange
 
 TODO: as a new API in the next release
 
@@ -148,10 +148,9 @@ Returns information about the block specified by its height.
 
 #### Parameters
 
-| Position | Name               | type    | Description                                                                                     | Sample |
-| -------- | ------------------ | ------- | ----------------------------------------------------------------------------------------------- | ------ |
-| 0        | height             | integer | height of the block                                                                             | 1024   |
-| 1        | fetch_transactions | boolean | fetch transactions or not, if false, `transactions` field in the response will be an empty list | true   |
+| Position | Name   | type    | Description         | Sample |
+| -------- | ------ | ------- | ------------------- | ------ |
+| 0        | height | integer | height of the block | 1024   |
 
 #### Returns
 
@@ -188,10 +187,9 @@ Returns information about the block specified by its hash.
 
 #### Parameters
 
-| Position | Name               | type    | Description                                                                                     | Sample |
-| -------- | ------------------ | ------- | ----------------------------------------------------------------------------------------------- | ------ |
-| 0        | hash               | string  | hash of the block                                                                               | "TODO" |
-| 1        | fetch_transactions | boolean | fetch transactions or not, if false, `transactions` field in the response will be an empty list | true   |
+| Position | Name | type   | Description       | Sample |
+| -------- | ---- | ------ | ----------------- | ------ |
+| 0        | hash | string | hash of the block | "TODO" |
 
 #### Returns
 
@@ -273,6 +271,47 @@ Response: [Transaction](#s-transaction) array
 }
 ```
 
+### bp_getTransactionListInBlock
+
+Returns a list of the transactions from a block by the specified height.
+
+| Position | Name   | type    | Description           | Sample |
+| -------- | ------ | ------- | --------------------- | ------ |
+| 0        | height | integer | block height          | 1024   |
+| 1        | from   | integer | start index, included | 0      |
+| 2        | to     | integer | end index, excluded   | 10     |
+
+**Constraints:** `to - from ∈ [5, 100]`
+
+#### Returns
+
+- array: list of the transactions, the object in the list is a [Transaction](#s-transaction)
+
+#### Example
+
+Request:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "bp_getTransactionListInBlock",
+  "params": [1024, 0, 10]
+}
+```
+
+Response: [Transaction](#s-transaction) array
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": [
+    { TODO: transaction object }
+  ]
+}
+```
+
 ### bp_getTransactionByHash
 
 Returns information about the transaction specified by its hash.
@@ -322,40 +361,33 @@ Here are some common structure definitions used in the API.
 
 The block generated in the CovenantSQL blockchain network.
 
-| Field              | Type    | Description                                  |
-| ------------------ | ------- | -------------------------------------------- |
-| version            | integer | Version number of the block                  |
-| producer           | string  | Address of the node who generated this block |
-| merkle_root        | string  | Hash of the merkle tree                      |
-| parent             | string  | Hash of its parent block                     |
-| timestamp          | string  | Create time of the block                     |
-| hash               | string  | Hash of the block                            |
-| signee             | string  | Public key of the node who signed this block |
-| signature          | string  | Signature for the this block                 |
-| height             | integer | Height of the block                          |
-| count_tranasctions | integer | Count of the transactions in this block      |
-| transactions       | array   | Array of [Transaction](#s-transaction)       |
+| Field       | Type    | Description                                  |
+| ----------- | ------- | -------------------------------------------- |
+| height      | integer | Height of the block                          |
+| hash        | string  | Hash of the block                            |
+| version     | integer | Version number of the block                  |
+| producer    | string  | Address of the node who generated this block |
+| merkle_root | string  | Hash of the merkle tree                      |
+| parent      | string  | Hash of its parent block                     |
+| timestamp   | string  | Create time of the block                     |
+| signee      | string  | Public key of the node who signed this block |
+| signature   | string  | Signature for the this block                 |
+| tx_count    | integer | Count of the transactions in this block      |
 
 Sample in JSON format:
 
 ```json
 {
+  "height": 12,
+  "hash": "TODO",
   "version": 1,
   "producer": "4io8u9v9nydaQPXtmqibg8gJbkNFd7DdM47PLWuM7ubzBXZ4At7",
   "merkle_root": "TODO",
   "parent": "TODO",
   "timestamp": "TODO",
-  "hash": "TODO",
   "signee": "TODO",
   "signature": "TODO",
-  "height": 12,
-  "count_tranasctions": 1,
-  "transactions": [
-    {
-      "hash": "TODO",
-      "signee": "TODO"
-    }
-  ]
+  "tx_count": 1
 }
 ```
 
@@ -365,34 +397,35 @@ Sample in JSON format:
 
 | Field        | Type    | Description                                                                                 |
 | ------------ | ------- | ------------------------------------------------------------------------------------------- |
+| block_height | integer | Height of the block this transaction belongs to                                             |
+| index        | integer | Index of the transaction in the block                                                       |
 | hash         | string  | Hash of the transaction data                                                                |
+| block_hash   | string  | Hash of the block this transaction belongs to                                               |
+| type         | integer | Type of the transaction                                                                     |
 | signee       | string  | Public key of the account who signed this transaction                                       |
 | address      | string  | Account address who signed this transaction                                                 |
 | signature    | string  | Signature of this transaction                                                               |
 | timestamp    | string  | Create time of the transaction                                                              |
-| tx_type      | integer | Type of the transaction                                                                     |
 | raw          | string  | Raw content of the transaction data, in JSON format                                         |
 | tx           | object  | Concrete transaction object, see supported [transaction types](#transaction-types) for more |
-| block_height | integer | Height of the block this transaction belongs to                                             |
-| block_hash   | string  | Hash of the block this transaction belongs to                                               |
-| index        | integer | Index of the transaction in the block                                                       |
 
 Sample in JSON format:
 
 ```json
 {
+  "block_height": 1,
+  "index": 0,
   "hash": "TODO",
+  "block_hash": "TODO",
+  "timestamp": "TODO",
+  "type": 1,
   "signee": "TODO",
   "address": "TODO",
   "signature": "TODO",
-  "timestamp": "TODO",
-  "tx_type": 1,
   "raw": "TODO",
   "tx": {
     "field": "TODO"
-  },
-  "block_height": 1,
-  "block_hash": "TODO"
+  }
 }
 ```
 

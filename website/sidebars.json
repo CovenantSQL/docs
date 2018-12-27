@@ -1,6 +1,19 @@
 {
   "docs": {
-    "Getting Started": ["getting-started"],
-    "API": ["api-json-rpc"]
+    "Intro": [
+      "intro"
+    ],
+    "使用": [
+      "keygen",
+      "cql",
+      "golang-client"
+    ],
+    "部署": [
+      "local-deployment",
+      "testnet"
+    ],
+    "API": [
+      "api-json-rpc"
+    ]
   }
 }

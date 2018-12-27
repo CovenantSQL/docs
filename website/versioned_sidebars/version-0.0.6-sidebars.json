@@ -1,7 +1,16 @@
 {
   "version-0.0.6-docs": {
-    "Getting Started": [
-      "version-0.0.6-getting-started"
+    "Intro": [
+      "version-0.0.6-intro"
+    ],
+    "使用": [
+      "version-0.0.6-keygen",
+      "version-0.0.6-cql",
+      "version-0.0.6-golang-client"
+    ],
+    "部署": [
+      "version-0.0.6-local-deployment",
+      "version-0.0.6-testnet"
     ],
     "API": [
       "version-0.0.6-api-json-rpc"
