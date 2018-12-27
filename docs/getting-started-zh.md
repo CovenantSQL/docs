@@ -3,7 +3,56 @@ id: local-deployment
 title: CovenantSQL 一键开箱使用
 ---
 
-## 一键部署
+# 安装 CovenantSQL 客户端
+
+
+
+`cql-utils` 是 CovenantSQL 的一个命令行工具，具体用法如下。
+
+## 安装
+
+下载 [最新发布版本](https://github.com/CovenantSQL/CovenantSQL/releases) 或直接从源码编译：
+
+```bash
+$ go get github.com/CovenantSQL/CovenantSQL/cmd/cql-utils
+```
+
+*保证 Golang 环境变量 `$GOPATH/bin` 已在 `$PATH` 中*
+
+## 使用
+
+### 生成公私钥对
+
+```
+$ cql-utils -tool keygen
+Enter master key(press Enter for default: ""):
+⏎
+Private key file: private.key
+Public key's hex: 03bc9e90e3301a2f5ae52bfa1f9e033cde81b6b6e7188b11831562bf5847bff4c0
+```
+
+生成的 private.key 文件即是使用主密码加密过的私钥文件，而输出到屏幕上的字符串就是使用十六进制进行编码的公钥。
+
+### 使用私钥文件或公钥生成钱包地址
+
+```
+$ cql-utils -tool addrgen -private private.key
+Enter master key(default: ""):
+⏎
+wallet address: 4jXvNvPHKNPU8Sncz5u5F5WSGcgXmzC1g8RuAXTCJzLsbF9Dsf9
+$ cql-utils -tool addrgen -public 02f2707c1c6955a9019cd9d02ade37b931fbfa286a1163dfc1de965ec01a5c4ff8
+wallet address: 4jXvNvPHKNPU8Sncz5u5F5WSGcgXmzC1g8RuAXTCJzLsbF9Dsf9
+```
+
+你可以通过指定私钥文件，或者把上述的公钥十六进制编码字符串作为命令行参数来直接生成钱包地址。
+
+#部署 CovenantSQL
+
+## 使用 CovenantSQL 测试网
+
+补充
+
+## 使用 CovenantSQL Docker 部署
 
 ### 安装 Docker
 
@@ -13,7 +62,7 @@ Docker：https://docs.docker.com/install/
 
 Docker-Compose：https://docs.docker.com/compose/install/
 
-### 部署 CovenantSQL
+### 启动 Docker 容器
 
 执行以下的命令在本地运行 CovenantSQL
 
@@ -49,9 +98,13 @@ covenantsql_mysql_adapter   ./docker-entry.sh -listen  ...   Up      4661/tcp, 0
 covenantsql_observer        ./docker-entry.sh -listen  ...   Up      4661/tcp, 0.0.0.0:11106->4663/tcp
 ```
 
-## 使用 CovenantSQL
+### SQLChain Explorer
 
-注：cql 命令暂时只支持linux环境执行
+我们在`:11108`端口提供了一个 SQLChain 的 Explorer 可以看到 SQL 语句在链上的情况
+
+#操作 CovenantSQL
+
+注：cql 命令暂时只支持 Linux、MacOS 环境执行
 
 ### 创建数据库
 
@@ -100,11 +153,17 @@ co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> \q
 $
 ```
 
-## 使用 Python Driver 操作 CovenantSQL
+
+
+# 使用 CovenantSQL 开发 App
+
+## Golang 使用  CovenantSQL
+
+补充
+
+## Python 使用 CovenantSQL
 
 当前 Python Driver 需要依赖  ```covenantsql_adapter``` 服务使用，使用前确保 `covenantsql_adapter` 服务运行正常
-
-### Python Driver 使用
 
 **当前支持 `python3` 下使用 Python Driver，`python2` 将会在兼容性测试后提供
 
@@ -190,6 +249,12 @@ mysql> show tables;
 
 mysql>
 ```
-## SQLChain Explorer
 
-我们在`:11108`端口提供了一个 SQLChain 的 Explorer 可以看到 SQL 语句在链上的情况
+
+# CovenantSQL API
+
+
+
+# 常见问题解答
+
+补充
