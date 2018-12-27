@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="logo/covenantsql_horizontal.png"
+    <img src="https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/logo/covenantsql_horizontal.png"
         height="130">
 </p>
 <p align="center">
@@ -43,7 +43,7 @@ sql.Open("CovenantSQL", dbURI)
 
 ## 
 
-![CovenantSQL 3 Layer design](https://github.com/CovenantSQL/CovenantSQL/tree/develop/logo/arch.png)
+![CovenantSQL 3 Layer design](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/logo/arch.png)
 
 - 第一层: **全局共识层**(主链，架构图中的中间环):
     - 整个网络中只有一个主链。
@@ -95,10 +95,10 @@ sql.Open("CovenantSQL", dbURI)
 CovenantSQL仍在建设中，测试网已经发布，[尝试一下](https://testnet.covenantsql.io/).
 
 
-- [Golang](https://github.com/CovenantSQL/CovenantSQL/tree/develop/client)
-- [Java](https://github.com/CovenantSQL/covenant-connector)
-- [NodeJS](https://github.com/CovenantSQL/node-covenantsql)
-- [Python](https://github.com/CovenantSQL/python-driver)
+- [Golang](https://github.com/CovenantSQL/CovenantSQL/tree/develop/client/_example)
+- [Java](https://github.com/CovenantSQL/covenant-connector/)
+- [NodeJS](https://github.com/CovenantSQL/node-covenantsql/)
+- [Python](https://github.com/CovenantSQL/python-driver/)
 - Coding for more……
 
 关注我们或[![follow on Twitter](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40CovenantLabs)](https://twitter.com/intent/follow?screen_name=CovenantLabs) 保持更新
