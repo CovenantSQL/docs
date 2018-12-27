@@ -1,19 +1,12 @@
 {
   "docs": {
-    "Intro": [
-      "intro"
-    ],
-    "使用": [
-      "keygen",
-      "cql",
-      "golang-client"
-    ],
-    "部署": [
-      "local-deployment",
-      "testnet"
-    ],
-    "API": [
-      "api-json-rpc"
+    "CovanantSQL": [
+      "intro",
+      "install",
+      "deployment",
+      "development",
+      "api",
+      "qna"
     ]
   }
 }

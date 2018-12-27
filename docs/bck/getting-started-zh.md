@@ -1,7 +1,6 @@
 ---
-id: version-0.0.6-local-deployment
+id: local-deployment
 title: CovenantSQL 综述
-original_id: local-deployment
 ---
 
 # CovenantSQL 介绍
@@ -213,10 +212,10 @@ Docker-Compose：https://docs.docker.com/compose/install/
 执行以下的命令在本地运行 CovenantSQL
 
 ```shell
-git clone https://github.com/CovenantSQL/CovenantSQL
-cd CovenantSQL
-make docker
-make start
+$ git clone https://github.com/CovenantSQL/CovenantSQL
+$ cd CovenantSQL
+$ make docker
+$ make start
 ```
 
 后续的所有命令，工作目录默认都是在 clone 的 CovenantSQL 源码目录中，可以执行`export COVENANTSQL_ROOT=$PWD`存为环境变量
@@ -224,7 +223,7 @@ make start
 ### 检查运行状态
 
 ```shell
-docker-compose ps
+$ docker-compose ps
 ```
 
 确认所有组件都处于 `Up` 的状态
