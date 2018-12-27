@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>简介 · CovenantSQL Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p align=&quot;center&quot;&gt;"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="简介 · CovenantSQL Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="http://developers.covenantsql.io/index.html"/><meta property="og:description" content="&lt;p align=&quot;center&quot;&gt;"/><meta property="og:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo.svg" alt="CovenantSQL Docs"/><h2 class="headerTitleWithLogo">CovenantSQL Docs</h2></a><a href="/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/docs/next/intro" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Intro</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Intro</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/next/intro">简介</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用</h3><ul><li class="navListItem"><a class="navItem" href="/docs/next/keygen">使用 cql-utils 生成密钥与钱包</a></li><li class="navListItem"><a class="navItem" href="/docs/next/cql">使用命令行客户端 cql 创建数据库</a></li><li class="navListItem"><a class="navItem" href="/docs/next/golang-client">使用 Golang 驱动访问数据库</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">部署</h3><ul><li class="navListItem"><a class="navItem" href="/docs/next/local-deployment">CovenantSQL 一键开箱使用</a></li><li class="navListItem"><a class="navItem" href="/docs/next/testnet">CovenantSQL 测试网快速入门</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul><li class="navListItem"><a class="navItem" href="/docs/next/api-json-rpc">JSON RPC</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">简介</h1></header><article><div><span><p align="center">
+    <img src="https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/logo/covenantsql_horizontal.png" height="auto" width="100%">
+</p>
+<p align="center">
+    <a href="https://goreportcard.com/report/github.com/CovenantSQL/CovenantSQL">
+        <img src="https://goreportcard.com/badge/github.com/CovenantSQL/CovenantSQL?style=flat-square"
+            alt="Go Report Card"></a>
+    <a href="https://codecov.io/gh/CovenantSQL/CovenantSQL">
+        <img src="https://codecov.io/gh/CovenantSQL/CovenantSQL/branch/develop/graph/badge.svg"
+            alt="Coverage"></a>
+    <a href="https://travis-ci.org/CovenantSQL/CovenantSQL">
+        <img src="https://travis-ci.org/CovenantSQL/CovenantSQL.png?branch=develop"
+            alt="Build Status"/></a>
+    <a href="https://opensource.org/licenses/Apache-2.0">
+        <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"
+            alt="License"></a>
+    <a href="https://godoc.org/github.com/CovenantSQL/CovenantSQL">
+        <img src="https://img.shields.io/badge/godoc-reference-blue.svg"
+            alt="GoDoc"></a>
+    <a href="https://twitter.com/intent/follow?screen_name=CovenantLabs">
+        <img src="https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40CovenantLabs"
+            alt="follow on Twitter"></a>
+    <a href="https://gitter.im/CovenantSQL/CovenantSQL?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
+        <img src="https://badges.gitter.im/CovenantSQL/CovenantSQL.svg"
+            alt="Join the chat at https://gitter.im/CovenantSQL/CovenantSQL"></a>
+</p>
+<p>CovenantSQL 是一个基于区块链技术的去中心化众筹式 SQL 数据库，并具备以下特点：</p>
+<ul>
+<li><strong>SQL</strong>: 支持 SQL-92 标准</li>
+<li><strong>去中心化</strong>: 基于独有的高效共识算法 DH-RPC 和 Kayak 实现的中心化</li>
+<li><strong>隐私</strong>: 通过加密和授权许可进行访问</li>
+<li><strong>不可篡改</strong>: CovenantSQL 中的查询历史记录是不可变且可跟踪的</li>
+</ul>
+<p>我们相信<a href="https://medium.com/@covenant_labs/covenantsql-the-sql-database-on-blockchain-db027aaf1e0e">在下一个互联网时代，每个人都应该有完整的<strong>数据权利</strong></a></p>
+<h4><a class="anchor" aria-hidden="true" id="一行代码接入区块链数据"></a><a href="#一行代码接入区块链数据" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>一行代码接入区块链数据</h4>
+<pre><code class="hljs css language-go">sql.Open(<span class="hljs-string">"CovenantSQL"</span>, dbURI)
+</code></pre>
+<h2></h2>
+<p><img src="https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/logo/arch.png" alt="CovenantSQL 3 Layer design"></p>
+<ul>
+<li>第一层: <strong>全局共识层</strong>(主链，架构图中的中间环):
+<ul>
+<li>整个网络中只有一个主链。</li>
+<li>主要负责数据库矿工与用户的合同匹配，交易结算，反作弊，子链哈希锁定等全局共识事宜。</li>
+</ul></li>
+<li>第二层: <strong>SQL 共识层</strong>(子链，架构图中的两边环):
+<ul>
+<li>每个数据库都有自己独立的子链。</li>
+<li>主要负责数据库各种事务的签名，交付和一致性。这里主要实现永久可追溯性的数据历史，并且在主链中执行哈希锁定。</li>
+</ul></li>
+<li>第三层: <strong>数据储存层</strong>(支持 SQL-92 的数据库引擎):
+<ul>
+<li>每个数据库都有自己独立的分布式引擎。</li>
+<li>主要负责：数据库存储和加密；查询处理和签名；高效索引。</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="文章"></a><a href="#文章" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>文章</h2>
+<p>团队成员发表过的论文</p>
+<ul>
+<li><a href="https://dl.acm.org/citation.cfm?id=2736085">迅雷水晶：一种新颖的基于众筹的内容分发平台</a></li>
+<li><a href="https://ieeexplore.ieee.org/abstract/document/7114727/">基于众筹的视频服务系统性能分析</a></li>
+<li><a href="https://ieeexplore.ieee.org/abstract/document/7762143/">迅雷水晶性能分析：基于众筹的视频分发平台</a></li>
+</ul>
+<p>这些启发了我们：</p>
+<ul>
+<li><a href="https://bitcoin.org/bitcoin.pdf">比特币：P2P电子现金系统</a></li>
+<li><a href="https://github.com/thunderdb/research/wiki/Secure-Kademlia">S/Kademlia</a>
+<ul>
+<li><a href="https://ieeexplore.ieee.org/document/4447808/">S/Kademlia: 一种针对密钥的实用方法</a></li>
+</ul></li>
+<li><a href="https://ieeexplore.ieee.org/abstract/document/7958614/">vSQL: 验证动态外包数据库上的任意SQL查询</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="libs"></a><a href="#libs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Libs</h2>
+<h3><a class="anchor" aria-hidden="true" id="网络栈"></a><a href="#网络栈" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>网络栈</h3>
+<p><a href="rpc/">DH-RPC</a> := TLS - Cert + DHT</p>
+<table>
+<thead>
+<tr><th style="text-align:left">层</th><th style="text-align:center">应用</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">远程调用协议</td><td style="text-align:center"><code>net/rpc</code></td></tr>
+<tr><td style="text-align:left">寻址</td><td style="text-align:center"><a href="https://godoc.org/github.com/CovenantSQL/CovenantSQL/consistent"><strong>C</strong>onsistent <strong>S</strong>ecure <strong>DHT</strong></a></td></tr>
+<tr><td style="text-align:left">会话池</td><td style="text-align:center">Session Pool</td></tr>
+<tr><td style="text-align:left">多路复用</td><td style="text-align:center"><a href="https://github.com/xtaci/smux">smux</a></td></tr>
+<tr><td style="text-align:left">传输安全</td><td style="text-align:center"><a href="https://github.com/CovenantSQL/research/wiki/ETLS(Enhanced-Transport-Layer-Security)"><strong>E</strong>nhanced <strong>TLS</strong></a></td></tr>
+<tr><td style="text-align:left">网络</td><td style="text-align:center">TCP or KCP for optional later</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="测试工具"></a><a href="#测试工具" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>测试工具</h4>
+<ul>
+<li><a href="https://github.com/CovenantSQL/GNTE">全球网络拓扑模拟器(GNTE)</a> 用于网络模拟</li>
+<li><a href="https://github.com/anishathalye/porcupine">线性一致性测试</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="接口"></a><a href="#接口" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>接口</h4>
+<p>CovenantSQL仍在建设中，测试网已经发布，<a href="https://testnet.covenantsql.io/">尝试一下</a>.</p>
+<ul>
+<li><a href="https://github.com/CovenantSQL/CovenantSQL/tree/develop/client/_example">Golang</a></li>
+<li><a href="https://github.com/CovenantSQL/covenant-connector/">Java</a></li>
+<li><a href="https://github.com/CovenantSQL/node-covenantsql/">NodeJS</a></li>
+<li><a href="https://github.com/CovenantSQL/python-driver/">Python</a></li>
+<li>Coding for more……</li>
+</ul>
+<p>关注我们或<a href="https://twitter.com/intent/follow?screen_name=CovenantLabs"><img src="https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&amp;label=Follow%20%40CovenantLabs" alt="follow on Twitter"></a> 保持更新</p>
+<h2><a class="anchor" aria-hidden="true" id="测试网"></a><a href="#测试网" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>测试网</h2>
+<ul>
+<li><a href="https://testnet.covenantsql.io/quickstart">快捷入口</a></li>
+<li><a href="https://testnet.covenantsql.io/">测试网水龙头</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="联系我们"></a><a href="#联系我们" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>联系我们</h2>
+<ul>
+<li><p><a href="mailto:webmaster@covenantsql.io">邮箱地址</a></p></li>
+<li><p><a href="https://twitter.com/intent/follow?screen_name=CovenantLabs">
+<img src="https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40CovenantLabs"
+            alt="follow on Twitter"></a></p></li>
+<li><p><a href="https://gitter.im/CovenantSQL/CovenantSQL?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/CovenantSQL/CovenantSQL.svg" alt="Join the chat at https://gitter.im/CovenantSQL/CovenantSQL"></a></p></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-27</em></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/next/keygen"><span>使用 cql-utils 生成密钥与钱包</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#文章">文章</a></li><li><a href="#libs">Libs</a><ul class="toc-headings"><li><a href="#网络栈">网络栈</a></li></ul></li><li><a href="#测试网">测试网</a></li><li><a href="#联系我们">联系我们</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '1b47865e3d00b7996a988bbc155a68e4',
+                indexName: 'covenantsql',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
