@@ -6,13 +6,13 @@ original_id: quickstart
 
 ## 下载 CovenantSQL 工具包
 
-请 [下载最新版 CovenantSQL 工具包](https://github.com/CovenantSQL/CovenantSQL/releases)。您将得到以下命令行工具：`cql`、`cql-utils`。
+请 [下载最新版 CovenantSQL 工具包](https://github.com/CovenantSQL/CovenantSQL/releases)。你将得到以下命令行工具：`cql`、`cql-utils`。
 
 ## 创建并访问 CovenantSQL 数据库
 
-我们已经上线了 CovenantSQL 测试网，也为您准备了一个公共的测试账号，请下载账号配置文件和私钥：[config.yaml](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/feature/chainBus-SQLChain/test/service/node_c/config.yaml)、[private.key](https://github.com/CovenantSQL/CovenantSQL/raw/feature/chainBus-SQLChain/test/service/node_c/private.key) 用于测试。
+我们已经上线了 CovenantSQL 测试网，也为你准备了一个公共的测试账号，请下载账号配置文件和私钥：[config.yaml](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/feature/chainBus-SQLChain/test/service/node_c/config.yaml)、[private.key](https://github.com/CovenantSQL/CovenantSQL/raw/feature/chainBus-SQLChain/test/service/node_c/private.key) 用于测试。
 
-**注**：该账号是公共的且只供测试使用，请不要在该账号创建的数据库中存放您的应用信息，我们会不定期清理数据库数据。
+**注**：该账号是公共的且只供测试使用，请不要在该账号创建的数据库中存放你的应用信息，我们会不定期清理数据库数据。
 
 ### 使用 cql 命令行工具创建数据库
 
@@ -26,7 +26,7 @@ original_id: quickstart
 INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872?use_follower=false&use_leader=true"
 ```
 
-这里表示您创建了 `0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` 这个数据库。
+这里表示你创建了 `0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` 这个数据库。
 
 ### 使用 cql 命令行工具访问数据库
 
@@ -34,7 +34,7 @@ INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a7
 ./cql -config config.yaml -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ```
 
-连接上数据库后，您可以按您操作数据库的习惯来操作 CovenantSQL 上的数据库。比如执行 `CREATE TABLE` 创建表、`SELECT` 查询数据等操作。
+连接上数据库后，你可以按你操作数据库的习惯来操作 CovenantSQL 上的数据库。比如执行 `CREATE TABLE` 创建表、`SELECT` 查询数据等操作。
 
 ### 使用数据库驱动访问数据库
 
@@ -44,13 +44,13 @@ INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a7
 - [NodeJS](https://github.com/CovenantSQL/node-covenantsql)
 - [Web (WIP)](https://github.com/CovenantSQL/cql.js)
 
-## 通过区块浏览器查看您的数据库操作记录
+## 通过区块浏览器查看你的数据库操作记录
 
-CovenantSQL 有一个特性是**其操作记录是不可变且可跟踪的**，您可以通过 [测试网区块浏览器](https://explorer.dbhub.org/) 来查询某个数据库的操作记录。查询时，请在其页面右上角填入您的数据库地址。
+CovenantSQL 有一个特性是**其操作记录是不可变且可跟踪的**，你可以通过 [测试网区块浏览器](https://explorer.dbhub.org/) 来查询某个数据库的操作记录。查询时，请在其页面右上角填入你的数据库地址。
 
 ## 创建账号
 
-我们的测试网支持您创建自己的的账号，并在自己的账号下创建数据库。通过以下的命令创建账号（需要输入主密码）：
+我们的测试网支持你创建自己的的账号，并在自己的账号下创建数据库。通过以下的命令创建账号（需要输入主密码）：
 
 ```shell
 ./cql-utils -tool confgen
@@ -79,8 +79,8 @@ Generated nonce.
 
 该命令会为你创建一个 `conf` 目录：
 
-- `conf/private.key`: 为您生成的私钥通过主密码加密保存在该文件中，您的账号地址需要使用该文件创建；
-- `conf/config.yaml`: 为您生成的配置，cql 可以通过读取该配置来访问 CovenantSQL 测试网。
+- `conf/private.key`: 为你生成的私钥通过主密码加密保存在该文件中，你的账号地址需要使用该文件创建；
+- `conf/config.yaml`: 为你生成的配置，cql 可以通过读取该配置来访问 CovenantSQL 测试网。
 
 再运行命令用来生成账号地址（也叫钱包地址、CovenantSQL 地址）：
 
@@ -94,7 +94,7 @@ Generated nonce.
 wallet address: 4kcCg4niPjWURuFyT633V8TF9Xb9PvUR5Xbf6aTvGxFZkJFQaS9
 ```
 
-您可以在我们的 [CovenantSQL 测试网](https://testnet.covenantsql.io/) 输入您生成的钱包地址，通过发微博、推特等社交媒体来帮助我们推广我们的项目，我们会为您的钱包充值。
+你可以在我们的 [CovenantSQL 测试网](https://testnet.covenantsql.io/) 输入你生成的钱包地址，通过发微博、推特等社交媒体来帮助我们推广我们的项目，我们会为你的钱包充值。
 
 使用 cql 命令行工具查询余额：
 
@@ -109,12 +109,4 @@ INFO[0000] stable coin balance is: 100                   caller="main.go:246 mai
 INFO[0000] covenant coin balance is: 0                   caller="main.go:247 main.main"
 ```
 
-## 部署私有 CovenantSQL 数据库（搭建私链）
-
-如果您是企业用户，希望在自己的网络搭建 CovenantSQL 数据库服务，请参考：
-
-- [Docker 一键部署 CovenantSQL 测试网](./deployment)
-
-## CovenantSQL 联盟链解决方案
-
-正在建设中，如需咨询请邮件至 webmaster@covenantsql.io。
+恭喜，你已收到我们发出的 PTC 稳定币，现在即可开始使用 CovenantSQL， 你可以参考 [Golang 使用 CovenantSQL 文档](./development) 进行开发。

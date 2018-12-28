@@ -1,6 +1,6 @@
 ---
 id: version-0.0.6-deployment
-title: 部署 CovenantSQL
+title: 部署 CovenantSQL 私有链
 original_id: deployment
 ---
 

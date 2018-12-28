@@ -1,11 +1,19 @@
 {
   "version-0.0.6-docs": {
-    "CovanantSQL": [
-      "version-0.0.6-intro",
+    "Intro": [
+      "version-0.0.6-intro"
+    ],
+    "使用与部署": [
+      "version-0.0.6-nav",
       "version-0.0.6-quickstart",
-      "version-0.0.6-deployment",
+      "version-0.0.6-deployment"
+    ],
+    "开发者": [
       "version-0.0.6-development",
-      "version-0.0.6-api",
+      "version-0.0.6-api"
+    ],
+    "About": [
+      "version-0.0.6-usecase",
       "version-0.0.6-qna"
     ]
   }

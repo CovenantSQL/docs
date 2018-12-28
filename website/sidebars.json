@@ -1,11 +1,19 @@
 {
   "docs": {
-    "CovanantSQL": [
-      "intro",
+    "Intro": [
+      "intro"
+    ],
+    "使用与部署": [
+      "nav",
       "quickstart",
-      "deployment",
+      "deployment"
+    ],
+    "开发者": [
       "development",
-      "api",
+      "api"
+    ],
+    "About": [
+      "usecase",
       "qna"
     ]
   }
