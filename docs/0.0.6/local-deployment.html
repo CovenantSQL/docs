@@ -1,0 +1,409 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>CovenantSQL 综述 · CovenantSQL Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;covenantsql-介绍&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#covenantsql-介绍&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CovenantSQL 介绍&lt;/h1&gt;
+"/><meta name="docsearch:version" content="0.0.6"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="CovenantSQL 综述 · CovenantSQL Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="http://developers.covenantsql.io/index.html"/><meta property="og:description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;covenantsql-介绍&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#covenantsql-介绍&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CovenantSQL 介绍&lt;/h1&gt;
+"/><meta property="og:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo.svg" alt="CovenantSQL Docs"/><h2 class="headerTitleWithLogo">CovenantSQL Docs</h2></a><a href="/versions"><h3>0.0.6</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/0.0.6/intro" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">CovenantSQL 综述</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="covenantsql-介绍"></a><a href="#covenantsql-介绍" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CovenantSQL 介绍</h1>
+<p align="center">
+    <img src="https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/logo/covenantsql_horizontal.png" height="auto" width="100%">
+</p>
+<p align="center">
+    <a href="https://goreportcard.com/report/github.com/CovenantSQL/CovenantSQL">
+        <img src="https://goreportcard.com/badge/github.com/CovenantSQL/CovenantSQL?style=flat-square"
+            alt="Go Report Card"></a>
+    <a href="https://codecov.io/gh/CovenantSQL/CovenantSQL">
+        <img src="https://codecov.io/gh/CovenantSQL/CovenantSQL/branch/develop/graph/badge.svg"
+            alt="Coverage"></a>
+    <a href="https://travis-ci.org/CovenantSQL/CovenantSQL">
+        <img src="https://travis-ci.org/CovenantSQL/CovenantSQL.png?branch=develop"
+            alt="Build Status"/></a>
+    <a href="https://opensource.org/licenses/Apache-2.0">
+        <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"
+            alt="License"></a>
+    <a href="https://godoc.org/github.com/CovenantSQL/CovenantSQL">
+        <img src="https://img.shields.io/badge/godoc-reference-blue.svg"
+            alt="GoDoc"></a>
+    <a href="https://twitter.com/intent/follow?screen_name=CovenantLabs">
+        <img src="https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40CovenantLabs"
+            alt="follow on Twitter"></a>
+    <a href="https://gitter.im/CovenantSQL/CovenantSQL?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
+        <img src="https://badges.gitter.im/CovenantSQL/CovenantSQL.svg"
+            alt="Join the chat at https://gitter.im/CovenantSQL/CovenantSQL"></a>
+</p>
+<p>CovenantSQL 是应用区块链技术构建的去中心化 SQL 云数据库，</p>
+<p>结合了区块链、共享经济、分布式数据库的优势，保障了用户隐私及对数据的所有权。</p>
+<p>CovenantSQL 具备以下特点：</p>
+<ul>
+<li><strong>SQL接口</strong>: 支持 SQL-92 标准，传统 App 几乎0修改即可变成 ĐApp</li>
+<li><strong>去中心化</strong>: 基于独有的高效拜占庭容错共识算法 Kayak 实现的去中心化结构</li>
+<li><strong>不可篡改</strong>: CovenantSQL 中的 Query 历史记录是可追溯的</li>
+<li><strong>隐私</strong>:  如果 Bitcoin 是用户的钱包，那么 CovenantSQL 就是是用户的去中心化数据库</li>
+</ul>
+<p>我们相信 <a href="https://medium.com/@covenant_labs/covenantsql-the-sql-database-on-blockchain-db027aaf1e0e">在下一个互联网时代，每个人都应该有完整的<strong>数据权利</strong></a></p>
+<h2><a class="anchor" aria-hidden="true" id="covenantsql-原理"></a><a href="#covenantsql-原理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CovenantSQL 原理</h2>
+<p>CovenantSQL 是一个运行在 Internet 上的开放网络，主要有以下三种角色组成：</p>
+<ul>
+<li>主链节点：
+<ul>
+<li>通过去中心化的架构，DPoS 模式的共识机制对矿工和用户进行撮合、协调、仲裁</li>
+</ul></li>
+<li>侧链矿工：
+<ul>
+<li>所有人都可以通过运行 Covenant Miner 来提供数据库服务来赚取奖励</li>
+<li>通过 ETLS 传输层加密、应用层签名、落盘加密、端到端加密 保证用户数据隐私</li>
+</ul></li>
+<li>数据库用户：
+<ul>
+<li>用户通过一个私钥就可以创建指定数量节点的分布式数据库，存储自己的结构化数据</li>
+<li>数据矿工的分布和地址仅对数据库用户可见，防止用户数据被嗅探</li>
+<li>通过 <strong>去中心化的高可用的架构</strong> 和 <strong>Miner 押金机制</strong>，用户的数据可以在成本和可靠性、可用性上达到平衡可控</li>
+</ul></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/logo/arch.png" alt="CovenantSQL 3 Layer design"></p>
+<ul>
+<li>第一层：<strong>全局共识层</strong>（主链，架构图中的中间环）:
+<ul>
+<li>整个网络中只有一个主链。</li>
+<li>主要负责数据库矿工与用户的合同匹配，交易结算，反作弊，子链哈希锁定等全局共识事宜。</li>
+</ul></li>
+<li>第二层：<strong>SQL 共识层</strong>（子链，架构图中的两边环）:
+<ul>
+<li>每个数据库都有自己独立的子链。</li>
+<li>主要负责数据库各种事务的签名，交付和一致性。这里主要实现永久可追溯性的数据历史，并且在主链中执行哈希锁定。</li>
+</ul></li>
+<li>第三层：<strong>数据储存层</strong>（支持 SQL-92 的数据库引擎）:
+<ul>
+<li>每个数据库都有自己独立的分布式引擎。</li>
+<li>主要负责：数据库存储和加密；查询处理和签名；高效索引。</li>
+</ul></li>
+</ul>
+<h1><a class="anchor" aria-hidden="true" id="安装-covenantsql-客户端"></a><a href="#安装-covenantsql-客户端" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装 CovenantSQL 客户端</h1>
+<h2><a class="anchor" aria-hidden="true" id="下载-covenantsql-工具包"></a><a href="#下载-covenantsql-工具包" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>下载 CovenantSQL 工具包</h2>
+<p>请 <a href="https://github.com/CovenantSQL/CovenantSQL/releases">下载最新版 CovenantSQL 工具包</a>。您将得到以下命令行工具：<code>cql</code>、<code>cql-utils</code>。</p>
+<h2><a class="anchor" aria-hidden="true" id="创建并访问-covenantsql-数据库"></a><a href="#创建并访问-covenantsql-数据库" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建并访问 CovenantSQL 数据库</h2>
+<p>我们已经上线了 CovenantSQL 测试网，也为您准备了一个公共的测试账号，请下载账号配置文件和私钥：<a href="https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/feature/chainBus-SQLChain/test/service/node_c/config.yaml">config.yaml</a>、<a href="https://github.com/CovenantSQL/CovenantSQL/raw/feature/chainBus-SQLChain/test/service/node_c/private.key">private.key</a> 用于测试。</p>
+<p><strong>注</strong>：该账号是公共的且只供测试使用，请不要在该账号创建的数据库中存放您的应用信息，我们会不定期清理数据库数据。</p>
+<h3><a class="anchor" aria-hidden="true" id="使用-cql-命令行工具创建数据库"></a><a href="#使用-cql-命令行工具创建数据库" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用 cql 命令行工具创建数据库</h3>
+<pre><code class="hljs css language-shell">./cql -config config.yaml -create 1
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs"><span class="hljs-keyword">INFO</span>[<span class="hljs-number">0000</span>] the newly created <span class="hljs-keyword">database</span> <span class="hljs-keyword">is</span>: "covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872?use_follower=false&amp;use_leader=true"
+</code></pre>
+<p>这里表示您创建了 <code>0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872</code> 这个数据库。</p>
+<h3><a class="anchor" aria-hidden="true" id="使用-cql-命令行工具访问数据库"></a><a href="#使用-cql-命令行工具访问数据库" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用 cql 命令行工具访问数据库</h3>
+<pre><code class="hljs css language-shell">./cql -config config.yaml -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+</code></pre>
+<p>连接上数据库后，您可以按您操作数据库的习惯来操作 CovenantSQL 上的数据库。比如执行 <code>CREATE TABLE</code> 创建表、<code>SELECT</code> 查询数据等操作。</p>
+<h3><a class="anchor" aria-hidden="true" id="使用数据库驱动访问数据库"></a><a href="#使用数据库驱动访问数据库" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用数据库驱动访问数据库</h3>
+<ul>
+<li><a href="./development-golang-client-zh.md">Go</a></li>
+<li><a href="https://github.com/CovenantSQL/covenant-connector">Java</a></li>
+<li><a href="https://github.com/CovenantSQL/python-driver">Python</a></li>
+<li><a href="https://github.com/CovenantSQL/cql.js">Javascript（开发中）</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="通过区块浏览器查看您的数据库操作记录"></a><a href="#通过区块浏览器查看您的数据库操作记录" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>通过区块浏览器查看您的数据库操作记录</h2>
+<p>CovenantSQL 有一个特性是<strong>其操作记录是不可变且可跟踪的</strong>，您可以通过 <a href="https://explorer.dbhub.org/">测试网区块浏览器</a> 来查询某个数据库的操作记录。查询时，请在其页面右上角填入您的数据库地址。</p>
+<h2><a class="anchor" aria-hidden="true" id="创建账号"></a><a href="#创建账号" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建账号</h2>
+<p>我们的测试网支持您创建自己的的账号，并在自己的账号下创建数据库。通过以下的命令创建账号（需要输入主密码）：</p>
+<pre><code class="hljs css language-shell">./cql-utils -tool confgen
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs">Generating key pair...
+Enter master key(press Enter for default: <span class="hljs-string">""</span>):
+Private key file: conf/private.key
+Public key's hex: 027af<span class="hljs-number">3584</span>b8b<span class="hljs-number">4736</span>d6ba1e78ace5f0fdefe561f<span class="hljs-number">0874</span>9c5cac39d<span class="hljs-number">2366</span>8c<span class="hljs-number">3030</span>fe39
+Generated key pair.
+Generating nonce...
+INFO[<span class="hljs-number">0075</span>] cpu: 4
+INFO[<span class="hljs-number">0075</span>] position: 3, shift: 0x0, i: 3
+INFO[<span class="hljs-number">0075</span>] position: 1, shift: 0x0, i: 1
+INFO[<span class="hljs-number">0075</span>] position: 0, shift: 0x0, i: 0
+INFO[<span class="hljs-number">0075</span>] position: 2, shift: 0x0, i: 2
+nonce: {{<span class="hljs-number">105638</span>8 0 0 <span class="hljs-number">1424219234</span>} 25 <span class="hljs-number">000000737633</span>a77a39fc5e0a<span class="hljs-number">1855</span>ca2c<span class="hljs-number">441486</span>fef049ac<span class="hljs-number">4069</span>e93dde6e58bb01}
+node id: <span class="hljs-number">000000737633</span>a77a39fc5e0a<span class="hljs-number">1855</span>ca2c<span class="hljs-number">441486</span>fef049ac<span class="hljs-number">4069</span>e93dde6e58bb01
+Generated nonce.
+Generating config file...
+Generated nonce.
+</code></pre>
+<p>该命令会为你创建一个 <code>conf</code> 目录：</p>
+<ul>
+<li><code>conf/private.key</code>: 为您生成的私钥通过主密码加密保存在该文件中，您的账号地址需要使用该文件创建；</li>
+<li><code>conf/config.yaml</code>: 为您生成的配置，cql 可以通过读取该配置来访问 CovenantSQL 测试网。</li>
+</ul>
+<p>再运行命令用来生成账号地址（也叫钱包地址、CovenantSQL 地址）：</p>
+<pre><code class="hljs css language-shell">./cql-utils -tool addrgen -private conf/private.key
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs">wallet address: <span class="hljs-number">4</span>kcC<span class="hljs-name">g4</span><span class="hljs-symbol">niPjWURuFyT633</span>V<span class="hljs-number">8</span>TF<span class="hljs-number">9</span>Xb<span class="hljs-number">9</span>PvUR<span class="hljs-number">5</span>Xbf<span class="hljs-number">6</span>aTvGxFZkJFQaS<span class="hljs-number">9</span>
+</code></pre>
+<p>您可以在我们的 <a href="https://testnet.covenantsql.io/">CovenantSQL 测试网</a> 输入您生成的钱包地址，通过发微博、推特等社交媒体来帮助我们推广我们的项目，我们会为您的钱包充值。</p>
+<p>使用 cql 命令行工具查询余额：</p>
+<pre><code class="hljs css language-shell">./cql -config conf/config.yaml -get-balance
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs"><span class="hljs-builtin-name">INFO</span>[0000] stable coin balance is: 100                   <span class="hljs-attribute">caller</span>=<span class="hljs-string">"main.go:246 main.main"</span>
+<span class="hljs-builtin-name">INFO</span>[0000] covenant coin balance is: 0                   <span class="hljs-attribute">caller</span>=<span class="hljs-string">"main.go:247 main.main"</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="部署私有-covenantsql-数据库-搭建私链"></a><a href="#部署私有-covenantsql-数据库-搭建私链" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署私有 CovenantSQL 数据库（搭建私链）</h2>
+<p>如果您是企业用户，希望在自己的网络搭建 CovenantSQL 数据库服务，请参考：</p>
+<ul>
+<li><a href="./getting-started-zh.md">Docker 一键部署 CovenantSQL 测试网</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="covenantsql-联盟链解决方案"></a><a href="#covenantsql-联盟链解决方案" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CovenantSQL 联盟链解决方案</h2>
+<p>正在建设中，如需咨询请邮件至 <a href="mailto:webmaster@covenantsql.io">webmaster@covenantsql.io</a>。</p>
+<p>#部署 CovenantSQL</p>
+<h2><a class="anchor" aria-hidden="true" id="使用-covenantsql-docker-部署"></a><a href="#使用-covenantsql-docker-部署" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用 CovenantSQL Docker 部署</h2>
+<h3><a class="anchor" aria-hidden="true" id="安装-docker"></a><a href="#安装-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装 Docker</h3>
+<p>需要在机器上安装 docker 和 docker-compose 来一键部署 CovenantSQL</p>
+<p>Docker：<a href="https://docs.docker.com/install/">https://docs.docker.com/install/</a></p>
+<p>Docker-Compose：<a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a></p>
+<h3><a class="anchor" aria-hidden="true" id="启动-docker-容器"></a><a href="#启动-docker-容器" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动 Docker 容器</h3>
+<p>执行以下的命令在本地运行 CovenantSQL</p>
+<pre><code class="hljs css language-shell">git clone https://github.com/CovenantSQL/CovenantSQL
+cd CovenantSQL
+make docker
+make start
+</code></pre>
+<p>后续的所有命令，工作目录默认都是在 clone 的 CovenantSQL 源码目录中，可以执行<code>export COVENANTSQL_ROOT=$PWD</code>存为环境变量</p>
+<h3><a class="anchor" aria-hidden="true" id="检查运行状态"></a><a href="#检查运行状态" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>检查运行状态</h3>
+<pre><code class="hljs css language-shell">docker-compose ps
+</code></pre>
+<p>确认所有组件都处于 <code>Up</code> 的状态</p>
+<pre><code class="hljs css language-shell">          Name                         Command               State                 Ports
+------------------------------------------------------------------------------------------------------
+covenantsql_adapter         ./docker-entry.sh                Up      0.0.0.0:11105-&gt;4661/tcp
+covenantsql_bp_0            ./docker-entry.sh                Up      0.0.0.0:11099-&gt;4661/tcp
+covenantsql_bp_1            ./docker-entry.sh                Up      0.0.0.0:11100-&gt;4661/tcp
+covenantsql_bp_2            ./docker-entry.sh                Up      0.0.0.0:11101-&gt;4661/tcp
+covenantsql_explorer        /bin/sh -c MAGIC_DOLLAR='$ ...   Up      0.0.0.0:11108-&gt;80/tcp
+covenantsql_miner_0         ./docker-entry.sh                Up      0.0.0.0:11102-&gt;4661/tcp
+covenantsql_miner_1         ./docker-entry.sh                Up      0.0.0.0:11103-&gt;4661/tcp
+covenantsql_miner_2         ./docker-entry.sh                Up      0.0.0.0:11104-&gt;4661/tcp
+covenantsql_mysql_adapter   ./docker-entry.sh -listen  ...   Up      4661/tcp, 0.0.0.0:11107-&gt;4664/tcp
+covenantsql_observer        ./docker-entry.sh -listen  ...   Up      4661/tcp, 0.0.0.0:11106-&gt;4663/tcp
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="sqlchain-explorer"></a><a href="#sqlchain-explorer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SQLChain Explorer</h3>
+<p>我们在<code>:11108</code>端口提供了一个 SQLChain 的 Explorer 可以看到 SQL 语句在链上的情况</p>
+<p>#操作 CovenantSQL</p>
+<h3><a class="anchor" aria-hidden="true" id="创建数据库"></a><a href="#创建数据库" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建数据库</h3>
+<p>使用 <code>cql</code> 命令并使用 <code>create</code> 参数提供所需的数据库节点数量创建数据库实例，例如：创建一个单节点的数据库实例</p>
+<pre><code class="hljs css language-shell">cql -config config/config.yaml -create 1
+</code></pre>
+<blockquote>
+<p>修改 <code>create</code> 参数的值，可以创建运行在多节点上的实例，例如：创建两个节点的实例</p>
+</blockquote>
+<pre><code class="hljs css language-shell">cql -config config/config.yaml -create 2
+</code></pre>
+<p>命令会返回创建的数据库实例的连接串</p>
+<pre><code class="hljs css language-shell">covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="访问数据库"></a><a href="#访问数据库" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>访问数据库</h3>
+<p>使用 <code>cql</code> 命令并使用 <code>dsn</code> 参数提供数据库实例的连接串进行数据库访问</p>
+<pre><code class="hljs css language-shell">cql -config config/config.yaml -dsn covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
+</code></pre>
+<p>会得到如下输出，并进入 <code>cql</code> 交互命令行模式</p>
+<pre><code class="hljs css language-shell">Connected with driver covenantsql (develop)
+Type "help" for help.
+
+co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt;
+</code></pre>
+<p><code>cql</code> 交互命令行模式的使用方法类似 <code>mysql</code> 命令，例如：创建一个名为 <code>test</code>  的表，查看数据库中的表，插入记录，查询结果</p>
+<pre><code class="hljs css language-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">test</span> (<span class="hljs-keyword">test</span> <span class="hljs-built_in">TEXT</span>);
+<span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">TABLES</span>;
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-keyword">test</span> <span class="hljs-keyword">VALUES</span>(<span class="hljs-string">"happy"</span>);
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">test</span>;
+</code></pre>
+<p>会得到如下输出</p>
+<pre><code class="hljs css language-shell">co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt; CREATE TABLE test (test TEXT);
+CREATE TABLE
+co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt; SHOW TABLES;
+ name
+------
+ test
+(1 row)
+
+co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt; INSERT INTO test VALUES("happy");
+INSERT
+co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt; SELECT * FROM test;
+ test
+-------
+ happy
+(1 row)
+
+co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt;
+</code></pre>
+<p>使用 <code>Ctrl + D</code> 快捷键或输入 <code>\q</code> 可以退出 <code>cql</code> 交互命令行</p>
+<h1><a class="anchor" aria-hidden="true" id="使用-covenantsql-开发-app"></a><a href="#使用-covenantsql-开发-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用 CovenantSQL 开发 App</h1>
+<h2><a class="anchor" aria-hidden="true" id="golang-使用-covenantsql"></a><a href="#golang-使用-covenantsql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Golang 使用  CovenantSQL</h2>
+<h4><a class="anchor" aria-hidden="true" id="简介"></a><a href="#简介" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>简介</h4>
+<p><code>CovenantSQL</code> 提供了 <code>Golang SDK</code> ，支持以 <code>Golang</code> App 以原生通讯协议的形式访问数据库实例，是当前性能最高的使用方法， <code>cql</code> 等工具也是基于 <code>Golang SDK</code> 进行开发的。</p>
+<p><code>Golang SDK</code> 遵守 <code>Golang</code> 标准的 <code>database/sql</code> 接口定义，能够使用常见的 <code>Golang ORM</code> 进行使用。</p>
+<h4><a class="anchor" aria-hidden="true" id="兼容性"></a><a href="#兼容性" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>兼容性</h4>
+<p><code>Golang SDK</code> 目前只兼容 <code>1.10+</code> 的 Golang 版本。</p>
+<h4><a class="anchor" aria-hidden="true" id="安装和使用"></a><a href="#安装和使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装和使用</h4>
+<p><code>Golang SDK</code> 的 import 地址是 <code>github.com/CovenantSQL/CovenantSQL/client</code></p>
+<p>可以执行 <code>go get</code> 命令进行安装</p>
+<pre><code class="hljs css language-shell">go get github.com/CovenantSQL/CovenantSQL/client
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="api-文档"></a><a href="#api-文档" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API 文档</h4>
+<p><a href="https://godoc.org/github.com/CovenantSQL/CovenantSQL/client">https://godoc.org/github.com/CovenantSQL/CovenantSQL/client</a></p>
+<h4><a class="anchor" aria-hidden="true" id="示例"></a><a href="#示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>示例</h4>
+<pre><code class="hljs css language-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"database/sql"</span>
+    <span class="hljs-string">"flag"</span>
+
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/client"</span>
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/utils/log"</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    log.SetLevel(log.DebugLevel)
+    <span class="hljs-keyword">var</span> config, password, dsn <span class="hljs-keyword">string</span>
+
+    flag.StringVar(&amp;config, <span class="hljs-string">"config"</span>, <span class="hljs-string">"./conf/config.yaml"</span>, <span class="hljs-string">"config file path"</span>)
+    flag.StringVar(&amp;dsn, <span class="hljs-string">"dsn"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"database url"</span>)
+    flag.StringVar(&amp;password, <span class="hljs-string">"password"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"master key password for covenantsql"</span>)
+    flag.Parse()
+
+    <span class="hljs-comment">// 使用节点配置文件初始化 Golang SDK</span>
+    err := client.Init(config, []<span class="hljs-keyword">byte</span>(password))
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatal(err)
+    }
+
+    <span class="hljs-comment">// 连接数据库实例</span>
+    db, err := sql.Open(<span class="hljs-string">"covenantsql"</span>, dsn)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatal(err)
+    }
+
+    Q := <span class="hljs-string">`DROP TABLE IF EXISTS cityPop;
+        CREATE TABLE cityPop (
+            ID INT,
+            Name VARCHAR,
+            CountryCode VARCHAR,
+            District VARCHAR,
+            Population INT
+        );
+        CREATE INDEX cityCountryCodeIndex ON cityPop ( CountryCode );
+
+        DROP TABLE IF EXISTS countryGDP;
+        CREATE TABLE countryGDP (
+             ID integer PRIMARY KEY,
+             CountryCode string NOT NULL,
+             GDP integer
+        );
+        CREATE INDEX countryCountryCodeIndex ON countryGDP ( CountryCode );`</span>
+
+    <span class="hljs-comment">// 写入数据</span>
+    _, err = db.Exec(Q)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatal(err)
+    }
+    log.Printf(<span class="hljs-string">"\nExec:\n %s\n"</span>, Q)
+
+    Q = <span class="hljs-string">`INSERT INTO countryGDP VALUES
+            (0, "ZWE", 99999),(1, "CHN", 3000000000000),
+            (2, "PSE", 321312313),(3, "JPN", 300000000);
+        INSERT INTO cityPop VALUES (707,'Shenzhen','CHN','Guangzhou',99442);
+        INSERT INTO cityPop VALUES (1074,'Shenzhen','CHN','Guangzhou',353632);
+        INSERT INTO cityPop VALUES (1591,'Toyama','JPN','Toyama',325790);
+        INSERT INTO cityPop VALUES (1649,'Takaoka','JPN','Toyama',174380);
+        INSERT INTO cityPop VALUES (1762,'Takasago','JPN','Hyogo',97632);
+        INSERT INTO cityPop VALUES (1763,'Fujimi','JPN','Saitama',96972);
+        INSERT INTO cityPop VALUES (1764,'Urasoe','JPN','Okinawa',96002);
+        INSERT INTO cityPop VALUES (1765,'Yonezawa','JPN','Yamagata',95592);
+        INSERT INTO cityPop VALUES (1766,'Konan','JPN','Aichi',95521);
+        INSERT INTO cityPop VALUES (1767,'Yamatokoriyama','JPN','Nara',95165);
+        INSERT INTO cityPop VALUES (1768,'Maizuru','JPN','Kyoto',94784);
+        INSERT INTO cityPop VALUES (1769,'Onomichi','JPN','Hiroshima',93756);
+        INSERT INTO cityPop VALUES (1770,'Higashimatsuyama','JPN','Saitama',93342);
+        INSERT INTO cityPop VALUES (2707,'Xai-Xai','MOZ','Gaza',99442);
+        INSERT INTO cityPop VALUES (4074,'Gaza','PSE','Gaza',353632);
+        INSERT INTO cityPop VALUES (4077,'Jabaliya','PSE','North Gaza',113901);`</span>
+    _, err = db.Exec(Q)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Warn(err)
+    }
+    log.Printf(<span class="hljs-string">"\nExec:\n %s\n"</span>, Q)
+
+    Q = <span class="hljs-string">`SELECT * FROM cityPop
+        WHERE District IN ("Shenzhen", "Balkh", "Gaza", "North Gaza")
+        GROUP  BY cityPop.CountryCode
+        ORDER  BY Population DESC
+        LIMIT  10;`</span>
+    
+    <span class="hljs-comment">// 查询数据</span>
+    rows, err := db.Query(Q)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatal(err)
+    }
+    log.Printf(<span class="hljs-string">"\nExec:\n %s\n"</span>, Q)
+    log.Println(<span class="hljs-string">"ID Name    CountryCode District    Population"</span>)
+    <span class="hljs-keyword">var</span> ID, GDP, Population <span class="hljs-keyword">int</span>
+    <span class="hljs-keyword">var</span> Name, CountryCode, District <span class="hljs-keyword">string</span>
+    <span class="hljs-keyword">var</span> GDPPerson <span class="hljs-keyword">float64</span>
+
+    <span class="hljs-keyword">for</span> rows.Next() {
+        err = rows.Scan(&amp;ID, &amp;Name, &amp;CountryCode, &amp;District, &amp;Population)
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            log.Fatal(err)
+        }
+
+        log.Printf(<span class="hljs-string">"%d  %s  %s  %s  %d"</span>, ID, Name, CountryCode, District, Population)
+    }
+    Q = <span class="hljs-string">`UPDATE countryGDP SET GDP = 1234567 WHERE CountryCode LIKE "CHN";
+            UPDATE cityPop SET Population = 123456 WHERE CountryCode LIKE "CHN";
+            REPLACE INTO countryGDP (ID, CountryCode, GDP) VALUES (77, "AFG", 11111111);`</span>
+    _, err = db.Exec(Q)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatal(err)
+    }
+    log.Printf(<span class="hljs-string">"\nExec:\n %s\n"</span>, Q)
+
+    Q = <span class="hljs-string">`SELECT cityPop.ID,  cityPop.CountryCode, cityPop.District,
+        countryGDP.GDP / cityPop.Population, countryGDP.GDP, cityPop.Population
+        FROM   cityPop
+            LEFT JOIN countryGDP
+                  ON countryGDP.CountryCode = cityPop.CountryCode
+        WHERE District IN ( "Shenzhen", "Balkh", "North Gaza", "Toyama", "Yonezawa") AND countryGDP.GDP &gt; 0
+        GROUP BY cityPop.CountryCode
+        ORDER BY countryGDP.GDP / cityPop.Population DESC
+        LIMIT 10;`</span>
+    rows, err = db.Query(Q)
+    log.Printf(<span class="hljs-string">"\nExec:\n %s\n"</span>, Q)
+
+    log.Println(<span class="hljs-string">"ID CountryCode District    GDPPerson   GDP Population"</span>)
+    <span class="hljs-keyword">for</span> rows.Next() {
+        err = rows.Scan(&amp;ID, &amp;CountryCode, &amp;District, &amp;GDPPerson, &amp;GDP, &amp;Population)
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            log.Fatal(err)
+        }
+
+        log.Printf(<span class="hljs-string">"%d  %s  %s  %f  %d  %d"</span>,
+            ID, CountryCode, District, GDPPerson, GDP, Population)
+    }
+}
+</code></pre>
+<h1><a class="anchor" aria-hidden="true" id="covenantsql-api"></a><a href="#covenantsql-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CovenantSQL API</h1>
+<h1><a class="anchor" aria-hidden="true" id="常见问题解答"></a><a href="#常见问题解答" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>常见问题解答</h1>
+<p>补充</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-28</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#covenantsql-原理">CovenantSQL 原理</a></li><li><a href="#下载-covenantsql-工具包">下载 CovenantSQL 工具包</a></li><li><a href="#创建并访问-covenantsql-数据库">创建并访问 CovenantSQL 数据库</a><ul class="toc-headings"><li><a href="#使用-cql-命令行工具创建数据库">使用 cql 命令行工具创建数据库</a></li><li><a href="#使用-cql-命令行工具访问数据库">使用 cql 命令行工具访问数据库</a></li><li><a href="#使用数据库驱动访问数据库">使用数据库驱动访问数据库</a></li></ul></li><li><a href="#通过区块浏览器查看您的数据库操作记录">通过区块浏览器查看您的数据库操作记录</a></li><li><a href="#创建账号">创建账号</a></li><li><a href="#部署私有-covenantsql-数据库-搭建私链">部署私有 CovenantSQL 数据库（搭建私链）</a></li><li><a href="#covenantsql-联盟链解决方案">CovenantSQL 联盟链解决方案</a></li><li><a href="#使用-covenantsql-docker-部署">使用 CovenantSQL Docker 部署</a><ul class="toc-headings"><li><a href="#安装-docker">安装 Docker</a></li><li><a href="#启动-docker-容器">启动 Docker 容器</a></li><li><a href="#检查运行状态">检查运行状态</a></li><li><a href="#sqlchain-explorer">SQLChain Explorer</a></li><li><a href="#创建数据库">创建数据库</a></li><li><a href="#访问数据库">访问数据库</a></li></ul></li><li><a href="#golang-使用-covenantsql">Golang 使用 CovenantSQL</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '1b47865e3d00b7996a988bbc155a68e4',
+                indexName: 'covenantsql',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
