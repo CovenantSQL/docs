@@ -3,15 +3,49 @@ id: quickstart
 title: 快速开始
 ---
 
-## 下载 CovenantSQL 工具包
+## CovenantSQL 工具包
 
-请 [下载最新版 CovenantSQL 工具包](https://github.com/CovenantSQL/CovenantSQL/releases)。你将得到以下命令行工具：`cql`、`cql-utils`。
+###工具包简介
+
+请根据您使用的操作系统平台选择 [下载最新版 CovenantSQL 工具包](https://github.com/CovenantSQL/CovenantSQL/releases)。
+
+例如，您使用的是：
+
+- MacOS 平台请下载：[**CovenantSQL-v0.1.0.osx-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.1.0/CovenantSQL-v0.1.0.osx-amd64.tar.gz)
+- Linux 平台请下载：[**CovenantSQL-v0.1.0.linux-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.1.0/CovenantSQL-v0.1.0.linux-amd64.tar.gz)
+- Windows 平台我们稍后发布，有需求请戳这里：[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/CovenantSQL/CovenantSQL)
+
+解压之后，你将得到以下命令行工具，包括：`cql`、`cql-utils` 等。
+
+| 工具名     | 介绍                                                         |
+| ---------- | ------------------------------------------------------------ |
+| cql        | CovenantSQL 的客户端，类似 mysql 命令，用于执行 SQL          |
+| cql-utils  | CovenantSQL 工具箱，用于和主链交互                           |
+| cql-minerd | CovenantSQL 矿工客户端，用于运行数据库赚取奖励，以后会开放加入 |
+| cqld       | CovenantSQL 主链节点，主要由 CovenantLabs 以及合作伙伴以 DPoS 模式运行 |
+
+###测试网快速接入
+
+目前，我们已经发布了测试网 v0.1.0，供大家进行原理性验证和体验。你可以选在使用公共的测试账号快速进行接入测试。
+
+测试账号的配置文件和私钥：[config.yaml](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/config.yaml)、[private.key](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/private.key) ，或者使用以下命令：
+
+```bash
+mkdir conf 
+wget https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/config.yaml -O conf/config.yaml
+wget https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/private.key -O conf/private.key
+chmod 600 conf/private.key
+```
+
+**测试网注**：
+
+> 该账号是公共的且只供测试使用，请不要在该账号创建的数据库中存放你的应用信息，我们会不定期清理数据库数据。
+>
+> 测试网暂时由2个 Miner 组成，所以暂时最大只支持`create 2`创建两个节点组成的数据库。
+
+
 
 ## 创建并访问 CovenantSQL 数据库
-
-我们已经上线了 CovenantSQL 测试网，也为你准备了一个公共的测试账号，请下载账号配置文件和私钥：[config.yaml](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/feature/chainBus-SQLChain/test/service/node_c/config.yaml)、[private.key](https://github.com/CovenantSQL/CovenantSQL/raw/feature/chainBus-SQLChain/test/service/node_c/private.key) 用于测试。
-
-**注**：该账号是公共的且只供测试使用，请不要在该账号创建的数据库中存放你的应用信息，我们会不定期清理数据库数据。
 
 ### 使用 cql 命令行工具创建数据库
 
@@ -22,7 +56,7 @@ title: 快速开始
 输出：
 
 ```
-INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872?use_follower=false&use_leader=true"
+covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ```
 
 这里表示你创建了 `0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` 这个数据库。
@@ -37,19 +71,19 @@ INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a7
 
 ### 使用数据库驱动访问数据库
 
-- [Go](./development)
-- [Java](https://github.com/CovenantSQL/covenant-connector)
-- [Python](https://github.com/CovenantSQL/python-driver)
-- [NodeJS](https://github.com/CovenantSQL/node-covenantsql)
-- [Web (WIP)](https://github.com/CovenantSQL/cql.js)
+- [Golang开发指引](./development)
 
-## 通过区块浏览器查看你的数据库操作记录
+## SQLChain区块浏览器
 
-CovenantSQL 有一个特性是**其操作记录是不可变且可跟踪的**，你可以通过 [测试网区块浏览器](https://explorer.dbhub.org/) 来查询某个数据库的操作记录。查询时，请在其页面右上角填入你的数据库地址。
+CovenantSQL 有一个特性是**其操作记录是不可变且可跟踪的**，你可以通过 [测试网区块浏览器](https://explorer.dbhub.org/) 来查询某个数据库的操作记录。
+
+> 测试网的`区块浏览器`目前是开放权限的，所以任何知道数据库 ID 的人都能看到您的数据
+
+查询时，请在其页面右上角填入你的数据库 ID。例如：`0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872`
 
 ## 创建账号
 
-我们的测试网支持你创建自己的的账号，并在自己的账号下创建数据库。通过以下的命令创建账号（需要输入主密码）：
+我们的测试网支持你创建自己的的账号，并在自己的账号下创建数据库。通过以下的命令创建账号（会询问设置主密码，测试期间建议直接回车留空）：
 
 ```shell
 ./cql-utils -tool confgen
@@ -89,11 +123,11 @@ Generated nonce.
 
 输出：
 
-```
+```toml
 wallet address: 4kcCg4niPjWURuFyT633V8TF9Xb9PvUR5Xbf6aTvGxFZkJFQaS9
 ```
 
-你可以在我们的 [CovenantSQL 测试网](https://testnet.covenantsql.io/) 输入你生成的钱包地址，通过发微博、推特等社交媒体来帮助我们推广我们的项目，我们会为你的钱包充值。
+你可以在我们的 [CovenantSQL 测试网](https://testnet.covenantsql.io/) 输入你生成的钱包地址，通过发微博、推特等社交媒体来帮助我们推广我们的项目，我们会为你的钱包充值。有任何问题请来这里讨论：[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/CovenantSQL/CovenantSQL)
 
 使用 cql 命令行工具查询余额：
 
