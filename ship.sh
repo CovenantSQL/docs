@@ -50,7 +50,7 @@ command::ship() {
     # commit and push
     cd ..
     git add .
-    git commit -m "chore(version): bump to $version [$user]"
+    git commit -m "chore(publish): published $version docs by [$user]"
     git push origin master
 }
 
