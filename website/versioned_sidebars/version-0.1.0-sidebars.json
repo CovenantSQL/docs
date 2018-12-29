@@ -1,0 +1,20 @@
+{
+  "version-0.1.0-docs": {
+    "Intro": [
+      "version-0.1.0-intro"
+    ],
+    "使用与部署": [
+      "version-0.1.0-nav",
+      "version-0.1.0-quickstart",
+      "version-0.1.0-deployment"
+    ],
+    "开发者": [
+      "version-0.1.0-development",
+      "version-0.1.0-api"
+    ],
+    "About": [
+      "version-0.1.0-usecase",
+      "version-0.1.0-qna"
+    ]
+  }
+}

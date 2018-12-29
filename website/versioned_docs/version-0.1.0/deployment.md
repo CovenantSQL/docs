@@ -1,6 +1,6 @@
 ---
 id: version-0.1.0-deployment
-title: 部署 CovenantSQL 私有链
+title: 🐳 Docker 一键部署
 original_id: deployment
 ---
 
