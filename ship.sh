@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-
-# cd website
-# rm versions.json
-#
-# GIT_USER=foreseaz \
-# CURRENT_BRANCH=master \
-# USE_SSH=true \
-# yarn run publish-gh-pages
-
-# ship -v 0.1.0 -u auxten
+# ship script for covenantsql docs
+# usage: ship -v 0.1.0 -u foreseaz
 
 command::ship() {
-
     local version=()
     local user=()
     local current_opt=""
@@ -41,18 +32,22 @@ command::ship() {
         shift
     done
 
+    # print version and user
     echo $version
     echo $user
 
+    # generate versioned docs
     cd website
     rm versions.json
     yarn run version $version
 
+    # publish current docs
     GIT_USER=$user \
     CURRENT_BRANCH=master \
     USE_SSH=true \
     yarn run publish-gh-pages
 
+    # commit and push
     cd ..
     git add .
     git commit -m "chore(version): bump to $version [$user]"
@@ -61,9 +56,7 @@ command::ship() {
 
 usage() {
     echo "
-Usage: ship [command]
-available seba variables:
-    COMMIT, VERSION, SHIP_VERSION, IMAGE_NAME, IMAGE_TAR, IMAGE_TAR_GZ
+Usage: ship -v [version] -u [user]
 " 1>&2; exit 1;
 }
 
