@@ -15,20 +15,39 @@ Docker-Compose：https://docs.docker.com/compose/install/
 
 ### 启动 Docker 容器
 
+现在有两种方式启动 CovenantSQL 容器：
+
+1. 使用 Docker Hub 上的公共镜像
+2. 构建 CovenantSQL Docker 镜像
+
+我们推荐普通用户使用第一种方式直接使用我们构件好的镜像进行试用，第二种方式可以体验最新的开发中的特性。
+
+#### 使用 Docker Hub 上的公共镜像
+
+
+
+#### 构建 CovenantSQL Docker 镜像
+
 执行以下的命令在本地运行 CovenantSQL
 
-```shell
+```bash
 git clone https://github.com/CovenantSQL/CovenantSQL
 cd CovenantSQL
 make docker
 make start
 ```
 
-后续的所有命令，工作目录默认都是在 clone 的 CovenantSQL 源码目录中，可以执行`export COVENANTSQL_ROOT=$PWD`存为环境变量
+后续的所有命令，工作目录默认都是在 clone 的 CovenantSQL 源码目录中，可以执行
+
+```bash
+export COVENANTSQL_ROOT=$PWD
+```
+
+存为环境变量
 
 ### 检查运行状态
 
-```shell
+```bash
 docker-compose ps
 ```
 
@@ -51,7 +70,7 @@ covenantsql_observer        ./docker-entry.sh -listen  ...   Up      4661/tcp, 0
 
 ### SQLChain Explorer
 
-我们在`:11108`端口提供了一个 SQLChain 的 Explorer 可以看到 SQL 语句在链上的情况
+我们在`127.0.0.1:11108`端口提供了一个 SQLChain 的 Explorer 可以看到 SQL 语句在链上的情况
 
 #操作 CovenantSQL
 
@@ -60,13 +79,13 @@ covenantsql_observer        ./docker-entry.sh -listen  ...   Up      4661/tcp, 0
 使用 `cql` 命令并使用 `create` 参数提供所需的数据库节点数量创建数据库实例，例如：创建一个单节点的数据库实例
 
 ```shell
-./cql -config config/config.yaml -create 1
+docker exec -it covenantsql_adapter /app/cql -config /app/config.yaml -create 1
 ```
 
 >  修改 `create` 参数的值，可以创建运行在多节点上的实例，例如：创建两个节点的实例
 
 ```shell
-./cql -config config/config.yaml -create 2
+docker exec -it covenantsql_adapter /app/cql -config /app/config.yaml -create 2
 ```
 
 命令会返回创建的数据库实例的连接串
@@ -80,7 +99,7 @@ covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
 使用 `cql` 命令并使用 `dsn` 参数提供数据库实例的连接串进行数据库访问
 
  ```shell
-./cql -config config/config.yaml -dsn covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
+docker exec -it covenantsql_adapter /app/cql -config /app/config.yaml -dsn covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
  ```
 
 会得到如下输出，并进入 `cql` 交互命令行模式
