@@ -42,7 +42,7 @@ chmod 600 conf/private.key
 
 > 该账号是公共的且只供测试使用，请不要在该账号创建的数据库中存放你的应用信息，我们会不定期清理数据库数据。
 >
-> 测试网暂时由2个 Miner 组成，所以暂时最大只支持`create 2`创建两个节点组成的数据库。
+> 测试网暂时由 3 个 Miner 组成，所以暂时最大只支持`create 3`创建 3 个节点组成的数据库。
 
 
 
@@ -51,7 +51,7 @@ chmod 600 conf/private.key
 ### 创建数据库
 
 ```shell
-./cql -config config.yaml -create 1
+./cql -config conf/config.yaml -create 1
 ```
 
 输出：
@@ -60,12 +60,20 @@ chmod 600 conf/private.key
 covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ```
 
-这里表示你创建了 `0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` 这个数据库。
+这里表示你提交了 `0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` 这个数据库的创建请求到主链。
+
+> 我们需要等待大概 30s 的时间，等待数据库创建，大致过程为：
+>
+> 1. 收到请求的 出块节点（Block Producer）进行 Miner 和数据库创建请求的撮合
+> 2. 数据库创建请求在 其它出块节点 进行验证和确认
+> 3. SQLChain 的符合条件的 Miner 收到数据库任务
+> 4. SQLChian 组建 Kayak 数据库集群
+> 5. 所有 Miner 准备就绪等待请求
 
 ### 访问数据库
 
 ```shell
-./cql -config config.yaml -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+./cql -config conf/config.yaml -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ```
 
 连接上数据库后，你可以按你操作数据库的习惯来操作 CovenantSQL 上的数据库。比如执行 `CREATE TABLE` 创建表、`SELECT` 查询数据等操作。
