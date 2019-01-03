@@ -12,6 +12,9 @@
       "development",
       "api"
     ],
+    "工具": [
+      "cql"
+    ],
     "About": [
       "usecase",
       "qna"
