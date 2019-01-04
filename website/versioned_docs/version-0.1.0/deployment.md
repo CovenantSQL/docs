@@ -14,6 +14,13 @@ Docker：https://docs.docker.com/install/
 
 Docker-Compose：https://docs.docker.com/compose/install/
 
+### 下载项目
+
+```bash
+git clone https://github.com/CovenantSQL/CovenantSQL
+cd CovenantSQL
+```
+
 ### 启动 Docker 容器
 
 现在有两种方式启动 CovenantSQL 容器：
@@ -21,30 +28,26 @@ Docker-Compose：https://docs.docker.com/compose/install/
 1. 使用 Docker Hub 上的公共镜像
 2. 构建 CovenantSQL Docker 镜像
 
-我们推荐普通用户使用第一种方式直接使用我们构件好的镜像进行试用，第二种方式可以体验最新的开发中的特性。
+> 我们推荐普通用户使用第一种方式测试 CovenantSQL，第二种仅用于体验最新的开发中的特性。
 
-#### 使用 Docker Hub 上的公共镜像
+#### 1. 使用 Docker Hub 上的公共镜像
 
-直接下载 docker-compose.yml，然后运行
+然后直接启动：
 
 ```bash
-wget https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/docker-compose.yml
-docker-compose up --no-start
-docker-compose start
+make start
 ```
 
-
-
-#### 构建 CovenantSQL Docker 镜像
+#### 2. 构建 CovenantSQL Docker 镜像
 
 执行以下的命令在本地运行 CovenantSQL
 
 ```bash
-git clone https://github.com/CovenantSQL/CovenantSQL
-cd CovenantSQL
-make docker
+make docker # 从头编译新的镜像
 make start
 ```
+
+### 检查运行状态
 
 后续的所有命令，工作目录默认都是在 clone 的 CovenantSQL 源码目录中，可以执行
 
@@ -54,7 +57,7 @@ export COVENANTSQL_ROOT=$PWD
 
 存为环境变量
 
-### 检查运行状态
+检查容器状态：
 
 ```bash
 docker-compose ps
