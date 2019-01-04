@@ -24,6 +24,14 @@ Docker-Compose：https://docs.docker.com/compose/install/
 
 #### 使用 Docker Hub 上的公共镜像
 
+直接下载 docker-compose.yml，然后运行
+
+```bash
+wget https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/docker-compose.yml
+docker-compose up --no-start
+docker-compose start
+```
+
 
 
 #### 构建 CovenantSQL Docker 镜像
