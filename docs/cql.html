@@ -41,17 +41,20 @@
 <p>查看默认余额：</p>
 <pre><code class="hljs css language-bash">./cql -config conf/config.yaml -get-balance
 </code></pre>
-<pre><code class="hljs">INFO[<span class="hljs-number">0000</span>] stable coin balance <span class="hljs-keyword">is</span>: <span class="hljs-number">10000000000000000000</span>
-INFO[<span class="hljs-number">0000</span>] covenant coin balance <span class="hljs-keyword">is</span>: <span class="hljs-number">10000000000000000000</span>
+<p>输出：</p>
+<pre><code class="hljs">INFO[<span class="hljs-number">0000</span>] Particle balance <span class="hljs-keyword">is</span>: <span class="hljs-number">10000000000000000000</span>
+INFO[<span class="hljs-number">0000</span>] Wave balance <span class="hljs-keyword">is</span>: <span class="hljs-number">10000000000000000000</span>
 </code></pre>
 <p>查看 Particle 余额：</p>
 <pre><code class="hljs css language-bash">./cql -config conf/config.yaml -token-balance Particle
 </code></pre>
+<p>输出：</p>
 <pre><code class="hljs">INFO[<span class="hljs-number">0000</span>] Particle balance <span class="hljs-keyword">is</span>: <span class="hljs-number">10000000000000000000</span>
 </code></pre>
 <p>查看 Bitcoin 余额：</p>
 <pre><code class="hljs css language-bash">./cql -config conf/config.yaml -token-balance Bitcoin
 </code></pre>
+<p>输出：</p>
 <pre><code class="hljs">INFO[<span class="hljs-number">0000</span>] Bitcoin balance <span class="hljs-keyword">is</span>: <span class="hljs-number">0</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="转账"></a><a href="#转账" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>转账</h2>
@@ -65,6 +68,7 @@ INFO[<span class="hljs-number">0000</span>] covenant coin balance <span class="h
 <p>转账 Particle：</p>
 <pre><code class="hljs css language-bash">./cql -config conf/config.yaml -transfer <span class="hljs-string">'{"addr":"011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6","amount":"1000000 Particle"}'</span>
 </code></pre>
+<p>输出：</p>
 <pre><code class="hljs"><span class="hljs-keyword">INFO</span>[<span class="hljs-number">0000</span>] succeed <span class="hljs-keyword">in</span> sending <span class="hljs-keyword">transaction</span> <span class="hljs-keyword">to</span> CovenantSQL
 </code></pre>
 <p>转账 Wave：</p>
@@ -75,8 +79,9 @@ INFO[<span class="hljs-number">0000</span>] covenant coin balance <span class="h
 <p>查看余额：</p>
 <pre><code class="hljs css language-bash">./cql -config conf/config.yaml -get-balance
 </code></pre>
-<pre><code class="hljs">INFO[<span class="hljs-number">0000</span>] stable coin balance <span class="hljs-keyword">is</span>: <span class="hljs-number">9999999999999000000</span>
-INFO[<span class="hljs-number">0000</span>] covenant coin balance <span class="hljs-keyword">is</span>: <span class="hljs-number">9999999999999000000</span>
+<p>输出：</p>
+<pre><code class="hljs">INFO[<span class="hljs-number">0000</span>] Particle balance <span class="hljs-keyword">is</span>: <span class="hljs-number">9999999999999000000</span>
+INFO[<span class="hljs-number">0000</span>] Wave balance <span class="hljs-keyword">is</span>: <span class="hljs-number">9999999999999000000</span>
 </code></pre>
 <p>注意，<code>succeed in sending transaction to CovenantSQL</code> 只说明交易已成功发送至主网，交易能否成功、何时成功需要通过 <code>-get-balance</code> 或者 <code>-token-balance &lt;token_type&gt;</code> 确定。</p>
 <h2><a class="anchor" aria-hidden="true" id="数据库权限管理"></a><a href="#数据库权限管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数据库权限管理</h2>
@@ -85,9 +90,9 @@ INFO[<span class="hljs-number">0000</span>] covenant coin balance <span class="h
 <li><code>Admin</code></li>
 <li><code>Write</code></li>
 <li><code>Read</code></li>
-<li><code>UnknownPerm</code></li>
+<li><code>Void</code></li>
 </ul>
-<p>其中，<code>Admin</code> 可以赋予其他钱包地址数据库的权限（<code>Admin</code>、<code>Write</code> 或 <code>Read</code>）；<code>Admin</code> 和 <code>Write</code> 可以对数据库进行写操作（<code>CREATE</code>, <code>INSERT</code> 等）；<code>Admin</code>, <code>Write</code> 和 <code>Read</code> 可以对数据库进行读操作（<code>SHOW</code>, <code>SELECT</code> 等）；<code>UnknownPerm</code> 是一个特殊的权限，当 <code>Admin</code> 想取消某个地址的权限时可以将该地址的权限设置为 <code>UnknownPerm</code>，这样该地址将无法继续读写数据库。创建数据库的地址的权限默认为 <code>Admin</code>。若 <code>Admin</code> 需要赋予他人权限请使用 <code>cql -update-perm</code> 并以 <code>json</code> 格式的权限信息为参数：</p>
+<p>其中，<code>Admin</code> 可以赋予其他钱包地址数据库的权限（<code>Admin</code>、<code>Write</code> 或 <code>Read</code>）；<code>Admin</code> 和 <code>Write</code> 可以对数据库进行写操作（<code>CREATE</code>, <code>INSERT</code> 等）；<code>Admin</code>, <code>Write</code> 和 <code>Read</code> 可以对数据库进行读操作（<code>SHOW</code>, <code>SELECT</code> 等）；<code>Void</code> 是一个特殊的权限，当 <code>Admin</code> 想取消某个地址的权限时可以将该地址的权限设置为 <code>Void</code>，这样该地址将无法继续读写数据库。创建数据库的地址的权限默认为 <code>Admin</code>。若 <code>Admin</code> 需要赋予他人权限请使用 <code>cql -update-perm</code> 并以 <code>json</code> 格式的权限信息为参数：</p>
 <pre><code class="hljs css language-json">{
    "chain":"4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5", // 需要进行权限变更的数据库地址
    "user":"011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6", // 需要赋予权限的钱包地址
@@ -97,15 +102,18 @@ INFO[<span class="hljs-number">0000</span>] covenant coin balance <span class="h
 <p>增加写权限：</p>
 <pre><code class="hljs css language-bash">./cql -config conf/config.yaml -update-perm <span class="hljs-string">'{"chain":"4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","user":"011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6","perm":"Write"}'</span>
 </code></pre>
+<p>输出：</p>
 <pre><code class="hljs"><span class="hljs-keyword">INFO</span>[<span class="hljs-number">0000</span>] succeed <span class="hljs-keyword">in</span> sending <span class="hljs-keyword">transaction</span> <span class="hljs-keyword">to</span> CovenantSQL
 </code></pre>
 <p>吊销权限：</p>
-<pre><code class="hljs css language-bash">./cql -config conf/config.yaml -update-perm <span class="hljs-string">'{"chain":"4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6","perm":"UnknownPerm"}'</span>
+<pre><code class="hljs css language-bash">./cql -config conf/config.yaml -update-perm <span class="hljs-string">'{"chain":"4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6","perm":"Void"}'</span>
 </code></pre>
+<p>输出：</p>
 <pre><code class="hljs"><span class="hljs-keyword">INFO</span>[<span class="hljs-number">0000</span>] succeed <span class="hljs-keyword">in</span> sending <span class="hljs-keyword">transaction</span> <span class="hljs-keyword">to</span> CovenantSQL
 </code></pre>
 <p>注意，<code>succeed in sending transaction to CovenantSQL</code> 只说明交易已成功发送至主网，交易成功与否请通过查询数据库确认。</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/api"><span class="arrow-prev">← </span><span class="function-name-prevnext">👩🏻‍💻 CovenantSQL API</span></a><a class="docs-next button" href="/docs/usecase"><span>使用案例</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#简介">简介</a></li><li><a href="#查询余额">查询余额</a></li><li><a href="#转账">转账</a></li><li><a href="#数据库权限管理">数据库权限管理</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<p>为数据库添加新的账户权限后账户需补充押金与预付款才能进行正常查询。押金计算方法：<code>gas_price*number_of_miner*60000</code>。</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 1/4/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/api"><span class="arrow-prev">← </span><span class="function-name-prevnext">👩🏻‍💻 CovenantSQL API</span></a><a class="docs-next button" href="/docs/usecase"><span>使用案例</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#简介">简介</a></li><li><a href="#查询余额">查询余额</a></li><li><a href="#转账">转账</a></li><li><a href="#数据库权限管理">数据库权限管理</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
