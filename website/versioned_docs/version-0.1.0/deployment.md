@@ -21,6 +21,14 @@ git clone https://github.com/CovenantSQL/CovenantSQL
 cd CovenantSQL
 ```
 
+后续的所有命令，工作目录默认都是在 clone 的 CovenantSQL 源码目录中，可以执行
+
+```bash
+export COVENANTSQL_ROOT=$PWD
+```
+
+存为环境变量
+
 ### 启动 Docker 容器
 
 现在有两种方式启动 CovenantSQL 容器：
@@ -48,14 +56,6 @@ make start
 ```
 
 ### 检查运行状态
-
-后续的所有命令，工作目录默认都是在 clone 的 CovenantSQL 源码目录中，可以执行
-
-```bash
-export COVENANTSQL_ROOT=$PWD
-```
-
-存为环境变量
 
 检查容器状态：
 

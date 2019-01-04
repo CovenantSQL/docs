@@ -1,6 +1,6 @@
 ---
 id: version-0.1.0-nav
-title: 使用导航
+title: 📖 使用导航
 original_id: nav
 ---
 
@@ -12,6 +12,10 @@ original_id: nav
 如果您是企业用户，希望在自己的网络搭建 CovenantSQL 数据库服务，请参考：
 
 [🐳 Docker 一键部署](./deployment)
+
+## 使用 CovenantSQL 开发应用
+
+[📦 CovenantSQL SDK](./development)
 
 ## CovenantSQL 联盟链解决方案
 
