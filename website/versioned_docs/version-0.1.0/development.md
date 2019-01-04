@@ -4,7 +4,7 @@ title: 📦 CovenantSQL SDK
 original_id: development
 ---
 
-## Golang 使用  CovenantSQL
+## Golang 使用 CovenantSQL
 
 ### 简介
 

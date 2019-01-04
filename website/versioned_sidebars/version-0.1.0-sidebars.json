@@ -12,6 +12,9 @@
       "version-0.1.0-development",
       "version-0.1.0-api"
     ],
+    "工具": [
+      "version-0.1.0-cql"
+    ],
     "About": [
       "version-0.1.0-usecase",
       "version-0.1.0-qna"
