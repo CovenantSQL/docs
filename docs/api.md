@@ -1,6 +1,7 @@
 ---
 id: api
-title: CovenantSQL API
+title: 👩🏻‍💻 CovenantSQL API
 ---
 
 ## TBD
+

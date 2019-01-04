@@ -3,7 +3,7 @@ id: development
 title: 📦 CovenantSQL SDK
 ---
 
-## Golang 使用  CovenantSQL
+## Golang 使用 CovenantSQL
 
 ### 简介
 
