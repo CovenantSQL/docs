@@ -88,3 +88,5 @@ INFO[0000] succeed in sending transaction to CovenantSQL
 ```
 
 注意，`succeed in sending transaction to CovenantSQL` 只说明交易已成功发送至主网，交易成功与否请通过查询数据库确认。
+
+为数据库添加新的账户权限后账户需补充押金与预付款才能进行正常查询。押金计算方法：`gas_price*number_of_miner*60000`。
