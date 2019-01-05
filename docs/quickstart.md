@@ -11,8 +11,8 @@ title: 🌏 TestNet 快速开始
 
 例如，您使用的是：
 
-- MacOS 平台请下载：[**CovenantSQL-v0.1.0.osx-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.1.0/CovenantSQL-v0.1.0.osx-amd64.tar.gz)
-- Linux 平台请下载：[**CovenantSQL-v0.1.0.linux-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.1.0/CovenantSQL-v0.1.0.linux-amd64.tar.gz)
+- MacOS 平台请下载：[**CovenantSQL-v0.2.0.osx-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.2.0/CovenantSQL-v0.2.0.osx-amd64.tar.gz)
+- Linux 平台请下载：[**CovenantSQL-v0.2.0.linux-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.2.0/CovenantSQL-v0.2.0.linux-amd64.tar.gz)
 - Windows 平台我们稍后发布，有需求请戳这里：[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/CovenantSQL/CovenantSQL)
 
 解压之后，你将得到以下命令行工具，包括：`cql`、`cql-utils` 等。
@@ -26,7 +26,7 @@ title: 🌏 TestNet 快速开始
 
 ### 测试网快速接入
 
-目前，我们已经发布了测试网 v0.1.0，供大家进行原理性验证和体验。你可以选在使用公共的测试账号快速进行接入测试。
+目前，我们已经发布了测试网 v0.2.0，供大家进行原理性验证和体验。你可以选在使用公共的测试账号快速进行接入测试。
 
 测试账号的配置文件和私钥：[config.yaml](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/config.yaml)、[private.key](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/private.key) ，或者使用以下命令：
 
