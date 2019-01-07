@@ -364,18 +364,17 @@ Here are some common structure definitions used in the API.
 
 The block generated in the CovenantSQL blockchain network.
 
-| Field       | Type    | Description                                  |
-| ----------- | ------- | -------------------------------------------- |
-| height      | integer | Height of the block                          |
-| hash        | string  | Hash of the block                            |
-| version     | integer | Version number of the block                  |
-| producer    | string  | Address of the node who generated this block |
-| merkle_root | string  | Hash of the merkle tree                      |
-| parent      | string  | Hash of its parent block                     |
-| timestamp   | string  | Create time of the block                     |
-| signee      | string  | Public key of the node who signed this block |
-| signature   | string  | Signature for the this block                 |
-| tx_count    | integer | Count of the transactions in this block      |
+| Field           | Type    | Description                                             |
+| --------------- | ------- | ------------------------------------------------------- |
+| height          | integer | Height of the block                                     |
+| hash            | string  | Hash of the block                                       |
+| version         | integer | Version number of the block                             |
+| producer        | string  | Address of the node who generated this block            |
+| merkle_root     | string  | Hash of the merkle tree                                 |
+| parent          | string  | Hash of its parent block                                |
+| timestamp       | integer | Create time of the block, unix time in nanoseconds      |
+| timestamp_human | string  | Create time of the block, human readable RFC3339 format |
+| tx_count        | integer | Count of the transactions in this block                 |
 
 Sample in JSON format:
 
@@ -388,8 +387,7 @@ Sample in JSON format:
   "merkle_root": "TODO",
   "parent": "TODO",
   "timestamp": "TODO",
-  "signee": "TODO",
-  "signature": "TODO",
+  "timestamp_human": "TODO",
   "tx_count": 1
 }
 ```
@@ -398,19 +396,18 @@ Sample in JSON format:
 
 ### Transaction
 
-| Field        | Type    | Description                                                                                 |
-| ------------ | ------- | ------------------------------------------------------------------------------------------- |
-| block_height | integer | Height of the block this transaction belongs to                                             |
-| index        | integer | Index of the transaction in the block                                                       |
-| hash         | string  | Hash of the transaction data                                                                |
-| block_hash   | string  | Hash of the block this transaction belongs to                                               |
-| type         | integer | Type of the transaction                                                                     |
-| signee       | string  | Public key of the account who signed this transaction                                       |
-| address      | string  | Account address who signed this transaction                                                 |
-| signature    | string  | Signature of this transaction                                                               |
-| timestamp    | string  | Create time of the transaction                                                              |
-| raw          | string  | Raw content of the transaction data, in JSON format                                         |
-| tx           | object  | Concrete transaction object, see supported [transaction types](#transaction-types) for more |
+| Field           | Type    | Description                                                                                 |
+| --------------- | ------- | ------------------------------------------------------------------------------------------- |
+| block_height    | integer | Height of the block this transaction belongs to                                             |
+| index           | integer | Index of the transaction in the block                                                       |
+| hash            | string  | Hash of the transaction data                                                                |
+| block_hash      | string  | Hash of the block this transaction belongs to                                               |
+| type            | integer | Type of the transaction                                                                     |
+| address         | string  | Account address who signed this transaction                                                 |
+| timestamp       | integer | Create time of the transaction, unix time in nanoseconds                                    |
+| timestamp_human | string  | Create time of the transaction, human readable RFC3339 format                               |
+| raw             | string  | Raw content of the transaction data, in JSON format                                         |
+| tx              | object  | Concrete transaction object, see supported [transaction types](#transaction-types) for more |
 
 Sample in JSON format:
 
@@ -421,10 +418,9 @@ Sample in JSON format:
   "hash": "TODO",
   "block_hash": "TODO",
   "timestamp": "TODO",
+  "timestamp_human": "TODO",
   "type": 1,
-  "signee": "TODO",
   "address": "TODO",
-  "signature": "TODO",
   "raw": "TODO",
   "tx": {
     "field": "TODO"
