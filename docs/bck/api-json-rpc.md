@@ -229,16 +229,20 @@ Returns a list of the transactions. Traverse page by page by using a transaction
 | -------- | --------- | ------- | ------------------------------------------- | ---------- |
 | 0        | since     | string  | hash as the start point of traverse         | "TODO"     |
 | 1        | direction | string  | traverse direction, "backward" or "forward" | "backward" |
-| 2        | size      | integer | page size, [5, 100]                         | 20         |
+| 2        | limit     | integer | page size limit, [5, 100]                   | 20         |
 
 ```
-QhcAe42Xf8cwGUf5NYGQDQ
-XNZ9yipFBUV5ySBtreW1MA ↑ forward (in newer blocks)
-9fXd3s5HE5fC8lOYY6uAZA
-KhytGjS0xjw5CJvcJYpsNg ← since (paging mark)
-2KOxrKMS4iVDKXnm6HuYiA
-71VwqOMOvAsBXJRMeBruWg ↓ backward (in older blocks)
-0P3k04RKHw8SEMKHxADC8A
++------------------------+--------------+----------+
+|          HASH          | BLOCK_HEIGHT | TX_INDEX |
++------------------------+--------------+----------+
+| QhcAe42Xf8cwGUf5NYGQDQ |      10      |    1     |
+| XNZ9yipFBUV5ySBtreW1MA |      10      |    0     |
+| 9fXd3s5HE5fC8lOYY6uAZA |      8       |    0     |
+| KhytGjS0xjw5CJvcJYpsNg |      7       |    2     | ↑  forward (to newer)
+| 2KOxrKMS4iVDKXnm6HuYiA |      7       |    1     | <- since (paging mark)
+| 71VwqOMOvAsBXJRMeBruWg |      7       |    0     | ↓ backward (to older)
+| 0P3k04RKHw8SEMKHxADC8A |      5       |    0     |
++------------------------+--------------+----------+
 ```
 
 #### Returns
@@ -270,7 +274,7 @@ Response: [Transaction](#s-transaction) array
 }
 ```
 
-### bp_getTransactionListInBlock
+### bp_getTransactionListOfBlock
 
 Returns a list of the transactions from a block by the specified height.
 
@@ -294,7 +298,7 @@ Request:
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "method": "bp_getTransactionListInBlock",
+  "method": "bp_getTransactionListOfBlock",
   "params": [1024, 0, 10]
 }
 ```
