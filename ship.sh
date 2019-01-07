@@ -2,6 +2,9 @@
 # ship script for covenantsql docs
 # usage: ship -v 0.1.0 -u foreseaz
 
+set -o errexit
+set -o pipefail
+
 command::ship() {
     local version=()
     local user=()
