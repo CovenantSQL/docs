@@ -230,16 +230,20 @@ Returns a list of the transactions. Traverse page by page by using a transaction
 | -------- | --------- | ------- | ------------------------------------------- | ---------- |
 | 0        | since     | string  | hash as the start point of traverse         | "TODO"     |
 | 1        | direction | string  | traverse direction, "backward" or "forward" | "backward" |
-| 2        | size      | integer | page size, [5, 100]                         | 20         |
+| 2        | limit     | integer | page size limit, [5, 100]                   | 20         |
 
 ```
-QhcAe42Xf8cwGUf5NYGQDQ
-XNZ9yipFBUV5ySBtreW1MA ↑ forward (in newer blocks)
-9fXd3s5HE5fC8lOYY6uAZA
-KhytGjS0xjw5CJvcJYpsNg ← since (paging mark)
-2KOxrKMS4iVDKXnm6HuYiA
-71VwqOMOvAsBXJRMeBruWg ↓ backward (in older blocks)
-0P3k04RKHw8SEMKHxADC8A
++------------------------+--------------+----------+
+|          HASH          | BLOCK_HEIGHT | TX_INDEX |
++------------------------+--------------+----------+
+| QhcAe42Xf8cwGUf5NYGQDQ |      10      |    1     |
+| XNZ9yipFBUV5ySBtreW1MA |      10      |    0     |
+| 9fXd3s5HE5fC8lOYY6uAZA |      8       |    0     |
+| KhytGjS0xjw5CJvcJYpsNg |      7       |    2     | ↑  forward (to newer)
+| 2KOxrKMS4iVDKXnm6HuYiA |      7       |    1     | <- since (paging mark)
+| 71VwqOMOvAsBXJRMeBruWg |      7       |    0     | ↓ backward (to older)
+| 0P3k04RKHw8SEMKHxADC8A |      5       |    0     |
++------------------------+--------------+----------+
 ```
 
 #### Returns
@@ -271,7 +275,7 @@ Response: [Transaction](#s-transaction) array
 }
 ```
 
-### bp_getTransactionListInBlock
+### bp_getTransactionListOfBlock
 
 Returns a list of the transactions from a block by the specified height.
 
@@ -295,7 +299,7 @@ Request:
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "method": "bp_getTransactionListInBlock",
+  "method": "bp_getTransactionListOfBlock",
   "params": [1024, 0, 10]
 }
 ```
@@ -361,18 +365,17 @@ Here are some common structure definitions used in the API.
 
 The block generated in the CovenantSQL blockchain network.
 
-| Field       | Type    | Description                                  |
-| ----------- | ------- | -------------------------------------------- |
-| height      | integer | Height of the block                          |
-| hash        | string  | Hash of the block                            |
-| version     | integer | Version number of the block                  |
-| producer    | string  | Address of the node who generated this block |
-| merkle_root | string  | Hash of the merkle tree                      |
-| parent      | string  | Hash of its parent block                     |
-| timestamp   | string  | Create time of the block                     |
-| signee      | string  | Public key of the node who signed this block |
-| signature   | string  | Signature for the this block                 |
-| tx_count    | integer | Count of the transactions in this block      |
+| Field           | Type    | Description                                             |
+| --------------- | ------- | ------------------------------------------------------- |
+| height          | integer | Height of the block                                     |
+| hash            | string  | Hash of the block                                       |
+| version         | integer | Version number of the block                             |
+| producer        | string  | Address of the node who generated this block            |
+| merkle_root     | string  | Hash of the merkle tree                                 |
+| parent          | string  | Hash of its parent block                                |
+| timestamp       | integer | Create time of the block, unix time in nanoseconds      |
+| timestamp_human | string  | Create time of the block, human readable RFC3339 format |
+| tx_count        | integer | Count of the transactions in this block                 |
 
 Sample in JSON format:
 
@@ -385,8 +388,7 @@ Sample in JSON format:
   "merkle_root": "TODO",
   "parent": "TODO",
   "timestamp": "TODO",
-  "signee": "TODO",
-  "signature": "TODO",
+  "timestamp_human": "TODO",
   "tx_count": 1
 }
 ```
@@ -395,19 +397,18 @@ Sample in JSON format:
 
 ### Transaction
 
-| Field        | Type    | Description                                                                                 |
-| ------------ | ------- | ------------------------------------------------------------------------------------------- |
-| block_height | integer | Height of the block this transaction belongs to                                             |
-| index        | integer | Index of the transaction in the block                                                       |
-| hash         | string  | Hash of the transaction data                                                                |
-| block_hash   | string  | Hash of the block this transaction belongs to                                               |
-| type         | integer | Type of the transaction                                                                     |
-| signee       | string  | Public key of the account who signed this transaction                                       |
-| address      | string  | Account address who signed this transaction                                                 |
-| signature    | string  | Signature of this transaction                                                               |
-| timestamp    | string  | Create time of the transaction                                                              |
-| raw          | string  | Raw content of the transaction data, in JSON format                                         |
-| tx           | object  | Concrete transaction object, see supported [transaction types](#transaction-types) for more |
+| Field           | Type    | Description                                                                                 |
+| --------------- | ------- | ------------------------------------------------------------------------------------------- |
+| block_height    | integer | Height of the block this transaction belongs to                                             |
+| index           | integer | Index of the transaction in the block                                                       |
+| hash            | string  | Hash of the transaction data                                                                |
+| block_hash      | string  | Hash of the block this transaction belongs to                                               |
+| type            | integer | Type of the transaction                                                                     |
+| address         | string  | Account address who signed this transaction                                                 |
+| timestamp       | integer | Create time of the transaction, unix time in nanoseconds                                    |
+| timestamp_human | string  | Create time of the transaction, human readable RFC3339 format                               |
+| raw             | string  | Raw content of the transaction data, in JSON format                                         |
+| tx              | object  | Concrete transaction object, see supported [transaction types](#transaction-types) for more |
 
 Sample in JSON format:
 
@@ -418,10 +419,9 @@ Sample in JSON format:
   "hash": "TODO",
   "block_hash": "TODO",
   "timestamp": "TODO",
+  "timestamp_human": "TODO",
   "type": 1,
-  "signee": "TODO",
   "address": "TODO",
-  "signature": "TODO",
   "raw": "TODO",
   "tx": {
     "field": "TODO"
