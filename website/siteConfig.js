@@ -92,6 +92,7 @@ const siteConfig = {
     'https://buttons.github.io/buttons.js',
     'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
     '/js/code-block-buttons.js',
+    'https://hm.baidu.com/hm.js?fd1ee4ccc9da39d0cf4c60ad8e6e214b',
   ],
   stylesheets: ['/css/code-block-buttons.css'],
 
