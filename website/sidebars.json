@@ -15,8 +15,10 @@
     "工具": [
       "cql"
     ],
+    "使用案例": [
+      "quandl"
+    ],
     "About": [
-      "usecase",
       "qna"
     ]
   }
