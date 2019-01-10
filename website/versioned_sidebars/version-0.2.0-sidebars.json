@@ -15,8 +15,10 @@
     "工具": [
       "version-0.2.0-cql"
     ],
+    "使用案例": [
+      "version-0.2.0-quandl"
+    ],
     "About": [
-      "version-0.2.0-usecase",
       "version-0.2.0-qna"
     ]
   }
