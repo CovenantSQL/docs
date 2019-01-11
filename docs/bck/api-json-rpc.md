@@ -101,12 +101,11 @@ Returns a list of the blocks.
 
 #### Parameters
 
-| Position | Name | type    | Description            | Sample |
-| -------- | ---- | ------- | ---------------------- | ------ |
-| 0        | from | integer | start height, included | 1      |
-| 1        | to   | integer | end height, excluded   | 11     |
-
-**Constraints:** `to - from ∈ [5, 100]`
+| Position | Name  | type    | Description            | Sample |
+| -------- | ----- | ------- | ---------------------- | ------ |
+| 0        | since | integer | since height, excluded | 1024   |
+| 1        | page  | integer | page number            | 1      |
+| 2        | size  | integer | page size, max 1000    | 10     |
 
 #### Returns
 
@@ -121,7 +120,7 @@ Request:
   "jsonrpc": "2.0",
   "id": 1,
   "method": "bp_getBlockList",
-  "params": [1, 11]
+  "params": [1024, 1, 10]
 }
 ```
 
@@ -131,9 +130,14 @@ Response: [Block](#s-block) array
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "result": [
-    { TODO: block object }
-  ]
+  "result": {
+    "blocks" [ { TODO: block object } ],
+    "pagination": {
+      "page": 1,
+      "size": 10,
+      "total": 102,
+      "pages": 11
+    }
 }
 ```
 
@@ -164,7 +168,7 @@ Request:
   "jsonrpc": "2.0",
   "id": 1,
   "method": "bp_getBlockByHeight",
-  "params": [1, true]
+  "params": [1]
 }
 ```
 
@@ -203,7 +207,7 @@ Request:
   "jsonrpc": "2.0",
   "id": 1,
   "method": "bp_getBlockByHash",
-  "params": ["TODO", true]
+  "params": ["TODO"]
 }
 ```
 
@@ -225,25 +229,11 @@ Returns a list of the transactions. Traverse page by page by using a transaction
 
 #### Parameters
 
-| Position | Name      | type    | Description                                 | Sample     |
-| -------- | --------- | ------- | ------------------------------------------- | ---------- |
-| 0        | since     | string  | hash as the start point of traverse         | "TODO"     |
-| 1        | direction | string  | traverse direction, "backward" or "forward" | "backward" |
-| 2        | limit     | integer | page size limit, [5, 100]                   | 20         |
-
-```
-+------------------------+--------------+----------+
-|          HASH          | BLOCK_HEIGHT | TX_INDEX |
-+------------------------+--------------+----------+
-| QhcAe42Xf8cwGUf5NYGQDQ |      10      |    1     |
-| XNZ9yipFBUV5ySBtreW1MA |      10      |    0     |
-| 9fXd3s5HE5fC8lOYY6uAZA |      8       |    0     |
-| KhytGjS0xjw5CJvcJYpsNg |      7       |    2     | ↑  forward (to newer)
-| 2KOxrKMS4iVDKXnm6HuYiA |      7       |    1     | <- since (paging mark)
-| 71VwqOMOvAsBXJRMeBruWg |      7       |    0     | ↓ backward (to older)
-| 0P3k04RKHw8SEMKHxADC8A |      5       |    0     |
-+------------------------+--------------+----------+
-```
+| Position | Name  | type    | Description          | Sample |
+| -------- | ----- | ------- | -------------------- | ------ |
+| 0        | since | string  | since hash, excluded | "TODO" |
+| 1        | page  | integer | page number          | 1      |
+| 2        | size  | integer | page size, max 1000  | 10     |
 
 #### Returns
 
@@ -258,7 +248,7 @@ Request:
   "jsonrpc": "2.0",
   "id": 1,
   "method": "bp_getTransactionList",
-  "params": ["KhytGjS0xjw5CJvcJYpsNg", "forward", 10]
+  "params": ["KhytGjS0xjw5CJvcJYpsNg", 1, 10]
 }
 ```
 
@@ -268,9 +258,15 @@ Response: [Transaction](#s-transaction) array
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "result": [
-    { TODO: transaction object }
-  ]
+  "result": {
+    "transactions": [ { TODO: transaction object } ],
+    "pagination": {
+      "page": 1,
+      "size": 10,
+      "total": 8,
+      "pages": 1
+    }
+  }
 }
 ```
 
@@ -278,13 +274,11 @@ Response: [Transaction](#s-transaction) array
 
 Returns a list of the transactions from a block by the specified height.
 
-| Position | Name   | type    | Description           | Sample |
-| -------- | ------ | ------- | --------------------- | ------ |
-| 0        | height | integer | block height          | 1024   |
-| 1        | from   | integer | start index, included | 0      |
-| 2        | to     | integer | end index, excluded   | 10     |
-
-**Constraints:** `to - from ∈ [5, 100]`
+| Position | Name   | type    | Description         | Sample |
+| -------- | ------ | ------- | ------------------- | ------ |
+| 0        | height | integer | of block height     | 1024   |
+| 1        | page   | integer | page number         | 1      |
+| 2        | size   | integer | page size, max 1000 | 10     |
 
 #### Returns
 
@@ -299,7 +293,7 @@ Request:
   "jsonrpc": "2.0",
   "id": 1,
   "method": "bp_getTransactionListOfBlock",
-  "params": [1024, 0, 10]
+  "params": [1024, 1, 10]
 }
 ```
 
@@ -309,9 +303,15 @@ Response: [Transaction](#s-transaction) array
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "result": [
-    { TODO: transaction object }
-  ]
+  "result": {
+    "transactions": [ { TODO: transaction object } ],
+    "pagination": {
+      "page": 1,
+      "size": 10,
+      "total": 8,
+      "pages": 1
+    }
+  }
 }
 ```
 
@@ -338,7 +338,7 @@ Request:
   "jsonrpc": "2.0",
   "id": 1,
   "method": "bp_getTransactionByHash",
-  "params": ["TODO", true]
+  "params": ["TODO"]
 }
 ```
 
