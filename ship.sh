@@ -59,12 +59,19 @@ command::ship() {
 
 usage() {
     echo "
-Usage: ship -v [version] -u [user]
+Usage: ship -v <version> -u <user>
+
+Options:
+    version: semantic version, e.g. 0.2.0
+    user:    username who updates the docs, e.g. forseaz
 " 1>&2; exit 1;
 }
 
 main() {
-  command::ship "$@"
+    if [[ $# -ne 4 ]]; then
+        usage
+    fi
+    command::ship "$@"
 }
 
 main "$@"
