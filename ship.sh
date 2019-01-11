@@ -5,6 +5,19 @@
 set -o errexit
 set -o pipefail
 
+check_env() {
+    if [[ ! -e "./website/node_modules/.bin/docusaurus-version" ]]; then
+        echo "
+**ERROR**
+docusaurus related commands not found under [website/node_modules/.bin]
+Please install dependencies for this project:
+    1. install node if you don't have;
+    2. install dependencies: cd website && npm install.
+"
+        exit 1
+    fi
+}
+
 command::ship() {
     local version=()
     local user=()
@@ -36,16 +49,16 @@ command::ship() {
     done
 
     # print version and user
-    echo $version
-    echo $user
+    echo "Version: ${version}"
+    echo "User: ${user}"
 
     # generate versioned docs
     cd website
     rm versions.json || true
-    yarn run version $version
+    yarn run version ${version}
 
     # publish current docs
-    GIT_USER=$user \
+    GIT_USER=${user} \
     CURRENT_BRANCH=master \
     USE_SSH=true \
     yarn run publish-gh-pages
@@ -53,7 +66,7 @@ command::ship() {
     # commit and push
     cd ..
     git add .
-    git commit -m "chore(publish): published $version docs by [$user]"
+    git commit -m "chore(publish): published ${version} docs by [${user}]"
     git push origin master
 }
 
@@ -68,6 +81,7 @@ Options:
 }
 
 main() {
+    check_env
     if [[ $# -ne 4 ]]; then
         usage
     fi
