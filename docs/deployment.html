@@ -139,7 +139,7 @@ wallet address: 6304a1bcc4a8903b1bc8675fd37a588040a55ade1f1df552ef7721a823ae1c25
 <p>转账：</p>
 <pre><code class="hljs css language-bash">docker <span class="hljs-built_in">exec</span> -it covenantsql_adapter /app/cql -config /app/config.yaml -transfer <span class="hljs-string">'{"addr":"6304a1bcc4a8903b1bc8675fd37a588040a55ade1f1df552ef7721a823ae1c25","amount":"100000000 Particle"}'</span>
 </code></pre>
-<p>其中，<code>addr</code> 表示转账地址，这里为 observer 地址，observer 地址可以在。<code>amount</code> 为能使 observer 运行的最小金额 <code>gas_price*number_of_miner*240000</code>，建议尽量转些方便后续操作。</p>
+<p>其中，<code>addr</code> 表示转账地址，这里为 Explorer 使用的钱包地址，Explorer 地址可以在上一步中获得。<code>amount</code> 为能使 Explorer 运行的最小金额 <code>gas_price*number_of_miner*240000</code>，建议多一转些方便后续操作。</p>
 <p>授权：</p>
 <pre><code class="hljs css language-bash">docker <span class="hljs-built_in">exec</span> -it covenantsql_adapter /app/cql -config /app/config.yaml -update-perm <span class="hljs-string">'{"chain":"139f71bb7b2775baafa42bd9ed2ade6755381d4eed1e02d4847eb1491847a0ce","user":"6304a1bcc4a8903b1bc8675fd37a588040a55ade1f1df552ef7721a823ae1c25","perm":"Read"}'</span>
 </code></pre>
