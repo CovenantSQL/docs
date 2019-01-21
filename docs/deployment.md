@@ -188,7 +188,7 @@ docker exec -it covenantsql_adapter /app/cql -config /app/config.yaml -update-pe
 充值：
 
 ```bash
-docker exec -it covenantsql_observer /app/cql -config /app/config.yaml -transfer '{"addr":"139f71bb7b2775baafa42bd9ed2ade6755381d4eed1e02d4847eb1491847a0ce","amount":"90000000 Particle"}'
+docker exec -it covenantsql_observer /app/cql -config /app/node_observer/config.yaml -transfer '{"addr":"139f71bb7b2775baafa42bd9ed2ade6755381d4eed1e02d4847eb1491847a0ce","amount":"90000000 Particle"}'
 ```
 
 关于转账充值与授权的详细说明请参考[文档](cql.md)。
