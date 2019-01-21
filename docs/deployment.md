@@ -191,6 +191,8 @@ docker exec -it covenantsql_adapter /app/cql -config /app/config.yaml -update-pe
 docker exec -it covenantsql_observer /app/cql -config /app/config.yaml -transfer '{"addr":"139f71bb7b2775baafa42bd9ed2ade6755381d4eed1e02d4847eb1491847a0ce","amount":"90000000 Particle"}'
 ```
 
+关于转账充值与授权的详细说明请参考[文档](cql.md)。
+
 ### 在浏览器使用 SQLChain Explorer
 
 我们在 `127.0.0.1:11108` 端口提供了一个 SQLChain 的 Explorer 可以看到 SQL 语句在链上的情况。
