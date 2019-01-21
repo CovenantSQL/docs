@@ -177,7 +177,7 @@ wallet address: 6304a1bcc4a8903b1bc8675fd37a588040a55ade1f1df552ef7721a823ae1c25
 docker exec -it covenantsql_adapter /app/cql -config /app/config.yaml -transfer '{"addr":"6304a1bcc4a8903b1bc8675fd37a588040a55ade1f1df552ef7721a823ae1c25","amount":"100000000 Particle"}'
 ```
 
-其中，`addr` 表示转账地址，这里为 observer 地址，observer 地址可以在。`amount` 为能使 observer 运行的最小金额 `gas_price*number_of_miner*240000`，建议尽量转些方便后续操作。
+其中，`addr` 表示转账地址，这里为 Explorer 使用的钱包地址，Explorer 地址可以在上一步中获得。`amount` 为能使 Explorer 运行的最小金额 `gas_price*number_of_miner*240000`，建议多一转些方便后续操作。
 
 授权：
 
