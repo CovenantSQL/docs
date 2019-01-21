@@ -154,7 +154,7 @@ co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=>
 
 ### SQLChain Explorer
 
-由于读数据库需要计费，并且数据库有权限限制，在启动 Explorer 前需要确保 Explorer 使用的钱包地址内有充足的 token 并且已使用管理员账户为 Explorer 地址授权读权限。
+由于读数据库需要计费，并且数据库有权限限制，在启动 Explorer 前需要确保 Explorer 使用的钱包地址内有充足的 token 并且已使用管理员账户为 Explorer 地址授权读权限。（关于权限管理的详细说明请参考[数据库权限管理](cql.md#数据库权限管理)）
 
 **注意：**在授权前不要在浏览器打开 Explorer 地址。
 
