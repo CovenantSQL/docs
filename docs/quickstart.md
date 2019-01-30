@@ -11,27 +11,27 @@ title: 🌏 TestNet 快速开始
 
 例如，您使用的是：
 
-- MacOS 平台请下载：[**CovenantSQL-v0.2.0.osx-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.2.0/CovenantSQL-v0.2.0.osx-amd64.tar.gz)
-- Linux 平台请下载：[**CovenantSQL-v0.2.0.linux-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.2.0/CovenantSQL-v0.2.0.linux-amd64.tar.gz)
+- MacOS 平台请下载：[**CovenantSQL-v0.3.0.osx-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.3.0/CovenantSQL-v0.3.0.osx-amd64.tar.gz)
+- Linux 平台请下载：[**CovenantSQL-v0.3.0.linux-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.3.0/CovenantSQL-v0.3.0.linux-amd64.tar.gz)
 - Windows 平台我们稍后发布，有需求请戳这里：[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/CovenantSQL/CovenantSQL)
 
 解压之后，你将得到以下命令行工具，包括：`cql`、`cql-utils` 等。
 
-| 工具名     | 介绍                                                         |
-| ---------- | ------------------------------------------------------------ |
-| cql        | CovenantSQL 的客户端，类似 mysql 命令，用于执行 SQL          |
-| cql-utils  | CovenantSQL 工具箱，用于和主链交互                           |
-| cql-minerd | CovenantSQL 矿工客户端，用于运行数据库赚取奖励，以后会开放加入 |
+| 工具名     | 介绍                                                                   |
+| ---------- | ---------------------------------------------------------------------- |
+| cql        | CovenantSQL 的客户端，类似 mysql 命令，用于执行 SQL                    |
+| cql-utils  | CovenantSQL 工具箱，用于和主链交互                                     |
+| cql-minerd | CovenantSQL 矿工客户端，用于运行数据库赚取奖励，以后会开放加入         |
 | cqld       | CovenantSQL 主链节点，主要由 CovenantLabs 以及合作伙伴以 DPoS 模式运行 |
 
 ### 测试网快速接入
 
-目前，我们已经发布了测试网 v0.2.0，供大家进行原理性验证和体验。你可以选在使用公共的测试账号快速进行接入测试。
+目前，我们已经发布了测试网 v0.3.0，供大家进行原理性验证和体验。你可以选在使用公共的测试账号快速进行接入测试。
 
 测试账号的配置文件和私钥：[config.yaml](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/config.yaml)、[private.key](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/private.key) ，或者使用以下命令：
 
 ```bash
-mkdir conf 
+mkdir conf
 wget https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/config.yaml -O conf/config.yaml
 wget https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/private.key -O conf/private.key
 chmod 600 conf/private.key
@@ -42,8 +42,6 @@ chmod 600 conf/private.key
 > 该账号是公共的且只供测试使用，请不要在该账号创建的数据库中存放你的应用信息，我们会不定期清理数据库数据。
 >
 > 测试网暂时由 3 个 Miner 组成，所以暂时最大只支持`create 3`创建 3 个节点组成的数据库。
-
-
 
 ## 创建并访问 CovenantSQL 数据库
 
@@ -77,11 +75,11 @@ covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 
 连接上数据库后，你可以按你操作数据库的习惯来操作 CovenantSQL 上的数据库。比如执行 `CREATE TABLE` 创建表、`SELECT` 查询数据等操作。
 
-### 数据库SDK
+### 数据库 SDK
 
-- [Golang开发指引](./development)
+- [Golang 开发指引](./development)
 
-## SQLChain区块浏览器
+## SQLChain 区块浏览器
 
 CovenantSQL 有一个特性是**其操作记录是不可变且可跟踪的**，你可以通过 [测试网区块浏览器](https://explorer.dbhub.org/) 来查询某个数据库的操作记录。
 
