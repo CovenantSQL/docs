@@ -89,19 +89,19 @@ Quandl 数据分为表以及子表两层索引
 
 1. 直接双击对应的 32 位或 64 位 Excel 的 xll 文件打开
 
-![quandl_ext_1](https://github.com/CovenantSQL/cql-excel-extension/blob/master/refs/quandl_ext_1.png
+![quandl_ext_1](https://raw.githubusercontent.com/CovenantSQL/cql-excel-extension/master/refs/quandl_ext_1.png)
 
 如果弹出如上对话框，选择第一个： `仅为本回话启用此加载项`。然后新建一个 Excel 表格，如果在 Excel 的上方选项卡中看到 CovenantSQL，说明插件加载成功。
 
 2. 打开 Excel，然后依次选择 `文件 — 选项 — 加载项`，管理选择 Excel 加载项，点击转到然后浏览选择解压后的对应版本的 `.xll` 文件，然后点击 `确定`，在选项卡中如果成功加载出 CovenantSQL 即为成功加载，如下图：
 
-![quandl_ext_2](https://github.com/CovenantSQL/cql-excel-extension/blob/master/refs/quandl_ext_2.png)
+![quandl_ext_2](https://raw.githubusercontent.com/CovenantSQL/cql-excel-extension/master/refs/quandl_ext_2.png)
 
 #### 使用插件
 
 选择 CovenantSQL 的选项卡可以看到 Quandl 数据查询，点击 Quandl 数据查询，会弹出一个窗体如下图所示：
 
-![quandl_ext_3](https://github.com/CovenantSQL/cql-excel-extension/blob/master/refs/quandl_ext_3.png)
+![quandl_ext_3](https://raw.githubusercontent.com/CovenantSQL/cql-excel-extension/master/refs/quandl_ext_3.png)
 
 - 其中红色框住的列表部分是一级目录，下方则是所选项的具体描述
 
