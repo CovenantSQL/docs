@@ -89,8 +89,9 @@ Response:
   "result": {
     "block_height": 182414, // height of the latest block
     "count_accounts": 103, // count of the accounts ever created
-    "count_databases": 912414, // count of the databases ever created
+    "count_shardchains": 912414, // count of the databases ever created
     "qps": 10241 // estimated QPS of database operations of the whole net
+    "storage_size": 109870095269 // storage size
   }
 }
 ```
