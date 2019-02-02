@@ -150,3 +150,10 @@ INFO[0000] succeed in sending transaction to CovenantSQL
 注意，`succeed in sending transaction to CovenantSQL` 只说明交易已成功发送至主网，交易成功与否请通过查询数据库确认。
 
 为数据库添加新的账户权限后账户需补充押金与预付款才能进行正常查询。押金与预付款最小值的计算公式：`gas_price*number_of_miner*120000`。
+
+使用新账户给数据库充值：
+
+```bash
+./cql -config new_user_config/config.yaml -transfer '{"addr":"4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","amount":"90000000 Particle"}'
+```
+
