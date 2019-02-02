@@ -24,14 +24,14 @@ $ go get github.com/CovenantSQL/CovenantSQL/cmd/cql-utils
 
 ### 生成默认的配置文件
 
-运行以下 `cql-utils` 命令，输入 master key（类似密码）来生成本地密钥对。等待几十秒，会在 `conf` 文件夹中，生成一个私钥文件和一个名为 `config.yaml` 的配置文件。
+运行以下 `cql-utils` 命令，输入 master key（类似密码）来生成本地密钥对。等待几十秒，会在 `~/.cql` 文件夹中，生成一个私钥文件和一个名为 `config.yaml` 的配置文件。
 
 ```bash
-$ cql-utils -tool confgen -root conf
+./cql-utils -tool confgen
 Generating key pair...
 Enter master key(press Enter for default: ""):
 ⏎
-Private key file: conf/private.key
+Private key file: ~/.cql/private.key
 Public key's hex: 025abec9b0072615170f4acf4a2fa1162a13864bb66bc3f140b29f6bf50ceafc75
 Generated key pair.
 Generating nonce...

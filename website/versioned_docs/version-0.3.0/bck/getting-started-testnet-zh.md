@@ -24,7 +24,7 @@ $ cql-utils -tool confgen
 Generating key pair...
 Enter master key(press Enter for default: ""):
 ⏎
-Private key file: conf/private.key
+Private key file: ~/.cql/private.key
 Public key's hex: 02296ea73240dcd69d2b3f1fb754c8debdf68c62147488abb10165428667ec8cbd
 Generated key pair.
 Generating nonce...
@@ -35,14 +35,17 @@ Generating config file...
 Generated nonce.
 ```
 
-运行完成后，`cql-utils`会在 `./conf` 目录生成一个配置文件。
+该命令会为你在~目录下创建一个 `.cql` 目录：
+
+- `~/.cql/private.key`: 为你生成的私钥通过主密码加密保存在该文件中，你的账号地址需要使用该文件创建；
+- `~/.cql/config.yaml`: 为你生成的配置，cql 可以通过读取该配置来访问 CovenantSQL 测试网。
 
 ## 2. 用私钥生成钱包地址
 
-私钥可以再上一步的 `./conf` 目录中找到，文件名为 `private.key`
+私钥可以再上一步的 `~/.cql` 目录中找到，文件名为 `private.key`
 
 ```bash
-$ cql-utils -tool addrgen -private ./conf/private.key
+$ cql-utils -tool addrgen -private ~/.cql/private.key
 Enter master key(default: ""):
 ⏎
 wallet address: 4jXvNvPHKNPU8Sncz5u5F5WSGcgXmzC1g8RuAXTCJzLsbF9Dsf9
@@ -52,10 +55,10 @@ wallet address: 4jXvNvPHKNPU8Sncz5u5F5WSGcgXmzC1g8RuAXTCJzLsbF9Dsf9
 
 水龙头(Faucet)的地址为: [CovenantSQL 测试网 Particle(PTC) 水龙头](https://testnet.covenantsql.io/)。
 
-完成教程之后，用 `cql` 命令来检查钱包地址的余额：
+完成教程之后，用 `cql` 命令来检查钱包地址的余额(未加-config参数时，命令会自动找~/.cql目录的config.yaml文件)：
 
 ```bash
-$ cql -config conf/config.yaml -get-balance
+$ cql -get-balance
 INFO[0000] stable coin balance is: 100                   caller="main.go:246 main.main"
 INFO[0000] covenant coin balance is: 0                   caller="main.go:247 main.main"
 ```
@@ -69,7 +72,7 @@ INFO[0000] covenant coin balance is: 0                   caller="main.go:247 mai
 ## 4. 使用 `CLI` 创建数据库
 
 ```bash
-$ cql -config conf/config.yaml -create 1
+$ cql -create 1
 INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872?use_follower=false&use_leader=true"
 ```
 

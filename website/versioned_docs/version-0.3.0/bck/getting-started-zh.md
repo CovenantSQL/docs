@@ -138,7 +138,7 @@ CovenantSQL 有一个特性是**其操作记录是不可变且可跟踪的**，�
 ```
 Generating key pair...
 Enter master key(press Enter for default: ""):
-Private key file: conf/private.key
+Private key file: ~/.cql/private.key
 Public key's hex: 027af3584b8b4736d6ba1e78ace5f0fdefe561f08749c5cac39d23668c3030fe39
 Generated key pair.
 Generating nonce...
@@ -154,15 +154,15 @@ Generating config file...
 Generated nonce.
 ```
 
-该命令会为你创建一个 `conf` 目录：
+该命令会为你在~目录下创建一个 `.cql` 目录：
 
-- `conf/private.key`: 为您生成的私钥通过主密码加密保存在该文件中，您的账号地址需要使用该文件创建；
-- `conf/config.yaml`: 为您生成的配置，cql 可以通过读取该配置来访问 CovenantSQL 测试网。
+- `~/.cql/private.key`: 为你生成的私钥通过主密码加密保存在该文件中，你的账号地址需要使用该文件创建；
+- `~/.cql/config.yaml`: 为你生成的配置，cql 可以通过读取该配置来访问 CovenantSQL 测试网。
 
 再运行命令用来生成账号地址（也叫钱包地址、CovenantSQL 地址）：
 
 ```shell
-./cql-utils -tool addrgen -private conf/private.key
+./cql-utils -tool addrgen -private ~/.cql/private.key
 ```
 
 输出：
@@ -173,10 +173,10 @@ wallet address: 4kcCg4niPjWURuFyT633V8TF9Xb9PvUR5Xbf6aTvGxFZkJFQaS9
 
 您可以在我们的 [CovenantSQL 测试网](https://testnet.covenantsql.io/) 输入您生成的钱包地址，通过发微博、推特等社交媒体来帮助我们推广我们的项目，我们会为您的钱包充值。
 
-使用 cql 命令行工具查询余额：
+使用 cql 命令行工具查询余额(未加 -config 参数时，命令会自动找 ~/.cql 目录的 config.yaml 文件)：
 
 ```shell
-./cql -config conf/config.yaml -get-balance
+./cql -config ~/.cql/config.yaml -get-balance
 ```
 
 输出：
@@ -232,21 +232,21 @@ docker-compose ps
 ```shell
           Name                         Command               State                 Ports
 ------------------------------------------------------------------------------------------------------
-covenantsql_adapter         ./docker-entry.sh                Up      0.0.0.0:11105->4661/tcp
-covenantsql_bp_0            ./docker-entry.sh                Up      0.0.0.0:11099->4661/tcp
-covenantsql_bp_1            ./docker-entry.sh                Up      0.0.0.0:11100->4661/tcp
-covenantsql_bp_2            ./docker-entry.sh                Up      0.0.0.0:11101->4661/tcp
-covenantsql_explorer        /bin/sh -c MAGIC_DOLLAR='$ ...   Up      0.0.0.0:11108->80/tcp
-covenantsql_miner_0         ./docker-entry.sh                Up      0.0.0.0:11102->4661/tcp
-covenantsql_miner_1         ./docker-entry.sh                Up      0.0.0.0:11103->4661/tcp
-covenantsql_miner_2         ./docker-entry.sh                Up      0.0.0.0:11104->4661/tcp
-covenantsql_mysql_adapter   ./docker-entry.sh -listen  ...   Up      4661/tcp, 0.0.0.0:11107->4664/tcp
-covenantsql_observer        ./docker-entry.sh -listen  ...   Up      4661/tcp, 0.0.0.0:11106->4663/tcp
+covenantsql_bp_0            "./docker-entry.sh"              Up        0.0.0.0:11099->4661/tcp
+covenantsql_bp_1            "./docker-entry.sh"              Up        0.0.0.0:11100->4661/tcp
+covenantsql_bp_2            "./docker-entry.sh"              Up        0.0.0.0:11101->4661/tcp
+covenantsql_miner_0         "./docker-entry.sh"              Up        0.0.0.0:11102->4661/tcp
+covenantsql_miner_1         "./docker-entry.sh"              Up        0.0.0.0:11103->4661/tcp
+covenantsql_miner_2         "./docker-entry.sh"              Up        0.0.0.0:11104->4661/tcp
+covenantsql_adapter         "./docker-entry.sh"              Up        0.0.0.0:11105->4661/tcp
+covenantsql_mysql_adapter   "./docker-entry.sh -…"           Up        4661/tcp, 0.0.0.0:11107->4664/tcp
+covenantsql_observer        "./docker-entry.sh"              Up        4661/tcp, 0.0.0.0:11108->80/tcp
+covenantsql_fn_0            "./docker-entry.sh -…"           Up        4661/tcp, 0.0.0.0:11110->8546/tcp
 ```
 
-### SQLChain Explorer
+### SQLChain Observer
 
-我们在`:11108`端口提供了一个 SQLChain 的 Explorer 可以看到 SQL 语句在链上的情况
+我们在`:11108`端口提供了一个 SQLChain 的 Observer 可以看到 SQL 语句在链上的情况
 
 #操作 CovenantSQL
 
