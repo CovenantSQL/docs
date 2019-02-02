@@ -105,37 +105,37 @@
 <pre><code class="hljs css language-shell">./cql-utils -tool confgen
 </code></pre>
 <p>输出：</p>
-<pre><code class="hljs">Generating key pair...
-Enter master key(press Enter for default: <span class="hljs-string">""</span>):
-Private key file: conf/private.key
-Public key's hex: 027af<span class="hljs-number">3584</span>b8b<span class="hljs-number">4736</span>d6ba1e78ace5f0fdefe561f<span class="hljs-number">0874</span>9c5cac39d<span class="hljs-number">2366</span>8c<span class="hljs-number">3030</span>fe39
-Generated key pair.
-Generating nonce...
-INFO[<span class="hljs-number">0075</span>] cpu: 4
-INFO[<span class="hljs-number">0075</span>] position: 3, shift: 0x0, i: 3
-INFO[<span class="hljs-number">0075</span>] position: 1, shift: 0x0, i: 1
-INFO[<span class="hljs-number">0075</span>] position: 0, shift: 0x0, i: 0
-INFO[<span class="hljs-number">0075</span>] position: 2, shift: 0x0, i: 2
-nonce: {{<span class="hljs-number">105638</span>8 0 0 <span class="hljs-number">1424219234</span>} 25 <span class="hljs-number">000000737633</span>a77a39fc5e0a<span class="hljs-number">1855</span>ca2c<span class="hljs-number">441486</span>fef049ac<span class="hljs-number">4069</span>e93dde6e58bb01}
-node id: <span class="hljs-number">000000737633</span>a77a39fc5e0a<span class="hljs-number">1855</span>ca2c<span class="hljs-number">441486</span>fef049ac<span class="hljs-number">4069</span>e93dde6e58bb01
-Generated nonce.
-Generating config file...
-Generated nonce.
+<pre><code class="hljs"><span class="hljs-string">Generating</span> <span class="hljs-string">key</span> <span class="hljs-string">pair...</span>
+<span class="hljs-string">Enter</span> <span class="hljs-string">master</span> <span class="hljs-string">key(press</span> <span class="hljs-string">Enter</span> <span class="hljs-string">for</span> <span class="hljs-attr">default:</span> <span class="hljs-string">""</span><span class="hljs-string">):</span>
+<span class="hljs-string">Private</span> <span class="hljs-string">key</span> <span class="hljs-attr">file:</span> <span class="hljs-string">~/.cql/private.key</span>
+<span class="hljs-string">Public</span> <span class="hljs-string">key's</span> <span class="hljs-attr">hex:</span> <span class="hljs-number">027</span><span class="hljs-string">af3584b8b4736d6ba1e78ace5f0fdefe561f08749c5cac39d23668c3030fe39</span>
+<span class="hljs-string">Generated</span> <span class="hljs-string">key</span> <span class="hljs-string">pair.</span>
+<span class="hljs-string">Generating</span> <span class="hljs-string">nonce...</span>
+<span class="hljs-string">INFO[0075]</span> <span class="hljs-attr">cpu:</span> <span class="hljs-number">4</span>
+<span class="hljs-string">INFO[0075]</span> <span class="hljs-attr">position:</span> <span class="hljs-number">3</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x0</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">3</span>
+<span class="hljs-string">INFO[0075]</span> <span class="hljs-attr">position:</span> <span class="hljs-number">1</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x0</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">1</span>
+<span class="hljs-string">INFO[0075]</span> <span class="hljs-attr">position:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x0</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">0</span>
+<span class="hljs-string">INFO[0075]</span> <span class="hljs-attr">position:</span> <span class="hljs-number">2</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x0</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">2</span>
+<span class="hljs-attr">nonce:</span> <span class="hljs-string">{{1056388</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1424219234</span><span class="hljs-string">}</span> <span class="hljs-number">25</span> <span class="hljs-number">000000737633</span><span class="hljs-string">a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01}</span>
+<span class="hljs-string">node</span> <span class="hljs-attr">id:</span> <span class="hljs-number">000000737633</span><span class="hljs-string">a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01</span>
+<span class="hljs-string">Generated</span> <span class="hljs-string">nonce.</span>
+<span class="hljs-string">Generating</span> <span class="hljs-string">config</span> <span class="hljs-string">file...</span>
+<span class="hljs-string">Generated</span> <span class="hljs-string">nonce.</span>
 </code></pre>
-<p>该命令会为你创建一个 <code>conf</code> 目录：</p>
+<p>该命令会为你在~目录下创建一个 <code>.cql</code> 目录：</p>
 <ul>
-<li><code>conf/private.key</code>: 为您生成的私钥通过主密码加密保存在该文件中，您的账号地址需要使用该文件创建；</li>
-<li><code>conf/config.yaml</code>: 为您生成的配置，cql 可以通过读取该配置来访问 CovenantSQL 测试网。</li>
+<li><code>~/.cql/private.key</code>: 为你生成的私钥通过主密码加密保存在该文件中，你的账号地址需要使用该文件创建；</li>
+<li><code>~/.cql/config.yaml</code>: 为你生成的配置，cql 可以通过读取该配置来访问 CovenantSQL 测试网。</li>
 </ul>
 <p>再运行命令用来生成账号地址（也叫钱包地址、CovenantSQL 地址）：</p>
-<pre><code class="hljs css language-shell">./cql-utils -tool addrgen -private conf/private.key
+<pre><code class="hljs css language-shell">./cql-utils -tool addrgen -private ~/.cql/private.key
 </code></pre>
 <p>输出：</p>
 <pre><code class="hljs">wallet address: <span class="hljs-number">4</span>kcC<span class="hljs-name">g4</span><span class="hljs-symbol">niPjWURuFyT633</span>V<span class="hljs-number">8</span>TF<span class="hljs-number">9</span>Xb<span class="hljs-number">9</span>PvUR<span class="hljs-number">5</span>Xbf<span class="hljs-number">6</span>aTvGxFZkJFQaS<span class="hljs-number">9</span>
 </code></pre>
 <p>您可以在我们的 <a href="https://testnet.covenantsql.io/">CovenantSQL 测试网</a> 输入您生成的钱包地址，通过发微博、推特等社交媒体来帮助我们推广我们的项目，我们会为您的钱包充值。</p>
-<p>使用 cql 命令行工具查询余额：</p>
-<pre><code class="hljs css language-shell">./cql -config conf/config.yaml -get-balance
+<p>使用 cql 命令行工具查询余额(未加 -config 参数时，命令会自动找 ~/.cql 目录的 config.yaml 文件)：</p>
+<pre><code class="hljs css language-shell">./cql -config ~/.cql/config.yaml -get-balance
 </code></pre>
 <p>输出：</p>
 <pre><code class="hljs"><span class="hljs-builtin-name">INFO</span>[0000] stable coin balance is: 100                   <span class="hljs-attribute">caller</span>=<span class="hljs-string">"main.go:246 main.main"</span>
@@ -168,19 +168,19 @@ make start
 <p>确认所有组件都处于 <code>Up</code> 的状态</p>
 <pre><code class="hljs css language-shell">          Name                         Command               State                 Ports
 ------------------------------------------------------------------------------------------------------
-covenantsql_adapter         ./docker-entry.sh                Up      0.0.0.0:11105-&gt;4661/tcp
-covenantsql_bp_0            ./docker-entry.sh                Up      0.0.0.0:11099-&gt;4661/tcp
-covenantsql_bp_1            ./docker-entry.sh                Up      0.0.0.0:11100-&gt;4661/tcp
-covenantsql_bp_2            ./docker-entry.sh                Up      0.0.0.0:11101-&gt;4661/tcp
-covenantsql_explorer        /bin/sh -c MAGIC_DOLLAR='$ ...   Up      0.0.0.0:11108-&gt;80/tcp
-covenantsql_miner_0         ./docker-entry.sh                Up      0.0.0.0:11102-&gt;4661/tcp
-covenantsql_miner_1         ./docker-entry.sh                Up      0.0.0.0:11103-&gt;4661/tcp
-covenantsql_miner_2         ./docker-entry.sh                Up      0.0.0.0:11104-&gt;4661/tcp
-covenantsql_mysql_adapter   ./docker-entry.sh -listen  ...   Up      4661/tcp, 0.0.0.0:11107-&gt;4664/tcp
-covenantsql_observer        ./docker-entry.sh -listen  ...   Up      4661/tcp, 0.0.0.0:11106-&gt;4663/tcp
+covenantsql_bp_0            "./docker-entry.sh"              Up        0.0.0.0:11099-&gt;4661/tcp
+covenantsql_bp_1            "./docker-entry.sh"              Up        0.0.0.0:11100-&gt;4661/tcp
+covenantsql_bp_2            "./docker-entry.sh"              Up        0.0.0.0:11101-&gt;4661/tcp
+covenantsql_miner_0         "./docker-entry.sh"              Up        0.0.0.0:11102-&gt;4661/tcp
+covenantsql_miner_1         "./docker-entry.sh"              Up        0.0.0.0:11103-&gt;4661/tcp
+covenantsql_miner_2         "./docker-entry.sh"              Up        0.0.0.0:11104-&gt;4661/tcp
+covenantsql_adapter         "./docker-entry.sh"              Up        0.0.0.0:11105-&gt;4661/tcp
+covenantsql_mysql_adapter   "./docker-entry.sh -…"           Up        4661/tcp, 0.0.0.0:11107-&gt;4664/tcp
+covenantsql_observer        "./docker-entry.sh"              Up        4661/tcp, 0.0.0.0:11108-&gt;80/tcp
+covenantsql_fn_0            "./docker-entry.sh -…"           Up        4661/tcp, 0.0.0.0:11110-&gt;8546/tcp
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="sqlchain-explorer"></a><a href="#sqlchain-explorer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SQLChain Explorer</h3>
-<p>我们在<code>:11108</code>端口提供了一个 SQLChain 的 Explorer 可以看到 SQL 语句在链上的情况</p>
+<h3><a class="anchor" aria-hidden="true" id="sqlchain-observer"></a><a href="#sqlchain-observer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SQLChain Observer</h3>
+<p>我们在<code>:11108</code>端口提供了一个 SQLChain 的 Observer 可以看到 SQL 语句在链上的情况</p>
 <p>#操作 CovenantSQL</p>
 <h3><a class="anchor" aria-hidden="true" id="创建数据库"></a><a href="#创建数据库" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建数据库</h3>
 <p>使用 <code>cql</code> 命令并使用 <code>create</code> 参数提供所需的数据库节点数量创建数据库实例，例如：创建一个单节点的数据库实例</p>
@@ -387,7 +387,7 @@ co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt;
 <h1><a class="anchor" aria-hidden="true" id="covenantsql-api"></a><a href="#covenantsql-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CovenantSQL API</h1>
 <h1><a class="anchor" aria-hidden="true" id="常见问题解答"></a><a href="#常见问题解答" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>常见问题解答</h1>
 <p>补充</p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/28/2018</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#covenantsql-原理">CovenantSQL 原理</a></li><li><a href="#下载-covenantsql-工具包">下载 CovenantSQL 工具包</a></li><li><a href="#创建并访问-covenantsql-数据库">创建并访问 CovenantSQL 数据库</a><ul class="toc-headings"><li><a href="#使用-cql-命令行工具创建数据库">使用 cql 命令行工具创建数据库</a></li><li><a href="#使用-cql-命令行工具访问数据库">使用 cql 命令行工具访问数据库</a></li><li><a href="#使用数据库驱动访问数据库">使用数据库驱动访问数据库</a></li></ul></li><li><a href="#通过区块浏览器查看您的数据库操作记录">通过区块浏览器查看您的数据库操作记录</a></li><li><a href="#创建账号">创建账号</a></li><li><a href="#部署私有-covenantsql-数据库-搭建私链">部署私有 CovenantSQL 数据库（搭建私链）</a></li><li><a href="#covenantsql-联盟链解决方案">CovenantSQL 联盟链解决方案</a></li><li><a href="#使用-covenantsql-docker-部署">使用 CovenantSQL Docker 部署</a><ul class="toc-headings"><li><a href="#安装-docker">安装 Docker</a></li><li><a href="#启动-docker-容器">启动 Docker 容器</a></li><li><a href="#检查运行状态">检查运行状态</a></li><li><a href="#sqlchain-explorer">SQLChain Explorer</a></li><li><a href="#创建数据库">创建数据库</a></li><li><a href="#访问数据库">访问数据库</a></li></ul></li><li><a href="#golang-使用-covenantsql">Golang 使用 CovenantSQL</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2/2/2019</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#covenantsql-原理">CovenantSQL 原理</a></li><li><a href="#下载-covenantsql-工具包">下载 CovenantSQL 工具包</a></li><li><a href="#创建并访问-covenantsql-数据库">创建并访问 CovenantSQL 数据库</a><ul class="toc-headings"><li><a href="#使用-cql-命令行工具创建数据库">使用 cql 命令行工具创建数据库</a></li><li><a href="#使用-cql-命令行工具访问数据库">使用 cql 命令行工具访问数据库</a></li><li><a href="#使用数据库驱动访问数据库">使用数据库驱动访问数据库</a></li></ul></li><li><a href="#通过区块浏览器查看您的数据库操作记录">通过区块浏览器查看您的数据库操作记录</a></li><li><a href="#创建账号">创建账号</a></li><li><a href="#部署私有-covenantsql-数据库-搭建私链">部署私有 CovenantSQL 数据库（搭建私链）</a></li><li><a href="#covenantsql-联盟链解决方案">CovenantSQL 联盟链解决方案</a></li><li><a href="#使用-covenantsql-docker-部署">使用 CovenantSQL Docker 部署</a><ul class="toc-headings"><li><a href="#安装-docker">安装 Docker</a></li><li><a href="#启动-docker-容器">启动 Docker 容器</a></li><li><a href="#检查运行状态">检查运行状态</a></li><li><a href="#sqlchain-observer">SQLChain Observer</a></li><li><a href="#创建数据库">创建数据库</a></li><li><a href="#访问数据库">访问数据库</a></li></ul></li><li><a href="#golang-使用-covenantsql">Golang 使用 CovenantSQL</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

@@ -10,12 +10,12 @@ $ go get github.com/CovenantSQL/CovenantSQL/cmd/cql-utils
 <h2><a class="anchor" aria-hidden="true" id="初始化一个-covenantsql-客户端"></a><a href="#初始化一个-covenantsql-客户端" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>初始化一个 CovenantSQL 客户端</h2>
 <p>首先需要一个 config 文件和 master key 来初始化。master key 用来加密解密本地密钥对。以下是如何用一个自定义 master key 来生成默认的 config 文件：</p>
 <h3><a class="anchor" aria-hidden="true" id="生成默认的配置文件"></a><a href="#生成默认的配置文件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生成默认的配置文件</h3>
-<p>运行以下 <code>cql-utils</code> 命令，输入 master key（类似密码）来生成本地密钥对。等待几十秒，会在 <code>conf</code> 文件夹中，生成一个私钥文件和一个名为 <code>config.yaml</code> 的配置文件。</p>
-<pre><code class="hljs css language-bash">$ cql-utils -tool confgen -root conf
+<p>运行以下 <code>cql-utils</code> 命令，输入 master key（类似密码）来生成本地密钥对。等待几十秒，会在 <code>~/.cql</code> 文件夹中，生成一个私钥文件和一个名为 <code>config.yaml</code> 的配置文件。</p>
+<pre><code class="hljs css language-bash">./cql-utils -tool confgen
 Generating key pair...
 Enter master key(press Enter <span class="hljs-keyword">for</span> default: <span class="hljs-string">""</span>):
 ⏎
-Private key file: conf/private.key
+Private key file: ~/.cql/private.key
 Public key<span class="hljs-string">'s hex: 025abec9b0072615170f4acf4a2fa1162a13864bb66bc3f140b29f6bf50ceafc75
 Generated key pair.
 Generating nonce...

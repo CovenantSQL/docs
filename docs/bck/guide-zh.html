@@ -30,37 +30,37 @@
 <pre><code class="hljs css language-shell">./cql-utils -tool confgen
 </code></pre>
 <p>输出：</p>
-<pre><code class="hljs">Generating key pair...
-Enter master key(press Enter for default: <span class="hljs-string">""</span>):
-Private key file: conf/private.key
-Public key's hex: 027af<span class="hljs-number">3584</span>b8b<span class="hljs-number">4736</span>d6ba1e78ace5f0fdefe561f<span class="hljs-number">0874</span>9c5cac39d<span class="hljs-number">2366</span>8c<span class="hljs-number">3030</span>fe39
-Generated key pair.
-Generating nonce...
-INFO[<span class="hljs-number">0075</span>] cpu: 4
-INFO[<span class="hljs-number">0075</span>] position: 3, shift: 0x0, i: 3
-INFO[<span class="hljs-number">0075</span>] position: 1, shift: 0x0, i: 1
-INFO[<span class="hljs-number">0075</span>] position: 0, shift: 0x0, i: 0
-INFO[<span class="hljs-number">0075</span>] position: 2, shift: 0x0, i: 2
-nonce: {{<span class="hljs-number">105638</span>8 0 0 <span class="hljs-number">1424219234</span>} 25 <span class="hljs-number">000000737633</span>a77a39fc5e0a<span class="hljs-number">1855</span>ca2c<span class="hljs-number">441486</span>fef049ac<span class="hljs-number">4069</span>e93dde6e58bb01}
-node id: <span class="hljs-number">000000737633</span>a77a39fc5e0a<span class="hljs-number">1855</span>ca2c<span class="hljs-number">441486</span>fef049ac<span class="hljs-number">4069</span>e93dde6e58bb01
-Generated nonce.
-Generating config file...
-Generated nonce.
+<pre><code class="hljs"><span class="hljs-string">Generating</span> <span class="hljs-string">key</span> <span class="hljs-string">pair...</span>
+<span class="hljs-string">Enter</span> <span class="hljs-string">master</span> <span class="hljs-string">key(press</span> <span class="hljs-string">Enter</span> <span class="hljs-string">for</span> <span class="hljs-attr">default:</span> <span class="hljs-string">""</span><span class="hljs-string">):</span>
+<span class="hljs-string">Private</span> <span class="hljs-string">key</span> <span class="hljs-attr">file:</span> <span class="hljs-string">~/.cql/private.key</span>
+<span class="hljs-string">Public</span> <span class="hljs-string">key's</span> <span class="hljs-attr">hex:</span> <span class="hljs-number">027</span><span class="hljs-string">af3584b8b4736d6ba1e78ace5f0fdefe561f08749c5cac39d23668c3030fe39</span>
+<span class="hljs-string">Generated</span> <span class="hljs-string">key</span> <span class="hljs-string">pair.</span>
+<span class="hljs-string">Generating</span> <span class="hljs-string">nonce...</span>
+<span class="hljs-string">INFO[0075]</span> <span class="hljs-attr">cpu:</span> <span class="hljs-number">4</span>
+<span class="hljs-string">INFO[0075]</span> <span class="hljs-attr">position:</span> <span class="hljs-number">3</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x0</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">3</span>
+<span class="hljs-string">INFO[0075]</span> <span class="hljs-attr">position:</span> <span class="hljs-number">1</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x0</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">1</span>
+<span class="hljs-string">INFO[0075]</span> <span class="hljs-attr">position:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x0</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">0</span>
+<span class="hljs-string">INFO[0075]</span> <span class="hljs-attr">position:</span> <span class="hljs-number">2</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x0</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">2</span>
+<span class="hljs-attr">nonce:</span> <span class="hljs-string">{{1056388</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1424219234</span><span class="hljs-string">}</span> <span class="hljs-number">25</span> <span class="hljs-number">000000737633</span><span class="hljs-string">a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01}</span>
+<span class="hljs-string">node</span> <span class="hljs-attr">id:</span> <span class="hljs-number">000000737633</span><span class="hljs-string">a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01</span>
+<span class="hljs-string">Generated</span> <span class="hljs-string">nonce.</span>
+<span class="hljs-string">Generating</span> <span class="hljs-string">config</span> <span class="hljs-string">file...</span>
+<span class="hljs-string">Generated</span> <span class="hljs-string">nonce.</span>
 </code></pre>
-<p>该命令会为你创建一个 <code>conf</code> 目录：</p>
+<p>该命令会为你在~目录下创建一个 <code>.cql</code> 目录：</p>
 <ul>
-<li><code>conf/private.key</code>: 为您生成的私钥通过主密码加密保存在该文件中，您的账号地址需要使用该文件创建；</li>
-<li><code>conf/config.yaml</code>: 为您生成的配置，cql 可以通过读取该配置来访问 CovenantSQL 测试网。</li>
+<li><code>~/.cql/private.key</code>: 为你生成的私钥通过主密码加密保存在该文件中，你的账号地址需要使用该文件创建；</li>
+<li><code>~/.cql/config.yaml</code>: 为你生成的配置，cql 可以通过读取该配置来访问 CovenantSQL 测试网。</li>
 </ul>
 <p>再运行命令用来生成账号地址（也叫钱包地址、CovenantSQL 地址）：</p>
-<pre><code class="hljs css language-shell">./cql-utils -tool addrgen -private conf/private.key
+<pre><code class="hljs css language-shell">./cql-utils -tool addrgen -private ~/.cql/private.key
 </code></pre>
 <p>输出：</p>
 <pre><code class="hljs">wallet address: <span class="hljs-number">4</span>kcC<span class="hljs-name">g4</span><span class="hljs-symbol">niPjWURuFyT633</span>V<span class="hljs-number">8</span>TF<span class="hljs-number">9</span>Xb<span class="hljs-number">9</span>PvUR<span class="hljs-number">5</span>Xbf<span class="hljs-number">6</span>aTvGxFZkJFQaS<span class="hljs-number">9</span>
 </code></pre>
 <p>您可以在我们的 <a href="https://testnet.covenantsql.io/">CovenantSQL 测试网</a> 输入您生成的钱包地址，通过发微博、推特等社交媒体来帮助我们推广我们的项目，我们会为您的钱包充值。</p>
-<p>使用 cql 命令行工具查询余额：</p>
-<pre><code class="hljs css language-shell">./cql -config conf/config.yaml -get-balance
+<p>使用 cql 命令行工具查询余额(未加 -config 参数时，命令会自动找 ~/.cql 目录的 config.yaml 文件)：</p>
+<pre><code class="hljs css language-shell">./cql -config ~/.cql/config.yaml -get-balance
 </code></pre>
 <p>输出：</p>
 <pre><code class="hljs"><span class="hljs-builtin-name">INFO</span>[0000] stable coin balance is: 100                   <span class="hljs-attribute">caller</span>=<span class="hljs-string">"main.go:246 main.main"</span>
