@@ -94,7 +94,7 @@ wallet address: 4kcCg4niPjWURuFyT633V8TF9Xb9PvUR5Xbf6aTvGxFZkJFQaS9
 
 您可以在我们的 [CovenantSQL 测试网](https://testnet.covenantsql.io/) 输入您生成的钱包地址，通过发微博、推特等社交媒体来帮助我们推广我们的项目，我们会为您的钱包充值。
 
-使用 cql 命令行工具查询余额(未加-config参数时，命令会自动找~/.cql目录的config.yaml文件)：
+使用 cql 命令行工具查询余额(未加 -config 参数时，命令会自动找 ~/.cql 目录的 config.yaml 文件)：
 
 ```shell
 ./cql -config ~/.cql/config.yaml -get-balance
