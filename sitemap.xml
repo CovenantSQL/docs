@@ -15,9 +15,10 @@
 <url> <loc>http://developers.covenantsql.io/docs/next/bck/guide-zh</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/next/bck/guide-zh" /> </url>
 <url> <loc>http://developers.covenantsql.io/docs/next/cql</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/next/cql" /> </url>
 <url> <loc>http://developers.covenantsql.io/docs/next/deployment</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/next/deployment" /> </url>
-<url> <loc>http://developers.covenantsql.io/docs/next/development</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/next/development" /> </url>
 <url> <loc>http://developers.covenantsql.io/docs/next/intro</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/next/intro" /> </url>
+<url> <loc>http://developers.covenantsql.io/docs/next/native</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/next/native" /> </url>
 <url> <loc>http://developers.covenantsql.io/docs/next/nav</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/next/nav" /> </url>
+<url> <loc>http://developers.covenantsql.io/docs/next/proxy</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/next/proxy" /> </url>
 <url> <loc>http://developers.covenantsql.io/docs/next/qna</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/next/qna" /> </url>
 <url> <loc>http://developers.covenantsql.io/docs/next/quandl</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/next/quandl" /> </url>
 <url> <loc>http://developers.covenantsql.io/docs/next/quickstart</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/next/quickstart" /> </url>
@@ -40,4 +41,6 @@
 <url> <loc>http://developers.covenantsql.io/docs/quickstart</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/quickstart" /> </url>
 <url> <loc>http://developers.covenantsql.io/docs/usecase</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/usecase" /> </url>
 <url> <loc>http://developers.covenantsql.io/docs/quandl</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/quandl" /> </url>
+<url> <loc>http://developers.covenantsql.io/docs/native</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/native" /> </url>
+<url> <loc>http://developers.covenantsql.io/docs/proxy</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://developers.covenantsql.io/docs/proxy" /> </url>
 </urlset>
