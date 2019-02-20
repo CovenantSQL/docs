@@ -1,9 +1,9 @@
 ---
-id: development
-title: 📦 CovenantSQL SDK
+id: native
+title: 📦 CovenantSQL Native SDK
 ---
 
-## Golang 使用 CovenantSQL
+## 用 Golang 使用 CovenantSQL
 
 ### 简介
 

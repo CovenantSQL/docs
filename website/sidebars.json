@@ -9,7 +9,8 @@
       "deployment"
     ],
     "开发者": [
-      "development",
+      "native",
+      "proxy",
       "api"
     ],
     "工具": [
