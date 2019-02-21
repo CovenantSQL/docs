@@ -33,8 +33,8 @@ original_id: quickstart
 
 ```bash
 mkdir conf
-wget https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/config.yaml -O conf/config.yaml
-wget https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/private.key -O conf/private.key
+wget https://git.io/fhFZe -O conf/config.yaml
+wget https://git.io/fhFZv -O conf/private.key
 chmod 600 conf/private.key
 ```
 

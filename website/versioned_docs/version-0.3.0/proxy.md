@@ -21,14 +21,23 @@ original_id: adapter
 ```bash
 export adapter_addr=0.0.0.0:11105
 docker rm -f cql-adapter
-docker run -itd --env COVENANT_ROLE=adapter --env COVENANT_CONF=/app/config.yaml -v ~/.cql/config.yaml:/app/config.yaml -v ~/.cql/private.key:/app/private.key --name cql-adapter -p $adapter_addr:4661 covenantsql/covenantsql:testnet -listen 0.0.0.0:4661
+docker run -itd \
+	--env COVENANT_ROLE=adapter --env COVENANT_CONF=/app/config.yaml \
+	-v ~/.cql/config.yaml:/app/config.yaml \
+	-v ~/.cql/private.key:/app/private.key \
+	--name cql-adapter -p $adapter_addr:4661 \ 
+	covenantsql/covenantsql:testnet -listen 0.0.0.0:4661
 ```
 
 ### 创建数据库
 使用 `cql` 命令并使用 `create` 参数提供所需的数据库节点数量创建数据库实例，例如：创建一个单节点的数据库实例
 
 ```shell
-docker run -it --rm -v ~/.cql/config.yaml:/app/config.yaml -v ~/.cql/private.key:/app/private.key --entrypoint /app/cql covenantsql/covenantsql:testnet  -config /app/config.yaml -create 1
+docker run -it --rm \
+	-v ~/.cql/config.yaml:/app/config.yaml \
+	-v ~/.cql/private.key:/app/private.key \
+	--entrypoint /app/cql covenantsql/covenantsql:testnet \
+	-config /app/config.yaml -create 1
 ```
 
 命令会返回创建的数据库实例的连接串（DSN）
