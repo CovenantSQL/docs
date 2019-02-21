@@ -1,5 +1,5 @@
 ---
-id: Adapter
+id: adapter
 title: 📦 CovenantSQL Adapter SDK
 ---
 
