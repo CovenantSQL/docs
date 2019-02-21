@@ -36,7 +36,7 @@
 <p>下面的命令将使用<code>~/.cql/config.yaml</code> 和 <code>~/.cql/private.key</code> 启动 Adapter，并把端口映射在 <code>0.0.0.0:11105</code></p>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">export</span> adapter_addr=0.0.0.0:11105
 docker rm -f cql-adapter
-docker run -itd --env COVENANT_ROLE=adapter --env COVENANT_CONF=/app/config.yaml -v ~/.cql/config.yaml:/app/config.yaml -v ~/.cql/private.key:/app/private.key --name cql-adapter -p <span class="hljs-variable">$adapter_addr</span>:4661 covenantsql/covenantsql:testnet
+docker run -itd --env COVENANT_ROLE=adapter --env COVENANT_CONF=/app/config.yaml -v ~/.cql/config.yaml:/app/config.yaml -v ~/.cql/private.key:/app/private.key --name cql-adapter -p <span class="hljs-variable">$adapter_addr</span>:4661 covenantsql/covenantsql:testnet -listen 0.0.0.0:4661
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="创建数据库"></a><a href="#创建数据库" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建数据库</h3>
 <p>使用 <code>cql</code> 命令并使用 <code>create</code> 参数提供所需的数据库节点数量创建数据库实例，例如：创建一个单节点的数据库实例</p>
@@ -59,7 +59,7 @@ docker run -itd --env COVENANT_ROLE=adapter --env COVENANT_CONF=/app/config.yaml
 <p>在运行本地 Adapter 之后，将 Adapter 的 endpoint 填入 <code>node-covenantsql</code> 的 config 之中：</p>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> config = {
     <span class="hljs-attr">endpoint</span>: <span class="hljs-string">'localhost:11105'</span>, <span class="hljs-comment">// local testnet endpoint without https</span>
-    database: <span class="hljs-string">`<span class="hljs-subst">${DB_ID}</span>`</span>, <span class="hljs-comment">// your DB id created by `cql` tools</span>
+    database: <span class="hljs-string">`<span class="hljs-subst">${DSN}</span>`</span>, <span class="hljs-comment">// your DB id created by `cql` tools</span>
     bypassPem: <span class="hljs-literal">true</span> <span class="hljs-comment">// bypass https config</span>
 }
 </code></pre>
