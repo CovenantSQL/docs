@@ -10,7 +10,7 @@
     ],
     "开发者": [
       "version-0.3.0-native",
-      "version-0.3.0-proxy",
+      "version-0.3.0-adapter",
       "version-0.3.0-api"
     ],
     "工具": [

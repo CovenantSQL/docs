@@ -1,7 +1,7 @@
 ---
-id: version-0.3.0-Adapter
+id: version-0.3.0-adapter
 title: 📦 CovenantSQL Adapter SDK
-original_id: Adapter
+original_id: adapter
 ---
 
 # 通过 Adapter 使用 CovenantSQL
