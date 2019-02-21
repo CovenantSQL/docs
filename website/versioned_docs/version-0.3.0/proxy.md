@@ -30,7 +30,7 @@ docker run -itd --env COVENANT_ROLE=adapter --env COVENANT_CONF=/app/config.yaml
 使用 `cql` 命令并使用 `create` 参数提供所需的数据库节点数量创建数据库实例，例如：创建一个单节点的数据库实例
 
 ```shell
-docker run -it --rm -v ~/.cql/config.yaml:/app/config.yaml -v ~/.cql/private.key:/app/private.key --entrypoint /app/cql  covenantsql/covenantsql  -config /app/config.yaml -create 1
+docker run -it --rm -v ~/.cql/config.yaml:/app/config.yaml -v ~/.cql/private.key:/app/private.key --entrypoint /app/cql covenantsql/covenantsql:testnet  -config /app/config.yaml -create 1
 ```
 
 命令会返回创建的数据库实例的连接串（DSN）
