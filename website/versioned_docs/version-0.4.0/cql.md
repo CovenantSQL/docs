@@ -107,6 +107,8 @@ INFO[0000] Wave balance is: 9999999999999000000
 
 ## 数据库权限管理
 
+#### 访问权限
+
 CovenantSQL 数据库有三类库级别权限：
 
 - `Admin`
@@ -114,7 +116,7 @@ CovenantSQL 数据库有三类库级别权限：
 - `Read`
 - `Void`
 
-其中，`Admin` 可以赋予其他钱包地址数据库的权限（`Admin`、`Write` 或 `Read`）；`Admin` 和 `Write` 可以对数据库进行写操作（`CREATE`, `INSERT` 等）；`Admin`, `Write` 和 `Read` 可以对数据库进行读操作（`SHOW`, `SELECT` 等）；`Void` 是一个特殊的权限，当 `Admin` 想取消某个地址的权限时可以将该地址的权限设置为 `Void`，这样该地址将无法继续读写数据库。创建数据库的地址的权限默认为 `Admin`。若 `Admin` 需要赋予他人权限请使用 `cql -update-perm` 并以 `json` 格式的权限信息为参数：
+其中，`Admin` 可以赋予其他钱包地址数据库的权限（`Admin`、`Write` 或 `Read`）；`Admin` 和 `Write` 可以对数据库进行写操作（`CREATE`, `INSERT` 等）；`Admin` 和 `Read` 可以对数据库进行读操作（`SHOW`, `SELECT` 等）；如果需要设置用户有读写权限但是不能修改其他用户或自己的权限，可以将权限设置为 `Read,Write`；`Void` 是一个特殊的权限，当 `Admin` 想取消某个地址的权限时可以将该地址的权限设置为 `Void`，这样该地址将无法继续读写数据库。创建数据库的地址的权限默认为 `Admin`。若 `Admin` 需要赋予他人权限请使用 `cql -update-perm` 并以 `json` 格式的权限信息为参数：
 
 ```json
 {
@@ -157,4 +159,55 @@ INFO[0000] succeed in sending transaction to CovenantSQL
 ```bash
 ./cql -config new_user_config/config.yaml -transfer '{"addr":"4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","amount":"90000000 Particle"}'
 ```
+
+#### SQL 白名单
+
+CovenantSQL 还支持给用户设置可执行的 SQL 白名单，可以限定用户以指定的 SQL Pattern 和可配的 Query 参数来访问数据库。在指定语句白名单的功能支持下，可以提高数据库的安全性，避免被单语句拖库或执行不正确的删除货更新操作。
+
+增加白名单：
+
+```shell
+./cql -config conf/config.yaml -update-perm '
+{
+    "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
+    "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
+    "perm": {
+        "patterns": [
+            "SELECT COUNT(1) FROM a",
+            "SELECT * FROM a WHERE id = ? LIMIT 1"
+        ],
+        "role": "Read"
+    }
+}
+'
+```
+
+*白名单功能是基于数据库权限的一个扩展，且当前不支持增量的白名单更新，在设置白名单时需要写明所有授权该用户使用的语句，以及该用户对数据库的访问权限*
+
+设置完成后，用户将只能执行 `SELECT COUNT(1) FROM a` 或 `SELECT * FROM a WHERE id = ? LIMIT 1` 的语句（语句内容严格匹配，使用 `select COUNT(1) FROM a` 或 `SELECT COUNT(1) FROM        a` 也不可以）；其中 第二条语句支持用户提供一个参数，以支持查询不同记录的目的。最终可以实现限定用户访问 `表 a`，并一次只能查询 `表 a` 中的一条数据或查询 `表 a`的 总数据量。
+
+去掉白名单限制：
+
+```shell
+./cql -config conf/config.yaml -update-perm '
+{
+    "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
+    "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
+    "perm": {
+        "patterns": nil,
+        "role": "Read"
+    }
+}
+'
+# or
+./cql -config conf/config.yaml -update-perm '
+{
+    "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
+    "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
+    "perm": "Read"
+}
+'
+```
+
+将 `pattern` 设置为 `nil` 或直接设置用户权限，都可以将用户的白名单限制去掉，设置回可以查询所有内容的读权限。
 
