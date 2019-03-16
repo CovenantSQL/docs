@@ -134,7 +134,7 @@ Generated nonce.
 wallet address: 4kcCg4niPjWURuFyT633V8TF9Xb9PvUR5Xbf6aTvGxFZkJFQaS9
 ```
 
-你可以在我们的 [CovenantSQL 测试网](https://testnet.covenantsql.io/) 输入你生成的钱包地址，通过发微博、推特等社交媒体来帮助我们推广我们的项目，我们会为你的钱包充值。有任何问题请来这里讨论：[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/CovenantSQL/CovenantSQL)
+你可以在这里回复上面得到的钱包地址 [GitHub Issue](https://github.com/CovenantSQL/CovenantSQL/issues/283)，我们会为你的钱包充值。
 
 使用 cql 命令行工具查询余额(未加 -config 参数时，命令会自动找 ~/.cql 目录的 config.yaml 文件)：
 
