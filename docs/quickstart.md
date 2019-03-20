@@ -11,8 +11,8 @@ title: 🌏 TestNet 快速开始
 
 例如，您使用的是：
 
-- MacOS 平台请下载：[**CovenantSQL-v0.4.0.osx-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.4.0/CovenantSQL-v0.4.0.osx-amd64.tar.gz)
-- Linux 平台请下载：[**CovenantSQL-v0.4.0.linux-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.4.0/CovenantSQL-v0.4.0.linux-amd64.tar.gz)
+- MacOS 平台请下载：[**CovenantSQL-v0.5.0.osx-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.5.0/CovenantSQL-v0.5.0.osx-amd64.tar.gz)
+- Linux 平台请下载：[**CovenantSQL-v0.5.0.linux-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.5.0/CovenantSQL-v0.5.0.linux-amd64.tar.gz)
 - Windows 平台我们稍后发布，有需求请戳这里：[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/CovenantSQL/CovenantSQL)
 
 解压之后，你将得到以下命令行工具，包括：`cql`、`cql-utils` 等。
@@ -26,9 +26,9 @@ title: 🌏 TestNet 快速开始
 
 ### 测试网快速接入
 
-目前，我们已经发布了测试网 v0.4.0，供大家进行原理性验证和体验。你可以选在使用公共的测试账号快速进行接入测试。
+目前，我们已经发布了测试网 v0.5.0，供大家进行原理性验证和体验。你可以选在使用公共的测试账号快速进行接入测试。
 
-测试账号的配置文件和私钥：[config.yaml](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/config.yaml)、[private.key](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/private.key) ，或者使用以下命令：
+测试账号的配置文件和私钥：[config.yaml](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/config.yaml)、[private.key](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/private.key) (密码为空)，或者使用以下命令：
 
 ```bash
 mkdir conf
@@ -48,10 +48,10 @@ chmod 600 conf/private.key
 ### 创建数据库
 
 ```shell
-./cql -config conf/config.yaml -create 1
+./cql create -config conf/config.yaml '{"node":1}'
 ```
 
-输出：
+在命令行提示中输入master key的密码，之后控制台会输出：
 
 ```
 covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
@@ -70,10 +70,10 @@ covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ### 访问数据库
 
 ```shell
-./cql -config conf/config.yaml -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+./cql console -config conf/config.yaml -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ```
 
-连接上数据库后，你可以按你操作数据库的习惯来操作 CovenantSQL 上的数据库。比如执行 `CREATE TABLE` 创建表、`SELECT` 查询数据等操作。
+在控制台中根据提示输入master key的密码。连接上数据库后，你可以按你操作数据库的习惯来操作 CovenantSQL 上的数据库。比如执行 `CREATE TABLE` 创建表、`SELECT` 查询数据等操作。
 
 ### 数据库 SDK
 
@@ -138,7 +138,7 @@ wallet address: 4kcCg4niPjWURuFyT633V8TF9Xb9PvUR5Xbf6aTvGxFZkJFQaS9
 使用 cql 命令行工具查询余额(未加 -config 参数时，命令会自动找 ~/.cql 目录的 config.yaml 文件)：
 
 ```shell
-./cql -config ~/.cql/config.yaml -get-balance
+./cql balance -config ~/.cql/config.yaml
 ```
 
 输出：
