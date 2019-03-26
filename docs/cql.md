@@ -8,7 +8,7 @@ title: 🖥️ CQL 命令行工具
 本文将介绍如何使用 `cql` 进行查询、转账和数据库权限管理。在使用 `cql` 前请先确认已接入 [CovenantSQL TestNet](quickstart) 或者在本地使用 [Docker 一键部署](development)的网络。
 
 ### 配置文件
-`cql`命令依赖配置文件`config.yaml`和私钥文件`private.key`。这两个文件如果使用cql-utils工具生成，会默认放在`~/.cql/`目录下。在此目录下时，`cql`所有子命令的`-config`参数均可以省略不填写。
+`cql`命令依赖配置文件`config.yaml`和私钥文件`private.key`。这两个文件如果使用`cql generate config`命令生成，会默认放在`~/.cql/`目录下。在此目录下时，`cql`所有子命令的`-config`参数均可以省略不填写。
 
 ### Master key
 `private.key`文件在生成时需要输入密码，`cql`命令会自动请求输入master key (密码)。
