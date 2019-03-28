@@ -123,7 +123,7 @@ Generated nonce.
 再运行命令用来生成账号地址（也叫钱包地址、CovenantSQL 地址）：
 
 ```shell
-./cql generate wallet
+./cql wallet
 ```
 
 输出：
@@ -134,10 +134,10 @@ wallet address: 4kcCg4niPjWURuFyT633V8TF9Xb9PvUR5Xbf6aTvGxFZkJFQaS9
 
 你可以在这里回复上面得到的钱包地址 [GitHub Issue](https://github.com/CovenantSQL/CovenantSQL/issues/283)，我们会为你的钱包充值。
 
-使用 cql 命令行工具查询余额(未加 -config 参数时，命令会自动找 ~/.cql 目录的 config.yaml 文件)：
+使用 cql 命令行工具查询余额(可以添加 -config 参数，指定其他的 config.yaml 所在目录)：
 
 ```shell
-./cql balance -config ~/.cql/config.yaml
+./cql wallet -balance all
 ```
 
 输出：

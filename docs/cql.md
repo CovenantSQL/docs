@@ -16,7 +16,7 @@ title: 🖥️ CQL 命令行工具
 
 ## 查询余额
 
-查询余额有两个命令：`cql balance` 和 `cql balance -token <token_type>`。其中不加`-token`参数将返回用户账户中 `Particle` 与 `Wave` 的数量，`-token <token_type>` 将返回用户账户中特定 `token_type` 的 token 数量。目前系统支持的 `token_type` 有：
+查询余额的命令是：`cql wallet -balance <token_type>`。其中`token_type`设置为`all`时将返回用户账户中 `Particle` 与 `Wave` 的数量，其他关键词将返回用户账户中特定 `token_type` 的 token 数量。目前系统支持的 `token_type` 有：
 
 - `Particle`
 - `Wave`
@@ -27,7 +27,7 @@ title: 🖥️ CQL 命令行工具
 查看默认余额：
 
 ```bash
-./cql balance -config conf/config.yaml
+./cql wallet -balance all -config conf/config.yaml
 ```
 
 输出：
@@ -40,7 +40,7 @@ INFO[0000] Wave balance is: 10000000000000000000
 查看 Particle 余额：
 
 ```bash
-./cql balance -config conf/config.yaml -token Particle
+./cql wallet -balance Particle -config conf/config.yaml
 ```
 
 输出：
@@ -52,7 +52,7 @@ INFO[0000] Particle balance is: 10000000000000000000
 查看 Bitcoin 余额：
 
 ```bash
-./cql balance -config conf/config.yaml -token Bitcoin
+./cql wallet -balance Bitcoin -config conf/config.yaml
 ```
 
 输出：
@@ -99,7 +99,7 @@ INFO[0000] succeed in sending transaction to CovenantSQL
 查看余额： 
 
 ```bash
-./cql balance -config conf/config.yaml
+./cql wallet -balance all -config conf/config.yaml
 ```
 
 输出：
@@ -109,7 +109,7 @@ INFO[0000] Particle balance is: 9999999999999000000
 INFO[0000] Wave balance is: 9999999999999000000
 ```
 
-注意，`succeed in sending transaction to CovenantSQL` 只说明交易已成功发送至主网，交易能否成功、何时成功需要通过 `cql balance` 或者 `cql balance -token <token_type>` 确定。
+注意，`succeed in sending transaction to CovenantSQL` 只说明交易已成功发送至主网，交易能否成功、何时成功需要通过 `cql wallet -balance <token_type>` 确定。
 
 ## 数据库权限管理
 
