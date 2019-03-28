@@ -5,7 +5,7 @@ title: 🖥️ CQL 命令行工具
 
 ## 简介
 
-本文将介绍如何使用 `cql` 进行查询、转账和数据库权限管理。在使用 `cql` 前请先确认已接入 [CovenantSQL TestNet](quickstart) 或者在本地使用 [Docker 一键部署](development)的网络。
+本文将介绍如何使用 `cql` 进行查询、转账和数据库权限管理。在使用 `cql` 前请先确认已接入 [CovenantSQL TestNet](quickstart) 或者在本地使用 [Docker 一键部署](development)的网络, 并将 `cql` 可执行文件保存在 `PATH` 目录。
 
 ### 配置文件
 `cql`命令依赖配置文件`config.yaml`和私钥文件`private.key`。这两个文件如果使用`cql generate config`命令生成，会默认放在`~/.cql/`目录下。在此目录下时，`cql`所有子命令的`-config`参数均可以省略不填写。
@@ -27,7 +27,7 @@ title: 🖥️ CQL 命令行工具
 查看默认余额：
 
 ```bash
-./cql wallet -balance all -config conf/config.yaml
+cql wallet -balance all -config conf/config.yaml
 ```
 
 输出：
@@ -40,7 +40,7 @@ INFO[0000] Wave balance is: 10000000000000000000
 查看 Particle 余额：
 
 ```bash
-./cql wallet -balance Particle -config conf/config.yaml
+cql wallet -balance Particle -config conf/config.yaml
 ```
 
 输出：
@@ -52,7 +52,7 @@ INFO[0000] Particle balance is: 10000000000000000000
 查看 Bitcoin 余额：
 
 ```bash
-./cql wallet -balance Bitcoin -config conf/config.yaml
+cql wallet -balance Bitcoin -config conf/config.yaml
 ```
 
 输出：
@@ -77,7 +77,7 @@ INFO[0000] Bitcoin balance is: 0
 转账 Particle：
 
 ```bash
-./cql transfer -config conf/config.yaml '{"addr":"011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6","amount":"1000000 Particle"}'
+cql transfer -config conf/config.yaml '{"addr":"011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6","amount":"1000000 Particle"}'
 ```
 
 输出：
@@ -89,7 +89,7 @@ INFO[0000] succeed in sending transaction to CovenantSQL
 转账 Wave：
 
 ```bash
-./cql transfer -config conf/config.yaml '{"addr":"011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6","amount":"1000000 Wave"}'
+cql transfer -config conf/config.yaml '{"addr":"011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6","amount":"1000000 Wave"}'
 ```
 
 ```
@@ -99,7 +99,7 @@ INFO[0000] succeed in sending transaction to CovenantSQL
 查看余额： 
 
 ```bash
-./cql wallet -balance all -config conf/config.yaml
+cql wallet -balance all -config conf/config.yaml
 ```
 
 输出：
@@ -135,7 +135,7 @@ CovenantSQL 数据库有三类库级别权限：
 增加写权限：
 
 ```bash
-./cql grant -config conf/config.yaml '{"chain":"4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","user":"011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6","perm":"Write"}'
+cql grant -config conf/config.yaml '{"chain":"4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","user":"011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6","perm":"Write"}'
 ```
 
 输出：
@@ -147,7 +147,7 @@ INFO[0000] succeed in sending transaction to CovenantSQL
 吊销权限：
 
 ```bash
-./cql grant -config conf/config.yaml '{"chain":"4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6","perm":"Void"}'
+cql grant -config conf/config.yaml '{"chain":"4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6","perm":"Void"}'
 ```
 
 输出：
@@ -163,7 +163,7 @@ INFO[0000] succeed in sending transaction to CovenantSQL
 使用新账户给数据库充值：
 
 ```bash
-./cql transfer -config new_user_config/config.yaml '{"addr":"4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","amount":"90000000 Particle"}'
+cql transfer -config new_user_config/config.yaml '{"addr":"4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","amount":"90000000 Particle"}'
 ```
 
 #### SQL 白名单
@@ -173,7 +173,7 @@ CovenantSQL 还支持给用户设置可执行的 SQL 白名单，可以限定用
 增加白名单：
 
 ```shell
-./cql -config conf/config.yaml -update-perm '
+cql -config conf/config.yaml -update-perm '
 {
     "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
     "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
@@ -195,7 +195,7 @@ CovenantSQL 还支持给用户设置可执行的 SQL 白名单，可以限定用
 去掉白名单限制：
 
 ```shell
-./cql -config conf/config.yaml -update-perm '
+cql -config conf/config.yaml -update-perm '
 {
     "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
     "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
@@ -206,7 +206,7 @@ CovenantSQL 还支持给用户设置可执行的 SQL 白名单，可以限定用
 }
 '
 # or
-./cql -config conf/config.yaml -update-perm '
+cql -config conf/config.yaml -update-perm '
 {
     "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
     "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",

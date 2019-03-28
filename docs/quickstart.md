@@ -15,7 +15,7 @@ title: 🌏 TestNet 快速开始
 - Linux 平台请下载：[**CovenantSQL-v0.5.0.linux-amd64.tar.gz**](https://github.com/CovenantSQL/CovenantSQL/releases/download/v0.5.0/CovenantSQL-v0.5.0.linux-amd64.tar.gz)
 - Windows 平台我们稍后发布，有需求请戳这里：[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/CovenantSQL/CovenantSQL)
 
-解压之后，你将得到以下命令行工具，包括：`cql`、`cql-minerd` 等。
+解压之后，你将得到以下命令行工具，包括：`cql`、`cql-minerd` 等, 请将此文件移动到 `PATH` 目录。
 
 | 工具名     | 介绍                                                                                        |
 | ---------- | ----------------------------------------------------------------------                      |
@@ -47,7 +47,7 @@ chmod 600 conf/private.key
 ### 创建数据库
 
 ```shell
-./cql create -config conf/config.yaml '{"node":1}'
+cql create -config conf/config.yaml '{"node":1}'
 ```
 
 在命令行提示中输入master key的密码，之后控制台会输出：
@@ -69,7 +69,7 @@ covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ### 访问数据库
 
 ```shell
-./cql console -config conf/config.yaml -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+cql console -config conf/config.yaml -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ```
 
 在控制台中根据提示输入master key的密码。连接上数据库后，你可以按你操作数据库的习惯来操作 CovenantSQL 上的数据库。比如执行 `CREATE TABLE` 创建表、`SELECT` 查询数据等操作。
@@ -91,7 +91,7 @@ CovenantSQL 有一个特性是**其操作记录是不可变且可跟踪的**，�
 我们的测试网支持你创建自己的的账号，并在自己的账号下创建数据库。通过以下的命令创建账号（会询问设置主密码，测试期间建议直接回车留空）：
 
 ```shell
-./cql generate config
+cql generate config
 ```
 
 输出：
@@ -123,7 +123,7 @@ Generated nonce.
 再运行命令用来生成账号地址（也叫钱包地址、CovenantSQL 地址）：
 
 ```shell
-./cql wallet
+cql wallet
 ```
 
 输出：
@@ -137,7 +137,7 @@ wallet address: 4kcCg4niPjWURuFyT633V8TF9Xb9PvUR5Xbf6aTvGxFZkJFQaS9
 使用 cql 命令行工具查询余额(可以添加 -config 参数，指定其他的 config.yaml 所在目录)：
 
 ```shell
-./cql wallet -balance all
+cql wallet -balance all
 ```
 
 输出：
