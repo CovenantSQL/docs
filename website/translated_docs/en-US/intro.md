@@ -32,13 +32,13 @@ title: CovenantSQL 介绍
             alt="Join the chat at https://gitter.im/CovenantSQL/CovenantSQL"></a>
 </p>
 
-CovenantSQL 是应用区块链技术构建的去中心化 SQL 云数据库，
+CovenantSQL is a GDPR-compliant SQL database running on Open Internet without central coordination.
 
-结合了区块链、共享经济、分布式数据库的优势，保障了用户隐私及对数据的所有权。
+Combining the advantages of the blockchain, sharing economy and distributed database, the user's privacy and ownership of data are guaranteed.
 
-CovenantSQL 具备以下特点：
+CovenantSQL has the following features：
 
-* **SQL接口**: 支持 SQL-92 标准，传统 App 几乎0修改即可数据上链
+* **SQL Interface**: Supports SQL-92 standard, traditional App almost no modifications can be linked to data.
 * **去中心化**: 基于独有的高效拜占庭容错共识算法 Kayak 实现的去中心化结构
 * **不可篡改**: CovenantSQL 中的 Query 历史记录是可追溯的
 * **隐私**: 如果 Bitcoin 是人们的私人钱包，那么 CovenantSQL 就是是人们的去中心化的私密数据库
