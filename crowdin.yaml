@@ -1,5 +1,5 @@
-project_identifier_env: CROWDIN_DOCUSAURUS_PROJECT_ID
-api_key_env: CROWDIN_DOCUSAURUS_API_KEY
+project_identifier: covenantsql
+api_key: be9563cce4c905a7f6ba4091194ff9a6
 base_path: "./"
 preserve_hierarchy: true
 
