@@ -1,53 +1,9 @@
 ---
-id: adapter
-title: 📦 CovenantSQL Adapter SDK
+id: driver_js
+title: 📦 Javascript
 ---
 
-# 通过 Adapter 使用 CovenantSQL
-
-## 简介
-
-`CovenantSQL` 提供了 HTTP/HTTPS Adapter，类似于云数据库， 开发者可以直接用 HTTP 的形式使用 CovenantSQL。
-
-## 安装和使用
-
-首先，需要确认我们有一个可用的配置和公私钥对，通常我们默认的配置和公私钥对的存储位置为 `~/.cql/` 目录。生成或获取请参考 [QuickStart#创建账号](./quickstart#创建账号)
-
-### Docker 运行 Adapter
-
-下面的命令将使用`~/.cql/config.yaml` 和 `~/.cql/private.key` 启动 Adapter，并把端口映射在 `0.0.0.0:11105`
-
-```bash
-export adapter_addr=0.0.0.0:11105
-docker rm -f cql-adapter
-docker run -itd \
-	--env COVENANT_ROLE=adapter --env COVENANT_CONF=/app/config.yaml \
-	-v ~/.cql/config.yaml:/app/config.yaml \
-	-v ~/.cql/private.key:/app/private.key \
-	--name cql-adapter -p $adapter_addr:4661 \ 
-	covenantsql/covenantsql:testnet -listen 0.0.0.0:4661
-```
-
-### 创建数据库
-使用 `cql` 命令并使用 `create` 参数提供所需的数据库节点数量创建数据库实例，例如：创建一个单节点的数据库实例
-
-```shell
-docker run -it --rm \
-	-v ~/.cql/config.yaml:/app/config.yaml \
-	-v ~/.cql/private.key:/app/private.key \
-	--entrypoint /app/cql covenantsql/covenantsql:testnet \
-	-config /app/config.yaml -create 1
-```
-
-命令会返回创建的数据库实例的连接串（DSN）
-
-```shell
-covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
-```
-
-## 主流语言 Driver 的使用
-
-### NodeJS
+## 用 NodeJS 使用 CovenantSQL
 
 NodeJS 开发者可以通过 [node-covenantsql](https://github.com/CovenantSQL/node-covenantsql) 来与 CovenantSQL Adapter 进行交互。
 
@@ -64,6 +20,8 @@ yarn add node-covenantsql
 ```
 
 #### 使用
+
+使用前需要 [部署 Adapter 工具](./adapter)
 
 在运行本地 Adapter 之后，将 Adapter 的 endpoint 填入 `node-covenantsql` 的 config 之中：
 
@@ -88,7 +46,7 @@ cql.createConnection(config).then(async (connection: any) => {
     // read
     const data1 = await connection.query("select ? + ?", [2.1, 3.2]);
     console.log(data1);
-        
+
     // write
     const createTableSQL = `
     CREATE TABLE IF NOT EXISTS contacts (\

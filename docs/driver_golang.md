@@ -1,6 +1,6 @@
 ---
-id: native
-title: 📦 CovenantSQL Native SDK
+id: driver_golang
+title: 📦 Golang
 ---
 
 ## 用 Golang 使用 CovenantSQL

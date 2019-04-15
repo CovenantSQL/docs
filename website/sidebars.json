@@ -9,12 +9,14 @@
       "deployment"
     ],
     "开发者": [
-      "native",
-      "adapter",
-      "api"
+      "driver_golang",
+      "driver_java",
+      "driver_python",
+      "driver_js"
     ],
     "工具": [
-      "cql"
+      "cql",
+      "adapter"
     ],
     "使用案例": [
       "quandl"
