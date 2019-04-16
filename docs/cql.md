@@ -47,7 +47,7 @@ cql generate config
 
 > 目前默认生成的配置文件指向测试网，还需要提供生成指向 Docker 一键部署网络的配置方法。
 
-指定目录的参数详见[完整参数说明](### 子命令 `generate` 完整参数)。
+指定目录的参数详见[完整参数说明](#子命令-`generate`-完整参数)。
 
 输出：
 
@@ -92,7 +92,7 @@ Public key's hex: 02fd4089e7f4ca224f576d4baa573b3e9662153c952fce3f87f9586ffdd11b
 
 ### 子命令 `generate` 完整参数
 
-通用参数部分参考 [子命令通用参数](### 子命令通用参数)，以下介绍其他子命令时不再另外说明。
+通用参数部分参考 [子命令通用参数](#子命令通用参数)，以下介绍其他子命令时不再另外说明。
 
 特殊地，在使用 `cql generate config` 命令生成新账号配置时，`-config`、`-no-password` 和 `-password` 等参数实际作用于将要生成的新私钥和配置文件，而不是要读取的文件。
 
@@ -107,7 +107,7 @@ Params:
 
 ### 计算 Node ID
 
-子命令 `idminer` 用于计算指定配置文件（对应的私钥）的 Node ID（Node ID 的相关知识请参考[链接](terms## Node ID)）。示例：
+子命令 `idminer` 用于计算指定配置文件（对应的私钥）的 Node ID（Node ID 的相关知识请参考[链接](terms#Node-ID)）。示例：
 
 ```bash
 cql idminer
@@ -288,7 +288,7 @@ covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 
 子命令 `grant` 通过向 BP 发起交易实现，所以也支持 `wait-tx-confirm` 参数。
 
-关于子命令 `create` 输入参数的完整说明，请参见[完整参数](### 子命令 create 完整参数)。
+关于子命令 `create` 输入参数的完整说明，请参见[完整参数](#子命令-`create`-完整参数)。
 
 ### ~~删除数据库~~
 
@@ -527,7 +527,7 @@ co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=>
 
 ### 子命令 `console` 完整参数
 
-子命令 `console` 同时也支持在后台启动 `adapter` 和 `explorer` 服务，关于这些服务的相关说明请参考 [本地服务](## 本地服务) 的相关章节。
+子命令 `console` 同时也支持在后台启动 `adapter` 和 `explorer` 服务，关于这些服务的相关说明请参考 [本地服务](#本地服务) 的相关章节。
 
 ```bash
 usage: cql console [-config file] [-dsn dsn_string] [-command sqlcommand] [-file filename] [-out outputfile] [-no-rc true/false] [-single-transaction] [-variable variables] [-explorer explorer_addr] [-adapter adapter_addr]
