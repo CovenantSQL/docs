@@ -66,18 +66,18 @@ docker-compose ps
 确认所有组件都处于 `Up` 的状态
 
 ```shell
-          Name                         Command               State                 Ports
-------------------------------------------------------------------------------------------------------
-covenantsql_bp_0            "./docker-entry.sh"              Up        0.0.0.0:11099->4661/tcp
-covenantsql_bp_1            "./docker-entry.sh"              Up        0.0.0.0:11100->4661/tcp
-covenantsql_bp_2            "./docker-entry.sh"              Up        0.0.0.0:11101->4661/tcp
-covenantsql_miner_0         "./docker-entry.sh"              Up        0.0.0.0:11102->4661/tcp
-covenantsql_miner_1         "./docker-entry.sh"              Up        0.0.0.0:11103->4661/tcp
-covenantsql_miner_2         "./docker-entry.sh"              Up        0.0.0.0:11104->4661/tcp
-covenantsql_adapter         "./docker-entry.sh"              Up        0.0.0.0:11105->4661/tcp
-covenantsql_mysql_adapter   "./docker-entry.sh -…"           Up        4661/tcp, 0.0.0.0:11107->4664/tcp
-covenantsql_observer        "./docker-entry.sh"              Up        4661/tcp, 0.0.0.0:11108->80/tcp
-covenantsql_fn_0            "./docker-entry.sh -…"           Up        4661/tcp, 0.0.0.0:11110->8546/tcp
+          Name                         Command               State                        Ports
+---------------------------------------------------------------------------------------------------------------------
+covenantsql_adapter         ./docker-entry.sh                Up      0.0.0.0:11105->4661/tcp
+covenantsql_bp_0            ./docker-entry.sh                Up      0.0.0.0:11099->4661/tcp, 0.0.0.0:12099->4665/tcp
+covenantsql_bp_1            ./docker-entry.sh                Up      0.0.0.0:11100->4661/tcp, 0.0.0.0:12100->4665/tcp
+covenantsql_bp_2            ./docker-entry.sh                Up      0.0.0.0:11101->4661/tcp, 0.0.0.0:12101->4665/tcp
+covenantsql_fn_0            ./docker-entry.sh -wsapi :8546   Up      4661/tcp, 0.0.0.0:11110->8546/tcp
+covenantsql_miner_0         ./docker-entry.sh                Up      0.0.0.0:11102->4661/tcp, 0.0.0.0:12102->4665/tcp
+covenantsql_miner_1         ./docker-entry.sh                Up      0.0.0.0:11103->4661/tcp, 0.0.0.0:12103->4665/tcp
+covenantsql_miner_2         ./docker-entry.sh                Up      0.0.0.0:11104->4661/tcp, 0.0.0.0:12104->4665/tcp
+covenantsql_mysql_adapter   ./docker-entry.sh -listen  ...   Up      4661/tcp, 0.0.0.0:11107->4664/tcp
+covenantsql_observer        ./docker-entry.sh                Up      4661/tcp, 0.0.0.0:11108->80/tcp
 ```
 
 ## 操作 CovenantSQL
@@ -87,19 +87,19 @@ covenantsql_fn_0            "./docker-entry.sh -…"           Up        4661/tc
 使用 `cql` 命令并使用 `create` 参数提供所需的数据库节点数量创建数据库实例，例如：创建一个单节点的数据库实例
 
 ```shell
-docker exec -it covenantsql_adapter /app/cql create -config /app/config.yaml -no-password '{"node":1}'
+docker exec -it covenantsql_adapter /app/cql create -config /app/node_adapter/config.yaml -no-password '{"node":1}'
 ```
 
 >  修改 `create` 参数的值，可以创建运行在多节点上的实例，例如：创建两个节点的实例
 
 ```shell
-docker exec -it covenantsql_adapter /app/cql create -config /app/config.yaml -no-password '{"node":1}'
+docker exec -it covenantsql_adapter /app/cql create -config /app/node_adapter/config.yaml -no-password '{"node":2}'
 ```
 
 命令会返回创建的数据库实例的连接串
 
 ```shell
-covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
+covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5
 ```
 
 ### 访问数据库
@@ -107,16 +107,16 @@ covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
 使用 `cql` 命令并使用 `dsn` 参数提供数据库实例的连接串进行数据库访问
 
  ```shell
-docker exec -it covenantsql_adapter /app/cql console -config /app/config.yaml -no-password -dsn covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
+docker exec -it covenantsql_adapter /app/cql console -config /app/node_adapter/config.yaml -no-password -dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5
  ```
 
 会得到如下输出，并进入 `cql` 交互命令行模式
 
 ```shell
-Connected with driver covenantsql (develop)
+Connected with driver covenantsql (develop-34ae741a-20190415135520)
 Type "help" for help.
 
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=>
+co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=>
 ```
 
 `cql` 交互命令行模式的使用方法类似 `mysql` 命令，例如：创建一个名为 `test`  的表，查看数据库中的表，插入记录，查询结果
@@ -131,23 +131,23 @@ SELECT * FROM test;
 会得到如下输出
 
 ```shell
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> CREATE TABLE test (test TEXT);
+co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=> CREATE TABLE test (test TEXT);
 CREATE TABLE
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> SHOW TABLES;
+co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=> SHOW TABLES;
  name
 ------
  test
 (1 row)
 
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> INSERT INTO test VALUES("happy");
+co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=> INSERT INTO test VALUES("happy");
 INSERT
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> SELECT * FROM test;
+co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=> SELECT * FROM test;
  test
 -------
  happy
 (1 row)
 
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=>
+co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=>
 ```
 
 使用 `Ctrl + D` 快捷键或输入 `\q` 可以退出 `cql` 交互命令行

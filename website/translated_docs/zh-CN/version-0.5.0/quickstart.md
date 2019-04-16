@@ -1,7 +1,8 @@
 ---
 id: quickstart
-title: '🌏 TestNet 快速开始'
+title: 🌏 TestNet 快速开始
 ---
+
 ## CovenantSQL 工具包
 
 ### 工具包简介
@@ -16,11 +17,11 @@ title: '🌏 TestNet 快速开始'
 
 解压之后，你将得到以下命令行工具，包括：`cql`、`cql-minerd` 等, 请将此文件移动到 `PATH` 目录。
 
-| 工具名        | 介绍                                                               |
-| ---------- | ---------------------------------------------------------------- |
+| 工具名     | 介绍                                                                                        |
+| ---------- | ----------------------------------------------------------------------                      |
 | cql        | CovenantSQL 的客户端，`cql console` 命令类似 mysql 命令，用于执行 SQL。还有其他丰富的工具链 |
-| cql-minerd | CovenantSQL 矿工客户端，用于运行数据库赚取奖励，以后会开放加入                            |
-| cqld       | CovenantSQL 主链节点，主要由 CovenantLabs 以及合作伙伴以 DPoS 模式运行              |
+| cql-minerd | CovenantSQL 矿工客户端，用于运行数据库赚取奖励，以后会开放加入                              |
+| cqld       | CovenantSQL 主链节点，主要由 CovenantLabs 以及合作伙伴以 DPoS 模式运行                      |
 
 ### 测试网快速接入
 
@@ -38,7 +39,7 @@ chmod 600 conf/private.key
 **测试网注**：
 
 > 该账号是公共的且只供测试使用，请不要在该账号创建的数据库中存放你的应用信息，我们会不定期清理数据库数据。
-> 
+>
 > 测试网暂时由 3 个 Miner 组成，所以暂时最大只支持`create 3`创建 3 个节点组成的数据库。
 
 ## 创建并访问 CovenantSQL 数据库
@@ -51,13 +52,14 @@ cql create -config conf/config.yaml '{"node":1}'
 
 在命令行提示中输入master key的密码，之后控制台会输出：
 
-    covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
-    
+```
+covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+```
 
 这里表示你提交了 `0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` 这个数据库的创建请求到主链。
 
 > 我们需要等待大概 30s 的时间，等待数据库创建，大致过程为：
-> 
+>
 > 1. 收到请求的 出块节点（Block Producer）进行 Miner 和数据库创建请求的撮合
 > 2. 数据库创建请求在 其它出块节点 进行验证和确认
 > 3. SQLChain 的符合条件的 Miner 收到数据库任务
@@ -94,23 +96,24 @@ cql generate config
 
 输出：
 
-    Generating key pair...
-    Enter master key(press Enter for default: ""):
-    Private key file: ~/.cql/private.key
-    Public key's hex: 027af3584b8b4736d6ba1e78ace5f0fdefe561f08749c5cac39d23668c3030fe39
-    Generated key pair.
-    Generating nonce...
-    INFO[0075] cpu: 4
-    INFO[0075] position: 3, shift: 0x0, i: 3
-    INFO[0075] position: 1, shift: 0x0, i: 1
-    INFO[0075] position: 0, shift: 0x0, i: 0
-    INFO[0075] position: 2, shift: 0x0, i: 2
-    nonce: {{1056388 0 0 1424219234} 25 000000737633a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01}
-    node id: 000000737633a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01
-    Generated nonce.
-    Generating config file...
-    Generated nonce.
-    
+```
+Generating key pair...
+Enter master key(press Enter for default: ""):
+Private key file: ~/.cql/private.key
+Public key's hex: 027af3584b8b4736d6ba1e78ace5f0fdefe561f08749c5cac39d23668c3030fe39
+Generated key pair.
+Generating nonce...
+INFO[0075] cpu: 4
+INFO[0075] position: 3, shift: 0x0, i: 3
+INFO[0075] position: 1, shift: 0x0, i: 1
+INFO[0075] position: 0, shift: 0x0, i: 0
+INFO[0075] position: 2, shift: 0x0, i: 2
+nonce: {{1056388 0 0 1424219234} 25 000000737633a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01}
+node id: 000000737633a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01
+Generated nonce.
+Generating config file...
+Generated nonce.
+```
 
 该命令会为你在~目录下创建一个 `.cql` 目录：
 
@@ -139,8 +142,9 @@ cql wallet -balance all
 
 输出：
 
-    INFO[0000] stable coin balance is: 100                   caller="main.go:246 main.main"
-    INFO[0000] covenant coin balance is: 0                   caller="main.go:247 main.main"
-    
+```
+INFO[0000] stable coin balance is: 100                   caller="main.go:246 main.main"
+INFO[0000] covenant coin balance is: 0                   caller="main.go:247 main.main"
+```
 
 恭喜，你已收到我们发出的 PTC 稳定币，现在即可开始使用 CovenantSQL， 你可以参考 [Golang 使用 CovenantSQL 文档](./development) 进行开发。

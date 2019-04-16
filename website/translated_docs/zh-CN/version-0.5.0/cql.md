@@ -1,18 +1,18 @@
 ---
 id: cql
-title: '🖥️ CQL 命令行工具'
+title: 🖥️ CQL 命令行工具
 ---
+
 ## 简介
 
 本文将介绍如何使用 `cql` 进行查询、转账和数据库权限管理。在使用 `cql` 前请先确认已接入 [CovenantSQL TestNet](quickstart) 或者在本地使用 [Docker 一键部署](development)的网络, 并将 `cql` 可执行文件保存在 `PATH` 目录。
 
 ### 配置文件
-
 `cql`命令依赖配置文件`config.yaml`和私钥文件`private.key`。这两个文件如果使用`cql generate config`命令生成，会默认放在`~/.cql/`目录下。在此目录下时，`cql`所有子命令的`-config`参数均可以省略不填写。
 
 ### Master key
-
-`private.key`文件在生成时需要输入密码，`cql`命令会自动请求输入master key (密码)。 如果想在脚本中使用，可以在子命令后面增加`-password your_master_key`，空密码时用`-no-password`参数。
+`private.key`文件在生成时需要输入密码，`cql`命令会自动请求输入master key (密码)。
+如果想在脚本中使用，可以在子命令后面增加`-password your_master_key`，空密码时用`-no-password`参数。
 
 ## 查询余额
 
@@ -32,9 +32,10 @@ cql wallet -balance all -config conf/config.yaml
 
 输出：
 
-    INFO[0000] Particle balance is: 10000000000000000000
-    INFO[0000] Wave balance is: 10000000000000000000
-    
+```
+INFO[0000] Particle balance is: 10000000000000000000
+INFO[0000] Wave balance is: 10000000000000000000
+```
 
 查看 Particle 余额：
 
@@ -44,8 +45,9 @@ cql wallet -balance Particle -config conf/config.yaml
 
 输出：
 
-    INFO[0000] Particle balance is: 10000000000000000000
-    
+```
+INFO[0000] Particle balance is: 10000000000000000000
+```
 
 查看 Bitcoin 余额：
 
@@ -55,8 +57,9 @@ cql wallet -balance Bitcoin -config conf/config.yaml
 
 输出：
 
-    INFO[0000] Bitcoin balance is: 0
-    
+```
+INFO[0000] Bitcoin balance is: 0
+```
 
 ## 转账
 
@@ -79,8 +82,9 @@ cql transfer -config conf/config.yaml '{"addr":"011f72fea9efa1a49a6663d66e514a34
 
 输出：
 
-    INFO[0000] succeed in sending transaction to CovenantSQL
-    
+```
+INFO[0000] succeed in sending transaction to CovenantSQL
+```
 
 转账 Wave：
 
@@ -88,10 +92,11 @@ cql transfer -config conf/config.yaml '{"addr":"011f72fea9efa1a49a6663d66e514a34
 cql transfer -config conf/config.yaml '{"addr":"011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6","amount":"1000000 Wave"}'
 ```
 
-    INFO[0000] succeed in sending transaction to CovenantSQL
-    
+```
+INFO[0000] succeed in sending transaction to CovenantSQL
+```
 
-查看余额：
+查看余额： 
 
 ```bash
 cql wallet -balance all -config conf/config.yaml
@@ -99,9 +104,10 @@ cql wallet -balance all -config conf/config.yaml
 
 输出：
 
-    INFO[0000] Particle balance is: 9999999999999000000
-    INFO[0000] Wave balance is: 9999999999999000000
-    
+```
+INFO[0000] Particle balance is: 9999999999999000000
+INFO[0000] Wave balance is: 9999999999999000000
+```
 
 注意，`succeed in sending transaction to CovenantSQL` 只说明交易已成功发送至主网，交易能否成功、何时成功需要通过 `cql wallet -balance <token_type>` 确定。
 
@@ -134,8 +140,9 @@ cql grant -config conf/config.yaml '{"chain":"4bc27a06ae52a7b8b1747f3808dda786dd
 
 输出：
 
-    INFO[0000] succeed in sending transaction to CovenantSQL
-    
+```
+INFO[0000] succeed in sending transaction to CovenantSQL
+```
 
 吊销权限：
 
@@ -145,8 +152,9 @@ cql grant -config conf/config.yaml '{"chain":"4bc27a06ae52a7b8b1747f3808dda786dd
 
 输出：
 
-    INFO[0000] succeed in sending transaction to CovenantSQL
-    
+```
+INFO[0000] succeed in sending transaction to CovenantSQL
+```
 
 注意，`succeed in sending transaction to CovenantSQL` 只说明交易已成功发送至主网，交易成功与否请通过查询数据库确认。
 
@@ -208,3 +216,4 @@ cql -config conf/config.yaml -update-perm '
 ```
 
 将 `pattern` 设置为 `nil` 或直接设置用户权限，都可以将用户的白名单限制去掉，设置回可以查询所有内容的读权限。
+
