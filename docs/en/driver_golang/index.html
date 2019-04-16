@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>📦 Golang · CovenantSQL Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;用-golang-使用-covenantsql&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#用-golang-使用-covenantsql&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;用 Golang 使用 CovenantSQL&lt;/h2&gt;
+"/><meta name="docsearch:version" content="0.5.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="📦 Golang · CovenantSQL Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="http://developers.covenantsql.io/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;用-golang-使用-covenantsql&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#用-golang-使用-covenantsql&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;用 Golang 使用 CovenantSQL&lt;/h2&gt;
+"/><meta property="og:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="https://hm.baidu.com/hm.js?fd1ee4ccc9da39d0cf4c60ad8e6e214b"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/logo.svg" alt="CovenantSQL Docs"/><h2 class="headerTitleWithLogo">CovenantSQL Docs</h2></a><a href="/en/versions"><h3>0.5.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en/intro" target="_self">Docs</a></li><li class=""><a href="/en/help" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/zh-CN/driver_golang">中文</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>开发者</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Intro</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/intro">CovenantSQL 介绍</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用与部署</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/nav">📖 使用导航</a></li><li class="navListItem"><a class="navItem" href="/docs/en/quickstart">🌏 TestNet 快速开始</a></li><li class="navListItem"><a class="navItem" href="/docs/en/deployment">🐳 Docker 一键部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发者</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/driver_golang">📦 Golang</a></li><li class="navListItem"><a class="navItem" href="/docs/en/driver_java">📦 Java</a></li><li class="navListItem"><a class="navItem" href="/docs/en/driver_python">📦 Python</a></li><li class="navListItem"><a class="navItem" href="/docs/en/driver_js">📦 Javascript</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/cql">🖥️ CQL 命令行工具</a></li><li class="navListItem"><a class="navItem" href="/docs/en/adapter">📦 CovenantSQL Adapter SDK</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用案例</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/quandl">基于 Quandl 的金融数据分析</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">About</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/qna">🙋 常见问题解答</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">📦 Golang</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="用-golang-使用-covenantsql"></a><a href="#用-golang-使用-covenantsql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>用 Golang 使用 CovenantSQL</h2>
+<h3><a class="anchor" aria-hidden="true" id="简介"></a><a href="#简介" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>简介</h3>
+<p><code>CovenantSQL</code> 提供了 <code>Golang SDK</code> ，支持以 <code>Golang</code> App 以原生通讯协议的形式访问数据库实例，是当前性能最高的使用方法， <code>cql</code> 等工具也是基于 <code>Golang SDK</code> 进行开发的。</p>
+<p><code>Golang SDK</code> 遵守 <code>Golang</code> 标准的 <code>database/sql</code> 接口定义，能够使用常见的 <code>Golang ORM</code> 进行使用。</p>
+<h3><a class="anchor" aria-hidden="true" id="兼容性"></a><a href="#兼容性" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>兼容性</h3>
+<p><code>Golang SDK</code> 目前只兼容 <code>1.10+</code> 的 Golang 版本。</p>
+<h3><a class="anchor" aria-hidden="true" id="安装和使用"></a><a href="#安装和使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装和使用</h3>
+<p><code>Golang SDK</code> 的 import 地址是 <code>github.com/CovenantSQL/CovenantSQL/client</code></p>
+<p>可以执行 <code>go get</code> 命令进行安装</p>
+<pre><code class="hljs css language-shell">go get github.com/CovenantSQL/CovenantSQL/client
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="api-文档"></a><a href="#api-文档" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API 文档</h3>
+<p><a href="https://godoc.org/github.com/CovenantSQL/CovenantSQL/client">https://godoc.org/github.com/CovenantSQL/CovenantSQL/client</a></p>
+<h3><a class="anchor" aria-hidden="true" id="示例"></a><a href="#示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>示例</h3>
+<pre><code class="hljs css language-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"database/sql"</span>
+    <span class="hljs-string">"flag"</span>
+
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/client"</span>
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/utils/log"</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    log.SetLevel(log.DebugLevel)
+    <span class="hljs-keyword">var</span> config, password, dsn <span class="hljs-keyword">string</span>
+
+    flag.StringVar(&amp;config, <span class="hljs-string">"config"</span>, <span class="hljs-string">"./conf/config.yaml"</span>, <span class="hljs-string">"config file path"</span>)
+    flag.StringVar(&amp;dsn, <span class="hljs-string">"dsn"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"database url"</span>)
+    flag.StringVar(&amp;password, <span class="hljs-string">"password"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"master key password for covenantsql"</span>)
+    flag.Parse()
+
+    <span class="hljs-comment">// 使用节点配置文件初始化 Golang SDK</span>
+    err := client.Init(config, []<span class="hljs-keyword">byte</span>(password))
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatal(err)
+    }
+
+    <span class="hljs-comment">// 连接数据库实例</span>
+    db, err := sql.Open(<span class="hljs-string">"covenantsql"</span>, dsn)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatal(err)
+    }
+
+    Q := <span class="hljs-string">`DROP TABLE IF EXISTS cityPop;
+        CREATE TABLE cityPop (
+            ID INT,
+            Name VARCHAR,
+            CountryCode VARCHAR,
+            District VARCHAR,
+            Population INT
+        );
+        CREATE INDEX cityCountryCodeIndex ON cityPop ( CountryCode );
+
+        DROP TABLE IF EXISTS countryGDP;
+        CREATE TABLE countryGDP (
+             ID integer PRIMARY KEY,
+             CountryCode string NOT NULL,
+             GDP integer
+        );
+        CREATE INDEX countryCountryCodeIndex ON countryGDP ( CountryCode );`</span>
+
+    <span class="hljs-comment">// 写入数据</span>
+    _, err = db.Exec(Q)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatal(err)
+    }
+    log.Printf(<span class="hljs-string">"\nExec:\n %s\n"</span>, Q)
+
+    Q = <span class="hljs-string">`INSERT INTO countryGDP VALUES
+            (0, "ZWE", 99999),(1, "CHN", 3000000000000),
+            (2, "PSE", 321312313),(3, "JPN", 300000000);
+        INSERT INTO cityPop VALUES (707,'Shenzhen','CHN','Guangzhou',99442);
+        INSERT INTO cityPop VALUES (1074,'Shenzhen','CHN','Guangzhou',353632);
+        INSERT INTO cityPop VALUES (1591,'Toyama','JPN','Toyama',325790);
+        INSERT INTO cityPop VALUES (1649,'Takaoka','JPN','Toyama',174380);
+        INSERT INTO cityPop VALUES (1762,'Takasago','JPN','Hyogo',97632);
+        INSERT INTO cityPop VALUES (1763,'Fujimi','JPN','Saitama',96972);
+        INSERT INTO cityPop VALUES (1764,'Urasoe','JPN','Okinawa',96002);
+        INSERT INTO cityPop VALUES (1765,'Yonezawa','JPN','Yamagata',95592);
+        INSERT INTO cityPop VALUES (1766,'Konan','JPN','Aichi',95521);
+        INSERT INTO cityPop VALUES (1767,'Yamatokoriyama','JPN','Nara',95165);
+        INSERT INTO cityPop VALUES (1768,'Maizuru','JPN','Kyoto',94784);
+        INSERT INTO cityPop VALUES (1769,'Onomichi','JPN','Hiroshima',93756);
+        INSERT INTO cityPop VALUES (1770,'Higashimatsuyama','JPN','Saitama',93342);
+        INSERT INTO cityPop VALUES (2707,'Xai-Xai','MOZ','Gaza',99442);
+        INSERT INTO cityPop VALUES (4074,'Gaza','PSE','Gaza',353632);
+        INSERT INTO cityPop VALUES (4077,'Jabaliya','PSE','North Gaza',113901);`</span>
+    _, err = db.Exec(Q)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Warn(err)
+    }
+    log.Printf(<span class="hljs-string">"\nExec:\n %s\n"</span>, Q)
+
+    Q = <span class="hljs-string">`SELECT * FROM cityPop
+        WHERE District IN ("Shenzhen", "Balkh", "Gaza", "North Gaza")
+        GROUP  BY cityPop.CountryCode
+        ORDER  BY Population DESC
+        LIMIT  10;`</span>
+
+    <span class="hljs-comment">// 查询数据</span>
+    rows, err := db.Query(Q)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatal(err)
+    }
+    log.Printf(<span class="hljs-string">"\nExec:\n %s\n"</span>, Q)
+    log.Println(<span class="hljs-string">"ID Name    CountryCode District    Population"</span>)
+    <span class="hljs-keyword">var</span> ID, GDP, Population <span class="hljs-keyword">int</span>
+    <span class="hljs-keyword">var</span> Name, CountryCode, District <span class="hljs-keyword">string</span>
+    <span class="hljs-keyword">var</span> GDPPerson <span class="hljs-keyword">float64</span>
+
+    <span class="hljs-keyword">for</span> rows.Next() {
+        err = rows.Scan(&amp;ID, &amp;Name, &amp;CountryCode, &amp;District, &amp;Population)
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            log.Fatal(err)
+        }
+
+        log.Printf(<span class="hljs-string">"%d  %s  %s  %s  %d"</span>, ID, Name, CountryCode, District, Population)
+    }
+    Q = <span class="hljs-string">`UPDATE countryGDP SET GDP = 1234567 WHERE CountryCode LIKE "CHN";
+            UPDATE cityPop SET Population = 123456 WHERE CountryCode LIKE "CHN";
+            REPLACE INTO countryGDP (ID, CountryCode, GDP) VALUES (77, "AFG", 11111111);`</span>
+    _, err = db.Exec(Q)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatal(err)
+    }
+    log.Printf(<span class="hljs-string">"\nExec:\n %s\n"</span>, Q)
+
+    Q = <span class="hljs-string">`SELECT cityPop.ID,  cityPop.CountryCode, cityPop.District,
+        countryGDP.GDP / cityPop.Population, countryGDP.GDP, cityPop.Population
+        FROM   cityPop
+            LEFT JOIN countryGDP
+                  ON countryGDP.CountryCode = cityPop.CountryCode
+        WHERE District IN ( "Shenzhen", "Balkh", "North Gaza", "Toyama", "Yonezawa") AND countryGDP.GDP &gt; 0
+        GROUP BY cityPop.CountryCode
+        ORDER BY countryGDP.GDP / cityPop.Population DESC
+        LIMIT 10;`</span>
+    rows, err = db.Query(Q)
+    log.Printf(<span class="hljs-string">"\nExec:\n %s\n"</span>, Q)
+
+    log.Println(<span class="hljs-string">"ID CountryCode District    GDPPerson   GDP Population"</span>)
+    <span class="hljs-keyword">for</span> rows.Next() {
+        err = rows.Scan(&amp;ID, &amp;CountryCode, &amp;District, &amp;GDPPerson, &amp;GDP, &amp;Population)
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            log.Fatal(err)
+        }
+
+        log.Printf(<span class="hljs-string">"%d  %s  %s  %f  %d  %d"</span>,
+            ID, CountryCode, District, GDPPerson, GDP, Population)
+    }
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/deployment"><span class="arrow-prev">← </span><span>🐳 Docker 一键部署</span></a><a class="docs-next button" href="/docs/en/driver_java"><span>📦 Java</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#用-golang-使用-covenantsql">用 Golang 使用 CovenantSQL</a><ul class="toc-headings"><li><a href="#简介">简介</a></li><li><a href="#兼容性">兼容性</a></li><li><a href="#安装和使用">安装和使用</a></li><li><a href="#api-文档">API 文档</a></li><li><a href="#示例">示例</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '1b47865e3d00b7996a988bbc155a68e4',
+                indexName: 'covenantsql',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
