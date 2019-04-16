@@ -3,42 +3,39 @@ id: driver_js
 title: 📦 Javascript
 ---
 
-## 用 NodeJS 使用 CovenantSQL
+## 用 Javascript 访问 CovenantSQL
 
-NodeJS 开发者可以通过 [node-covenantsql](https://github.com/CovenantSQL/node-covenantsql) 来与 CovenantSQL Adapter 进行交互。
+前端开发者可以通过 [covenantsql-proxy-js](https://github.com/CovenantSQL/covenantsql-proxy-js) 来通过 [Adapter](./adapter) 与 CovenantSQL 进行交互。
 
 #### 下载安装
 
-可以直接通过 `npm` 或者 `yarn` 来安装 `node-covenantsql`
+可以直接通过 `npm` 或者 `yarn` 来安装 `covenantsql-proxy-js`
 
 ```bash
-npm install --save node-covenantsql
+npm install --save covenantsql-proxy-js
 ```
 or
 ```bash
-yarn add node-covenantsql
+yarn add covenantsql-proxy-js
 ```
 
 #### 使用
 
 使用前需要 [部署 Adapter 工具](./adapter)
 
-在运行本地 Adapter 之后，将 Adapter 的 endpoint 填入 `node-covenantsql` 的 config 之中：
+在运行本地 Adapter 之后，将 Adapter 的 endpoint 填入 `covenantsql-proxy-js` 的 config 之中：
 
 ```javascript
 const config = {
     endpoint: 'localhost:11105', // local testnet endpoint without https
     database: `${DSN}`, // your DB id created by `cql` tools
-    bypassPem: true // bypass https config
 }
 ```
-
-这里 `bypassPem` 为 `true` 表示应用中所有对链上数据库的操作都会经过本地的 Adapter 进行代理，我们默认本地环境是可控，安全的，无需用 HTTPS 来保证这段连接的信道安全，少了证书的繁琐认证，所以成为 `bypassPem`。
 
 接着连通之后则可进行链上数据库的增删改查：
 
 ```typescript
-const cql from 'node-covenantsql'
+const cql from 'covenantsql-proxy-js'
 
 const config = {...} // see above
 

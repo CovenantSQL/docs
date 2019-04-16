@@ -3,9 +3,7 @@ id: driver_golang
 title: 📦 Golang
 ---
 
-## 用 Golang 使用 CovenantSQL
-
-### 简介
+## 用 Golang 访问 CovenantSQL
 
 `CovenantSQL` 提供了 `Golang SDK` ，支持以 `Golang` App 以原生通讯协议的形式访问数据库实例，是当前性能最高的使用方法， `cql` 等工具也是基于 `Golang SDK` 进行开发的。
 
