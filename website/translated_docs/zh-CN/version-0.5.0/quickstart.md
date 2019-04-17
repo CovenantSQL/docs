@@ -9,27 +9,29 @@ original_id: quickstart
 
 请根据您使用的操作系统平台选择安装方式：
 
-- MacOS 平台
-    
-    - 🍺 Homebrew 用户可以直接在命令行：
+#### MacOS 平台
+
+- 🍺 Homebrew 用户可以直接在命令行：
 
 ```bash
-    brew tap CovenantSQL/cql && brew install cql
-    ```
+brew tap CovenantSQL/cql && brew install cql
+```
 
-  - 非 Homebrew，可以执行：
+- 非 Homebrew，可以执行：
 
-  - ```bash
-    curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.osx-amd64.tar.gz" | \
-    sudo tar xzv -C /usr/local/bin/ --strip-components=1
-    ```
+```bash
+sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.osx-amd64.tar.gz" | \
+ tar xzv -C /usr/local/bin/ --strip-components=1'
+```
 
-- Linux 平台请可以执行：
+#### Linux 平台
 
-  - ```bash
-    curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.linux-amd64.tar.gz" | \
-    sudo tar xzv -C /usr/local/bin/ --strip-components=1
-    ```
+在命令行中执行：
+
+```bash
+sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.linux-amd64.tar.gz" | \
+tar xzv -C /usr/local/bin/ --strip-components=1'
+```
 
 安装完成后可以执行下面的命令，查看是否安装成功
 
@@ -44,7 +46,7 @@ sudo chmod a+x /usr/local/bin/cql*         # Fix Permission
 sudo ln -s /usr/local/bin/cql* /usr/bin/   # Fix if /usr/local/bin not in $PATH
 ```
 
-如果问题依旧存在请在我们的 GitHub 页面[提交 Issue](https://github.com/CovenantSQL/CovenantSQL/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D)。
+如果问题依旧存在请在我们的 GitHub 页面 [提交 Issue](https://github.com/CovenantSQL/CovenantSQL/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D)。
 
 ### 工具包介绍
 
