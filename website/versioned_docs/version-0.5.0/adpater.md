@@ -1,6 +1,6 @@
 ---
 id: version-0.5.0-adapter
-title: 📦 CovenantSQL Adapter SDK
+title: 📦 Adapter SDK
 original_id: adapter
 ---
 
