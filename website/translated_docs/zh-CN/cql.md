@@ -46,7 +46,7 @@ cql generate config
 
 > 目前默认生成的配置文件指向测试网，还需要提供生成指向 Docker 一键部署网络的配置方法。
 
-指定目录的参数详见[完整参数说明](#子命令-<code>generate</code>-完整参数)。
+指定目录的参数详见[完整参数说明](#子命令-generate-完整参数)。
 
 输出：
 
@@ -287,7 +287,7 @@ covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 
 子命令 `grant` 通过向 BP 发起交易实现，所以也支持 `wait-tx-confirm` 参数。
 
-关于子命令 `create` 输入参数的完整说明，请参见[完整参数](#子命令-<code>create</code>-完整参数)。
+关于子命令 `create` 输入参数的完整说明，请参见[完整参数](#子命令-create-完整参数)。
 
 ### ~~删除数据库~~
 
