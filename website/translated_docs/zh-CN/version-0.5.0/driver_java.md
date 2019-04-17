@@ -3,23 +3,21 @@ id: version-0.5.0-driver_java
 title: '📦 Java'
 original_id: driver_java
 ---
-## 用 Java 使用 CovenantSQL
+## Use Java to access CovenantSQL
 
-### 简介
+`CovenantSQL` provides `Java SDK` to access database instance through [`Adapter`](./adapter) service.
 
-`CovenantSQL` 提供了 `Java SDK`，可通过 `Adapter` 工具转换协议访问数据库实例。
+`Java SDK` is compatible with `JDBC4` specifications，and popular `ORM` like `MyBatis` is supported through JDBC interface.
 
-`Java SDK` 遵守 `Java` 标准的 `JDBC4` 接口定义，能够使用常见的 `ORM` 例如 `MyBatis` 进行使用。
+### Compatibility
 
-### 兼容性
+`Java SDK` requires `Java 1.7+`.
 
-`Java SDK` 目前只兼容 `Java 1.7+` 的 `JDK` 版本。
+### Installation and quick start
 
-### 安装和使用
+Before using `Java SDK`, an adapter tool deployment is required, please see [Deploy Adapter Service](./adapter).
 
-使用 `Java SDK` 需要 [部署 Adapter 工具](./adapter)。
-
-然后通过 `jdbc:covenantsql://<adapter_endpoint>/<database_id>` URI，将其中的 `adapter_endpoint` 替换为 adapter 的地址，`database_id` 替换为数据库的 DSN 串访问数据库实例。
+Now you can use `jdbc:covenantsql://<adapter_endpoint>/<database_id>` uri，replacing `adapter_endpoint` with adapter listen address，`database_id` with database id。
 
 #### Maven
 
@@ -62,8 +60,8 @@ dependencies {
 }
 ```
 
-### 示例
+### Examples
 
-1. [JDBC示例](https://github.com/CovenantSQL/covenant-connector/blob/master/covenantsql-java-connector/example/src/main/java/io/covenantsql/connector/example/jdbc/Example.java)
-2. [MyBatis示例](https://github.com/CovenantSQL/covenant-connector/blob/master/covenantsql-java-connector/example/src/main/java/io/covenantsql/connector/example/mybatis/Example.java)
-3. [大型项目示例](https://github.com/CovenantSQL/covenantsql-mybatis-spring-boot-jpetstore)
+1. [JDBC Example](https://github.com/CovenantSQL/covenant-connector/blob/master/covenantsql-java-connector/example/src/main/java/io/covenantsql/connector/example/jdbc/Example.java)
+2. [MyBatis Example](https://github.com/CovenantSQL/covenant-connector/blob/master/covenantsql-java-connector/example/src/main/java/io/covenantsql/connector/example/mybatis/Example.java)
+3. [SpringBoot + MyBatis Project Example](https://github.com/CovenantSQL/covenantsql-mybatis-spring-boot-jpetstore)
