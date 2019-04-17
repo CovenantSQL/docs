@@ -566,7 +566,7 @@ Params:
 
 ## 本地服务
 
-### Explorer 完整参数
+### 子命令 `explorer` 完整参数
 
 ```bash
 usage: cql explorer [-config file] [-tmp-path path] [-bg-log-level level] address
@@ -582,7 +582,7 @@ Params:
         后台服务使用的临时目录，默认使用系统的默认临时文件路径
 ```
 
-### Mirror 完整参数
+### 子命令 `mirror` 完整参数
 
 ```bash
 usage: cql mirror [-config file] [-tmp-path path] [-bg-log-level level] dsn/dbid address
@@ -598,7 +598,9 @@ Params:
         后台服务使用的临时目录，默认使用系统的默认临时文件路径
 ```
 
-### Adapter 完整参数
+### 子命令 `adapter` 完整参数
+
+关于 `adapter` 服务的说明请参考 [adapter](adapter)。
 
 ```bash
 usage: cql adapter [-config file] [-tmp-path path] [-bg-log-level level] [-mirror addr] address
