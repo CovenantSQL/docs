@@ -53,7 +53,8 @@ cql generate config
 
 ```bash
 Generating key pair...
-Enter master key(press Enter for default: ""):
+Enter master key(press Enter for default: ""): 
+
 Private key file: ~/.cql/private.key
 Public key's hex: 027af3584b8b4736d6ba1e78ace5f0fdefe561f08749c5cac39d23668c3030fe39
 Generated key pair.
@@ -81,7 +82,7 @@ cql generate public
 输出：
 
 ```bash
-Enter master key(press Enter for default: ""):
+Enter master key(press Enter for default: ""): 
 
 INFO[0011] init config success                           path=/home/levente/.cql/private.key
 INFO[0011] use public key in config file: /home/levente/.cql/config.yaml
@@ -163,7 +164,7 @@ cql wallet
 输出：
 
 ```bash
-Enter master key(press Enter for default: ""):
+Enter master key(press Enter for default: ""): 
 
 wallet address: 43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40
 ```
@@ -616,7 +617,9 @@ Params:
 
 ## 高级使用
 
-### RPC 完整参数
+子命令 `rpc` 直接在 CovenantSQL 网络上进行 RPC 调用。
+
+### 子命令 `rpc` 完整参数
 
 ```bash
 usage: cql rpc [-config file] [-wait-tx-confirm] -name rpc_name -endpoint rpc_endpoint -req rpc_request
@@ -629,9 +632,9 @@ usage: cql rpc [-config file] [-wait-tx-confirm] -name rpc_name -endpoint rpc_en
 
 Params:
   -endpoint string
-        目标 RPC 服务地址
+        目标 RPC Node ID
   -name string
-        目标 RPC 方法名
+        目标 RPC 服务.方法名
   -req string
         RPC 请求数据，JSON 格式
   -wait-tx-confirm
