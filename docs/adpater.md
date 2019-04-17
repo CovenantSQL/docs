@@ -1,6 +1,6 @@
 ---
 id: adapter
-title: 📦 CovenantSQL Adapter SDK
+title: 📦 Adapter SDK
 ---
 
 # Use Adapter to access CovenantSQL

@@ -3,22 +3,22 @@
     "Intro": [
       "intro"
     ],
-    "使用与部署": [
+    "Install & Deploy": [
       "nav",
       "quickstart",
       "deployment"
     ],
-    "开发者": [
+    "Drivers": [
       "driver_golang",
       "driver_java",
       "driver_python",
       "driver_js"
     ],
-    "工具": [
+    "Tools & Services": [
       "cql",
       "adapter"
     ],
-    "使用案例": [
+    "Use Cases": [
       "quandl"
     ],
     "About": [

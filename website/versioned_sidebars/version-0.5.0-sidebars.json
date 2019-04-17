@@ -3,22 +3,22 @@
     "Intro": [
       "version-0.5.0-intro"
     ],
-    "使用与部署": [
+    "Install & Deploy": [
       "version-0.5.0-nav",
       "version-0.5.0-quickstart",
       "version-0.5.0-deployment"
     ],
-    "开发者": [
+    "Drivers": [
       "version-0.5.0-driver_golang",
       "version-0.5.0-driver_java",
       "version-0.5.0-driver_python",
       "version-0.5.0-driver_js"
     ],
-    "工具": [
+    "Tools & Services": [
       "version-0.5.0-cql",
       "version-0.5.0-adapter"
     ],
-    "使用案例": [
+    "Use Cases": [
       "version-0.5.0-quandl"
     ],
     "About": [
