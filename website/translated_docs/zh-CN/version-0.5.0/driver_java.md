@@ -3,9 +3,7 @@ id: driver_java
 title: 📦 Java
 ---
 
-## 用 Java 使用 CovenantSQL
-
-### 简介
+## 用 Java 访问 CovenantSQL
 
 `CovenantSQL` 提供了 `Java SDK`，可通过 `Adapter` 工具转换协议访问数据库实例。
 
@@ -19,7 +17,7 @@ title: 📦 Java
 
 使用 `Java SDK` 需要 [部署 Adapter 工具](./adapter)。
 
-然后通过 `jdbc:covenantsql://<adapter_endpoint>/<database_id>` URI，将其中的 `adapter_endpoint` 替换为 adapter 的地址，`database_id` 替换为数据库的 DSN 串访问数据库实例。
+然后通过 `jdbc:covenantsql://<adapter_endpoint>/<database_id>` URI，将其中的 `adapter_endpoint` 替换为 adapter 的地址，`database_id` 替换为数据库的 DSN 串中的数据库 ID 访问数据库实例。
 
 #### Maven
 
@@ -27,7 +25,7 @@ title: 📦 Java
 <repositories>
     <repository>
         <id>mvn-repo</id>
-        <url>https://rawcdn.githack.com/CovenantSQL/covenant-connector/tree/master/covenantsql-java-connector/mvn-repo</url>
+        <url>https://raw.githack.com/CovenantSQL/covenant-connector/master/covenantsql-java-connector/mvn-repo</url>
         <releases>
             <enabled>true</enabled>
         </releases>
@@ -42,7 +40,7 @@ title: 📦 Java
 <dependencies>
     <dependency>
         <groupId>io.covenantsql</groupId>
-        <artifactId>covenantsql-java</artifactId>
+        <artifactId>covenantsql-java-connector</artifactId>
         <version>1.0-SNAPSHOT</version>
     </dependency>
 </dependencies>
@@ -53,7 +51,7 @@ title: 📦 Java
 ```gradle
 repositories {
     maven {
-      url 'https://rawcdn.githack.com/CovenantSQL/covenant-connector/tree/master/covenantsql-java-connector/mvn-repo'
+      url 'https://raw.githack.com/CovenantSQL/covenant-connector/master/covenantsql-java-connector/mvn-repo'
     }
 }
 

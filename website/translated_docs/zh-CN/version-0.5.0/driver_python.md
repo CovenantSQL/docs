@@ -3,7 +3,7 @@ id: driver_python
 title: 📦 Python
 ---
 
-## 用 Python 使用 CovenantSQL
+## 用 Python 访问 CovenantSQL
 
 开发者可以通过 [PyCovenantSQL](https://github.com/CovenantSQL/python-driver) 来使用 CovenantSQL。
 
@@ -23,7 +23,7 @@ $ python3 -m pip install PyCovenantSQL
 
 ### 示例
 
-将 `adapter_host` 替换为 adapter 地址，`adapter_port` 替换为 adapter 的端口，adapter
+将 `adapter_host` 替换为 adapter 地址，`adapter_port` 替换为 adapter 的端口，`dsn` 替换为 DSN。
 
 
 ```python
@@ -32,7 +32,7 @@ import pycovenantsql
 # Connect to the database
 connection = pycovenantsql.connect(host='<adapter_host>',
                              port=<adapter_port>,
-                             database='<database_id>'
+                             database='<dsn>'
                              )
 
 try:
