@@ -3,27 +3,27 @@ id: driver_python
 title: 📦 Python
 ---
 
-## 用 Python 使用 CovenantSQL
+## Use Python to access CovenantSQL
 
-开发者可以通过 [PyCovenantSQL](https://github.com/CovenantSQL/python-driver) 来使用 CovenantSQL。
+Developers could use [PyCovenantSQL](https://github.com/CovenantSQL/python-driver) to access CovenantSQL through [Adapter](./adapter).
 
-### 兼容性
+### Compatibility
 
-`Python SDK` 目前只兼容 `python 3.4+`
+`Python SDK` requires `python 3.4+`.
 
-### 安装和使用
+### Installation and quick start
 
-使用 `Python SDK` 需要 [部署 Adapter 工具](./adapter)。
+Before using `Python SDK`, an adapter deployment is required, please see [Deploy Adapter Service](./adapter).
 
-使用 pip 安装 PyCovenantSQL
+Install `PyCovenantSQL` using pip: 
 
 ```shell
 $ python3 -m pip install PyCovenantSQL 
 ```
 
-### 示例
+### Example
 
-将 `adapter_host` 替换为 adapter 地址，`adapter_port` 替换为 adapter 的端口，adapter
+Replace `adapter_host` with adapter listen host, `adapter_port` with adapter listen port, `dsn` with database dsn.
 
 
 ```python
@@ -32,7 +32,7 @@ import pycovenantsql
 # Connect to the database
 connection = pycovenantsql.connect(host='<adapter_host>',
                              port=<adapter_port>,
-                             database='<database_id>'
+                             database='<dsn>'
                              )
 
 try:

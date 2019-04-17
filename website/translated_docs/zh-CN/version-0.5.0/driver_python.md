@@ -23,7 +23,7 @@ $ python3 -m pip install PyCovenantSQL
 
 ### 示例
 
-将 `adapter_host` 替换为 adapter 地址，`adapter_port` 替换为 adapter 的端口，`database_id` 替换为 DSN
+将 `adapter_host` 替换为 adapter 地址，`adapter_port` 替换为 adapter 的端口，`dsn` 替换为 DSN。
 
 
 ```python
@@ -32,7 +32,7 @@ import pycovenantsql
 # Connect to the database
 connection = pycovenantsql.connect(host='<adapter_host>',
                              port=<adapter_port>,
-                             database='<database_id>'
+                             database='<dsn>'
                              )
 
 try:

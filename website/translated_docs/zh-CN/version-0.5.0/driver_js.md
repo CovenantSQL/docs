@@ -14,16 +14,18 @@ title: 📦 Javascript
 ```bash
 npm install --save covenantsql-proxy-js
 ```
-or
+
+或者
+
 ```bash
 yarn add covenantsql-proxy-js
 ```
 
 #### 使用
 
-使用前需要 [部署 Adapter 工具](./adapter)
+使用前需要 [部署 Adapter 工具](./adapter)。
 
-在运行本地 Adapter 之后，将 Adapter 的 endpoint 填入 `covenantsql-proxy-js` 的 config 之中：
+在运行本地 Adapter 之后，将 Adapter 的 endpoint 和 需要连接的数据库的 Database ID 填入 `covenantsql-proxy-js` 的 config 之中：
 
 ```javascript
 const config = {
