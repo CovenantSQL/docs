@@ -2,33 +2,29 @@
 id: driver_golang
 title: '📦 Golang'
 ---
-## 用 Golang 使用 CovenantSQL
+## Use Golang to access CovenantSQL
 
-### 简介
+`CovenantSQL` provides `Golang SDK` to access database using native rpc protocol. The `cql` tool is developed based on `Golang SDK`.
 
-`CovenantSQL` 提供了 `Golang SDK` ，支持以 `Golang` App 以原生通讯协议的形式访问数据库实例，是当前性能最高的使用方法， `cql` 等工具也是基于 `Golang SDK` 进行开发的。
+`Golang SDK` is compatible with Golang `database/sql` driver standard, and popular `Golang ORM` is supported for advanced uses.
 
-`Golang SDK` 遵守 `Golang` 标准的 `database/sql` 接口定义，能够使用常见的 `Golang ORM` 进行使用。
+### Compatibility
 
-### 兼容性
+`Golang SDK` is compatible with Golang `1.10+`.
 
-`Golang SDK` 目前只兼容 `1.10+` 的 Golang 版本。
+### Installation and quick start
 
-### 安装和使用
-
-`Golang SDK` 的 import 地址是 `github.com/CovenantSQL/CovenantSQL/client`
-
-可以执行 `go get` 命令进行安装
+Install it with:
 
 ```shell
 go get github.com/CovenantSQL/CovenantSQL/client
 ```
 
-### API 文档
+### API doc
 
 https://godoc.org/github.com/CovenantSQL/CovenantSQL/client
 
-### 示例
+### Example
 
 ```go
 package main
@@ -50,13 +46,13 @@ func main() {
     flag.StringVar(&password, "password", "", "master key password for covenantsql")
     flag.Parse()
 
-    // 使用节点配置文件初始化 Golang SDK
+    // Use config file to initialize Golang SDK
     err := client.Init(config, []byte(password))
     if err != nil {
         log.Fatal(err)
     }
 
-    // 连接数据库实例
+    // Connect to database instance
     db, err := sql.Open("covenantsql", dsn)
     if err != nil {
         log.Fatal(err)
@@ -80,7 +76,7 @@ func main() {
         );
         CREATE INDEX countryCountryCodeIndex ON countryGDP ( CountryCode );`
 
-    // 写入数据
+    // Insert records
     _, err = db.Exec(Q)
     if err != nil {
         log.Fatal(err)
@@ -118,7 +114,7 @@ func main() {
         ORDER  BY Population DESC
         LIMIT  10;`
 
-    // 查询数据
+    // Query records
     rows, err := db.Query(Q)
     if err != nil {
         log.Fatal(err)
