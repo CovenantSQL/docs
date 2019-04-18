@@ -302,9 +302,7 @@ cql grant '{"chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7
 
 输出：
 
-```bash
-INFO[0000] succeed in sending transaction to CovenantSQL
-```
+    INFO[0000] succeed in sending transaction to CovenantSQL
 
 吊销权限：
 
@@ -314,9 +312,7 @@ cql grant '{"chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7
 
 输出：
 
-```bash
-INFO[0000] succeed in sending transaction to CovenantSQL
-```
+    INFO[0000] succeed in sending transaction to CovenantSQL
 
 子命令 `grant` 通过向 BP 发起交易实现，所以也支持 `wait-tx-confirm` 参数。
 
