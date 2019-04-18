@@ -1,6 +1,6 @@
 ---
 id: driver_python
-title: '📦 Python'
+title: Python
 ---
 ## Use Python to access CovenantSQL
 
@@ -8,7 +8,7 @@ Developers could use [PyCovenantSQL](https://github.com/CovenantSQL/python-drive
 
 ### Compatibility
 
-`Python SDK` requires `python 3.4+`.
+`Python SDK` requires `Python 3.4+`.
 
 ### Installation and quick start
 
