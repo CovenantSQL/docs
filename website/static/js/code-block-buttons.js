@@ -6,6 +6,7 @@ window.addEventListener('load', function() {
     btn.classList.add('btnIcon', className);
     btn.setAttribute('type', 'button');
     btn.setAttribute('aria-label', ariaLabel);
+    btn.setAttribute('style', 'color: #eee');
     btn.innerHTML =
       '<div class="btnIcon__body">' +
       icon +
@@ -18,7 +19,9 @@ window.addEventListener('load', function() {
 
   function addButtons(codeBlockSelector, btn) {
     document.querySelectorAll(codeBlockSelector).forEach(function(code) {
-      code.parentNode.appendChild(btn.cloneNode(true));
+      if (code.className.indexOf('language') > 0) {
+        code.parentNode.appendChild(btn.cloneNode(true));
+      }
     });
   }
 
