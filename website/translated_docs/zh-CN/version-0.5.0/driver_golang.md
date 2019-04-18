@@ -1,6 +1,6 @@
 ---
 id: version-0.5.0-driver_golang
-title: '📦 Golang'
+title: Golang
 original_id: driver_golang
 ---
 ## Use Golang to access CovenantSQL
