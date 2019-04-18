@@ -1,6 +1,6 @@
 ---
 id: deployment
-title: 🐳 Docker 一键部署
+title: Docker Deploy
 ---
 
 ## 使用 CovenantSQL Docker 部署

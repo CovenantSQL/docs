@@ -1,25 +1,28 @@
 {
   "docs": {
-    "Intro": [
+    "Introduction": [
       "intro"
     ],
-    "Install & Deploy": [
-      "nav",
-      "quickstart",
-      "deployment"
+    "Usage": [
+      "quickstart"
+    ],
+    "Tools": [
+      "cql"
     ],
     "Drivers": [
       "driver_golang",
+      "adapter",
       "driver_java",
       "driver_python",
       "driver_js"
     ],
-    "Tools & Services": [
-      "cql",
-      "adapter"
+    "Advanced Usage": [
+      "deployment"
     ],
     "Use Cases": [
-      "quandl"
+      "usecase_traditional_app",
+      "usecase_dapp",
+      "usecase_data_analysis"
     ],
     "About": [
       "qna"

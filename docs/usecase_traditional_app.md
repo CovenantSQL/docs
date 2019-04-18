@@ -1,10 +1,7 @@
 ---
-id: version-0.5.0-usecase
-title: Use case
-original_id: usecase
+id: usecase_traditional_app
+title: Traditional App
 ---
-
-## Traditional App
 
 ### Privacy data
 
@@ -33,10 +30,3 @@ For example, you are the most detailed Bitcoin OHLC data maintainer. You can dir
 
 Thanks to the CQL data history is immutable, CQL can be used as a storage for sensitive operational logs to prevent hacking and erasure access logs.
 
-------
-
-
-
-## ĐApp
-
-Storing data on Bitcoin or Ethereum is quite expensive ($4305 / MB on Ethereum 2018-05-15). Programming is very complicated due to the lack of support for structured data storage. CQL gives you a low-cost structured SQL database and also provides more room for ĐApp to exchange data with real-world.

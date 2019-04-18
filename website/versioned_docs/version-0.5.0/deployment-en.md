@@ -1,6 +1,6 @@
 ---
 id: version-0.5.0-deployment
-title: 🐳 Docker one-line deployment
+title: Docker one-line deployment
 original_id: deployment
 ---
 

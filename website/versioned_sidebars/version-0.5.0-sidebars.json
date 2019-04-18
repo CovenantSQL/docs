@@ -1,12 +1,14 @@
 {
   "version-0.5.0-docs": {
-    "Intro": [
+    "Introduction": [
       "version-0.5.0-intro"
     ],
-    "Install & Deploy": [
-      "version-0.5.0-nav",
-      "version-0.5.0-quickstart",
-      "version-0.5.0-deployment"
+    "Usage": [
+      "version-0.5.0-quickstart"
+    ],
+    "Tools": [
+      "version-0.5.0-cql",
+      "version-0.5.0-adapter"
     ],
     "Drivers": [
       "version-0.5.0-driver_golang",
@@ -14,12 +16,13 @@
       "version-0.5.0-driver_python",
       "version-0.5.0-driver_js"
     ],
-    "Tools & Services": [
-      "version-0.5.0-cql",
-      "version-0.5.0-adapter"
+    "Advanced Usage": [
+      "version-0.5.0-deployment"
     ],
     "Use Cases": [
-      "version-0.5.0-quandl"
+      "version-0.5.0-usecase_traditional_app",
+      "version-0.5.0-usecase_dapp",
+      "version-0.5.0-usecase_data_analysis"
     ],
     "About": [
       "version-0.5.0-qna"
