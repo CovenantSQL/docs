@@ -1,6 +1,6 @@
 ---
 id: intro
-title: CovenantSQL 介绍
+title: CovenantSQL Intro
 ---
 
 
