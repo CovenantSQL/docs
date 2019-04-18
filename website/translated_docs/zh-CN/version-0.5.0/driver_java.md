@@ -1,6 +1,6 @@
 ---
 id: version-0.5.0-driver_java
-title: '📦 Java'
+title: Java
 original_id: driver_java
 ---
 ## Use Java to access CovenantSQL
