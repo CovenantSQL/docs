@@ -6,7 +6,7 @@
     "tagline": "CovenantSQL 文档",
     "docs": {
       "adapter": {
-        "title": "📦 Adapter SDK"
+        "title": "API 网关"
       },
       "bck/api-json-rpc": {
         "title": "JSON RPC"
@@ -33,43 +33,49 @@
         "title": "快速开始"
       },
       "cql": {
-        "title": "🖥️ CQL 命令行工具集"
+        "title": "CQL 客户端"
       },
       "deployment": {
-        "title": "🐳 Docker 一键部署"
+        "title": "Docker 一键部署"
       },
       "driver_golang": {
-        "title": "📦 Golang"
+        "title": "Golang"
       },
       "driver_java": {
-        "title": "📦 Java"
+        "title": "Java"
       },
       "driver_js": {
-        "title": "📦 Javascript"
+        "title": "JavaScript"
       },
       "driver_python": {
-        "title": "📦 Python"
+        "title": "Python"
       },
       "intro": {
         "title": "CovenantSQL 介绍"
       },
       "nav": {
-        "title": "📖 使用导航"
+        "title": "使用导航"
       },
       "qna": {
-        "title": "🙋 常见问题解答"
+        "title": "常见问题解答"
       },
-      "quandl": {
-        "title": "基于 Quandl 的金融数据分析"
+      "usecase_data_analysis": {
+        "title": "数据分析"
+      },
+      "usecase_dapp": {
+        "title": "DApp"
+      },
+      "usecase_traditional_app": {
+        "title": "传统应用"
       },
       "quickstart": {
-        "title": "🌏 TestNet 快速开始"
+        "title": "快速开始"
       },
       "usecase": {
         "title": "使用案例"
       },
       "version-0.5.0-adapter": {
-        "title": "📦 Adapter SDK"
+        "title": "API 网关"
       },
       "version-0.5.0-api-json-rpc": {
         "title": "JSON RPC"
@@ -78,7 +84,7 @@
         "title": "使用 cql-utils 生成密钥与钱包"
       },
       "version-0.5.0-cql": {
-        "title": "🖥️ CQL 命令行工具集"
+        "title": "CQL 客户端"
       },
       "version-0.5.0-golang-client": {
         "title": "使用 Golang 驱动访问数据库"
@@ -96,31 +102,31 @@
         "title": "快速开始"
       },
       "version-0.5.0-deployment": {
-        "title": "🐳 Docker 一键部署"
+        "title": "Docker 一键部署"
       },
       "version-0.5.0-driver_golang": {
-        "title": "📦 Golang"
+        "title": "Golang"
       },
       "version-0.5.0-driver_java": {
-        "title": "📦 Java"
+        "title": "Java"
       },
       "version-0.5.0-driver_js": {
-        "title": "📦 Javascript"
+        "title": "JavaScript"
       },
       "version-0.5.0-driver_python": {
-        "title": "📦 Python"
+        "title": "Python"
       },
       "version-0.5.0-nav": {
-        "title": "📖 使用导航"
+        "title": "使用导航"
       },
       "version-0.5.0-qna": {
-        "title": "🙋 常见问题解答"
+        "title": "常见问题解答"
       },
       "version-0.5.0-quandl": {
-        "title": "基于 Quandl 的金融数据分析"
+        "title": "数据分析"
       },
       "version-0.5.0-quickstart": {
-        "title": "🌏 TestNet 快速开始"
+        "title": "快速开始"
       },
       "version-0.5.0-usecase": {
         "title": "使用案例"
@@ -132,10 +138,11 @@
     },
     "categories": {
       "Intro": "简介",
-      "Install & Deploy": "使用和部署",
-      "Drivers": "Drivers",
-      "Tools & Services": "工具",
+      "Usage": "使用",
+      "Drivers": "开发",
+      "Tools": "工具",
       "Use Cases": "使用案例",
+      "Advanced Usage": "高级使用方式",
       "About": "关于"
     }
   },

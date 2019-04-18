@@ -1,6 +1,7 @@
 ---
-id: quandl
-title: 基于 Quandl 的金融数据分析
+id: version-0.5.0-usecase_data_analysis
+title: Data Analysis
+original_id: usecase_data_analysis
 ---
 
 ## 关于 Quandl

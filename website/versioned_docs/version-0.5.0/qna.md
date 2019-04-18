@@ -1,6 +1,6 @@
 ---
 id: version-0.5.0-qna
-title: 🙋 常见问题解答
+title: Q&A
 original_id: qna
 ---
 

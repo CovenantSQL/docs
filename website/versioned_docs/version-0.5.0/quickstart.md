@@ -1,6 +1,6 @@
 ---
 id: version-0.5.0-quickstart
-title: 🌏 TestNet 快速开始
+title: Quick Start
 original_id: quickstart
 ---
 
@@ -88,9 +88,9 @@ cql create -config=~/.cql/testnet-conf/config.yaml -no-password \
 
 命令执行耗时较长，大约 30s 之后控制台会输出：
 
-```
-covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
-```
+> covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+
+​	
 
 这里表示你提交了 `0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` 这个数据库的创建请求到主链，并创建数据库完成。
 

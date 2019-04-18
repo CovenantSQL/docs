@@ -1,6 +1,6 @@
 ---
 id: version-0.5.0-driver_python
-title: 📦 Python
+title: Python
 original_id: driver_python
 ---
 
@@ -10,7 +10,7 @@ Developers could use [PyCovenantSQL](https://github.com/CovenantSQL/python-drive
 
 ### Compatibility
 
-`Python SDK` requires `python 3.4+`.
+`Python SDK` requires `Python 3.4+`.
 
 ### Installation and quick start
 

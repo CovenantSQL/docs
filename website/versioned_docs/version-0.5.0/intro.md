@@ -1,6 +1,6 @@
 ---
 id: version-0.5.0-intro
-title: CovenantSQL 介绍
+title: CovenantSQL Intro
 original_id: intro
 ---
 
