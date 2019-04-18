@@ -1,6 +1,6 @@
 ---
 id: version-0.5.0-cql
-title: '🖥️ CQL 命令行工具集'
+title: Client
 original_id: cql
 ---
 ## 简介
