@@ -1,8 +1,8 @@
 ---
 id: driver_js
-title: '📦 Javascript'
+title: JavaScript
 ---
-## Use Javascript to access CovenantSQL
+## Use JavaScript to access CovenantSQL
 
 Front-end developers could use [covenantsql-proxy-js](https://github.com/CovenantSQL/covenantsql-proxy-js) to access CovenantSQL through CovenantSQL [Adapter](./adapter).
 
