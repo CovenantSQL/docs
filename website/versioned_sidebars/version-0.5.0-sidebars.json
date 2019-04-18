@@ -7,11 +7,11 @@
       "version-0.5.0-quickstart"
     ],
     "Tools": [
-      "version-0.5.0-cql",
-      "version-0.5.0-adapter"
+      "version-0.5.0-cql"
     ],
     "Drivers": [
       "version-0.5.0-driver_golang",
+      "version-0.5.0-adapter",
       "version-0.5.0-driver_java",
       "version-0.5.0-driver_python",
       "version-0.5.0-driver_js"
