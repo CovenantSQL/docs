@@ -286,13 +286,13 @@ covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 <pre><code class="hljs css language-bash">cql grant <span class="hljs-string">'{"chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5", "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6", "perm": "Read,Write"}'</span>
 </code></pre>
 <p>输出：</p>
-<pre><code class="hljs css language-bash">INFO[0000] succeed <span class="hljs-keyword">in</span> sending transaction to CovenantSQL
+<pre><code class="hljs">INFO[0000] succeed in sending transaction to CovenantSQL
 </code></pre>
 <p>吊销权限：</p>
 <pre><code class="hljs css language-bash">cql grant <span class="hljs-string">'{"chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5", "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6", "perm": "Void"}'</span>
 </code></pre>
 <p>输出：</p>
-<pre><code class="hljs css language-bash">INFO[0000] succeed <span class="hljs-keyword">in</span> sending transaction to CovenantSQL
+<pre><code class="hljs">INFO[0000] succeed in sending transaction to CovenantSQL
 </code></pre>
 <p>子命令 <code>grant</code> 通过向 BP 发起交易实现，所以也支持 <code>wait-tx-confirm</code> 参数。</p>
 <p>由于目前每个数据库实例分别为每个用户独立计费，所以为数据库添加新的账户权限后，需要以新账户身份向该数据库转押金与预付款才能进行正常查询。押金与预付款最小值的计算公式：<code>gas_price*number_of_miner*120000</code>。</p>
