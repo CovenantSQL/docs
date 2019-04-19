@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>访问数据库 · CovenantSQL Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;完成数据库的创建后，就可以使用 &lt;code&gt;console&lt;/code&gt; 子命令来对数据库进行交互式的命令行访问了：&lt;/p&gt;
+"/><meta name="docsearch:version" content="0.5.0"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="访问数据库 · CovenantSQL Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="http://developers.covenantsql.io/index.html"/><meta property="og:description" content="&lt;p&gt;完成数据库的创建后，就可以使用 &lt;code&gt;console&lt;/code&gt; 子命令来对数据库进行交互式的命令行访问了：&lt;/p&gt;
+"/><meta property="og:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="https://hm.baidu.com/hm.js?fd1ee4ccc9da39d0cf4c60ad8e6e214b"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/logo.svg" alt="CovenantSQL Docs"/><h2 class="headerTitleWithLogo">CovenantSQL Docs</h2></a><a href="/zh-CN/versions"><h3>0.5.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/zh-CN/intro" target="_self">Docs</a></li><li class=""><a href="/zh-CN/help" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/cql_db_access">English</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>工具</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">简介</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/intro">CovenantSQL 介绍</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/quickstart">快速开始</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">工具</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_intro">简介</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_account">账号管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_wallet">钱包管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_db_manage">数据库管理</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/zh-CN/cql_db_access">访问数据库</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_server">本地服务</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_advance">高级使用</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_golang">Golang</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/adapter">API 网关</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_java">Java</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_python">Python</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_js">JavaScript</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">高级使用方式</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/deployment">Docker 部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">实现细节</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch">Architecture</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用案例</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_traditional_app">Traditional App</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_dapp">DApp</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_data_analysis">Data Analysis</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">关于</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/qna">常见问题解答</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">访问数据库</h1></header><article><div><span><p>完成数据库的创建后，就可以使用 <code>console</code> 子命令来对数据库进行交互式的命令行访问了：</p>
+<pre><code class="hljs css language-bash">cql console -dsn <span class="hljs-string">'covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5'</span>
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs">Enter master key(press Enter for default: &quot;&quot;): 
+
+INFO[0010] init config success                           path=/home/levente/.cql/config.yaml
+INFO[0010] connecting to &quot;covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5&quot; 
+Connected with driver covenantsql (develop-34ae741a-20190416184528)
+Type &quot;help&quot; for help.
+
+co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=&gt;
+</code></pre>
+<p>或者使用以授权的账号来连接：</p>
+<pre><code class="hljs css language-bash">cql console -config <span class="hljs-string">"account2/config.yaml"</span> -dsn <span class="hljs-string">'covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5'</span>
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs">Enter master key(press Enter for default: &quot;&quot;): 
+
+INFO[0010] init config success                           path=/home/levente/.config/cql/account2/config.yaml
+INFO[0010] connecting to &quot;covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5&quot; 
+Connected with driver covenantsql (develop-34ae741a-20190416184528)
+Type &quot;help&quot; for help.
+
+co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=&gt;
+</code></pre>
+<p>交互式访问示例：</p>
+<pre><code class="hljs">co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=&gt; create table t1 (c1 int);
+CREATE TABLE
+co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=&gt; insert into t1 values (1), (2), (3);
+INSERT
+co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=&gt; select * from t1;
+c1
+----
+1
+2
+3
+(3 rows)
+
+co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=&gt; 
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="子命令-console-完整参数"></a><a href="#子命令-console-完整参数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>子命令 <code>console</code> 完整参数</h2>
+<p>子命令 <code>console</code> 同时也支持在后台启动 <code>adapter</code> 和 <code>explorer</code> 服务，关于这些服务的相关说明请参考 <a href="#本地服务">本地服务</a> 的相关章节。</p>
+<pre><code class="hljs">usage: cql console [参数]...
+
+为 CovenantSQL 运行交互式的命令行访问。
+示例：
+    cql console -dsn the_dsn_of_your_database
+
+另外也可以通过 -command 参数来直接运行 SQL 查询语句或通过 -file 参数来从文件读取查询语句。
+在指定了这些参数的情况下 `console` 子命令将会直接执行命令后退出，而不会进入交互式的命令行模式。
+示例：
+    cql console -dsn the_dsn_of_your_database -command &quot;create table test1(test2 int);&quot;
+
+Params:
+  -adapter string
+        指定数据库子链的 adapter 服务器的监听地址
+  -command string
+        执行单条 SQL 语句并退出
+  -dsn string
+        数据库连接字符串
+  -explorer string
+        指定数据库子链的 explorer 服务器监听地址
+  -file string
+        执行 SQL 脚本中的语句并退出
+  -no-rc
+        启动时不加载 .rc 初始脚本
+  -out string
+        指定输出文件
+  -single-transaction
+        在非交互模式下使用单个事务执行所有语句
+  -variable value
+        设置环境变量
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/19/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/cql_db_manage"><span class="arrow-prev">← </span><span>数据库管理</span></a><a class="docs-next button" href="/docs/zh-CN/cql_server"><span>本地服务</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#子命令-console-完整参数">子命令 <code>console</code> 完整参数</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '1b47865e3d00b7996a988bbc155a68e4',
+                indexName: 'covenantsql',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
