@@ -34,7 +34,7 @@ Create new database using `cql create` command and provide database instance req
 
 For example, create a single node database instance:
 
-```shell
+```bash
 docker run -it --rm \
     -v ~/.cql/config.yaml:/app/config.yaml \
     -v ~/.cql/private.key:/app/private.key \
@@ -44,7 +44,7 @@ docker run -it --rm \
 
 This command would produce a database connection string (DSN) similar to following example.
 
-```shell
+```bash
 covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
 ```
 
