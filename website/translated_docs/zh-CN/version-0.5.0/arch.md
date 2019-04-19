@@ -7,7 +7,7 @@ title: Architecture
 ## 3 层架构
 
 
-![CovenantSQL 3 Layer design](logo/arch.png)
+![CovenantSQL 3 Layer design](https://github.com/CovenantSQL/CovenantSQL/raw/ed2878359345cd86e4221f14cd59e4654361b64e/logo/arch.png)
 
 - 第一层: **全局共识层**(主链，架构图中的中间环):
     - 整个网络中只有一个主链。
