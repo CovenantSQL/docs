@@ -74,18 +74,18 @@ make start
 <pre><code class="hljs css language-bash">docker-compose ps
 </code></pre>
 <p>Confirm that all components are in the <code>Up</code> state</p>
-<pre><code class="hljs css language-bash">          Name                         Command               State                 Ports
+<pre><code class="hljs">          Name                         Command               State                 Ports
 ------------------------------------------------------------------------------------------------------
-covenantsql_bp_0            <span class="hljs-string">"./docker-entry.sh"</span>              Up        0.0.0.0:11099-&gt;4661/tcp
-covenantsql_bp_1            <span class="hljs-string">"./docker-entry.sh"</span>              Up        0.0.0.0:11100-&gt;4661/tcp
-covenantsql_bp_2            <span class="hljs-string">"./docker-entry.sh"</span>              Up        0.0.0.0:11101-&gt;4661/tcp
-covenantsql_miner_0         <span class="hljs-string">"./docker-entry.sh"</span>              Up        0.0.0.0:11102-&gt;4661/tcp
-covenantsql_miner_1         <span class="hljs-string">"./docker-entry.sh"</span>              Up        0.0.0.0:11103-&gt;4661/tcp
-covenantsql_miner_2         <span class="hljs-string">"./docker-entry.sh"</span>              Up        0.0.0.0:11104-&gt;4661/tcp
-covenantsql_adapter         <span class="hljs-string">"./docker-entry.sh"</span>              Up        0.0.0.0:11105-&gt;4661/tcp
-covenantsql_mysql_adapter   <span class="hljs-string">"./docker-entry.sh -…"</span>           Up        4661/tcp, 0.0.0.0:11107-&gt;4664/tcp
-covenantsql_observer        <span class="hljs-string">"./docker-entry.sh"</span>              Up        4661/tcp, 0.0.0.0:11108-&gt;80/tcp
-covenantsql_fn_0            <span class="hljs-string">"./docker-entry.sh -…"</span>           Up        4661/tcp, 0.0.0.0:11110-&gt;8546/tcp
+covenantsql_bp_0            <span class="hljs-string">"./docker-entry.sh"</span>              Up        <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>:<span class="hljs-number">11099</span>-&gt;<span class="hljs-number">4661</span>/tcp
+covenantsql_bp_1            <span class="hljs-string">"./docker-entry.sh"</span>              Up        <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>:<span class="hljs-number">11100</span>-&gt;<span class="hljs-number">4661</span>/tcp
+covenantsql_bp_2            <span class="hljs-string">"./docker-entry.sh"</span>              Up        <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>:<span class="hljs-number">11101</span>-&gt;<span class="hljs-number">4661</span>/tcp
+covenantsql_miner_0         <span class="hljs-string">"./docker-entry.sh"</span>              Up        <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>:<span class="hljs-number">11102</span>-&gt;<span class="hljs-number">4661</span>/tcp
+covenantsql_miner_1         <span class="hljs-string">"./docker-entry.sh"</span>              Up        <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>:<span class="hljs-number">11103</span>-&gt;<span class="hljs-number">4661</span>/tcp
+covenantsql_miner_2         <span class="hljs-string">"./docker-entry.sh"</span>              Up        <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>:<span class="hljs-number">11104</span>-&gt;<span class="hljs-number">4661</span>/tcp
+covenantsql_adapter         <span class="hljs-string">"./docker-entry.sh"</span>              Up        <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>:<span class="hljs-number">11105</span>-&gt;<span class="hljs-number">4661</span>/tcp
+covenantsql_mysql_adapter   <span class="hljs-string">"./docker-entry.sh -…"</span>           Up        <span class="hljs-number">4661</span>/tcp, <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>:<span class="hljs-number">11107</span>-&gt;<span class="hljs-number">4664</span>/tcp
+covenantsql_observer        <span class="hljs-string">"./docker-entry.sh"</span>              Up        <span class="hljs-number">4661</span>/tcp, <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>:<span class="hljs-number">11108</span>-&gt;<span class="hljs-number">80</span>/tcp
+covenantsql_fn_0            <span class="hljs-string">"./docker-entry.sh -…"</span>           Up        <span class="hljs-number">4661</span>/tcp, <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>:<span class="hljs-number">11110</span>-&gt;<span class="hljs-number">8546</span>/tcp
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="operate-covenantsql"></a><a href="#operate-covenantsql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Operate CovenantSQL</h2>
 <h3><a class="anchor" aria-hidden="true" id="create-a-database"></a><a href="#create-a-database" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a database</h3>
@@ -100,17 +100,17 @@ e.g.: create an instance of two nodes</p>
 <pre><code class="hljs css language-bash">docker <span class="hljs-built_in">exec</span> -it covenantsql_adapter /app/cql create -config /app/config.yaml -no-password <span class="hljs-string">'{"node":1}'</span>
 </code></pre>
 <p>The command will return the connection string of the created database instance</p>
-<pre><code class="hljs css language-bash">covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
+<pre><code class="hljs"><span class="hljs-symbol">covenantsql:</span><span class="hljs-comment">//0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="accessing-the-database"></a><a href="#accessing-the-database" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accessing the database</h3>
 <p>Use the <code>cql</code> command and use the <code>dsn</code> parameter to provide a connection string for the database instance access:</p>
 <pre><code class="hljs css language-bash">docker <span class="hljs-built_in">exec</span> -it covenantsql_adapter /app/cql console -config /app/config.yaml -no-password -dsn covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
 </code></pre>
 <p>After that, it will get the following output, and enter the <code>cql</code> interactive command line mode</p>
-<pre><code class="hljs css language-bash">Connected with driver covenantsql (develop)
-Type <span class="hljs-string">"help"</span> <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>.
+<pre><code class="hljs">Connected with driver covenantsql (develop)<span class="hljs-built_in">
+Type </span><span class="hljs-string">"help"</span> <span class="hljs-keyword">for</span> help.
 
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt;
+co:<span class="hljs-attribute">0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4</span>=&gt;
 </code></pre>
 <p>The <code>cql</code> interactive command line mode is similar to the <code>mysql</code> command. For example, create a table named test, view the tables in the database, insert records, and query results etc.</p>
 <pre><code class="hljs css language-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">test</span> (<span class="hljs-keyword">test</span> <span class="hljs-built_in">TEXT</span>);
@@ -119,20 +119,20 @@ co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt;
 <span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">test</span>;
 </code></pre>
 <p>After that, it will get the following output:</p>
-<pre><code class="hljs css language-bash">co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt; CREATE TABLE <span class="hljs-built_in">test</span> (<span class="hljs-built_in">test</span> TEXT);
+<pre><code class="hljs">co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt; CREATE TABLE test (test TEXT);
 CREATE TABLE
 co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt; SHOW TABLES;
- name
-------
- <span class="hljs-built_in">test</span>
+<span class="hljs-section"> name
+------</span>
+<span class="hljs-code"> test</span>
 (1 row)
 
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt; INSERT INTO <span class="hljs-built_in">test</span> VALUES(<span class="hljs-string">"happy"</span>);
+co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt; INSERT INTO test VALUES("happy");
 INSERT
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt; SELECT * FROM <span class="hljs-built_in">test</span>;
- <span class="hljs-built_in">test</span>
--------
- happy
+co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt; SELECT * FROM test;
+<span class="hljs-section"> test
+-------</span>
+<span class="hljs-code"> happy</span>
 (1 row)
 
 co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=&gt;
