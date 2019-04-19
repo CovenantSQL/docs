@@ -1,6 +1,6 @@
 ---
 id: cql_intro
-title: Intro
+title: Overview
 ---
 CovenantSQL provides a `cql` command line toolset for terminal users to access and manage user accounts, wallet balances, and databases. Check the complete toolset installation tutorial at \[CovenantSQL Toolset installation\](quickstart#工具包安装).
 
