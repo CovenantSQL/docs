@@ -95,86 +95,26 @@
       "usecase": {
         "title": "使用案例"
       },
-      "version-0.5.0-adapter": {
-        "title": "API 网关"
-      },
-      "version-0.5.0-api-json-rpc": {
+      "api-json-rpc": {
         "title": "JSON RPC"
       },
-      "version-0.5.0-keygen": {
+      "keygen": {
         "title": "使用 cql-utils 生成密钥与钱包"
       },
-      "version-0.5.0-cql": {
+      "cql": {
         "title": "CQL 客户端"
       },
-      "version-0.5.0-cql": {
-        "title": "CQL 客户端"
-      },
-      "version-0.5.0-cql_intro": {
-        "title": "简介"
-      },
-      "version-0.5.0-cql_account": {
-        "title": "账号管理"
-      },
-      "version-0.5.0-cql_wallet": {
-        "title": "钱包管理"
-      },
-      "version-0.5.0-cql_db_manage": {
-        "title": "数据库管理"
-      },
-      "version-0.5.0-cql_db_access": {
-        "title": "访问数据库"
-      },
-      "version-0.5.0-cql_server": {
-        "title": "本地服务"
-      },
-      "version-0.5.0-cql_advance": {
-        "title": "高级使用"
-      },
-      "version-0.5.0-golang-client": {
+      "golang-client": {
         "title": "使用 Golang 驱动访问数据库"
       },
-      "version-0.5.0-intro": {
-        "title": "CovenantSQL 介绍"
-      },
-      "version-0.5.0-testnet": {
+      "testnet": {
         "title": "CovenantSQL 测试网快速入门"
       },
-      "version-0.5.0-local-deployment": {
+      "local-deployment": {
         "title": "CovenantSQL 综述"
       },
-      "version-0.5.0-guide-zh": {
+      "guide-zh": {
         "title": "快速开始"
-      },
-      "version-0.5.0-deployment": {
-        "title": "Docker 部署"
-      },
-      "version-0.5.0-driver_golang": {
-        "title": "Golang"
-      },
-      "version-0.5.0-driver_java": {
-        "title": "Java"
-      },
-      "version-0.5.0-driver_js": {
-        "title": "JavaScript"
-      },
-      "version-0.5.0-driver_python": {
-        "title": "Python"
-      },
-      "version-0.5.0-nav": {
-        "title": "使用导航"
-      },
-      "version-0.5.0-qna": {
-        "title": "常见问题解答"
-      },
-      "version-0.5.0-quandl": {
-        "title": "数据分析"
-      },
-      "version-0.5.0-quickstart": {
-        "title": "快速开始"
-      },
-      "version-0.5.0-usecase": {
-        "title": "使用案例"
       }
     },
     "links": {

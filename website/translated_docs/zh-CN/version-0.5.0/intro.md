@@ -42,10 +42,6 @@ CovenantSQL(CQL) 是一个运行在公网上的 SQL 数据库，并具有 GDPR �
 
 我们坚信 [在下一个互联网时代，每个人都应该有完整的**数据权利**](https://medium.com/@covenant_labs/covenantsql-the-sql-database-on-blockchain-db027aaf1e0e)
 
-## 使用文档
-
-https://developers.covenantsql.io/docs/zh-CN/quickstart
-
 **一行代码让数据上链**
 
 ```go
