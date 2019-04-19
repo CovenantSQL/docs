@@ -14,25 +14,25 @@ Please choose the installation method according to the operating system platform
 
 - 🍺 Homebrew users can just run:
 
-```bash
-brew install cql
-```
+    ```bash
+    brew install cql
+    ```
 
 - non-Homebrew users can run:
-
-```bash
-sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.osx-amd64.tar.gz" | \
- tar xzv -C /usr/local/bin/ --strip-components=1'
-```
+    
+    ```bash
+    sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.osx-amd64.tar.gz" | \
+     tar xzv -C /usr/local/bin/ --strip-components=1'
+    ```
 
 #### Linux
 
-Just run：
+- Just run：
 
-```bash
-sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.linux-amd64.tar.gz" | \
-tar xzv -C /usr/local/bin/ --strip-components=1'
-```
+    ```bash
+    sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.linux-amd64.tar.gz" | \
+    tar xzv -C /usr/local/bin/ --strip-components=1'
+    ```
 
 After the installation is complete, you can execute the following command to check whether the installation is successful.
 

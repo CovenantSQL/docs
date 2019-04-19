@@ -13,25 +13,25 @@ title: Quick Start
 
 - 🍺 Homebrew 用户可以直接在命令行：
 
-```bash
-brew install cql
-```
+    ```bash
+    brew install cql
+    ```
 
 - 非 Homebrew，可以执行：
 
-```bash
-sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.osx-amd64.tar.gz" | \
- tar xzv -C /usr/local/bin/ --strip-components=1'
-```
+    ```bash
+    sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.osx-amd64.tar.gz" | \
+     tar xzv -C /usr/local/bin/ --strip-components=1'
+    ```
 
 #### Linux 平台
 
-在命令行中执行：
+- 在命令行中执行：
 
-```bash
-sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.linux-amd64.tar.gz" | \
-tar xzv -C /usr/local/bin/ --strip-components=1'
-```
+    ```bash
+    sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.linux-amd64.tar.gz" | \
+    tar xzv -C /usr/local/bin/ --strip-components=1'
+    ```
 
 安装完成后可以执行下面的命令，查看是否安装成功
 
