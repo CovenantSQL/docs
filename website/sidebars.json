@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Introduction": [
+    "Overview": [
       "intro"
     ],
     "Usage": [
@@ -18,6 +18,9 @@
     ],
     "Advanced Usage": [
       "deployment"
+    ],
+    "How It Works": [
+      "arch"
     ],
     "Use Cases": [
       "usecase_traditional_app",

@@ -36,7 +36,7 @@
         "title": "CQL 客户端"
       },
       "deployment": {
-        "title": "Docker 一键部署"
+        "title": "Docker 部署"
       },
       "driver_golang": {
         "title": "Golang"
@@ -71,6 +71,9 @@
       "quickstart": {
         "title": "快速开始"
       },
+      "arch": {
+        "title": "实现细节"
+      },
       "usecase": {
         "title": "使用案例"
       },
@@ -102,7 +105,7 @@
         "title": "快速开始"
       },
       "version-0.5.0-deployment": {
-        "title": "Docker 一键部署"
+        "title": "Docker 部署"
       },
       "version-0.5.0-driver_golang": {
         "title": "Golang"
@@ -137,12 +140,13 @@
       "Help": "Help"
     },
     "categories": {
-      "Introduction": "简介",
+      "Overview": "简介",
       "Usage": "使用",
       "Drivers": "开发",
       "Tools": "工具",
       "Use Cases": "使用案例",
       "Advanced Usage": "高级使用方式",
+      "How It Works": "实现细节",
       "About": "关于"
     }
   },

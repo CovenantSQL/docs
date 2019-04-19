@@ -14,7 +14,7 @@ title: Quick Start
 - 🍺 Homebrew 用户可以直接在命令行：
 
 ```bash
-brew tap CovenantSQL/cql && brew install cql
+brew install cql
 ```
 
 - 非 Homebrew，可以执行：
