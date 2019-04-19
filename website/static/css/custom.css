@@ -5,6 +5,9 @@ article p img {
 button:focus, textarea:focus, input:focus{
   outline: none !important;
 }
+.post a {
+  text-decoration: underline !important;
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
