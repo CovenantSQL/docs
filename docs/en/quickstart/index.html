@@ -103,20 +103,19 @@ chmod 600 ~/.cql/testnet-conf/private.key
 <blockquote>
 <p><a href="covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872">covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872</a></p>
 </blockquote>
-<p>​</p>
-<p>这里表示你提交了 <code>0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872</code> 这个数据库的创建请求到主链，并创建数据库完成。</p>
+<p>这里表示你提交了数据库 <code>0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872</code> 的创建请求到主链，并创建数据库完成。</p>
 <blockquote>
 <p>命令执行耗时较长，大致过程为：</p>
 <ol>
 <li>收到请求的 出块节点（Block Producer）进行 Miner 和数据库创建请求的撮合</li>
 <li>数据库创建请求在 其它出块节点 进行验证和确认</li>
-<li>SQLChain 的符合条件的 Miner 收到数据库任务</li>
-<li>SQLChian 组建 Kayak 数据库集群</li>
+<li>SQLChain 上符合条件的 Miner 收到数据库任务</li>
+<li>SQLChain 组建 Kayak 数据库集群</li>
 <li>所有 Miner 准备就绪等待请求</li>
 </ol>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="访问数据库"></a><a href="#访问数据库" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>访问数据库</h2>
-<pre><code class="hljs css language-shell">cql console -config=~/.cql/testnet-conf/config.yaml -no-password \ 
+<pre><code class="hljs css language-bash">cql console -config=~/.cql/testnet-conf/config.yaml -no-password \ 
 -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 </code></pre>
 <p>连接上数据库后，你可以按你操作数据库的习惯来操作 CovenantSQL 上的数据库。比如执行 <code>CREATE TABLE</code> 创建表、<code>SELECT</code> 查询数据等操作。</p>
@@ -164,15 +163,15 @@ Generated config.
 <p>输出：</p>
 <pre><code class="hljs css language-toml">wallet address: bc3cba461500f49c2adf6e6e98c1b3513063227063512f0dd6a5160c01de5e3c
 </code></pre>
-<p>你可以在这里回复上面得到的钱包地址 <a href="https://github.com/CovenantSQL/CovenantSQL/issues/283">GitHub Issue</a>，我们会为你的钱包充值。</p>
-<p>使用 cql 命令行工具查询余额(可以添加 -config 参数，指定其他的 config.yaml 所在目录)：</p>
+<p>你可以用上面得到的钱包地址在这里领取测试用 PTC ： <a href="https://testnet.covenantsql.io/">申请 PTC</a>。</p>
+<p>最多 2min 后，可以使用 cql 命令行工具查询余额：</p>
 <pre><code class="hljs css language-bash">cql wallet -no-password -balance all
 </code></pre>
 <p>输出：</p>
 <pre><code class="hljs">Particle balance <span class="hljs-keyword">is</span>: <span class="hljs-number">100</span>
 Wave balance <span class="hljs-keyword">is</span>: <span class="hljs-number">0</span>
 </code></pre>
-<p>恭喜，你已收到我们发出的 PTC 稳定币，现在即可开始使用 CovenantSQL， 你可以参考 <a href="./development">Golang 使用 CovenantSQL 文档</a> 进行开发。</p>
+<p>恭喜，你已收到我们发出的 PTC 稳定币，现在即可开始使用 CovenantSQL， 你可以参考 <a href="./driver_golang">Golang 使用 CovenantSQL 文档</a> 进行开发。</p>
 </span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/19/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/intro"><span class="arrow-prev">← </span><span class="function-name-prevnext">CovenantSQL Intro</span></a><a class="docs-next button" href="/docs/en/cql_intro"><span>Intro</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#covenantsql-工具包">CovenantSQL 工具包</a><ul class="toc-headings"><li><a href="#工具包安装">工具包安装</a></li><li><a href="#工具包介绍">工具包介绍</a></li><li><a href="#测试网快速接入">测试网快速接入</a></li></ul></li><li><a href="#创建数据库">创建数据库</a></li><li><a href="#访问数据库">访问数据库</a></li><li><a href="#sqlchain-区块浏览器">SQLChain 区块浏览器</a></li><li><a href="#创建新账号">创建新账号</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
