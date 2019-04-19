@@ -3,4 +3,4 @@ id: usecase_dapp
 title: DApp
 ---
 
-Storing data on Bitcoin or Ethereum is quite expensive ($4305 / MB on Ethereum 2018-05-15). Programming is very complicated due to the lack of support for structured data storage. CQL gives you a low-cost structured SQL database and also provides more room for ĐApp to exchange data with real-world.
+在比特币或以太坊这种传统公链上存储数据非常昂贵（2018-05-15 以太坊上为 $4305 / MB），而且由于缺乏结构化数据的支持，代码实现非常复杂。但 CQL 可以给你一个结构化且低成本的 SQL 数据库，并为 ĐApp 提供了与真实世界交换数据的空间。

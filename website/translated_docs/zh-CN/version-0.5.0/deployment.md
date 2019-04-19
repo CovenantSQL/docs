@@ -64,7 +64,7 @@ docker-compose ps
 
 确认所有组件都处于 `Up` 的状态
 
-```bash
+```
           Name                         Command               State                        Ports
 ---------------------------------------------------------------------------------------------------------------------
 covenantsql_adapter         ./docker-entry.sh                Up      0.0.0.0:11105->4661/tcp
@@ -97,7 +97,7 @@ docker exec -it covenantsql_adapter /app/cql create -config /app/node_adapter/co
 
 命令会返回创建的数据库实例的连接串
 
-```bash
+```
 covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5
 ```
 
@@ -111,7 +111,7 @@ docker exec -it covenantsql_adapter /app/cql console -config /app/node_adapter/c
 
 会得到如下输出，并进入 `cql` 交互命令行模式
 
-```bash
+```
 Connected with driver covenantsql (develop-34ae741a-20190415135520)
 Type "help" for help.
 
@@ -129,7 +129,7 @@ SELECT * FROM test;
 
 会得到如下输出
 
-```bash
+```
 co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=> CREATE TABLE test (test TEXT);
 CREATE TABLE
 co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=> SHOW TABLES;
