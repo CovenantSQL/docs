@@ -16,7 +16,7 @@ title: Golang
 
 Install it with:
 
-```shell
+```bash
 go get github.com/CovenantSQL/CovenantSQL/client
 ```
 
