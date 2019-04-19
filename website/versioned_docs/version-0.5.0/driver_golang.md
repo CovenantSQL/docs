@@ -18,7 +18,7 @@ original_id: driver_golang
 
 Install it with:
 
-```shell
+```bash
 go get github.com/CovenantSQL/CovenantSQL/client
 ```
 

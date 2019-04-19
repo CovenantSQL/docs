@@ -17,7 +17,7 @@ title: 📦 Python
 
 使用 pip 安装 PyCovenantSQL
 
-```shell
+```bash
 $ python3 -m pip install PyCovenantSQL 
 ```
 

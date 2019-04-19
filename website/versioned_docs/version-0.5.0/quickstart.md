@@ -106,7 +106,7 @@ cql create -config=~/.cql/testnet-conf/config.yaml -no-password \
 
 ## 访问数据库
 
-```shell
+```bash
 cql console -config=~/.cql/testnet-conf/config.yaml -no-password \ 
 -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ```

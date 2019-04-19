@@ -64,7 +64,7 @@ docker-compose ps
 
 确认所有组件都处于 `Up` 的状态
 
-```shell
+```bash
           Name                         Command               State                        Ports
 ---------------------------------------------------------------------------------------------------------------------
 covenantsql_adapter         ./docker-entry.sh                Up      0.0.0.0:11105->4661/tcp
@@ -85,19 +85,19 @@ covenantsql_observer        ./docker-entry.sh                Up      4661/tcp, 0
 
 使用 `cql` 命令并使用 `create` 参数提供所需的数据库节点数量创建数据库实例，例如：创建一个单节点的数据库实例
 
-```shell
+```bash
 docker exec -it covenantsql_adapter /app/cql create -config /app/node_adapter/config.yaml -no-password '{"node":1}'
 ```
 
 >  修改 `create` 参数的值，可以创建运行在多节点上的实例，例如：创建两个节点的实例
 
-```shell
+```bash
 docker exec -it covenantsql_adapter /app/cql create -config /app/node_adapter/config.yaml -no-password '{"node":2}'
 ```
 
 命令会返回创建的数据库实例的连接串
 
-```shell
+```bash
 covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5
 ```
 
@@ -105,13 +105,13 @@ covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5
 
 使用 `cql` 命令并使用 `dsn` 参数提供数据库实例的连接串进行数据库访问
 
- ```shell
+ ```bash
 docker exec -it covenantsql_adapter /app/cql console -config /app/node_adapter/config.yaml -no-password -dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5
  ```
 
 会得到如下输出，并进入 `cql` 交互命令行模式
 
-```shell
+```bash
 Connected with driver covenantsql (develop-34ae741a-20190415135520)
 Type "help" for help.
 
@@ -129,7 +129,7 @@ SELECT * FROM test;
 
 会得到如下输出
 
-```shell
+```bash
 co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=> CREATE TABLE test (test TEXT);
 CREATE TABLE
 co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=> SHOW TABLES;

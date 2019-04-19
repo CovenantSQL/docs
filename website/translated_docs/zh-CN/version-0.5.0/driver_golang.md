@@ -19,7 +19,7 @@ title: 📦 Golang
 
 可以执行 `go get` 命令进行安装
 
-```shell
+```bash
 go get github.com/CovenantSQL/CovenantSQL/client
 ```
 

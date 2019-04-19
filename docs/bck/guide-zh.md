@@ -15,7 +15,7 @@ title: 快速开始
 
 ### 使用 cql 命令行工具创建数据库
 
-```shell
+```bash
 ./cql -config config.yaml -create 1
 ```
 
@@ -29,7 +29,7 @@ INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a7
 
 ### 使用 cql 命令行工具访问数据库
 
-```shell
+```bash
 ./cql -config config.yaml -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ```
 
@@ -50,7 +50,7 @@ CovenantSQL 有一个特性是**其操作记录是不可变且可跟踪的**，�
 
 我们的测试网支持您创建自己的的账号，并在自己的账号下创建数据库。通过以下的命令创建账号（需要输入主密码）：
 
-```shell
+```bash
 ./cql-utils -tool confgen
 ```
 
@@ -82,7 +82,7 @@ Generated nonce.
 
 再运行命令用来生成账号地址（也叫钱包地址、CovenantSQL 地址）：
 
-```shell
+```bash
 ./cql-utils -tool addrgen -private ~/.cql/private.key
 ```
 
@@ -96,7 +96,7 @@ wallet address: 4kcCg4niPjWURuFyT633V8TF9Xb9PvUR5Xbf6aTvGxFZkJFQaS9
 
 使用 cql 命令行工具查询余额(未加 -config 参数时，命令会自动找 ~/.cql 目录的 config.yaml 文件)：
 
-```shell
+```bash
 ./cql -config ~/.cql/config.yaml -get-balance
 ```
 

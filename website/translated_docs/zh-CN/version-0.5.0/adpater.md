@@ -32,7 +32,7 @@ docker run -itd \
 
 使用 `cql` 命令并使用 `create` 参数提供所需的数据库节点数量创建数据库实例，例如：创建一个单节点的数据库实例
 
-```shell
+```bash
 docker run -it --rm \
 	-v ~/.cql/config.yaml:/app/config.yaml \
 	-v ~/.cql/private.key:/app/private.key \
@@ -42,7 +42,7 @@ docker run -it --rm \
 
 命令会返回创建的数据库实例的连接串（DSN）
 
-```shell
+```bash
 covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
 ```
 

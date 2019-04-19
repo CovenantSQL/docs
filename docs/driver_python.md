@@ -17,7 +17,7 @@ Before using `Python SDK`, an adapter deployment is required, please see [Deploy
 
 Install `PyCovenantSQL` using pip: 
 
-```shell
+```bash
 $ python3 -m pip install PyCovenantSQL 
 ```
 

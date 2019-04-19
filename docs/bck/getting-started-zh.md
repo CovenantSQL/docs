@@ -93,7 +93,7 @@ CovenantSQL 是一个运行在 Internet 上的开放网络，主要有以下三�
 
 ### 使用 cql 命令行工具创建数据库
 
-```shell
+```bash
 ./cql -config config.yaml -create 1
 ```
 
@@ -107,7 +107,7 @@ INFO[0000] the newly created database is: "covenantsql://0a10b74439f2376d828c9a7
 
 ### 使用 cql 命令行工具访问数据库
 
-```shell
+```bash
 ./cql -config config.yaml -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ```
 
@@ -128,7 +128,7 @@ CovenantSQL 有一个特性是**其操作记录是不可变且可跟踪的**，�
 
 我们的测试网支持您创建自己的的账号，并在自己的账号下创建数据库。通过以下的命令创建账号（需要输入主密码）：
 
-```shell
+```bash
 ./cql-utils -tool confgen
 ```
 
@@ -160,7 +160,7 @@ Generated nonce.
 
 再运行命令用来生成账号地址（也叫钱包地址、CovenantSQL 地址）：
 
-```shell
+```bash
 ./cql-utils -tool addrgen -private ~/.cql/private.key
 ```
 
@@ -174,7 +174,7 @@ wallet address: 4kcCg4niPjWURuFyT633V8TF9Xb9PvUR5Xbf6aTvGxFZkJFQaS9
 
 使用 cql 命令行工具查询余额(未加 -config 参数时，命令会自动找 ~/.cql 目录的 config.yaml 文件)：
 
-```shell
+```bash
 ./cql -config ~/.cql/config.yaml -get-balance
 ```
 
@@ -211,7 +211,7 @@ Docker-Compose：https://docs.docker.com/compose/install/
 
 执行以下的命令在本地运行 CovenantSQL
 
-```shell
+```bash
 git clone https://github.com/CovenantSQL/CovenantSQL
 cd CovenantSQL
 make docker
@@ -222,13 +222,13 @@ make start
 
 ### 检查运行状态
 
-```shell
+```bash
 docker-compose ps
 ```
 
 确认所有组件都处于 `Up` 的状态
 
-```shell
+```bash
           Name                         Command               State                 Ports
 ------------------------------------------------------------------------------------------------------
 covenantsql_bp_0            "./docker-entry.sh"              Up        0.0.0.0:11099->4661/tcp
@@ -253,19 +253,19 @@ covenantsql_fn_0            "./docker-entry.sh -…"           Up        4661/tc
 
 使用 `cql` 命令并使用 `create` 参数提供所需的数据库节点数量创建数据库实例，例如：创建一个单节点的数据库实例
 
-```shell
+```bash
 cql -config config/config.yaml -create 1
 ```
 
 >  修改 `create` 参数的值，可以创建运行在多节点上的实例，例如：创建两个节点的实例
 
-```shell
+```bash
 cql -config config/config.yaml -create 2
 ```
 
 命令会返回创建的数据库实例的连接串
 
-```shell
+```bash
 covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
 ```
 
@@ -273,13 +273,13 @@ covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
 
 使用 `cql` 命令并使用 `dsn` 参数提供数据库实例的连接串进行数据库访问
 
- ```shell
+ ```bash
 cql -config config/config.yaml -dsn covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
  ```
 
 会得到如下输出，并进入 `cql` 交互命令行模式
 
-```shell
+```bash
 Connected with driver covenantsql (develop)
 Type "help" for help.
 
@@ -297,7 +297,7 @@ SELECT * FROM test;
 
 会得到如下输出
 
-```shell
+```bash
 co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> CREATE TABLE test (test TEXT);
 CREATE TABLE
 co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> SHOW TABLES;
@@ -339,7 +339,7 @@ co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=>
 
 可以执行 `go get` 命令进行安装
 
-```shell
+```bash
 go get github.com/CovenantSQL/CovenantSQL/client
 ```
 
