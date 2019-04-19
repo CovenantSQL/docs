@@ -90,16 +90,15 @@ cql create -config=~/.cql/testnet-conf/config.yaml -no-password \
 
 > covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 
-​	
 
-这里表示你提交了 `0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` 这个数据库的创建请求到主链，并创建数据库完成。
+这里表示你提交了数据库 `0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` 的创建请求到主链，并创建数据库完成。
 
 > 命令执行耗时较长，大致过程为：
 >
 > 1. 收到请求的 出块节点（Block Producer）进行 Miner 和数据库创建请求的撮合
 > 2. 数据库创建请求在 其它出块节点 进行验证和确认
-> 3. SQLChain 的符合条件的 Miner 收到数据库任务
-> 4. SQLChian 组建 Kayak 数据库集群
+> 3. SQLChain 上符合条件的 Miner 收到数据库任务
+> 4. SQLChain 组建 Kayak 数据库集群
 > 5. 所有 Miner 准备就绪等待请求
 
 
@@ -178,9 +177,9 @@ cql wallet -no-password
 wallet address: bc3cba461500f49c2adf6e6e98c1b3513063227063512f0dd6a5160c01de5e3c
 ```
 
-你可以在这里回复上面得到的钱包地址 [GitHub Issue](https://github.com/CovenantSQL/CovenantSQL/issues/283)，我们会为你的钱包充值。
+你可以用上面得到的钱包地址在这里领取测试用 PTC ： [申请 PTC](https://testnet.covenantsql.io/)。
 
-使用 cql 命令行工具查询余额(可以添加 -config 参数，指定其他的 config.yaml 所在目录)：
+最多 2min 后，可以使用 cql 命令行工具查询余额：
 
 ```bash
 cql wallet -no-password -balance all
@@ -193,4 +192,4 @@ Particle balance is: 100
 Wave balance is: 0
 ```
 
-恭喜，你已收到我们发出的 PTC 稳定币，现在即可开始使用 CovenantSQL， 你可以参考 [Golang 使用 CovenantSQL 文档](./development) 进行开发。
+恭喜，你已收到我们发出的 PTC 稳定币，现在即可开始使用 CovenantSQL， 你可以参考 [Golang 使用 CovenantSQL 文档](./driver_golang) 进行开发。
