@@ -19,6 +19,9 @@
     "Advanced Usage": [
       "version-0.5.0-deployment"
     ],
+    "How It Works": [
+      "version-0.5.0-arch"
+    ],
     "Use Cases": [
       "version-0.5.0-usecase_traditional_app",
       "version-0.5.0-usecase_dapp",
