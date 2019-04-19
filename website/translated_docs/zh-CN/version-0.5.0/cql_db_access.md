@@ -53,7 +53,7 @@ cql console -config "account2/config.yaml" -dsn 'covenantsql://4bc27a06ae52a7b8b
 
     co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=> 
 
-### 子命令 `console` 完整参数
+## 子命令 `console` 完整参数
 
 子命令 `console` 同时也支持在后台启动 `adapter` 和 `explorer` 服务，关于这些服务的相关说明请参考 [本地服务](#本地服务) 的相关章节。
 
