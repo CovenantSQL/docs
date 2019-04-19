@@ -32,8 +32,26 @@
       "bck/guide-zh": {
         "title": "快速开始"
       },
-      "cql": {
-        "title": "CQL 客户端"
+      "cql_intro": {
+        "title": "简介"
+      },
+      "cql_account": {
+        "title": "账号管理"
+      },
+      "cql_wallet": {
+        "title": "钱包管理"
+      },
+      "cql_db_manage": {
+        "title": "数据库管理"
+      },
+      "cql_db_access": {
+        "title": "访问数据库"
+      },
+      "cql_server": {
+        "title": "本地服务"
+      },
+      "cql_advance": {
+        "title": "高级使用"
       },
       "deployment": {
         "title": "Docker 部署"
@@ -88,6 +106,30 @@
       },
       "version-0.5.0-cql": {
         "title": "CQL 客户端"
+      },
+      "version-0.5.0-cql": {
+        "title": "CQL 客户端"
+      },
+      "version-0.5.0-cql_intro": {
+        "title": "简介"
+      },
+      "version-0.5.0-cql_account": {
+        "title": "账号管理"
+      },
+      "version-0.5.0-cql_wallet": {
+        "title": "钱包管理"
+      },
+      "version-0.5.0-cql_db_manage": {
+        "title": "数据库管理"
+      },
+      "version-0.5.0-cql_db_access": {
+        "title": "访问数据库"
+      },
+      "version-0.5.0-cql_server": {
+        "title": "本地服务"
+      },
+      "version-0.5.0-cql_advance": {
+        "title": "高级使用"
       },
       "version-0.5.0-golang-client": {
         "title": "使用 Golang 驱动访问数据库"

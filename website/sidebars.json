@@ -7,7 +7,13 @@
       "quickstart"
     ],
     "Tools": [
-      "cql"
+      "cql_intro",
+      "cql_account",
+      "cql_wallet",
+      "cql_db_manage",
+      "cql_db_access",
+      "cql_server",
+      "cql_advance"
     ],
     "Drivers": [
       "driver_golang",
