@@ -62,20 +62,19 @@ docker-compose ps
 
 Confirm that all components are in the `Up` state
 
-```bash
-          Name                         Command               State                 Ports
-------------------------------------------------------------------------------------------------------
-covenantsql_bp_0            "./docker-entry.sh"              Up        0.0.0.0:11099->4661/tcp
-covenantsql_bp_1            "./docker-entry.sh"              Up        0.0.0.0:11100->4661/tcp
-covenantsql_bp_2            "./docker-entry.sh"              Up        0.0.0.0:11101->4661/tcp
-covenantsql_miner_0         "./docker-entry.sh"              Up        0.0.0.0:11102->4661/tcp
-covenantsql_miner_1         "./docker-entry.sh"              Up        0.0.0.0:11103->4661/tcp
-covenantsql_miner_2         "./docker-entry.sh"              Up        0.0.0.0:11104->4661/tcp
-covenantsql_adapter         "./docker-entry.sh"              Up        0.0.0.0:11105->4661/tcp
-covenantsql_mysql_adapter   "./docker-entry.sh -…"           Up        4661/tcp, 0.0.0.0:11107->4664/tcp
-covenantsql_observer        "./docker-entry.sh"              Up        4661/tcp, 0.0.0.0:11108->80/tcp
-covenantsql_fn_0            "./docker-entry.sh -…"           Up        4661/tcp, 0.0.0.0:11110->8546/tcp
-```
+              Name                         Command               State                 Ports
+    ------------------------------------------------------------------------------------------------------
+    covenantsql_bp_0            "./docker-entry.sh"              Up        0.0.0.0:11099->4661/tcp
+    covenantsql_bp_1            "./docker-entry.sh"              Up        0.0.0.0:11100->4661/tcp
+    covenantsql_bp_2            "./docker-entry.sh"              Up        0.0.0.0:11101->4661/tcp
+    covenantsql_miner_0         "./docker-entry.sh"              Up        0.0.0.0:11102->4661/tcp
+    covenantsql_miner_1         "./docker-entry.sh"              Up        0.0.0.0:11103->4661/tcp
+    covenantsql_miner_2         "./docker-entry.sh"              Up        0.0.0.0:11104->4661/tcp
+    covenantsql_adapter         "./docker-entry.sh"              Up        0.0.0.0:11105->4661/tcp
+    covenantsql_mysql_adapter   "./docker-entry.sh -…"           Up        4661/tcp, 0.0.0.0:11107->4664/tcp
+    covenantsql_observer        "./docker-entry.sh"              Up        4661/tcp, 0.0.0.0:11108->80/tcp
+    covenantsql_fn_0            "./docker-entry.sh -…"           Up        4661/tcp, 0.0.0.0:11110->8546/tcp
+    
 
 ## Operate CovenantSQL
 
@@ -98,9 +97,8 @@ docker exec -it covenantsql_adapter /app/cql create -config /app/config.yaml -no
 
 The command will return the connection string of the created database instance
 
-```bash
-covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
-```
+    covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
+    
 
 ### Accessing the database
 
@@ -112,43 +110,41 @@ docker exec -it covenantsql_adapter /app/cql console -config /app/config.yaml -n
 
 After that, it will get the following output, and enter the `cql` interactive command line mode
 
-```bash
-Connected with driver covenantsql (develop)
-Type "help" for help.
+```
+
+Connected with driver covenantsql (develop) Type "help" for help.
 
 co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=>
-```
 
-The `cql` interactive command line mode is similar to the `mysql` command. For example, create a table named test, view the tables in the database, insert records, and query results etc.
-
-```sql
-CREATE TABLE test (test TEXT);
-SHOW TABLES;
-INSERT INTO test VALUES("happy");
-SELECT * FROM test;
-```
+    <br />The `cql` interactive command line mode is similar to the `mysql` command. For example, create a table named test, view the tables in the database, insert records, and query results etc.
+    
+    ```sql
+    CREATE TABLE test (test TEXT);
+    SHOW TABLES;
+    INSERT INTO test VALUES("happy");
+    SELECT * FROM test;
+    
 
 After that, it will get the following output:
 
-```bash
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> CREATE TABLE test (test TEXT);
-CREATE TABLE
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> SHOW TABLES;
- name
-------
- test
-(1 row)
-
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> INSERT INTO test VALUES("happy");
-INSERT
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> SELECT * FROM test;
- test
--------
- happy
-(1 row)
-
-co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=>
-```
+    co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> CREATE TABLE test (test TEXT);
+    CREATE TABLE
+    co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> SHOW TABLES;
+     name
+    ------
+     test
+    (1 row)
+    
+    co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> INSERT INTO test VALUES("happy");
+    INSERT
+    co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=> SELECT * FROM test;
+     test
+    -------
+     happy
+    (1 row)
+    
+    co:0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4=>
+    
 
 Use the `Ctrl + D` shortcut or type `\q` to exit the `cql` interactive command line
 
