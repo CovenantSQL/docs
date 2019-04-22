@@ -26,12 +26,16 @@
       "deployment"
     ],
     "How It Works": [
-      "arch"
+      "arch",
+      "arch_network"
     ],
     "Use Cases": [
       "usecase_traditional_app",
       "usecase_dapp",
       "usecase_data_analysis"
+    ],
+    "Demos": [
+      "demo_forum"
     ],
     "About": [
       "qna"
