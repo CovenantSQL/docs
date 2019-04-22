@@ -1,6 +1,6 @@
 ---
 id: cql_advance
-title: Advance Usage
+title: Advanced Usage
 ---
 Sub-command `rpc` calls the remote process directly in the CovenantSQL network.
 
