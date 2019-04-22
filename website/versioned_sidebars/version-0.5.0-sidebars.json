@@ -26,12 +26,16 @@
       "version-0.5.0-deployment"
     ],
     "How It Works": [
-      "version-0.5.0-arch"
+      "version-0.5.0-arch",
+      "version-0.5.0-arch_network"
     ],
     "Use Cases": [
       "version-0.5.0-usecase_traditional_app",
       "version-0.5.0-usecase_dapp",
       "version-0.5.0-usecase_data_analysis"
+    ],
+    "Demos": [
+      "version-0.5.0-demo_forum"
     ],
     "About": [
       "version-0.5.0-qna"

@@ -48,7 +48,7 @@ sudo chmod a+x /usr/local/bin/cql*         # Fix Permission
 sudo ln -s /usr/local/bin/cql* /usr/bin/   # Fix if /usr/local/bin not in $PATH
 ```
 
-If the problem persists please check out our GitHub page [Submit issue](https://github.com/CovenantSQL/CovenantSQL/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D)。
+If the problem persists please check out our GitHub page [submit issue](https://github.com/CovenantSQL/CovenantSQL/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D)
 
 ### Utils
 
@@ -59,7 +59,7 @@ If the problem persists please check out our GitHub page [Submit issue](https://
 | cql-minerd | CovenantSQL miner client, used to run the database to earn rewards, will open later |
 | cqld       | CovenantSQL main chain node, mainly run by CovenantLabs and partners in DPoS mode |
 
-> Windows platform we will release later, if there is a need please [Submit Issue](https://github.com/CovenantSQL/CovenantSQL/issues/new?assignees=&labels=&template=feature_request.md&title=) 讨论。
+> Windows platform we will release later, if there is a need please [submit issue](https://github.com/CovenantSQL/CovenantSQL/issues/new?assignees=&labels=&template=feature_request.md&title=) 
 
 ### TestNet
 
@@ -178,7 +178,7 @@ Output：
 wallet address: bc3cba461500f49c2adf6e6e98c1b3513063227063512f0dd6a5160c01de5e3c
 ```
 
-You can get the test PTC here with the wallet address obtained above: [Request PTC] (https://testnet.covenantsql.io/).
+You can get the test PTC here with the wallet address obtained above: [Request for PTC] (https://testnet.covenantsql.io/).
 
 After up to 2 minutes, you can use the cql command line tool to check the balance:
 
