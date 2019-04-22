@@ -25,22 +25,20 @@ original_id: intro
     <a href="https://godoc.org/github.com/CovenantSQL/CovenantSQL">
         <img src="https://img.shields.io/badge/godoc-reference-blue.svg"
             alt="GoDoc"></a>
-    <a href="https://twitter.com/intent/follow?screen_name=CovenantLabs">
-        <img src="https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40CovenantLabs"
-            alt="follow on Twitter"></a>
-    <a href="https://gitter.im/CovenantSQL/CovenantSQL?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
-        <img src="https://badges.gitter.im/CovenantSQL/CovenantSQL.svg"
-            alt="Join the chat at https://gitter.im/CovenantSQL/CovenantSQL"></a>
+    <a href="https://formulae.brew.sh/formula/cql">
+        <img src="https://img.shields.io/homebrew/v/cql.svg?color=blue&label=brew%20install%20cql"
+            alt="homebrew"></a>
 </p>
 
 CovenantSQL(CQL) is a GDPR-compliant SQL database running on Open Internet without central coordination:
 
+- **ServerLess**: Free, High Availabile, Auto Sync Database Service for Serverless App
 - **GDPR-compliant**: Zero pain to be GDPR-compliant.
-- **SQL**: most SQL-92 support.
-- **Decentralize**: decentralize with our consensus algorithm DH-RPC & Kayak.
-- **Privacy**: access with granted permission and Encryption Pass.
-- **Immutable**: query history in CQL is immutable and trackable.
-- **Permission**: grant permission with column level ACL and SQL pattern whitelist.
+- **SQL**: Most SQL-92 support.
+- **Decentralize**: Running on Open Internet without Central Coordination.
+- **Privacy**: Access with Granted Permission and Encryption Pass.
+- **Immutable**: Query History in CQL is Immutable and Trackable.
+- **Permission**: Column Level ACL and SQL Pattern Whitelist.
 
 We believe [On the next Internet, everyone should have a complete **Data Rights**](https://medium.com/@covenant_labs/covenantsql-the-sql-database-on-blockchain-db027aaf1e0e)
 
