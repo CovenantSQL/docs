@@ -133,24 +133,24 @@ Either setting the `pattern` field to `nil` or just resetting the user permissio
 
 ## Sub-command `create` Complete Parameters
 
-    usage: cql create [parameter]... db_meta_json
+    usage: cql create [common params] [-wait-tx-confirm] db_meta_json
     
-    Create CovenantSQL database by database meta info JSON string, meta info must include node count.
+    Create creates a CovenantSQL database by database meta info JSON string. The meta info must include node count.
     e.g.
-        cql create '{"node":2}'
+        cql create '{"node": 2}'
     
-    A complete introduction of db_meta_json fields：
-        targetminers           []string // List of target miner addresses
-        node                   int      // Target node number
-        space                  int      // Minimum disk space requirement, 0 for none
-        memory                 int      // Minimum memory requirement, 0 for none
-        loadavgpercpu          float    // Minimum idle CPU requirement, 0 for none
-        encryptionkey          string   // Encryption key for persistence data
-        useeventualconsistency bool     // Use eventual consistency to sync among miner nodes
-        consistencylevel       float    // Consistency level, node*consistencylevel is the node number to perform strong consistency
-        isolationlevel         int      // Isolation level in a single node
+    A complete introduction of db_meta_json fields:
+        target-miners           []string    // List of target miner addresses
+        node                    int         // Target node number
+        space                   int         // Minimum disk space requirement, 0 for none
+        memory                  int         // Minimum memory requirement, 0 for none
+        load-avg-per-cpu        float       // Minimum idle CPU requirement, 0 for none
+        encrypt-key             string      // Encryption key for persistence data
+        eventual-consistency    bool        // Use eventual consistency to sync among miner nodes
+        consistency-level       float       // Consistency level, node*consistency_level is the node number to perform strong consistency
+        isolation-level         int         // Isolation level in a single node
     
-    Since CovenantSQL is blockchain database, you may want get confirm of creation.
+    Since CovenantSQL is built on top of blockchain, you may want to wait for the transaction confirmation before the creation takes effect.
     e.g.
         cql create -wait-tx-confirm '{"node": 2}'
     
@@ -161,15 +161,15 @@ Either setting the `pattern` field to `nil` or just resetting the user permissio
 
 ## Sub-command `drop` Complete Parameters
 
-    usage: cql drop [parameter]... dsn/dbid
+    usage: cql drop [common params] [-wait-tx-confirm] dsn/dbid
     
-    Drop command can drop a database by DSN or database id
+    Drop drops a CovenantSQL database by DSN or database ID.
     e.g.
         cql drop covenantsql://the_dsn_of_your_database
     
-    Since CovenantSQL is blockchain database, you may want get confirm of drop operation.
+    Since CovenantSQL is built on top of blockchain, you may want to wait for the transaction confirmation before the drop operation takes effect.
     e.g.
-        cql drop -wait-tx-confirm covenantsql://the_dsn_of_your_database
+        cql drop -wait-tx-confirm covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
     
     Params:
       -wait-tx-confirm
@@ -178,13 +178,13 @@ Either setting the `pattern` field to `nil` or just resetting the user permissio
 
 ## Sub-command `grant` Complete Parameters
 
-    usage: cql grant [parameter]... permission_meta_json
+    usage: cql grant [common params] [-wait-tx-confirm] permission_meta_json
     
-    Grant command can give a user some specific permissions on your database
+    Grant grants specific permissions for the target user.
     e.g.
         cql grant '{"chain": "your_chain_addr", "user": "user_addr", "perm": "perm_struct"}'
     
-    Since CovenantSQL is blockchain database, you may want get confirm of permission update.
+    Since CovenantSQL is built on top of blockchain, you may want to wait for the transaction confirmation before the permission takes effect.
     e.g.
         cql grant -wait-tx-confirm '{"chain":"your_chain_addr","user":"user_addr","perm":"perm_struct"}'
     
