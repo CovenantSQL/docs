@@ -165,7 +165,7 @@ Either setting the `pattern` field to `nil` or just resetting the user permissio
     
     Drop drops a CovenantSQL database by DSN or database ID.
     e.g.
-        cql drop covenantsql://the_dsn_of_your_database
+        cql drop covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
     
     Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction confirmation before the drop operation takes effect.
     e.g.
