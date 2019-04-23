@@ -1,7 +1,7 @@
 ---
-id: version-0.5.0-arch_secure_gateway
+id: version-0.5.0-advanced_secure_gateway
 title: Secure Gateway
-original_id: arch_secure_gateway
+original_id: advanced_secure_gateway
 ---
 
 ## SecureGateway
