@@ -2,6 +2,7 @@
 id: usecase_traditional_app
 title: Traditional App
 ---
+
 ## Privacy data
 
 If you are a developper of password management tools just like [1Password](https://1password.com/) or [LastPass](https://www.lastpass.com/). You can use CQL as the database to take benefits:
