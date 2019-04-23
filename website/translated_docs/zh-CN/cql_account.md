@@ -2,6 +2,7 @@
 id: cql_account
 title: Account Management
 ---
+
 For the TestNet environment, we provide a public account for quick testing. Check the [CovenantSQL TestNet](quickstart) tutorial to find out the private key and config file of the public account. And you can also follow the next section to create an individual account with `cql` command.
 
 ## Creating New Account
