@@ -150,7 +150,7 @@ Either setting the `pattern` field to `nil` or just resetting the user permissio
         consistency-level       float       // Consistency level, node*consistency_level is the node number to perform strong consistency
         isolation-level         int         // Isolation level in a single node
     
-    Since CovenantSQL is built on top of blockchain, you may want to wait for the transaction confirmation before the creation takes effect.
+    Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction confirmation before the creation takes effect.
     e.g.
         cql create -wait-tx-confirm '{"node": 2}'
     
@@ -167,7 +167,7 @@ Either setting the `pattern` field to `nil` or just resetting the user permissio
     e.g.
         cql drop covenantsql://the_dsn_of_your_database
     
-    Since CovenantSQL is built on top of blockchain, you may want to wait for the transaction confirmation before the drop operation takes effect.
+    Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction confirmation before the drop operation takes effect.
     e.g.
         cql drop -wait-tx-confirm covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
     
@@ -184,7 +184,7 @@ Either setting the `pattern` field to `nil` or just resetting the user permissio
     e.g.
         cql grant '{"chain": "your_chain_addr", "user": "user_addr", "perm": "perm_struct"}'
     
-    Since CovenantSQL is built on top of blockchain, you may want to wait for the transaction confirmation before the permission takes effect.
+    Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction confirmation before the permission takes effect.
     e.g.
         cql grant -wait-tx-confirm '{"chain":"your_chain_addr","user":"user_addr","perm":"perm_struct"}'
     
