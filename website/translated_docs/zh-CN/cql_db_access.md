@@ -20,7 +20,7 @@ Output:
     co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=>
     
 
-Or access as `account2` if it has successfully been granted access permission:
+Or access as `account2` if it has been granted access permission successfully:
 
 ```bash
 cql console -config "account2/config.yaml" -dsn 'covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5'
