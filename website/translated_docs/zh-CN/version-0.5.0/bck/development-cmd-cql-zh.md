@@ -3,6 +3,7 @@ id: version-0.5.0-cql
 title: 使用命令行客户端 cql 创建数据库
 original_id: cql
 ---
+
 本文档主要介绍 CovenantSQL 命令行客户端 `cql` 的使用。`cql` 是一个用于批量进行 SQLChain 上数据库的创建、查询、更新或删除操作的命令行工具。
 
 ## 安装
