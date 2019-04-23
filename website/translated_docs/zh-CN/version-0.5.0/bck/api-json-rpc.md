@@ -3,6 +3,7 @@ id: version-0.5.0-api-json-rpc
 title: JSON RPC
 original_id: api-json-rpc
 ---
+
 > JSON-RPC is a stateless, light-weight remote procedure call (RPC) protocol.
 
 CovenantSQL provides a suite of RPC methods in [JSON-RPC 2.0](https://www.jsonrpc.org/specification) for easily accessing to CovenantSQL networks.
