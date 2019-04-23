@@ -2,6 +2,7 @@
 id: cql_db_access
 title: Accessing Database
 ---
+
 Once your database is successfully created, you can use the `console` sub-command to access it in an interactive console:
 
 ```bash
