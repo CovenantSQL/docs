@@ -3,6 +3,7 @@ id: version-0.5.0-cql_account
 title: Account Management
 original_id: cql_account
 ---
+
 For the TestNet environment, we provide a public account for quick testing. Check the [CovenantSQL TestNet](quickstart) tutorial to find out the private key and config file of the public account. And you can also follow the next section to create an individual account with `cql` command.
 
 ## Creating New Account
@@ -61,9 +62,9 @@ Output：
 
 Also see [Common Parameters for Sub-commands](#common-parameters-for-sub-commands). We will not mention this again in the later sub-command introductions.
 
-    usage: cql generate [parameter]... config | public
+    usage: cql generate [common params] config | public
     
-    Generate command can generate private.key and config.yaml for CovenantSQL.
+    Generate generates private.key and config.yaml for CovenantSQL.
     e.g.
         cql generate config
     
@@ -103,9 +104,9 @@ Output:
 
 ## Sub-command `idminer` Complete Parameters
 
-    usage: cql idminer [parameter]...
+    usage: cql idminer [common params] [-difficulty number] [-loop [true]]
     
-    IDMiner command can calculate legal node id and it's nonce. Default 24 difficulty and no endless loop.
+    IDMiner calculates legal node id and it's nonce. Default parameters are difficulty of 24 and no endless loop.
     e.g.
         cql idminer -difficulty 24
     
