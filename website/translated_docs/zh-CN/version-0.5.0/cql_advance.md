@@ -7,7 +7,7 @@ title: 高级使用
 
 ## 子命令 `rpc` 完整参数
 
-    usage: cql rpc [参数]...
+    usage: cql rpc [通用参数] [-wait-tx-confirm] -name rpc_name -endpoint rpc_endpoint -req rpc_request
 
     向目标服务器发送 RPC 请求。
     示例：

@@ -52,7 +52,7 @@ Output:
 
 ## Transferring Tokens to Another Account
 
-Once you get tokens from [TestNet](quickstart) or [Docker Environment by One-Click](deployment), you can use the `transfer` sub-command to transfer tokens to another account. The command takes a `json` format meta info as its main parameter, e.g.:
+Once you get tokens from [TestNet](quickstart) or [Docker Environment](deployment), you can use the `transfer` sub-command to transfer tokens to another account. The command takes a `json` format meta info as its main parameter, e.g.:
 
 ```json
 {
@@ -79,9 +79,9 @@ Note that the above output message indicates that the transfer request is succes
 
 ## Sub-command `wallet` Complete Parameters
 
-    usage: cql wallet [parameter]...
+    usage: cql wallet [common params] [-balance type]
 
-    Wallet command can get CovenantSQL wallet address and the token balance of the current account
+    Wallet gets the CovenantSQL wallet address and the token balances of the current account.
     e.g.
         cql wallet
 
@@ -94,18 +94,16 @@ Note that the above output message indicates that the transfer request is succes
 
 ## Sub-command `transfer` Complete Parameters
 
-    usage: cql transfer [parameter]... meta_json
+    usage: cql transfer [common params] [-wait-tx-confirm] meta_json
 
-    Transfer command can transfer your token to the target account.
-    The command argument is JSON meta info of a token transaction.
+    Transfer transfers your token to the target account. The command argument is a token transaction in JSON format.
     e.g.
-        cql transfer '{"addr":"your_account_addr","amount":"100 Particle"}'
+        cql transfer '{"addr": "43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40", "amount": "100 Particle"}'
 
-    Since CovenantSQL is based on blockchain, you may want to wait for the transaction confirmation.
+    Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction confirmation before the transfer takes effect.
     e.g.
-        cql transfer -wait-tx-confirm '{"addr":"your_account_addr","amount":"100 Particle"}'
+        cql transfer -wait-tx-confirm '{"addr": "43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40", "amount": "100 Particle"}'
 
     Params:
       -wait-tx-confirm
             Wait for transaction confirmation
-
