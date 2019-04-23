@@ -54,7 +54,7 @@ Output:
 
 ## Transferring Tokens to Another Account
 
-Once you get tokens from [TestNet](quickstart) or [Docker Environment by One-Click](deployment), you can use the `transfer` sub-command to transfer tokens to another account. The command takes a `json` format meta info as its main parameter, e.g.:
+Once you get tokens from [TestNet](quickstart) or [Docker Environment](deployment), you can use the `transfer` sub-command to transfer tokens to another account. The command takes a `json` format meta info as its main parameter, e.g.:
 
 ```json
 {
