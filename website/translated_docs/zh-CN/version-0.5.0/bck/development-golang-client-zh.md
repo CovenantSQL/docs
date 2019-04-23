@@ -3,6 +3,7 @@ id: version-0.5.0-golang-client
 title: 使用 Golang 驱动访问数据库
 original_id: golang-client
 ---
+
 本文档介绍 CovenantSQL 客户端的使用方式。客户端用来创建、查询、更新和删除 SQLChain 以及绑定的数据库。
 
 ## 开始之前
