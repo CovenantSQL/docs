@@ -3,6 +3,7 @@ id: version-0.5.0-arch_network
 title: RPC Framework
 original_id: arch_network
 ---
+
 The traditional key exchange like TLS or SSL needs a CA to ensure key exchange run safely. But in DH-RPC I use a DHT to do that. The main idea is removing CA Cert from the whole system by using a DHT for Naming and Key Exchange.
 
 DH-RPC is a secp256k1-ECDH-AES encrypted P2P RPC framework for decentralized applications written in golang.
