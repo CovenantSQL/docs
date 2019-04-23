@@ -23,10 +23,12 @@
       "driver_js"
     ],
     "Advanced Usage": [
-      "deployment"
+      "advanced_deployment",
+      "advanced_secure_gateway"
     ],
     "How It Works": [
       "arch",
+      "arch_layers",
       "arch_network"
     ],
     "Use Cases": [

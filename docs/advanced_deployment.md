@@ -1,6 +1,6 @@
 ---
-id: deployment
-title: Docker Deploy
+id: advanced_deployment
+title: Private Deploy
 ---
 
 ## Deploy with CovenantSQL Docker
