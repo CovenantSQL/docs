@@ -2,6 +2,7 @@
 id: cql_server
 title: Local Servers
 ---
+
 ## Sub-command `explorer` Complete Parameter
 
     usage: cql explorer [common params] [-tmp-path path] [-bg-log-level level] listen_address
