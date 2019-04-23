@@ -59,9 +59,9 @@ Output：
 
 Also see [Common Parameters for Sub-commands](#common-parameters-for-sub-commands). We will not mention this again in the later sub-command introductions.
 
-    usage: cql generate [parameter]... config | public
+    usage: cql generate [common params] config | public
 
-    Generate command can generate private.key and config.yaml for CovenantSQL.
+    Generate generates private.key and config.yaml for CovenantSQL.
     e.g.
         cql generate config
 
@@ -99,9 +99,9 @@ Output:
 
 ## Sub-command `idminer` Complete Parameters
 
-    usage: cql idminer [parameter]...
+    usage: cql idminer [common params] [-difficulty number] [-loop [true]]
 
-    IDMiner command can calculate legal node id and it's nonce. Default 24 difficulty and no endless loop.
+    IDMiner calculates legal node id and it's nonce. Default parameters are difficulty of 24 and no endless loop.
     e.g.
         cql idminer -difficulty 24
 
