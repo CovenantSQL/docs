@@ -24,4 +24,3 @@ Sub-command `rpc` calls the remote process directly in the CovenantSQL network.
             RPC request to do a test call, in json format
       -wait-tx-confirm
             Wait for transaction confirmation
-

@@ -113,4 +113,3 @@ Output:
             the difficulty for a miner to mine nodes and generating a nonce (default 24)
       -loop
             mining endless loop
-

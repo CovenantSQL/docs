@@ -28,4 +28,3 @@ The following parameters are commonly used by `cql` sub-commands:
           Master key for covenantsql (NOT SAFE, for debugging or script mode only)
 
 Note that the private key file path is specified in the config file, and its default value is `./private.key`, indicating that it's located in the same directory of the config. So usually we put the private key file together with config, instead of using an individual parameter to specify the private key file.
-

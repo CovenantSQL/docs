@@ -87,4 +87,3 @@ The sub-command `console` also supports running `adapter` or `explorer` servers 
             Execute as a single transaction (if non-interactive)
       -variable value
             Set variable
-

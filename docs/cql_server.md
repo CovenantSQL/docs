@@ -48,4 +48,3 @@ See [adapter](adapter) for details of adapter server.
             mirror server for the target adapter to query
       -tmp-path string
             Background service temp file path, use os.TempDir for default
-
