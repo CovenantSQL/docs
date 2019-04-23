@@ -104,7 +104,7 @@ Note that the above output message indicates that the transfer request is succes
     e.g.
         cql transfer '{"addr": "43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40", "amount": "100 Particle"}'
     
-    Since CovenantSQL is built on top of blockchain, you may want to wait for the transaction confirmation before the transfer takes effect.
+    Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction confirmation before the transfer takes effect.
     e.g.
         cql transfer -wait-tx-confirm '{"addr": "43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40", "amount": "100 Particle"}'
     
