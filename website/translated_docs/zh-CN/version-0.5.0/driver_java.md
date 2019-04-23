@@ -3,6 +3,7 @@ id: version-0.5.0-driver_java
 title: Java
 original_id: driver_java
 ---
+
 ## Use Java to access CovenantSQL
 
 `CovenantSQL` provides `Java SDK` to access database instance through [`Adapter`](./adapter) service.
