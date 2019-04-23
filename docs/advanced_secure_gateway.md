@@ -1,5 +1,5 @@
 ---
-id: arch_secure_gateway
+id: advanced_secure_gateway
 title: Secure Gateway
 ---
 

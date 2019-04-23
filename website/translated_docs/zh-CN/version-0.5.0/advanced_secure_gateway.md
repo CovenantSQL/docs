@@ -1,5 +1,5 @@
 ---
-id: secure_gateway
+id: advanced_secure_gateway
 title: 数据库安全网关
 ---
 
