@@ -3,6 +3,7 @@ id: version-0.5.0-deployment
 title: Docker Deploy
 original_id: deployment
 ---
+
 ## Deploy with CovenantSQL Docker
 
 ### Install Docker
