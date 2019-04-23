@@ -4,7 +4,6 @@ title: 简介
 original_id: intro
 ---
 
-
 <p align="center">
     <img src="https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/logo/covenantsql_horizontal.png" height="auto" width="100%">
 </p>
