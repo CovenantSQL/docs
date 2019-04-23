@@ -3,6 +3,7 @@ id: version-0.5.0-testnet
 title: CovenantSQL 测试网快速入门
 original_id: testnet
 ---
+
 [CovenantSQL](https://github.com/CovenantSQL/CovenantSQL/blob/develop/README-zh.md) 是一个基于区块链技术的去中心化众筹式 SQL 数据库，并具备以下特点：
 
 1. **SQL**: 支持 SQL-92 标准
