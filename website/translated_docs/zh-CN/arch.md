@@ -2,6 +2,7 @@
 id: arch
 title: Architecture
 ---
+
 ## 3 Layers Arch
 
 ![CovenantSQL 3 Layer design](https://github.com/CovenantSQL/CovenantSQL/raw/ed2878359345cd86e4221f14cd59e4654361b64e/logo/arch.png)
