@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Secure Gateway · CovenantSQL Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;securegateway&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#securegateway&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;SecureGateway&lt;/h2&gt;
+"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Secure Gateway · CovenantSQL Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="http://developers.covenantsql.io/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;securegateway&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#securegateway&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;SecureGateway&lt;/h2&gt;
+"/><meta property="og:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="https://hm.baidu.com/hm.js?fd1ee4ccc9da39d0cf4c60ad8e6e214b"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/logo.svg" alt="CovenantSQL Docs"/><h2 class="headerTitleWithLogo">CovenantSQL Docs</h2></a><a href="/en/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/next/intro" target="_self">Docs</a></li><li class=""><a href="/en/help" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/zh-CN/next/arch_secure_gateway">中文</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Secure Gateway</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="securegateway"></a><a href="#securegateway" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SecureGateway</h2>
+<p>CQL SecureGateway (CGS) is currently only available to enterprise users. If you have in-depth understanding or trial requirements, please <a href="mailto:info@covenantsql.io">contact us</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="architecture"></a><a href="#architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architecture</h3>
+<p><img src="https://github.com/CovenantSQL/docs/raw/master/website/static/img/CovenantSQL.SecureGateway.png" alt="CovenantSQL.SecureGateway"></p>
+<h3><a class="anchor" aria-hidden="true" id="api"></a><a href="#api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h3>
+<p>CGS uses the binary protocol of MySQL 5.x, and all language drivers compatible with MySQL 5.x can be used directly.</p>
+<h3><a class="anchor" aria-hidden="true" id="acl-config"></a><a href="#acl-config" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ACL Config</h3>
+<p>Support for <strong>User/User Group</strong> and <strong>Column/Column Group</strong> combination authorization (columns are represented as <strong>database.table.column</strong> triples)</p>
+<h4><a class="anchor" aria-hidden="true" id="acl-example"></a><a href="#acl-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ACL Example</h4>
+<p>The settings are divided into two parts, <code>Group</code> and <code>Strategy</code>, as follows:</p>
+<p>User Group</p>
+<table>
+<thead>
+<tr><th>User</th><th>Group</th></tr>
+</thead>
+<tbody>
+<tr><td>user1</td><td>admin,userGroup</td></tr>
+<tr><td>user2</td><td>admin,userGroup</td></tr>
+<tr><td>user3</td><td>userGroup</td></tr>
+</tbody>
+</table>
+<p>Column Group</p>
+<table>
+<thead>
+<tr><th>Column</th><th>Group</th></tr>
+</thead>
+<tbody>
+<tr><td>db1.tbl1.col2</td><td>someCols</td></tr>
+<tr><td>db1.tbl1.col3</td><td>someCols</td></tr>
+<tr><td>db1.tbl1.col4</td><td>someCols</td></tr>
+</tbody>
+</table>
+<p>Strategy</p>
+<table>
+<thead>
+<tr><th>User/Group</th><th>Column/Group</th><th>Permission（Write/Read）</th></tr>
+</thead>
+<tbody>
+<tr><td>user1</td><td>db1.tbl1.col1</td><td>write</td></tr>
+<tr><td>user2</td><td>db1.tbl1.col1</td><td>read</td></tr>
+<tr><td>admin</td><td>someCols</td><td>read</td></tr>
+<tr><td>userGroup</td><td>db1.tbl2.col1</td><td>read</td></tr>
+<tr><td>userGroup</td><td>db2.tbl1.*</td><td>read</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="encryption-config"></a><a href="#encryption-config" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Encryption Config</h3>
+<p>Support for configuring encryption settings in the form of fields &amp; encryption keys (fields are represented as <strong>database.table.field</strong> triples)
+Encryption/decryption is valid only if the user has permission to the field.</p>
+<h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<p>Keys</p>
+<table>
+<thead>
+<tr><th>Column</th><th>Key</th></tr>
+</thead>
+<tbody>
+<tr><td>db1.tbl1.col1</td><td>key1</td></tr>
+<tr><td>db1.tbl1.col2</td><td>key2</td></tr>
+<tr><td>db1.tbl1.col3</td><td>key3</td></tr>
+<tr><td>db1.tbl2.col1</td><td>key1</td></tr>
+<tr><td>db2.tbl1.col1</td><td>key1</td></tr>
+</tbody>
+</table>
+<p>In conjunction with the configuration of <code>ACL</code> &amp; <code>Keys</code> above, the access restrictions that are in effect are as follows:</p>
+<p>Result</p>
+<table>
+<thead>
+<tr><th>database</th><th>table</th><th>column</th><th>key</th><th>user permissions</th></tr>
+</thead>
+<tbody>
+<tr><td>db1</td><td>tbl1</td><td>col1</td><td>key1</td><td>user1 write; user2 read</td></tr>
+<tr><td>db1</td><td>tbl1</td><td>col2</td><td>key2</td><td>user1 read; user2 read</td></tr>
+<tr><td>db1</td><td>tbl1</td><td>col3</td><td>key3</td><td>user1 read; user2 read</td></tr>
+<tr><td>db1</td><td>tbl1</td><td>col4</td><td></td><td>user1 read; user2 read</td></tr>
+<tr><td>db1</td><td>tbl2</td><td>col1</td><td>key1</td><td>userGroup read</td></tr>
+<tr><td>db2</td><td>tbl1</td><td>*</td><td>key1</td><td>userGroup read</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/23/2019</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#securegateway">SecureGateway</a><ul class="toc-headings"><li><a href="#architecture">Architecture</a></li><li><a href="#api">API</a></li><li><a href="#acl-config">ACL Config</a></li><li><a href="#encryption-config">Encryption Config</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '1b47865e3d00b7996a988bbc155a68e4',
+                indexName: 'covenantsql',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
