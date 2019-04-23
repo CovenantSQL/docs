@@ -3,6 +3,7 @@ id: version-0.5.0-guide-zh
 title: 快速开始
 original_id: guide-zh
 ---
+
 ## 下载 CovenantSQL 工具包
 
 请 [下载最新版 CovenantSQL 工具包](https://github.com/CovenantSQL/CovenantSQL/releases)。您将得到以下命令行工具：`cql`、`cql-utils`。
