@@ -2,6 +2,7 @@
 id: cql_wallet
 title: Wallet Management
 ---
+
 ## Wallet Address
 
 Once the private key and config file is set, you can use sub-command `wallet` to check the wallet address of the account:
