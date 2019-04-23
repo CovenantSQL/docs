@@ -3,13 +3,14 @@ id: version-0.5.0-cql_advance
 title: Advanced Usage
 original_id: cql_advance
 ---
+
 Sub-command `rpc` calls the remote process directly in the CovenantSQL network.
 
 ## Sub-command `rpc` Complete Parameter
 
-    usage: cql rpc [parameter]...
+    usage: cql rpc [common params] [-wait-tx-confirm] -name rpc_name -endpoint rpc_endpoint -req rpc_request
     
-    Rpc command make a RPC request to the target server
+    RPC makes a RPC request to the target endpoint.
     e.g.
         cql rpc -name 'MCC.QuerySQLChainProfile' \
                 -endpoint 000000fd2c8f68d54d55d97d0ad06c6c0d91104e4e51a7247f3629cc2a0127cf \
