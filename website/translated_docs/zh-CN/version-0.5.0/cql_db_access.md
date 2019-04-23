@@ -3,6 +3,7 @@ id: version-0.5.0-cql_db_access
 title: Accessing Database
 original_id: cql_db_access
 ---
+
 Once your database is successfully created, you can use the `console` sub-command to access it in an interactive console:
 
 ```bash
@@ -21,7 +22,7 @@ Output:
     co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=>
     
 
-Or access as `account2` if it has successfully been granted access permission:
+Or access as `account2` if it has been granted access permission successfully:
 
 ```bash
 cql console -config "account2/config.yaml" -dsn 'covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5'
@@ -60,16 +61,16 @@ Here is an example of using the interactive console:
 
 The sub-command `console` also supports running `adapter` or `explorer` servers in the background. Check [Local Servers](#local-servers) for details.
 
-    usage: cql console [parameter]...
+    usage: cql console [common params] [-dsn dsn_string] [-command sqlcommand] [-file filename] [-out outputfile] [-no-rc true/false] [-single-transaction] [-variable variables] [-explorer explorer_addr] [-adapter adapter_addr]
     
-    Console command can run a interactive SQL console for CovenantSQL
+    Console runs an interactive SQL console for CovenantSQL.
     e.g.
-        cql console -dsn covenantsql://the_dsn_of_your_database
+        cql console -dsn covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
     
     There is also a -command param for SQL script, and a -file param for reading SQL in a file.
     If those params are set, it will run SQL script and exit without staying console mode.
     e.g.
-        cql console -dsn covenantsql://the_dsn_of_your_database -command "create table test1(test2 int);"
+        cql console -dsn covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c -command "create table test1(test2 int);"
     
     Params:
       -adapter string
