@@ -3,6 +3,7 @@ id: version-0.5.0-adapter
 title: Adapter
 original_id: adapter
 ---
+
 # Use Adapter to access CovenantSQL
 
 `CovenantSQL` provides an HTTP/HTTPS adapter service. Developers could access CovenantSQL like a cloud database by using HTTP RESTful requests.
