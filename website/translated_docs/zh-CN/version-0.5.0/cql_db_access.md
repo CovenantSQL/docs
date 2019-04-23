@@ -57,16 +57,16 @@ cql console -config "account2/config.yaml" -dsn 'covenantsql://4bc27a06ae52a7b8b
 
 子命令 `console` 同时也支持在后台启动 `adapter` 和 `explorer` 服务，关于这些服务的相关说明请参考 [本地服务](#本地服务) 的相关章节。
 
-    usage: cql console [参数]...
+    usage: cql console [通用参数] [-dsn dsn_string] [-command sqlcommand] [-file filename] [-out outputfile] [-no-rc true/false] [-single-transaction] [-variable variables] [-explorer explorer_addr] [-adapter adapter_addr]
 
     为 CovenantSQL 运行交互式的命令行访问。
     示例：
-        cql console -dsn the_dsn_of_your_database
+        cql console -dsn covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
 
     另外也可以通过 -command 参数来直接运行 SQL 查询语句或通过 -file 参数来从文件读取查询语句。
     在指定了这些参数的情况下 `console` 子命令将会直接执行命令后退出，而不会进入交互式的命令行模式。
     示例：
-        cql console -dsn the_dsn_of_your_database -command "create table test1(test2 int);"
+        cql console -dsn covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c -command "create table test1(test2 int);"
 
     Params:
       -adapter string
@@ -87,4 +87,3 @@ cql console -config "account2/config.yaml" -dsn 'covenantsql://4bc27a06ae52a7b8b
             在非交互模式下使用单个事务执行所有语句
       -variable value
             设置环境变量
-

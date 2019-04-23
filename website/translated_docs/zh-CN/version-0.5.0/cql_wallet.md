@@ -79,7 +79,7 @@ cql transfer '{"addr": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1
 
 ## 子命令 `wallet` 完整参数
 
-    usage: cql wallet [参数]...
+    usage: cql wallet [通用参数] [-balance type]
 
     查看账号钱包地址和代币余额。
     示例：
@@ -93,7 +93,7 @@ cql transfer '{"addr": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1
 
 ## 子命令 `transfer` 完整参数
 
-    usage: cql transfer [参数]... meta_json
+    usage: cql transfer [通用参数] [-wait-tx-confirm] meta_json
 
     向目标账号地址进行转账。输入参数为 JSON 格式的转账交易数据。
     示例：
@@ -106,4 +106,3 @@ cql transfer '{"addr": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1
     Params:
       -wait-tx-confirm
             等待交易执行确认（或者出现任何错误）后再退出
-

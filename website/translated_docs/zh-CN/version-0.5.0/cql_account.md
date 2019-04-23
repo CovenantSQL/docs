@@ -61,7 +61,7 @@ cql generate public
 
 特殊地，在使用 `cql generate config` 命令生成新账号配置时，`-config`、`-no-password` 和 `-password` 等参数实际作用于将要生成的新私钥和配置文件，而不是要读取的文件。
 
-    usage: cql generate [参数]... config | public
+    usage: cql generate [通用参数] config | public
 
     生成新私钥及配置文件，或获取指定配置的私钥文件对应的公钥。
 
@@ -99,7 +99,7 @@ cql idminer
 
 ## 子命令 `idminer` 完整参数
 
-    usage: cql idminer [参数]...
+    usage: cql idminer [通用参数] [-difficulty number] [-loop [true]]
 
     为指定配置的私钥文件计算新的 Node ID。
 
@@ -108,4 +108,3 @@ cql idminer
             生成 Node ID 的难度要求，默认值为 24
       -loop
             循环计算以取得更高难度的 Node ID
-

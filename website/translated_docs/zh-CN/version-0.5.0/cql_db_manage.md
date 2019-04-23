@@ -133,22 +133,22 @@ cql grant '
 
 ## 子命令 `create` 完整参数
 
-    usage: cql create [参数]... db_meta_json
+    usage: cql create [通用参数] [-wait-tx-confirm] db_meta_json
 
     为当前账号创建数据库实例，输入参数为 JSON 格式的创建交易数据，其中节点数 node 为必带字段。
     示例：
         cql create '{"node": 2}'
 
     完整的 db_meta_json 字段解释如下：
-        targetminers           []string // 目标节点的账号地址
-        node                   int      // 目标节点数
-        space                  int      // 需要的硬盘空间，0 为任意
-        memory                 int      // 需要的内存空间，0 为任意
-        loadavgpercpu          float    // 需要的 CPU 资源占用，0 为任意
-        encryptionkey          string   // 落盘加密密钥
-        useeventualconsistency bool     // 各个数据库节点之间是否使用最终一致性同步
-        consistencylevel       float    // 一致性级别，通过 node*consistencylevel 得到强同步的节点数
-        isolationlevel         int      // 单个节点上的隔离级别，默认级别为线性级别
+        target-miners           []string    // 目标节点的账号地址
+        node                    int         // 目标节点数
+        space                   int         // 需要的硬盘空间，0 为任意
+        memory                  int         // 需要的内存空间，0 为任意
+        load-avg-per-cpu        float       // 需要的 CPU 资源占用，0 为任意
+        encrypt-key             string      // 落盘加密密钥
+        eventual-consistency    bool        // 各个数据库节点之间是否使用最终一致性同步
+        consistency-level       float       // 一致性级别，通过 node*consistency_level 得到强同步的节点数
+        isolation-level         int         // 单个节点上的隔离级别，默认级别为线性级别
 
     由于 CovenantSQL 是区块链上的数据库，在真正访问数据库之前你可能需要等待创建请求的执行确认以及在数据库节点上的实际创建。
     示例：
@@ -160,15 +160,15 @@ cql grant '
 
 ## 子命令 `drop` 完整参数
 
-    usage: cql drop [参数]... dsn/dbid
+    usage: cql drop [通用参数] [-wait-tx-confirm] dsn/dbid
 
     通过数据库的连接字符串或账号地址来删除数据库。
     示例：
-        cql drop the_dsn_of_your_database
+        cql drop covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
 
     由于 CovenantSQL 是区块链上的数据库，在删除操作生效之前你可能需要等待删除请求的执行确认以及在数据库节点上的实际执行。
     示例：
-        cql drop -wait-tx-confirm the_dsn_of_your_database
+        cql drop -wait-tx-confirm covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
 
     Params:
       -wait-tx-confirm
@@ -176,17 +176,16 @@ cql grant '
 
 ## 子命令 `grant` 完整参数
 
-    usage: cql grant [参数]... permission_meta_json
+    usage: cql grant [通用参数] [-wait-tx-confirm] permission_meta_json
 
     为指定账号进行数据库权限授权。
     示例：
         cql grant '{"chain": "your_chain_addr", "user": "user_addr", "perm": "perm_struct"}'
 
     由于 CovenantSQL 是区块链上的数据库，在授权操作生效之前你可能需要等待授权请求的执行确认以及在数据库节点上的实际更新。
-    示例
+    示例：
         cql grant -wait-tx-confirm '{"chain": "your_chain_addr", "user": "user_addr", "perm": "perm_struct"}'
 
     Params:
       -wait-tx-confirm
             等待交易执行确认（或者出现任何错误）后再退出
-
