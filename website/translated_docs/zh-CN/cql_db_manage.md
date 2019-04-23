@@ -2,6 +2,7 @@
 id: cql_db_manage
 title: Database Management
 ---
+
 ## Creating Database
 
 Like `transfer`, `create` takes a `json` format main parameter. Create a database with one miner node with:
