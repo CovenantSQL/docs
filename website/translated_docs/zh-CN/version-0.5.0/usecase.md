@@ -3,6 +3,7 @@ id: version-0.5.0-usecase
 title: Use case
 original_id: usecase
 ---
+
 ## Traditional App
 
 ### Privacy data
