@@ -3,6 +3,8 @@ id: version-0.5.0-quickstart
 title: Quick Start
 original_id: quickstart
 ---
+
+
 ## CovenantSQL Client
 
 ### Install
