@@ -25,6 +25,12 @@ CQL 采用分层的架构进行数据库的创建和运行，一个典型的数�
 
 ## 主链出块流程
 
-完整的主链出块流程较为复杂，请参考下图中的编号进行理解，查看大图请点击[这里](https://cdn.jsdelivr.net/gh/CovenantSQL/docs/website/static/img/produce-block.svg)
+完整的主链出块流程较为复杂，请参考下图中的编号进行理解，
+
+为了容易理解，
+
+
 
 ![MainChain Produce Block](https://cdn.jsdelivr.net/gh/CovenantSQL/docs/website/static/img/produce-block.svg)
+
+查看大图请点击[这里](https://cdn.jsdelivr.net/gh/CovenantSQL/docs/website/static/img/produce-block.svg)
