@@ -18,7 +18,7 @@ CQL uses a layered architecture for database creation and operation. A typical d
 8. All miners are ready to wait for a request;
 9. Users can connect to the database and execute SQL through the `cql console` command.
 
-See the image below to view [Large picture](https://cdn.jsdelivr.net/gh/CovenantSQL/docs@b7143254adb804dff0e3bc1f2f6ab11ad9cd44f5/website/static/img/2layers.svg)：
+See the image below to view [large picture](https://cdn.jsdelivr.net/gh/CovenantSQL/docs@b7143254adb804dff0e3bc1f2f6ab11ad9cd44f5/website/static/img/2layers.svg)：
 
 ![2layers](https://cdn.jsdelivr.net/gh/CovenantSQL/docs@b7143254adb804dff0e3bc1f2f6ab11ad9cd44f5/website/static/img/2layers.svg)
 
