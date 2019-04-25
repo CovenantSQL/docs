@@ -41,8 +41,8 @@
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">常见问题解答</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="常见问题"></a><a href="#常见问题" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>常见问题</h2>
 <ul>
-<li><p><strong>Q:</strong> CQL 数据库支持怎样的一致性等级，是怎样组织的？</p>
-<p><strong>A:</strong> 参见 <a href="./arch#consensus-algorithm">一致性协议</a></p></li>
+<li><p><strong>Q:</strong> CQL 数据库支持怎样的一致性等级，以及 CQL 数据库是怎样创建的？</p>
+<p><strong>A:</strong> 参见 <a href="./arch#共识算法">一致性协议</a></p></li>
 <li><p><strong>Q:</strong> CQL 的数据库安全是如何做的？</p>
 <p><strong>A:</strong> 不同于传统的数据库，CQL 是运行在开放互联网上的分布式数据库系统。安全方面主要做了如下的工作：</p>
 <ol>
@@ -57,16 +57,30 @@
 </code></pre></li>
 </ol></li>
 </ol></li>
-<li><p><strong>Q:</strong> CQL 数据如果是不可篡改的，如何处理数据删除的需求？</p>
-<p><strong>A:</strong> CQL 的完整数据是存在 SQLChain 的 Miner 上的，这部分数据具有</p></li>
-<li><p><strong>Q:</strong> CQL 是如何存储数据库的数据的？</p>
-<p><strong>A:</strong> d</p></li>
-<li><p><strong>Q:</strong> CQL 支持数据量的上限大致是多少？</p>
-<p><strong>A:</strong> d</p></li>
-<li><p><strong>Q:</strong> CQL 的数据存储如何计费、收费？</p>
-<p><strong>A:</strong> d</p></li>
+<li><p><strong>Q:</strong> CQL 数据如果是不可篡改的，如何处理类似 GDPR 里数据删除的需求？</p>
+<p><strong>A:</strong> CQL 支持两种开发模式，一种是传统的 <code>DB per App</code>（一个 App 一个数据库），另外一种是偏向隐私保护的 <code>DB per User</code>（一个用户一个数据库）。</p>
+<p><code>DB per User</code> 的开发模式非常适用于类似 &quot;密码管理器&quot;，&quot;个人信息管理&quot; 等应用的开发。由于用户是通过类似比特币用一个私钥管理自己财产的方式，通过一个 CQL 私钥管理自己的个人数据，所以这种模式开发的 App 天然具有不存储任何用户数据，从技术上天然符合包括以下法律法规的严苛要求：</p>
+<ul>
+<li><a href="https://gdpr-info.eu/">欧盟 GDPR（General Data Protection Regulation）</a></li>
+<li><a href="https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act">美国加州 CCPA（California_Consumer_Privacy_Act）</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act">HIPAA（Health Insurance Portability and Accountability Act of 1996）</a></li>
+<li><a href="https://www.elegislation.gov.hk/hk/cap486">香港 Personal Data (Privacy) Ordinance</a></li>
 </ul>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/23/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/demo_forum"><span class="arrow-prev">← </span><span>上一页</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#常见问题">常见问题</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<p>CQL 的完整数据是存在 SQLChain 的 Miner 上的，这部分数据相关的 SQL 历史是完整保存在 Miner 上的。相对于传统数据库的 <code>CRUD</code> （Create、Read、Update、Delete），CQL 支持的是 <code>CRAP</code> （Create、Read、Append、Privatize）。</p>
+<blockquote>
+<p><strong>Append</strong> vs <strong>Update</strong></p>
+<p>传统数据库对数据进行更改（Update）后是没有历史记录存在的，换句话说数据是可被篡改的。CQL 支持的是对数据进行追加（Append），其结果是数据的历史记录是得以保全。</p>
+</blockquote>
+<blockquote>
+<p><strong>Privatize</strong> vs <strong>Delete</strong></p>
+<p>传统数据库对数据进行删除（Delete）也属于对数据不可追溯、不可逆的篡改。CQL 支持的是对数据进行私有化（Privatize），也就是把数据库的权限转给一个不可能的公钥。这样就可以实现对子链数据的实质性删除。针对单条数据的链上所有痕迹抹除目前仅在企业版提供支持。</p>
+</blockquote></li>
+<li><p><strong>Q:</strong> CQL 是如何存储数据库的数据的？</p>
+<p><strong>A:</strong> 用户数据库的绝大部分操作是在 SQLChain 上完成的。默认情况下，主链仅会保存子链的区块哈希。更多细节请参考<a href="./arch_layers#主链和-sql-链">主链和 SQL 链</a>。</p></li>
+<li><p><strong>Q:</strong> CQL 支持数据量的上限大致是多少？</p>
+<p><strong>A:</strong> CQL 的数据库数据是存储在一个个独立的 SQLChain 上的。CQL 的数据库的数量取决于全网的 &quot;矿工&quot; 数量。单个 CQL 数据库的上限取决于硬件配置，截止 2019-04-25 线上最大的表是在 AWS c5.2xlarge 标准配置的主机上持续运行的由 2 Miner 组成的一个数据库，数据行数为 433,211,000，占用磁盘 3.2 TB。</p></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/25/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/demo_forum"><span class="arrow-prev">← </span><span>上一页</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#常见问题">常见问题</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
