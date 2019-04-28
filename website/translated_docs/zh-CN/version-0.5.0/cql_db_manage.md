@@ -23,6 +23,24 @@ cql create '{"node": 1}'
 
 关于子命令 `create` 输入参数的完整说明，请参见[完整参数](#子命令-create-完整参数)。
 
+## 计费规则
+
+CovenantSQL 数据库采用与[以太坊](https://www.ethos.io/what-is-ethereum-gas/)类似的 `Gas` 计费方式，`Gas` 与稳定代币 `Particle` 的换算单位（即 `Gas Price`）在创建时指定，对应的字段为 `gas-price`。如果未指定，则默认设置为 1。另一个与计费相关的字段是预付款 `advance-payment`，用于进行押金抵扣及后续查询计费，默认值为 20,000,000。例如：
+
+```bash
+cql create '{"node": 2, "gas-price": 5, "advance-payment": 500000000}'
+```
+
+则可以创建 `gas-price` 为 5，预付款为 500,000,000 的数据库。在矿机资源紧缺时，设置更高的 `gas-price` 有助于创建请求被更快地被响应，但是也会消耗更多的代币。
+
+> 目前暂时还只支持使用 CovenantSQL 的稳定代币 Particle 来进行计费，未来将会陆续支持其他币种。
+
+进行数据库查询时具体扣费逻辑如下：
+
+- 对于读查询，消耗的 `Gas` 为返回的行数 `rows_count`
+- 对于写查询，消耗的 `Gas` 为结果中的 `affected_rows`
+- SQLChain 根据配置进行周期性结算上报总 `Gas` 消耗到主链，主链验证成功后从预付款中扣除 `Gas` * `Gas Price` 的代币
+
 ## ~~删除数据库~~
 
 ~~未实现。~~
@@ -149,6 +167,8 @@ cql grant '
         eventual-consistency    bool        // 各个数据库节点之间是否使用最终一致性同步
         consistency-level       float       // 一致性级别，通过 node*consistency_level 得到强同步的节点数
         isolation-level         int         // 单个节点上的隔离级别，默认级别为线性级别
+        gas-price               int         // 创建数据库使用 Gas 单价，默认为 1 Particle
+        advance-payment         int         // 创建数据库分配的预付款，会从创建者账户上扣除，默认为 20,000,000 Particles
 
     由于 CovenantSQL 是区块链上的数据库，在真正访问数据库之前你可能需要等待创建请求的执行确认以及在数据库节点上的实际创建。
     示例：
