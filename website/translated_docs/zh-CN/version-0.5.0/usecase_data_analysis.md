@@ -41,7 +41,9 @@ Quandl 数据分为表以及子表两层索引
 
 1. 我们想要查询 欧盟委员会年度宏观经济数据库 的数据，我们找到其第一层索引的 `databasecode` 为`quandl_ameco`，于是，我们可以查询其第二层索引，用以下 SQL 命令行：
 
-   `select * from quandl_updateindex where databasecode like 'ameco' group by quandlcode limit 10000`
+   ```SQL
+   select * from quandl_updateindex where databasecode like 'ameco' group by quandlcode limit 10000;
+   ```
 
 2. 然后通过第三列，我们可以查看`quandlcode`对应的描述
 
@@ -51,7 +53,9 @@ Quandl 数据分为表以及子表两层索引
 
    于是，我们可以用以下方式把这个子表给查询出来
 
-   `select * from quandl_ameco where quandlcode like 'AMECO/ALB_1_0_0_0_AAGE' limit 10000`
+   ```SQL
+   select * from quandl_ameco where quandlcode like 'AMECO/ALB_1_0_0_0_AAGE' limit 10000;
+   ```
 
 3. 注意：如果内容整列为 null 的，属于表结构本身不存在的字段，可以自行去除。
 
