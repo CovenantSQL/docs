@@ -24,6 +24,24 @@ The sub-command `create` sends transactions to block producers to create databas
 
 For a complete help message, check [Complete Parameters](#sub-command-create-complete-parameters).
 
+## Billing
+
+CovenantSQL uses Gas for billing just like the [Ethereum Gas](https://www.ethos.io/what-is-ethereum-gas/). The gas unit (a.k.a., the `Gas-Price`) in stable token `Particle` is specified while creating the database, and its corresponding field is `gas-price`. If not specified in the json string, it will be set as 1 by default. Another billing-related field is `advance-payment`, which will be used as deposit and query expending. The default advance payment is 20,000,000. Creating a database with specified `Gas-Price` and `Advance-Payment`:
+
+```bash
+cql create '{"node": 2, "gas-price": 5, "advance-payment": 500000000}'
+```
+
+Thus we created a new database with `Gas-Price` 5 and `Advance-Payment` 500,000,000. Note that when the CovenantSQL network is short of miner resources, setting a higher `Gas-Price` will help your creation request to be accepted earlier, but it will cost you more tokens of course.
+
+> At present, we only accept the CovenantSQL stable token Particle for database billing. More token types will be supported soon.
+
+And the billing is processed as following:
+
+- For a Read request, the result `rows_count` is counted as the `Gas` cost
+- For a Write request, the result `affected_rows` is counted as the `Gas` cost
+- The SQLChain miner does periodic billing, sums up, and reports the `Gas` cost to the main chain, and the main chain verifies and deducts `Gas` * `Gas Price` tokens from the user accounts
+
 ## ~~Deleting Database~~
 
 ~~Not yet implemented.~~
@@ -148,6 +166,8 @@ Either setting the `pattern` field to `nil` or just resetting the user permissio
         eventual-consistency    bool        // Use eventual consistency to sync among miner nodes
         consistency-level       float       // Consistency level, node*consistency_level is the node number to perform strong consistency
         isolation-level         int         // Isolation level in a single node
+        gas-price               int         // Specified Gas Price of the database, default is 1 Particle
+        advance-payment         int         // Specified advance payment of the database, default is 20,000,000 Particles
 
     Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction confirmation before the creation takes effect.
     e.g.
