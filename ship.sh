@@ -54,7 +54,7 @@ command::ship() {
 
     # generate versioned docs
     cd website
-    rm versions.json || true
+    sed -i "" "/${version}/d" versions.json
     yarn run version ${version}
 
     # publish current docs
