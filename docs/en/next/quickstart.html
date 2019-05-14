@@ -96,7 +96,7 @@ chmod 600 ~/.cql/testnet-conf/private.key
 <p>The test network is temporarily composed of 3 Miners, so temporarily only supports <code>create 3</code> to create a database of 3 nodes.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="create-a-database"></a><a href="#create-a-database" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a database</h2>
-<pre><code class="hljs css language-bash">cql create -config=~/.cql/testnet-conf/config.yaml -no-password \ 
+<pre><code class="hljs css language-bash">cql create -config=~/.cql/testnet-conf/config.yaml -no-password \
 -<span class="hljs-built_in">wait</span>-tx-confirm <span class="hljs-string">'{"node":1}'</span>
 </code></pre>
 <p>The command execution takes a little long time, and the console outputs after about 30 seconds:</p>
@@ -116,7 +116,7 @@ chmod 600 ~/.cql/testnet-conf/private.key
 </ol>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="access-the-database"></a><a href="#access-the-database" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access the database</h2>
-<pre><code class="hljs css language-bash">cql console -config=~/.cql/testnet-conf/config.yaml -no-password \ 
+<pre><code class="hljs css language-bash">cql console -config=~/.cql/testnet-conf/config.yaml -no-password \
 -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 </code></pre>
 <p>After connecting to the database, you can manipulate the database on CovenantSQL according to your habit of operating the database. For example, execute <code>CREATE TABLE</code> to create a table, <code>SELECT</code> query data, and so on.</p>
