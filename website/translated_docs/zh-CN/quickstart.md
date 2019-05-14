@@ -82,7 +82,7 @@ chmod 600 ~/.cql/testnet-conf/private.key
 ## Create a database
 
 ```bash
-cql create -config=~/.cql/testnet-conf/config.yaml -no-password \ 
+cql create -config=~/.cql/testnet-conf/config.yaml -no-password \
 -wait-tx-confirm '{"node":1}'
 ```
 
@@ -105,7 +105,7 @@ This means that you submitted the database `0a10b74439f2376d828c9a70fd538dac4b69
 ## Access the database
 
 ```bash
-cql console -config=~/.cql/testnet-conf/config.yaml -no-password \ 
+cql console -config=~/.cql/testnet-conf/config.yaml -no-password \
 -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ```
 
