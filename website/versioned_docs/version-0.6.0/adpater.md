@@ -1,6 +1,7 @@
 ---
-id: adapter
+id: version-0.6.0-adapter
 title: Adapter
+original_id: adapter
 ---
 
 # Use Adapter to access CovenantSQL

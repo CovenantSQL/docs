@@ -24,7 +24,7 @@ docker run -itd \
 	--env COVENANT_ROLE=adapter --env COVENANT_CONF=/app/config.yaml \
 	-v ~/.cql/config.yaml:/app/config.yaml \
 	-v ~/.cql/private.key:/app/private.key \
-	--name cql-adapter -p $adapter_addr:4661 \ 
+	--name cql-adapter -p $adapter_addr:4661 \
 	covenantsql/covenantsql:testnet 0.0.0.0:4661
 ```
 
