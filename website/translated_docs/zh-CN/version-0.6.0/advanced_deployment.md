@@ -155,7 +155,7 @@ co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=>
 
 镜像中的 Observer 角色使用了和 mysql-adapter 镜像中相同的 private.key ，故可以免去新账户授权和转账的过程制。
 
-（关于权限管理的详细说明请参考[数据库权限管理](cql.md#数据库权限管理)）
+（关于权限管理的详细说明请参考[数据库权限管理](cql_db_manage#数据库权限管理)）
 
 #### 在浏览器使用 SQLChain Observer
 
