@@ -26,7 +26,7 @@ Now you can use `jdbc:covenantsql://<adapter_endpoint>/<database_id>` uri，repl
 <repositories>
     <repository>
         <id>mvn-repo</id>
-        <url>https://raw.githack.com/CovenantSQL/covenant-connector/master/covenantsql-java-connector/mvn-repo</url>
+        <url>https://raw.githack.com/CovenantSQL/covenant-connector/mvn-repo</url>
         <releases>
             <enabled>true</enabled>
         </releases>
@@ -52,7 +52,7 @@ Now you can use `jdbc:covenantsql://<adapter_endpoint>/<database_id>` uri，repl
 ```gradle
 repositories {
     maven {
-      url 'https://raw.githack.com/CovenantSQL/covenant-connector/master/covenantsql-java-connector/mvn-repo'
+      url 'https://raw.githack.com/CovenantSQL/covenant-connector/mvn-repo'
     }
 }
 
