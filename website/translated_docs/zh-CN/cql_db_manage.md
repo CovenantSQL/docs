@@ -5,20 +5,25 @@ title: Database Management
 
 ## Creating Database
 
-Like `transfer`, `create` takes a `json` format main parameter. Create a database with one miner node with:
+Like `transfer`, `create` takes several parameters. e.g. Create a database with one miner node:
 
 ```bash
-cql create '{"node": 1}'
+cql create -db-node 1
 ```
 
 Output:
 
-    Enter master key(press Enter for default: ""): 
+    INFO[0000] Geting bp address from dns: bp00.testnet.gridb.io
+    INFO[0048] Register self to blockproducer: 00000000000589366268c274fdc11ec8bdb17e668d2f619555a2e9c1a29c91d8
+    INFO init config success                           path=~/.cql/config.yaml
+    INFO create database requested                    
     
-    covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+    The newly created database is: "covenantsql://962bbb3a8028a203e99121d23173a38fa24a670d52c8775a9d987d007a767ce4"
+    The connecting string beginning with 'covenantsql://' could be used as a dsn for `cql console`
+     or any command, or be used in website like https://web.covenantsql.io
     
 
-Here `covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` is the database source name (DSN) of the created database. And the `covenantsql` part is the scheme, which can be `cql` in abbreviation. The hex string after `://` is the database address, which can be used as a receiver address in `transfer` command.
+Here `covenantsql://962bbb3a8028a203e99121d23173a38fa24a670d52c8775a9d987d007a767ce4` is the database source name (DSN) of the created database. And the `covenantsql` part is the scheme, which can be `cql` in abbreviation. The hex string after `://` is the database address, which can be used as a receiver address in `transfer` command.
 
 The sub-command `create` sends transactions to block producers to create databases, so it has a `wait-tx-confirm` parameter too.
 
@@ -26,10 +31,10 @@ For a complete help message, check [Complete Parameters](#sub-command-create-com
 
 ## Billing
 
-CovenantSQL uses Gas for billing just like the [Ethereum Gas](https://www.ethos.io/what-is-ethereum-gas/). The gas unit (a.k.a., the `Gas-Price`) in stable token `Particle` is specified while creating the database, and its corresponding field is `gas-price`. If not specified in the json string, it will be set as 1 by default. Another billing-related field is `advance-payment`, which will be used as deposit and query expending. The default advance payment is 20,000,000. Creating a database with specified `Gas-Price` and `Advance-Payment`:
+CovenantSQL uses Gas for billing just like the [Ethereum Gas](https://www.ethos.io/what-is-ethereum-gas/). The gas unit (a.k.a., the `Gas-Price`) in stable token `Particle` is specified while creating the database, and its corresponding field is `-db-gas-price`. If not specified in the parameter, it will be set as 1 by default. Another billing-related field is `-db-advance-payment`, which will be used as deposit and query expending. The default advance payment is 20,000,000. Creating a database with specified `Gas-Price` and `Advance-Payment`:
 
 ```bash
-cql create '{"node": 2, "gas-price": 5, "advance-payment": 500000000}'
+cql create -db-node 2 -db-gas-price 5 -db-advance-payment 500000000
 ```
 
 Thus we created a new database with `Gas-Price` 5 and `Advance-Payment` 500,000,000. Note that when the CovenantSQL network is short of miner resources, setting a higher `Gas-Price` will help your creation request to be accepted earlier, but it will cost you more tokens of course.
@@ -59,36 +64,44 @@ CovenantSQL database has 3 kinds of access permission:
 
 Among them, `Admin` is the permission that can assign permissions (`Admin`, `Write`, or `Read`) to the other accounts. `Admin` and `Write` allows the write queries (such as `CREATE`, `INSERT`, and etc.). `Admin` and `Read` allows the read queries (such as `SHOW`, `SELECT`, and etc.). If you want to allow a user to read/write the database but not allow to modify the permissions of itself or other accounts, you can assign the user permission as `Read,Write`. `Void` is a special kind of permission which means 'no permission'. Once the `Admin` sets the permission of an account as `Void`, it will no longer able to read or write the database. The account who creates the database will be granted the initial `Admin` permission by default.
 
-Assume that you have created a database `covenantsql:\\4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5` with default account, and have generated another account under directory `account2` which has the address `011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6`. Now you can grant permissions to `accounts` to access the database, with the `json` format main parameter as following:
+Assume that you have created a database `covenantsql:\\4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5` with default account, and have generated another account under directory `account2` which has the address `011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6`. Now you can grant permissions to `accounts` to access the database, with parameters as following:
 
-```json
-{
-   "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5", // Target database adderss to give permission
-   "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6", // Target wallet address to get permission
-   "perm": "Read,Write" // Permission, separated by commas
-}
+```bash
+`-to-dsn`  Target database adderss to give permission
+`-to-user` Target wallet address to get permission
+`-perm`    Permission, separated by commas
 ```
 
 Pass the parameter to `grant`:
 
 ```bash
-cql grant '{"chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5", "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6", "perm": "Read,Write"}'
+cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm "Read,Write"
 ```
 
 Output:
 
-    INFO[0000] succeed in sending transaction to CovenantSQL
+    INFO[0000] Geting bp address from dns: bp04.testnet.gridb.io
+    INFO[0003] Self register to blockproducer: 00000000003b2bd120a7d07f248b181fc794ba8b278f07f9a780e61eb77f6abb
+    INFO init config success                           path=~/.cql/config.yaml
+    INFO succeed in grant permission on target database
     
 
 Or revoke the permission:
 
 ```bash
-cql grant '{"chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5", "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6", "perm": "Void"}'
+cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm "Void"
 ```
 
 Output:
 
-    INFO[0000] succeed in sending transaction to CovenantSQL
+    INFO[0000] Geting bp address from dns: bp04.testnet.gridb.io
+    INFO[0003] Self register to blockproducer: 00000000003b2bd120a7d07f248b181fc794ba8b278f07f9a780e61eb77f6abb
+    INFO init config success                           path=~/.cql/config.yaml
+    INFO succeed in grant permission on target database
     
 
 The sub-command `grant` sends transactions to block producers to request permission granting, so it has a `wait-tx-confirm` parameter too.
@@ -98,7 +111,10 @@ Since the database separately keeps billing for each user, you need to transfer 
 Transferring from `account2` to the database:
 
 ```bash
-cql -config "account2/config.yaml" transfer '{"addr": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","amount": "90000000 Particle"}'
+cql transfer -config "account2/config.yaml" \
+             -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+             -amount 90000000 \
+             -token Particle
 ```
 
 ### SQL White List
@@ -108,17 +124,15 @@ CovenantSQL supports white list setting for each of its users. By setting up SQL
 Adding a white list:
 
 ```bash
-cql grant '
+cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm '
 {
-    "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
-    "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
-    "perm": {
-        "patterns": [
-            "SELECT COUNT(1) FROM a",
-            "SELECT * FROM a WHERE id = ? LIMIT 1"
-        ],
-        "role": "Read,Write"
-    }
+    "patterns": [
+        "SELECT COUNT(1) FROM a",
+        "SELECT * FROM a WHERE id = ? LIMIT 1"
+    ],
+    "role": "Read,Write"
 }
 '
 ```
@@ -128,87 +142,102 @@ cql grant '
 Cleaning the white list:
 
 ```bash
-cql grant '
+<br />cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm '
 {
-    "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
-    "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
-    "perm": {
-        "patterns": nil,
-        "role": "Read,Write"
-    }
+   "patterns": nil,
+   "role": "Read,Write"
 }
 '
+
  or
-cql grant '
-{
-    "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
-    "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
-    "perm": "Read,Write"
-}
-'
+
+cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm "Read,Write"
 ```
 
 Either setting the `pattern` field to `nil` or just resetting the user permission directly, will eliminate the white list and give back the access permission to the user.
 
 ## Sub-command `create` Complete Parameters
 
-    usage: cql create [common params] [-wait-tx-confirm] db_meta_json
+    usage: cql create [common params] [-wait-tx-confirm] [db_meta_params]
     
-    Create creates a CovenantSQL database by database meta info JSON string. The meta info must include node count.
+    Create command creates a CovenantSQL database by database meta params. The meta info must include
+    node count.
     e.g.
-        cql create '{"node": 2}'
+        cql create -db-node 2
     
-    A complete introduction of db_meta_json fields:
-        target-miners           []string    // List of target miner addresses
-        node                    int         // Target node number
-        space                   int         // Minimum disk space requirement, 0 for none
-        memory                  int         // Minimum memory requirement, 0 for none
-        load-avg-per-cpu        float       // Minimum idle CPU requirement, 0 for none
-        encrypt-key             string      // Encryption key for persistence data
-        eventual-consistency    bool        // Use eventual consistency to sync among miner nodes
-        consistency-level       float       // Consistency level, node*consistency_level is the node number to perform strong consistency
-        isolation-level         int         // Isolation level in a single node
-        gas-price               int         // Specified Gas Price of the database, default is 1 Particle
-        advance-payment         int         // Specified advance payment of the database, default is 20,000,000 Particles
-    
-    Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction confirmation before the creation takes effect.
+    Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction
+    confirmation before the creation takes effect.
     e.g.
-        cql create -wait-tx-confirm '{"node": 2}'
+        cql create -wait-tx-confirm -db-node 2
     
-    Params:
+    DB meta params:
+      -db-advance-payment uint
+            Customized advance payment
+      -db-consistency-level float
+            Consistency level, node*consistency_level is the node count to perform strong consistency
+      -db-encrypt-key string
+            Encryption key for persistence data
+      -db-eventual-consistency
+            Use eventual consistency to sync among miner nodes
+      -db-gas-price uint
+            Customized gas price
+      -db-isolation-level int
+            Isolation level in a single node
+      -db-load-avg-per-cpu float
+            Minimum idle CPU requirement, 0 for none
+      -db-memory uint
+            Minimum memory requirement, 0 for none
+      -db-node uint
+            Target node count
+      -db-space uint
+            Minimum disk space requirement, 0 for none
+      -db-target-miners value
+            List of target miner addresses(separated by ',')
       -wait-tx-confirm
             Wait for transaction confirmation
     
 
 ## Sub-command `drop` Complete Parameters
 
-    usage: cql drop [common params] [-wait-tx-confirm] dsn/dbid
+    usage: cql drop [common params] [-wait-tx-confirm] dsn
     
     Drop drops a CovenantSQL database by DSN or database ID.
     e.g.
         cql drop covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
     
-    Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction confirmation before the drop operation takes effect.
+    Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction
+    confirmation before the drop operation takes effect.
     e.g.
         cql drop -wait-tx-confirm covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
     
-    Params:
+    Drop params:
       -wait-tx-confirm
             Wait for transaction confirmation
     
 
 ## Sub-command `grant` Complete Parameters
 
-    usage: cql grant [common params] [-wait-tx-confirm] permission_meta_json
+    usage: cql grant [common params] [-wait-tx-confirm] [-to-user wallet] [-to-dsn dsn] [-perm perm_struct]
     
-    Grant grants specific permissions for the target user.
+    Grant grants specific permissions for the target user on target dsn.
     e.g.
-        cql grant '{"chain": "your_chain_addr", "user": "user_addr", "perm": "perm_struct"}'
+        cql grant -to-user=43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40 -to-dsn="covenantsql://xxxx" -perm perm_struct
     
-    Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction confirmation before the permission takes effect.
+    Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction
+    confirmation before the permission takes effect.
     e.g.
-        cql grant -wait-tx-confirm '{"chain":"your_chain_addr","user":"user_addr","perm":"perm_struct"}'
+        cql grant -wait-tx-confirm -to-user=43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40 -to-dsn="covenantsql://xxxx" -perm perm_struct
     
-    Params:
+    Grant params:
+      -perm string
+            Permission type struct for grant.
+      -to-dsn string
+            Target database dsn to grant permission.
+      -to-user string
+            Target address of an user account to grant permission.
       -wait-tx-confirm
             Wait for transaction confirmation
