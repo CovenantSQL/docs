@@ -22,6 +22,7 @@ export adapter_addr=0.0.0.0:11105
 docker rm -f cql-adapter
 docker run -itd \
 	--env COVENANT_ROLE=adapter --env COVENANT_CONF=/app/config.yaml \
+    --env COVENANTSQL_ADAPTER_ADDR=0.0.0.0:4661 \
 	-v ~/.cql/config.yaml:/app/config.yaml \
 	-v ~/.cql/private.key:/app/private.key \
 	--name cql-adapter -p $adapter_addr:4661 \
