@@ -86,13 +86,13 @@ covenantsql_observer        ./docker-entry.sh                Up      4661/tcp, 0
 使用 `cql` 命令并使用 `create` 参数提供所需的数据库节点数量创建数据库实例，例如：创建一个单节点的数据库实例
 
 ```bash
-docker exec -it covenantsql_adapter /app/cql create -config /app/node_adapter/config.yaml -db-node 1
+cql create -config ${COVENANTSQL_ROOT}/test/service/node_c/config.yaml -db-node 1
 ```
 
 >  修改 `create` 参数的值，可以创建运行在多节点上的实例，例如：创建两个节点的实例
 
 ```bash
-docker exec -it covenantsql_adapter /app/cql create -config /app/node_adapter/config.yaml -db-node 2
+cql create -config ${COVENANTSQL_ROOT}/test/service/node_c/config.yaml -db-node 2
 ```
 
 命令会返回创建的数据库实例的连接串
@@ -105,9 +105,9 @@ covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5
 
 使用 `cql` 命令并使用 `dsn` 参数提供数据库实例的连接串进行数据库访问
 
- ```bash
-docker exec -it covenantsql_adapter /app/cql console -config /app/node_adapter/config.yaml covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5
- ```
+```bash
+cql console -config ${COVENANTSQL_ROOT}/test/service/node_c/config.yaml covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
+```
 
 会得到如下输出，并进入 `cql` 交互命令行模式
 
