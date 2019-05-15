@@ -22,10 +22,11 @@ export adapter_addr=0.0.0.0:11105
 docker rm -f cql-adapter
 docker run -itd \
 	--env COVENANT_ROLE=adapter --env COVENANT_CONF=/app/config.yaml \
+	--env COVENANTSQL_ADAPTER_ADDR=0.0.0.0:4661 \
 	-v ~/.cql/config.yaml:/app/config.yaml \
 	-v ~/.cql/private.key:/app/private.key \
 	--name cql-adapter -p $adapter_addr:4661 \
-	covenantsql/covenantsql:testnet 0.0.0.0:4661
+	covenantsql/covenantsql:testnet
 ```
 
 ### 创建数据库
@@ -37,7 +38,7 @@ docker run -it --rm \
 	-v ~/.cql/config.yaml:/app/config.yaml \
 	-v ~/.cql/private.key:/app/private.key \
 	--entrypoint /app/cql covenantsql/covenantsql:testnet \
-	create -config /app/config.yaml -wait-tx-confirm '{"node": 1}'
+	create -config /app/config.yaml -wait-tx-confirm -db-node 1
 ```
 
 命令会返回创建的数据库实例的连接串（DSN）

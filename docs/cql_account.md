@@ -66,7 +66,7 @@ Output：
     You can get some free PTC from:
     	https://testnet.covenantsql.io/wallet/dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
 
-After get a wallet address, you may need to request PTC as below.
+After get a wallet address, you may need to request PTC as above.
 
 ## Sub-command `generate` Complete Parameters
 

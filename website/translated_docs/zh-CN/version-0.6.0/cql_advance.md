@@ -7,7 +7,7 @@ title: 高级使用
 
 ## 子命令 `rpc` 完整参数
 
-    usage: cql rpc [通用参数] [-wait-tx-confirm] -name rpc_name -endpoint rpc_endpoint -req rpc_request
+    usage: cql rpc [通用参数] [-wait-tx-confirm] [-endpoint rpc_endpoint | -bp] -name rpc_name -req rpc_request
 
     向目标服务器发送 RPC 请求。
     示例：
@@ -16,6 +16,8 @@ title: 高级使用
                 -req '{"DBID": "c8328272ba9377acdf1ee8e73b17f2b0f7430c798141080d0282195507eb94e7"}'
 
     Params:
+      -bp
+        	Call block producer node
       -endpoint string
             目标 RPC Node ID
       -name string

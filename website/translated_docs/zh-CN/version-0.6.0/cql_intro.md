@@ -18,12 +18,10 @@ CovenantSQL 为终端用户提供 `cql` 命令行工具集，用于对用户账�
 
 以下列出子命令中使用到的通用参数：
 
-    -bypass-signature
-          禁用签名和验签，仅用于开发者测试
     -config string
           指定配置文件路径，默认值为 "~/.cql/config.yaml"
-    -no-password
-          使用空白主密码加密私钥
+    -with-password
+          使用主密码加密私钥
     -password string
           私钥主密码（不安全，仅用于调试或安全环境下的脚本模式）
 

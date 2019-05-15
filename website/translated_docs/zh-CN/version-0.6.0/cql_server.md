@@ -11,7 +11,7 @@ title: 本地服务
     示例：
         cql explorer 127.0.0.1:8546
 
-    Params:
+    Explorer params:
       -bg-log-level string
             后台服务日志级别
       -tmp-path string
@@ -23,9 +23,9 @@ title: 本地服务
 
     为数据库子链运行 mirror 服务器。
     示例：
-        cql mirror database_id 127.0.0.1:9389
+        cql mirror dsn 127.0.0.1:9389
 
-    Params:
+    Mirror params:
       -bg-log-level string
             后台服务日志级别
       -tmp-path string
@@ -41,7 +41,7 @@ title: 本地服务
     示例：
         cql adapter 127.0.0.1:7784
 
-    Params:
+    Adapter params:
       -bg-log-level string
             后台服务日志级别
       -mirror string

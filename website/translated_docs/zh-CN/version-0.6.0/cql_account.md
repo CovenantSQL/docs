@@ -10,7 +10,7 @@ title: 账号管理
 子命令 `generate` 在指定目录生成私钥及指向 TestNet 的配置文件，示例：
 
 ```bash
-cql generate config
+cql generate
 ```
 
 > 目前默认生成的配置文件指向测试网，还需要提供生成指向 Docker 一键部署网络的配置方法。
@@ -19,54 +19,78 @@ cql generate config
 
 输出：
 
-    Generating key pair...
-    Enter master key(press Enter for default: ""): 
-
-    Private key file: ~/.cql/private.key
-    Public key's hex: 027af3584b8b4736d6ba1e78ace5f0fdefe561f08749c5cac39d23668c3030fe39
-    Generated key pair.
+    Generating private key...
+    Please enter password for new private key
+    Generated private key.
     Generating nonce...
-    INFO[0075] cpu: 4
-    INFO[0075] position: 3, shift: 0x0, i: 3
-    INFO[0075] position: 1, shift: 0x0, i: 1
-    INFO[0075] position: 0, shift: 0x0, i: 0
-    INFO[0075] position: 2, shift: 0x0, i: 2
-    nonce: {{1056388 0 0 1424219234} 25 000000737633a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01}
-    node id: 000000737633a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01
+    INFO cpu: 4
+    INFO position: 2, shift: 0x0, i: 2
+    INFO position: 0, shift: 0x0, i: 0
+    INFO position: 3, shift: 0x0, i: 3
+    INFO position: 1, shift: 0x0, i: 1
+    nonce: {{973366 0 586194564 0} 26 0000002c32aa3ee39e4f461a5f5e7fda50859f597464d81c9618d443c476835b}
+    node id: 0000002c32aa3ee39e4f461a5f5e7fda50859f597464d81c9618d443c476835b
     Generated nonce.
     Generating config file...
-    Generated nonce.
+    Generated config.
 
-## 获取私钥文件的公钥
+    Config file:      ~/.cql/config.yaml
+    Private key file: ~/.cql/private.key
+    Public key's hex: 03f195dfe6237691e724bcf54359d76ef388b0996a3de94a7e782dac69192c96f0
 
-子命令 `generate` 也可以用来获取已经存在的私钥文件对应的公钥十六进制串。示例：
+    Wallet address: dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
 
-```bash
-cql generate public
-```
+    Any further command could costs PTC.
+    You can get some free PTC from:
+    	https://testnet.covenantsql.io/wallet/dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
+
+
+### 私钥文件的公钥
+
+子命令 `generate` 同时打印了私钥文件对应的公钥十六进制串。示例：
 
 输出：
 
-    Enter master key(press Enter for default: ""): 
+    Public key's hex: 03f195dfe6237691e724bcf54359d76ef388b0996a3de94a7e782dac69192c96f0
 
-    INFO[0011] init config success                           path=/home/levente/.cql/private.key
-    INFO[0011] use public key in config file: /home/levente/.cql/config.yaml
-    Public key's hex: 02fd4089e7f4ca224f576d4baa573b3e9662153c952fce3f87f9586ffdd11baef6
+> 这一信息实际使用过程中暂时不会用到。
 
-> 这一功能实际使用过程中暂时不会用到。
+### 钱包地址
+
+子命令 `generate` 也打印了钱包地址的十六进制串 (并且保存在了 `config.yaml` 文件中)。示例：
+
+输出：
+
+    Wallet address: dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
+
+    Any further command could costs PTC.
+    You can get some free PTC from:
+    	https://testnet.covenantsql.io/wallet/dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
+
+拿到一个新的钱包地址之后，你需要按照上面的提示去申请PTC。
+
 
 ## 子命令 `generate` 完整参数
 
 通用参数部分参考 [子命令通用参数](#子命令通用参数)，以下介绍其他子命令时不再另外说明。
 
-特殊地，在使用 `cql generate config` 命令生成新账号配置时，`-config`、`-no-password` 和 `-password` 等参数实际作用于将要生成的新私钥和配置文件，而不是要读取的文件。
-
-    usage: cql generate [通用参数] config | public
+    usage: cql generate [common params] [-source template_file] [-miner] [-private existing_private_key] [dest_path]
 
     生成新私钥及配置文件，或获取指定配置的私钥文件对应的公钥。
+    e.g.
+        cql generate
 
-    Params:
-      没有额外参数
+    or input a passphrase by
+
+        cql generate -with-password
+
+    Generate params:
+      -miner string
+        	Generate miner config with specified miner address
+      -private string
+        	Generate config using an existing private key
+      -source string
+        	Generate config using the specified config template
 
 ## 计算 Node ID
 

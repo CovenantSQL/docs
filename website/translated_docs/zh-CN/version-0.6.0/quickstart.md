@@ -20,7 +20,7 @@ title: Quick Start
 - 非 Homebrew，可以执行：
 
     ```bash
-    sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.osx-amd64.tar.gz" | \
+    sudo bash -c 'curl -L "https://mac.gridb.io/cql" | \
      tar xzv -C /usr/local/bin/ --strip-components=1'
     ```
 
@@ -29,7 +29,7 @@ title: Quick Start
 - 在命令行中执行：
 
     ```bash
-    sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.linux-amd64.tar.gz" | \
+    sudo bash -c 'curl -L "https://linux.gridb.io/cql" | \
     tar xzv -C /usr/local/bin/ --strip-components=1'
     ```
 
@@ -81,8 +81,8 @@ chmod 600 ~/.cql/testnet-conf/private.key
 ## 创建数据库
 
 ```bash
-cql create -config=~/.cql/testnet-conf/config.yaml -no-password \
--wait-tx-confirm '{"node":1}'
+cql create -config=~/.cql/testnet-conf/config.yaml \
+    -db-node 1 -wait-tx-confirm
 ```
 
 命令执行耗时较长，大约 30s 之后控制台会输出：
@@ -105,8 +105,8 @@ cql create -config=~/.cql/testnet-conf/config.yaml -no-password \
 ## 访问数据库
 
 ```bash
-cql console -config=~/.cql/testnet-conf/config.yaml -no-password \
--dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+cql console -config=~/.cql/testnet-conf/config.yaml \
+    covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ```
 
 连接上数据库后，你可以按你操作数据库的习惯来操作 CovenantSQL 上的数据库。比如执行 `CREATE TABLE` 创建表、`SELECT` 查询数据等操作。
@@ -131,32 +131,40 @@ CovenantSQL 有一个特性是**其操作记录是不可变且可跟踪的**，�
 
 ## 创建新账号
 
-我们的测试网支持你创建自己的的账号，并在自己的账号下创建数据库。通过以下的命令创建账号（会询问设置主密码，可以加上 `-no-password` 留空）：
+我们的测试网支持你创建自己的的账号，并在自己的账号下创建数据库。通过以下的命令创建账号（默认生成的私钥为空密码，可以加上 `-with-password` 输入密码）：
 
 ```bash
-cql generate -no-password config
+cql generate
 ```
 
 输出：
 
 ```
-INFO[0000] cql build: cql HEAD-48fff30-20190328075135 linux amd64 go1.11.6 
-"/home/work/.cql" already exists. 
-Do you want to delete it? (y or n, press Enter for default n):
-y
-Generating key pair...
-Private key file: /home/work/.cql/private.key
-Public key's hex: 024123d10696cf54fbf2b1e2b507ec4d1cbf2b4e87095774ad5fd6376cdae88e87
-Generated key pair.
+Generating private key...
+Please enter password for new private key
+Generated private key.
 Generating nonce...
-INFO[0001] cpu: 2                                       
-INFO[0001] position: 2, shift: 0x0, i: 1                
-INFO[0001] position: 0, shift: 0x0, i: 0                
-nonce: {{2556203225 0 0 0} 24 000000829171cb94b765b4d51f2601aaf2c0f5270827ed97ddbecf0075437dad}
-node id: 000000829171cb94b765b4d51f2601aaf2c0f5270827ed97ddbecf0075437dad
+INFO cpu: 4
+INFO position: 2, shift: 0x0, i: 2
+INFO position: 0, shift: 0x0, i: 0
+INFO position: 3, shift: 0x0, i: 3
+INFO position: 1, shift: 0x0, i: 1
+nonce: {{973366 0 586194564 0} 26 0000002c32aa3ee39e4f461a5f5e7fda50859f597464d81c9618d443c476835b}
+node id: 0000002c32aa3ee39e4f461a5f5e7fda50859f597464d81c9618d443c476835b
 Generated nonce.
 Generating config file...
 Generated config.
+
+Config file:      ~/.cql/config.yaml
+Private key file: ~/.cql/private.key
+Public key's hex: 03f195dfe6237691e724bcf54359d76ef388b0996a3de94a7e782dac69192c96f0
+
+Wallet address: dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
+
+Any further command could costs PTC.
+You can get some free PTC from:
+	https://testnet.covenantsql.io/wallet/dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
+
 ```
 
 该命令会为你在~目录下创建一个 `.cql` 目录：
@@ -164,30 +172,21 @@ Generated config.
 - `~/.cql/private.key`: 为你生成的私钥通过主密码加密保存在该文件中，你的账号地址需要使用该文件创建；
 - `~/.cql/config.yaml`: 为你生成的配置，cql 可以通过读取该配置来访问 CovenantSQL 测试网。
 
-再运行命令用来生成账号地址（也叫钱包地址、CovenantSQL 地址）：
-
-```bash
-cql wallet -no-password
-```
-
-输出：
-
-```toml
-wallet address: bc3cba461500f49c2adf6e6e98c1b3513063227063512f0dd6a5160c01de5e3c
-```
+同时也会生成账号地址（也叫钱包地址、CovenantSQL 地址）：
+`Wallet address: dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95`
 
 你可以用上面得到的钱包地址在这里领取测试用 PTC ： [申请 PTC](https://testnet.covenantsql.io/)。
 
 最多 2min 后，可以使用 cql 命令行工具查询余额：
 
 ```bash
-cql wallet -no-password -balance all
+cql wallet
 ```
 
 输出：
 
 ```
-Particle balance is: 100
+Particle balance is: 10000000
 Wave balance is: 0
 ```
 

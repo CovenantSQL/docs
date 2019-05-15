@@ -5,19 +5,24 @@ title: 数据库管理
 
 ## 创建数据库
 
-创建数据库与 `transfer` 子命令类似使用 `json` 格式的输入参数，创建由一个节点组成的数据库：
+创建数据库与 `transfer` 子命令类似格式的输入参数，例如，创建由一个节点组成的数据库：
 
 ```bash
-cql create '{"node": 1}'
+cql create -db-node 1
 ```
 
 输出：
 
-    Enter master key(press Enter for default: ""): 
+    INFO[0000] Geting bp address from dns: bp00.testnet.gridb.io
+    INFO[0048] Register self to blockproducer: 00000000000589366268c274fdc11ec8bdb17e668d2f619555a2e9c1a29c91d8
+    INFO init config success                           path=~/.cql/config.yaml
+    INFO create database requested                    
 
-    covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+    The newly created database is: "covenantsql://962bbb3a8028a203e99121d23173a38fa24a670d52c8775a9d987d007a767ce4"
+    The connecting string beginning with 'covenantsql://' could be used as a dsn for `cql console`
+     or any command, or be used in website like https://web.covenantsql.io
 
-注意这里生成的 `covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` 即为数据库的连接字符串（dsn），其中 `covenantsql` 为数据库协议字段，一般也可以缩写为 `cql`；`://` 后的十六进制串为数据库地址，可以在 `transfer` 子命令中作为收款地址使用。
+注意这里生成的 `covenantsql://962bbb3a8028a203e99121d23173a38fa24a670d52c8775a9d987d007a767ce4` 即为数据库的连接字符串（dsn），其中 `covenantsql` 为数据库协议字段，一般也可以缩写为 `cql`；`://` 后的十六进制串为数据库地址，可以在 `transfer` 子命令中作为收款地址使用。
 
 子命令 `create` 通过向 BP 发起交易实现，所以也支持 `wait-tx-confirm` 参数。
 
@@ -25,13 +30,13 @@ cql create '{"node": 1}'
 
 ## 计费规则
 
-CovenantSQL 数据库采用与[以太坊](https://www.ethos.io/what-is-ethereum-gas/)类似的 `Gas` 计费方式，`Gas` 与稳定代币 `Particle` 的换算单位（即 `Gas Price`）在创建时指定，对应的字段为 `gas-price`。如果未指定，则默认设置为 1。另一个与计费相关的字段是预付款 `advance-payment`，用于进行押金抵扣及后续查询计费，默认值为 20,000,000。例如：
+CovenantSQL 数据库采用与[以太坊](https://www.ethos.io/what-is-ethereum-gas/)类似的 `Gas` 计费方式，`Gas` 与稳定代币 `Particle` 的换算单位（即 `Gas Price`）在创建时指定，对应的字段为 `-db-gas-price`。如果未指定，则默认设置为 1。另一个与计费相关的字段是预付款 `-db-advance-payment`，用于进行押金抵扣及后续查询计费，默认值为 20,000,000。例如：
 
 ```bash
-cql create '{"node": 2, "gas-price": 5, "advance-payment": 500000000}'
+cql create -db-node 2 -db-gas-price 5 -db-advance-payment 500000000
 ```
 
-则可以创建 `gas-price` 为 5，预付款为 500,000,000 的数据库。在矿机资源紧缺时，设置更高的 `gas-price` 有助于创建请求被更快地被响应，但是也会消耗更多的代币。
+则可以创建 `Gas Price` 为 5，预付款为 500,000,000 的数据库。在矿机资源紧缺时，设置更高的 `Gas-Price` 有助于创建请求被更快地被响应，但是也会消耗更多的代币。
 
 > 目前暂时还只支持使用 CovenantSQL 的稳定代币 Particle 来进行计费，未来将会陆续支持其他币种。
 
@@ -58,35 +63,43 @@ CovenantSQL 数据库有三类库级别权限：
 
 其中，`Admin` 可以赋予其他钱包地址数据库的权限（`Admin`、`Write` 或 `Read`）；`Admin` 和 `Write` 可以对数据库进行写操作（`CREATE`, `INSERT` 等）；`Admin` 和 `Read` 可以对数据库进行读操作（`SHOW`, `SELECT` 等）；如果需要设置用户有读写权限但是不能修改其他用户或自己的权限，可以将权限设置为 `Read,Write`；`Void` 是一个特殊的权限，当 `Admin` 想取消某个地址的权限时可以将该地址的权限设置为 `Void`，这样该地址将无法继续读写数据库。创建数据库的地址的权限默认为 `Admin`。
 
-假设我们用默认账号创建好了数据库 `covenantsql:\\4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5`，在目录 `account2` 下创建好新账号配置，账号地址为 `011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6`，现在用默认账号给新账号授权已经创建好的数据库的访问权限，同样使用 `json` 格式的授权信息为参数：
+假设我们用默认账号创建好了数据库 `covenantsql:\\4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5`，在目录 `account2` 下创建好新账号配置，账号地址为 `011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6`，现在用默认账号给新账号授权已经创建好的数据库的访问权限，同样使用数个参数来授权：
 
-```json
-{
-   "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5", // 需要进行权限变更的数据库地址
-   "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6", // 需要赋予权限的钱包地址
-   "perm": "Read,Write" // 权限内容，多个权限用英文逗号隔开
-}
+```bash
+`-to-dsn`  需要进行权限变更的数据库地址
+`-to-user` 需要赋予权限的钱包地址
+`-perm`    权限内容，多个权限用英文逗号隔开
 ```
 
 把以上参数传给 `grant` 子命令来增加读写权限：
 
 ```bash
-cql grant '{"chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5", "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6", "perm": "Read,Write"}'
+cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm "Read,Write"
 ```
 
 输出：
 
-    INFO[0000] succeed in sending transaction to CovenantSQL
+    INFO[0000] Geting bp address from dns: bp04.testnet.gridb.io
+    INFO[0003] Self register to blockproducer: 00000000003b2bd120a7d07f248b181fc794ba8b278f07f9a780e61eb77f6abb
+    INFO init config success                           path=~/.cql/config.yaml
+    INFO succeed in grant permission on target database
 
 吊销权限：
 
 ```bash
-cql grant '{"chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5", "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6", "perm": "Void"}'
+cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm "Void"
 ```
 
 输出：
 
-    INFO[0000] succeed in sending transaction to CovenantSQL
+    INFO[0000] Geting bp address from dns: bp04.testnet.gridb.io
+    INFO[0003] Self register to blockproducer: 00000000003b2bd120a7d07f248b181fc794ba8b278f07f9a780e61eb77f6abb
+    INFO init config success                           path=~/.cql/config.yaml
+    INFO succeed in grant permission on target database
 
 子命令 `grant` 通过向 BP 发起交易实现，所以也支持 `wait-tx-confirm` 参数。
 
@@ -95,7 +108,10 @@ cql grant '{"chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7
 使用新账户给数据库充值：
 
 ```bash
-cql -config "account2/config.yaml" transfer '{"addr": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","amount": "90000000 Particle"}'
+cql transfer -config "account2/config.yaml" \
+             -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+             -amount 90000000 \
+             -token Particle
 ```
 
 ### SQL 白名单
@@ -105,17 +121,15 @@ CovenantSQL 还支持给用户设置可执行的 SQL 白名单，可以限定用
 增加白名单：
 
 ```bash
-cql grant '
+cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm '
 {
-    "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
-    "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
-    "perm": {
-        "patterns": [
-            "SELECT COUNT(1) FROM a",
-            "SELECT * FROM a WHERE id = ? LIMIT 1"
-        ],
-        "role": "Read,Write"
-    }
+    "patterns": [
+        "SELECT COUNT(1) FROM a",
+        "SELECT * FROM a WHERE id = ? LIMIT 1"
+    ],
+    "role": "Read,Write"
 }
 '
 ```
@@ -127,52 +141,59 @@ cql grant '
 去掉白名单限制：
 
 ```bash
-cql grant '
+cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm '
 {
-    "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
-    "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
-    "perm": {
-        "patterns": nil,
-        "role": "Read,Write"
-    }
+   "patterns": nil,
+   "role": "Read,Write"
 }
 '
+
  or
-cql grant '
-{
-    "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
-    "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
-    "perm": "Read,Write"
-}
-'
+
+cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm "Read,Write"
 ```
 
 将 `pattern` 设置为 `nil` 或直接设置用户权限，都可以将用户的白名单限制去掉，设置回可以查询所有内容的读权限。
 
 ## 子命令 `create` 完整参数
 
-    usage: cql create [通用参数] [-wait-tx-confirm] db_meta_json
+    usage: cql create [通用参数] [-wait-tx-confirm] [db_meta_params]
 
-    为当前账号创建数据库实例，输入参数为 JSON 格式的创建交易数据，其中节点数 node 为必带字段。
+    为当前账号创建数据库实例，输入以下db_meta参数，其中节点数 -db-node 为必带字段。
     示例：
-        cql create '{"node": 2}'
+        cql create -db-node 2
 
-    完整的 db_meta_json 字段解释如下：
-        target-miners           []string    // 目标节点的账号地址
-        node                    int         // 目标节点数
-        space                   int         // 需要的硬盘空间，0 为任意
-        memory                  int         // 需要的内存空间，0 为任意
-        load-avg-per-cpu        float       // 需要的 CPU 资源占用，0 为任意
-        encrypt-key             string      // 落盘加密密钥
-        eventual-consistency    bool        // 各个数据库节点之间是否使用最终一致性同步
-        consistency-level       float       // 一致性级别，通过 node*consistency_level 得到强同步的节点数
-        isolation-level         int         // 单个节点上的隔离级别，默认级别为线性级别
-        gas-price               int         // 创建数据库使用 Gas 单价，默认为 1 Particle
-        advance-payment         int         // 创建数据库分配的预付款，会从创建者账户上扣除，默认为 20,000,000 Particles
+    完整的 db_meta_params 字段解释如下：
+      -db-advance-payment uint
+        	创建数据库分配的预付款，会从创建者账户上扣除，默认为 20,000,000 Particles
+      -db-consistency-level float
+        	一致性级别，通过 node*consistency_level 得到强同步的节点数
+      -db-encrypt-key string
+        	落盘加密密钥
+      -db-eventual-consistency
+        	各个数据库节点之间是否使用最终一致性同步
+      -db-gas-price uint
+        	创建数据库使用 Gas 单价，默认为 1 Particle
+      -db-isolation-level int
+        	单个节点上的隔离级别，默认级别为线性级别
+      -db-load-avg-per-cpu float
+        	需要的 CPU 资源占用，0 为任意
+      -db-memory uint
+        	需要的内存空间，0 为任意
+      -db-node uint
+        	目标节点数
+      -db-space uint
+        	需要的硬盘空间，0 为任意
+      -db-target-miners value
+        	目标节点的账号地址(separated by ',')
 
     由于 CovenantSQL 是区块链上的数据库，在真正访问数据库之前你可能需要等待创建请求的执行确认以及在数据库节点上的实际创建。
     示例：
-        cql create -wait-tx-confirm '{"node": 2}'
+        cql create -wait-tx-confirm -db-node 2
 
     Params:
       -wait-tx-confirm
@@ -180,9 +201,9 @@ cql grant '
 
 ## 子命令 `drop` 完整参数
 
-    usage: cql drop [通用参数] [-wait-tx-confirm] dsn/dbid
+    usage: cql drop [通用参数] [-wait-tx-confirm] dsn
 
-    通过数据库的连接字符串或账号地址来删除数据库。
+    通过数据库的连接字符串来删除数据库。
     示例：
         cql drop covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
 
@@ -190,22 +211,28 @@ cql grant '
     示例：
         cql drop -wait-tx-confirm covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
 
-    Params:
+    Drop params:
       -wait-tx-confirm
             等待交易执行确认（或者出现任何错误）后再退出
 
 ## 子命令 `grant` 完整参数
 
-    usage: cql grant [通用参数] [-wait-tx-confirm] permission_meta_json
+    usage: cql grant [通用参数] [-wait-tx-confirm] [-to-user wallet] [-to-dsn dsn] [-perm perm_struct]
 
     为指定账号进行数据库权限授权。
     示例：
-        cql grant '{"chain": "your_chain_addr", "user": "user_addr", "perm": "perm_struct"}'
+        cql grant -to-user=43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40 -to-dsn="covenantsql://xxxx" -perm perm_struct
 
     由于 CovenantSQL 是区块链上的数据库，在授权操作生效之前你可能需要等待授权请求的执行确认以及在数据库节点上的实际更新。
     示例：
-        cql grant -wait-tx-confirm '{"chain": "your_chain_addr", "user": "user_addr", "perm": "perm_struct"}'
+        cql grant -wait-tx-confirm -to-user=43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40 -to-dsn="covenantsql://xxxx" -perm perm_struct
 
-    Params:
+    Grant params:
+      -perm string
+        	Permission type struct for grant.
+      -to-dsn string
+        	Target database dsn to grant permission.
+      -to-user string
+        	Target address of an user account to grant permission.
       -wait-tx-confirm
             等待交易执行确认（或者出现任何错误）后再退出
