@@ -152,7 +152,7 @@ Use the `Ctrl + D` shortcut or type `\q` to exit the `cql` interactive command l
 
 The Observer role in the image uses the same private.key as in the mysql-adapter image, so the new account authorization and transfer process can be eliminated.
 
-（For details on rights management, please refer to [Database Permission Managemen](cql.md#数据库权限管理)）
+（For details on rights management, please refer to [Database Permission Managemen](cql_db_manage#granting-permission)）
 
 #### Use SQLChain Observer in your browser
 
