@@ -86,14 +86,14 @@ Create a DB instance by using the `cql` command and using the `create` parameter
 e.g.: creating a single-node database instance
 
 ```bash
-docker exec -it covenantsql_adapter /app/cql create -config /app/config.yaml -db-node 1
+docker exec -it covenantsql_adapter /app/cql create -config /app/node_adapter/config.yaml -db-node 1
 ```
 
 > Modify the value of the `create` parameter to create an instance running on multiple nodes  
 > e.g.: create an instance of two nodes
 
 ```bash
-docker exec -it covenantsql_adapter /app/cql create -config /app/config.yaml -db-node 2
+docker exec -it covenantsql_adapter /app/cql create -config /app/node_adapter/config.yaml -db-node 2
 ```
 
 The command will return the connection string of the created database instance
@@ -106,7 +106,7 @@ The command will return the connection string of the created database instance
 Use the `cql` command and use the `dsn` parameter to provide a connection string for the database instance access:
 
 ```bash
-docker exec -it covenantsql_adapter /app/cql console -config /app/config.yaml covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
+docker exec -it covenantsql_adapter /app/cql console -config /app/node_adapter/config.yaml covenantsql://0a255f136520a2bc6a29055a619ec4f72c2c80fa600daf73b1caa375946ea0e4
  ```
 
 After that, it will get the following output, and enter the `cql` interactive command line mode
