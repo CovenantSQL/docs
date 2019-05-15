@@ -39,7 +39,7 @@ docker run -it --rm \
 	-v ~/.cql/config.yaml:/app/config.yaml \
 	-v ~/.cql/private.key:/app/private.key \
 	--entrypoint /app/cql covenantsql/covenantsql:testnet \
-	create -config /app/config.yaml -wait-tx-confirm '{"node": 1}'
+	create -config /app/config.yaml -wait-tx-confirm -db-node 1
 ```
 
 This command would produce a database connection string (DSN) similar to following example. 

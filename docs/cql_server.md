@@ -11,11 +11,11 @@ title: Local Servers
     e.g.
         cql explorer 127.0.0.1:8546
 
-    Params:
+    Explorer params:
       -bg-log-level string
-            Background service log level
+        	Background service log level: trace debug info warning error fatal panic (default "info")
       -tmp-path string
-            Background service temp file path, use os.TempDir for default
+        	Background service temp file path, use "dirname $(mktemp -u)" to check it out
 
 ## Sub-command `mirror` Complete Parameter
 
@@ -23,13 +23,13 @@ title: Local Servers
 
     Mirror subscribes database updates and serves a read-only database mirror.
     e.g.
-        cql mirror database_id 127.0.0.1:9389
+        cql mirror dsn 127.0.0.1:9389
 
-    Params:
+    Mirror params:
       -bg-log-level string
-            Background service log level
+        	Background service log level: trace debug info warning error fatal panic (default "info")
       -tmp-path string
-            Background service temp file path, use os.TempDir for default
+        	Background service temp file path, use "dirname $(mktemp -u)" to check it out
 
 ## Sub-command `adapter` Complete Parameter
 
@@ -41,10 +41,10 @@ See [adapter](adapter) for details of adapter server.
     e.g.
         cql adapter 127.0.0.1:7784
 
-    Params:
+    Adapter params:
       -bg-log-level string
-            Background service log level
+        	Background service log level: trace debug info warning error fatal panic (default "info")
       -mirror string
-            mirror server for the target adapter to query
+        	Mirror server for adapter to query
       -tmp-path string
-            Background service temp file path, use os.TempDir for default
+        	Background service temp file path, use "dirname $(mktemp -u)" to check it out
