@@ -22,7 +22,7 @@ Please choose the installation method according to the operating system platform
 - non-Homebrew users can run:
 
     ```bash
-    sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.osx-amd64.tar.gz" | \
+    sudo bash -c 'curl -L "https://mac.gridb.io/cql" | \
      tar xzv -C /usr/local/bin/ --strip-components=1'
     ```
 
@@ -31,7 +31,7 @@ Please choose the installation method according to the operating system platform
 - Just run：
 
     ```bash
-    sudo bash -c 'curl -L "https://bintray.com/covenantsql/bin/download_file?file_path=CovenantSQL-v0.5.0.linux-amd64.tar.gz" | \
+    sudo bash -c 'curl -L "https://linux.gridb.io/cql" | \
     tar xzv -C /usr/local/bin/ --strip-components=1'
     ```
 
@@ -107,7 +107,7 @@ This means that you submitted the database(dsn) `covenantsql://0a10b74439f2376d8
 
 ```bash
 cql console -config=~/.cql/testnet-conf/config.yaml \
-    -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+    covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ```
 
 After connecting to the database, you can manipulate the database on CovenantSQL according to your habit of operating the database. For example, execute `CREATE TABLE` to create a table, `SELECT` query data, and so on.
@@ -126,7 +126,7 @@ Please fill in your database ID in the upper right corner of the page. For examp
 
 ## Create your own account
 
-Our test network allows you to create your own account and create a database under your own account. Create an account with the following command (you will be asked to set the master password, you can add `-no-password` to leave blank)：
+Our test network allows you to create your own account and create a database under your own account. Create an account with the following command (default empty passphrase for private.key, you can add `-with-password` to set passphrase)：
 
 ```bash
 cql generate
