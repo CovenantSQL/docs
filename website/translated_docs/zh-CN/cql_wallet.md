@@ -57,17 +57,17 @@ Output:
 Once you get tokens from [TestNet](quickstart) or [Docker Environment](deployment), you can use the `transfer` sub-command to transfer tokens to another account. The command takes 3 main parameters, e.g.:
 
 ```bash
-cql transfer -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 -amount 1000000 -type Particle
+cql transfer -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 -amount 1000000 -token Particle
 ```
 
-`-to-user` is set for other user's wallet address, `-amount` param is for token count, and `-type` is for token type
+`-to-user` is set for other user's wallet address, `-amount` param is for token count, and `-token` is for token type
 
 ## Transferring Tokens to a database
 
 If you want to transfer token to a database address, replace `-to-user` to `-to-dsn`, and set a CovenantSQL dsn string. e.g.
 
 ```bash
-cql transfer -to-dsn covenantsql://0bfea233d20676bb848b66d072bb768945507bb8a3b8b22b13133cde0583e208 -amount 1000000 -type Particle
+cql transfer -to-dsn covenantsql://0bfea233d20676bb848b66d072bb768945507bb8a3b8b22b13133cde0583e208 -amount 1000000 -token Particle
 ```
 
 While transferring to a database, the tokens will be used as the deposit and advance payment of that database for the sender.
@@ -105,17 +105,17 @@ Note that the above output message indicates that the transfer request is succes
 
 ## Sub-command `transfer` Complete Parameters
 
-    usage: cql transfer [common params] [-wait-tx-confirm] [-to-user wallet | -to-dsn dsn] [-amount count] [-type token_type]
+    usage: cql transfer [common params] [-wait-tx-confirm] [-to-user wallet | -to-dsn dsn] [-amount count] [-token token_type]
     
     Transfer transfers your token to the target account or database.
     The command arguments are target wallet address(or dsn), amount of token, and token type.
     e.g.
-        cql transfer -to-user=43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40 -amount=100 -type=Particle
+        cql transfer -to-user=43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40 -amount=100 -token=Particle
     
     Since CovenantSQL is built on top of blockchains, you may want to wait for the transaction
     confirmation before the transfer takes effect.
     e.g.
-        cql transfer -wait-tx-confirm -to-dsn=43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40 -amount=100 -type=Particle
+        cql transfer -wait-tx-confirm -to-dsn=43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40 -amount=100 -token=Particle
     
     Transfer params:
       -amount uint
@@ -124,7 +124,7 @@ Note that the above output message indicates that the transfer request is succes
             Target database dsn to transfer token.
       -to-user string
             Target address of an user account to transfer token.
-      -type string
+      -token string
             Token type to transfer.
       -wait-tx-confirm
             Wait for transaction confirmation
