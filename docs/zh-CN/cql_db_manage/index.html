@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>数据库管理 · CovenantSQL Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;创建数据库&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#创建数据库&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;创建数据库&lt;/h2&gt;
-"/><meta name="docsearch:version" content="0.6.0"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="数据库管理 · CovenantSQL Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="http://developers.covenantsql.io/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;创建数据库&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#创建数据库&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;创建数据库&lt;/h2&gt;
-"/><meta property="og:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="https://hm.baidu.com/hm.js?fd1ee4ccc9da39d0cf4c60ad8e6e214b"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/logo.svg" alt="CovenantSQL Docs"/><h2 class="headerTitleWithLogo">CovenantSQL Docs</h2></a><a href="/zh-CN/versions"><h3>0.6.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/zh-CN/intro" target="_self">Docs</a></li><li class=""><a href="/zh-CN/help" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/cql_db_manage">English</a></li></ul></div></li><script>
+"/><meta name="docsearch:version" content="0.6.0"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="数据库管理 · CovenantSQL Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="http://developers.covenantsql.io/"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;创建数据库&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#创建数据库&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;创建数据库&lt;/h2&gt;
+"/><meta property="og:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="https://hm.baidu.com/hm.js?fd1ee4ccc9da39d0cf4c60ad8e6e214b"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/logo.svg" alt="CovenantSQL Docs"/><h2 class="headerTitleWithLogo">CovenantSQL Docs</h2></a><a href="/zh-CN/versions"><h3>0.6.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/zh-CN/intro" target="_self">Docs</a></li><li class=""><a href="/zh-CN/help" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/cql_db_manage">English</a></li></ul></div></li><script>
         const languagesMenuItem = document.getElementById("languages-menu");
         const languagesDropDown = document.getElementById("languages-dropdown");
         languagesMenuItem.addEventListener("click", function(event) {
@@ -12,7 +12,30 @@
             languagesDropDown.className = "hide";
           }
         });
-      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>工具</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">简介</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/intro">CovenantSQL 介绍</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/quickstart">快速开始</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">工具</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_intro">简介</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_account">账号管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_wallet">钱包管理</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/zh-CN/cql_db_manage">数据库管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_db_access">访问数据库</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_server">本地服务</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_advance">高级使用</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_golang">Golang</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/adapter">API 网关</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_java">Java</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_python">Python</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_js">JavaScript</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">高级使用方式</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/advanced_deployment">私有部署</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/advanced_secure_gateway">数据库安全网关</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">实现细节</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch">实现细节</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch_layers">主链和侧链</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch_network">网络传输层</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用案例</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_traditional_app">传统应用</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_dapp">DApp</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_data_analysis">数据分析</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">关于</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/qna">常见问题解答</a></li></ul></div></div></section></div><script>
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>工具</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">简介</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/intro">CovenantSQL 介绍</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/quickstart">快速开始</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_intro">简介</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_account">账号管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_wallet">钱包管理</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/zh-CN/cql_db_manage">数据库管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_db_access">访问数据库</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_server">本地服务</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_advance">高级使用</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_golang">Golang</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/adapter">API 网关</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_java">Java</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_python">Python</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_js">JavaScript</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">高级使用方式</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/advanced_deployment">私有部署</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/advanced_secure_gateway">数据库安全网关</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">实现细节</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch">实现细节</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch_layers">主链和侧链</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch_network">网络传输层</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用案例</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_traditional_app">传统应用</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_dapp">DApp</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_data_analysis">数据分析</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">关于</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/qna">常见问题解答</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
             document.addEventListener('DOMContentLoaded', function() {
               createToggler('#navToggler', '#docsNav', 'docsSliderActive');
               createToggler('#tocToggler', 'body', 'tocActive');
@@ -40,22 +63,27 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">数据库管理</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="创建数据库"></a><a href="#创建数据库" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建数据库</h2>
-<p>创建数据库与 <code>transfer</code> 子命令类似使用 <code>json</code> 格式的输入参数，创建由一个节点组成的数据库：</p>
-<pre><code class="hljs css language-bash">cql create <span class="hljs-string">'{"node": 1}'</span>
+<p>创建数据库与 <code>transfer</code> 子命令类似格式的输入参数，例如，创建由一个节点组成的数据库：</p>
+<pre><code class="hljs css language-bash">cql create -db-node 1
 </code></pre>
 <p>输出：</p>
-<pre><code class="hljs">Enter master key(press Enter for default: &quot;&quot;): 
+<pre><code class="hljs">INFO[0000] Geting bp address from dns: bp00.testnet.gridb.io
+INFO[0048] Register self to blockproducer: 00000000000589366268c274fdc11ec8bdb17e668d2f619555a2e9c1a29c91d8
+INFO init config success                           path=~/.cql/config.yaml
+INFO create database requested                    
 
-covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+The newly created database is: &quot;covenantsql://962bbb3a8028a203e99121d23173a38fa24a670d52c8775a9d987d007a767ce4&quot;
+The connecting string beginning with 'covenantsql://' could be used as a dsn for `cql console`
+ or any command, or be used in website like https://web.covenantsql.io
 </code></pre>
-<p>注意这里生成的 <code>covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872</code> 即为数据库的连接字符串（dsn），其中 <code>covenantsql</code> 为数据库协议字段，一般也可以缩写为 <code>cql</code>；<code>://</code> 后的十六进制串为数据库地址，可以在 <code>transfer</code> 子命令中作为收款地址使用。</p>
+<p>注意这里生成的 <code>covenantsql://962bbb3a8028a203e99121d23173a38fa24a670d52c8775a9d987d007a767ce4</code> 即为数据库的连接字符串（dsn），其中 <code>covenantsql</code> 为数据库协议字段，一般也可以缩写为 <code>cql</code>；<code>://</code> 后的十六进制串为数据库地址，可以在 <code>transfer</code> 子命令中作为收款地址使用。</p>
 <p>子命令 <code>create</code> 通过向 BP 发起交易实现，所以也支持 <code>wait-tx-confirm</code> 参数。</p>
 <p>关于子命令 <code>create</code> 输入参数的完整说明，请参见<a href="#子命令-create-完整参数">完整参数</a>。</p>
 <h2><a class="anchor" aria-hidden="true" id="计费规则"></a><a href="#计费规则" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>计费规则</h2>
-<p>CovenantSQL 数据库采用与<a href="https://www.ethos.io/what-is-ethereum-gas/">以太坊</a>类似的 <code>Gas</code> 计费方式，<code>Gas</code> 与稳定代币 <code>Particle</code> 的换算单位（即 <code>Gas Price</code>）在创建时指定，对应的字段为 <code>gas-price</code>。如果未指定，则默认设置为 1。另一个与计费相关的字段是预付款 <code>advance-payment</code>，用于进行押金抵扣及后续查询计费，默认值为 20,000,000。例如：</p>
-<pre><code class="hljs css language-bash">cql create <span class="hljs-string">'{"node": 2, "gas-price": 5, "advance-payment": 500000000}'</span>
+<p>CovenantSQL 数据库采用与<a href="https://www.ethos.io/what-is-ethereum-gas/">以太坊</a>类似的 <code>Gas</code> 计费方式，<code>Gas</code> 与稳定代币 <code>Particle</code> 的换算单位（即 <code>Gas Price</code>）在创建时指定，对应的字段为 <code>-db-gas-price</code>。如果未指定，则默认设置为 1。另一个与计费相关的字段是预付款 <code>-db-advance-payment</code>，用于进行押金抵扣及后续查询计费，默认值为 20,000,000。例如：</p>
+<pre><code class="hljs css language-bash">cql create -db-node 2 -db-gas-price 5 -db-advance-payment 500000000
 </code></pre>
-<p>则可以创建 <code>gas-price</code> 为 5，预付款为 500,000,000 的数据库。在矿机资源紧缺时，设置更高的 <code>gas-price</code> 有助于创建请求被更快地被响应，但是也会消耗更多的代币。</p>
+<p>则可以创建 <code>Gas Price</code> 为 5，预付款为 500,000,000 的数据库。在矿机资源紧缺时，设置更高的 <code>Gas-Price</code> 有助于创建请求被更快地被响应，但是也会消耗更多的代币。</p>
 <blockquote>
 <p>目前暂时还只支持使用 CovenantSQL 的稳定代币 Particle 来进行计费，未来将会陆续支持其他币种。</p>
 </blockquote>
@@ -77,102 +105,118 @@ covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 <li><code>Void</code> (没有访问权限)</li>
 </ul>
 <p>其中，<code>Admin</code> 可以赋予其他钱包地址数据库的权限（<code>Admin</code>、<code>Write</code> 或 <code>Read</code>）；<code>Admin</code> 和 <code>Write</code> 可以对数据库进行写操作（<code>CREATE</code>, <code>INSERT</code> 等）；<code>Admin</code> 和 <code>Read</code> 可以对数据库进行读操作（<code>SHOW</code>, <code>SELECT</code> 等）；如果需要设置用户有读写权限但是不能修改其他用户或自己的权限，可以将权限设置为 <code>Read,Write</code>；<code>Void</code> 是一个特殊的权限，当 <code>Admin</code> 想取消某个地址的权限时可以将该地址的权限设置为 <code>Void</code>，这样该地址将无法继续读写数据库。创建数据库的地址的权限默认为 <code>Admin</code>。</p>
-<p>假设我们用默认账号创建好了数据库 <code>covenantsql:\\4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5</code>，在目录 <code>account2</code> 下创建好新账号配置，账号地址为 <code>011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6</code>，现在用默认账号给新账号授权已经创建好的数据库的访问权限，同样使用 <code>json</code> 格式的授权信息为参数：</p>
-<pre><code class="hljs css language-json">{
-   "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5", // 需要进行权限变更的数据库地址
-   "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6", // 需要赋予权限的钱包地址
-   "perm": "Read,Write" // 权限内容，多个权限用英文逗号隔开
-}
+<p>假设我们用默认账号创建好了数据库 <code>covenantsql:\\4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5</code>，在目录 <code>account2</code> 下创建好新账号配置，账号地址为 <code>011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6</code>，现在用默认账号给新账号授权已经创建好的数据库的访问权限，同样使用数个参数来授权：</p>
+<pre><code class="hljs css language-bash">`-to-dsn`  需要进行权限变更的数据库地址
+`-to-user` 需要赋予权限的钱包地址
+`-perm`    权限内容，多个权限用英文逗号隔开
 </code></pre>
 <p>把以上参数传给 <code>grant</code> 子命令来增加读写权限：</p>
-<pre><code class="hljs css language-bash">cql grant <span class="hljs-string">'{"chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5", "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6", "perm": "Read,Write"}'</span>
+<pre><code class="hljs css language-bash">cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm <span class="hljs-string">"Read,Write"</span>
 </code></pre>
 <p>输出：</p>
-<pre><code class="hljs">INFO[0000] succeed in sending transaction to CovenantSQL
+<pre><code class="hljs">INFO[0000] Geting bp address from dns: bp04.testnet.gridb.io
+INFO[0003] Self register to blockproducer: 00000000003b2bd120a7d07f248b181fc794ba8b278f07f9a780e61eb77f6abb
+INFO init config success                           path=~/.cql/config.yaml
+INFO succeed in grant permission on target database
 </code></pre>
 <p>吊销权限：</p>
-<pre><code class="hljs css language-bash">cql grant <span class="hljs-string">'{"chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5", "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6", "perm": "Void"}'</span>
+<pre><code class="hljs css language-bash">cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm <span class="hljs-string">"Void"</span>
 </code></pre>
 <p>输出：</p>
-<pre><code class="hljs">INFO[0000] succeed in sending transaction to CovenantSQL
+<pre><code class="hljs">INFO[0000] Geting bp address from dns: bp04.testnet.gridb.io
+INFO[0003] Self register to blockproducer: 00000000003b2bd120a7d07f248b181fc794ba8b278f07f9a780e61eb77f6abb
+INFO init config success                           path=~/.cql/config.yaml
+INFO succeed in grant permission on target database
 </code></pre>
 <p>子命令 <code>grant</code> 通过向 BP 发起交易实现，所以也支持 <code>wait-tx-confirm</code> 参数。</p>
 <p>由于目前每个数据库实例分别为每个用户独立计费，所以为数据库添加新的账户权限后，需要以新账户身份向该数据库转押金与预付款才能进行正常查询。押金与预付款最小值的计算公式：<code>gas_price*number_of_miner*120000</code>。</p>
 <p>使用新账户给数据库充值：</p>
-<pre><code class="hljs css language-bash">cql -config <span class="hljs-string">"account2/config.yaml"</span> transfer <span class="hljs-string">'{"addr": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5","amount": "90000000 Particle"}'</span>
+<pre><code class="hljs css language-bash">cql transfer -config <span class="hljs-string">"account2/config.yaml"</span> \
+             -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+             -amount 90000000 \
+             -token Particle
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="sql-白名单"></a><a href="#sql-白名单" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SQL 白名单</h3>
 <p>CovenantSQL 还支持给用户设置可执行的 SQL 白名单，可以限定用户以指定的 SQL Pattern 和可配的 Query 参数来访问数据库。在指定语句白名单的功能支持下，可以提高数据库的安全性，避免被单语句拖库或执行不正确的删除或更新操作。</p>
 <p>增加白名单：</p>
-<pre><code class="hljs css language-bash">cql grant <span class="hljs-string">'
+<pre><code class="hljs css language-bash">cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm <span class="hljs-string">'
 {
-    "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
-    "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
-    "perm": {
-        "patterns": [
-            "SELECT COUNT(1) FROM a",
-            "SELECT * FROM a WHERE id = ? LIMIT 1"
-        ],
-        "role": "Read,Write"
-    }
+    "patterns": [
+        "SELECT COUNT(1) FROM a",
+        "SELECT * FROM a WHERE id = ? LIMIT 1"
+    ],
+    "role": "Read,Write"
 }
 '</span>
 </code></pre>
 <p><em>白名单功能是基于数据库权限的一个扩展，且当前不支持增量的白名单更新，在设置白名单时需要写明所有授权该用户使用的语句，以及该用户对数据库的访问权限</em></p>
 <p>设置完成后，用户将只能执行 <code>SELECT COUNT(1) FROM a</code> 或 <code>SELECT * FROM a WHERE id = ? LIMIT 1</code> 的语句（语句内容严格匹配，使用 <code>select COUNT(1) FROM a</code> 或 <code>SELECT COUNT(1) FROM a</code> 也不可以）；其中 第二条语句支持用户提供一个参数，以支持查询不同记录的目的。最终可以实现限定用户访问 <code>表 a</code>，并一次只能查询 <code>表 a</code> 中的一条数据或查询 <code>表 a</code> 的总数据量。</p>
 <p>去掉白名单限制：</p>
-<pre><code class="hljs css language-bash">cql grant <span class="hljs-string">'
+<pre><code class="hljs css language-bash">cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm <span class="hljs-string">'
 {
-    "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
-    "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
-    "perm": {
-        "patterns": nil,
-        "role": "Read,Write"
-    }
+   "patterns": nil,
+   "role": "Read,Write"
 }
 '</span>
+
  or
-cql grant <span class="hljs-string">'
-{
-    "chain": "4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5",
-    "user": "011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6",
-    "perm": "Read,Write"
-}
-'</span>
+
+cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5 \
+          -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
+          -perm <span class="hljs-string">"Read,Write"</span>
 </code></pre>
 <p>将 <code>pattern</code> 设置为 <code>nil</code> 或直接设置用户权限，都可以将用户的白名单限制去掉，设置回可以查询所有内容的读权限。</p>
 <h2><a class="anchor" aria-hidden="true" id="子命令-create-完整参数"></a><a href="#子命令-create-完整参数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>子命令 <code>create</code> 完整参数</h2>
-<pre><code class="hljs">usage: cql create [通用参数] [-wait-tx-confirm] db_meta_json
+<pre><code class="hljs">usage: cql create [通用参数] [-wait-tx-confirm] [db_meta_params]
 
-为当前账号创建数据库实例，输入参数为 JSON 格式的创建交易数据，其中节点数 node 为必带字段。
+为当前账号创建数据库实例，输入以下db_meta参数，其中节点数 -db-node 为必带字段。
 示例：
-    cql create '{&quot;node&quot;: 2}'
+    cql create -db-node 2
 
-完整的 db_meta_json 字段解释如下：
-    target-miners           []string    // 目标节点的账号地址
-    node                    int         // 目标节点数
-    space                   int         // 需要的硬盘空间，0 为任意
-    memory                  int         // 需要的内存空间，0 为任意
-    load-avg-per-cpu        float       // 需要的 CPU 资源占用，0 为任意
-    encrypt-key             string      // 落盘加密密钥
-    eventual-consistency    bool        // 各个数据库节点之间是否使用最终一致性同步
-    consistency-level       float       // 一致性级别，通过 node*consistency_level 得到强同步的节点数
-    isolation-level         int         // 单个节点上的隔离级别，默认级别为线性级别
-    gas-price               int         // 创建数据库使用 Gas 单价，默认为 1 Particle
-    advance-payment         int         // 创建数据库分配的预付款，会从创建者账户上扣除，默认为 20,000,000 Particles
+完整的 db_meta_params 字段解释如下：
+  -db-advance-payment uint
+        创建数据库分配的预付款，会从创建者账户上扣除，默认为 20,000,000 Particles
+  -db-consistency-level float
+        一致性级别，通过 node*consistency_level 得到强同步的节点数
+  -db-encrypt-key string
+        落盘加密密钥
+  -db-eventual-consistency
+        各个数据库节点之间是否使用最终一致性同步
+  -db-gas-price uint
+        创建数据库使用 Gas 单价，默认为 1 Particle
+  -db-isolation-level int
+        单个节点上的隔离级别，默认级别为线性级别
+  -db-load-avg-per-cpu float
+        需要的 CPU 资源占用，0 为任意
+  -db-memory uint
+        需要的内存空间，0 为任意
+  -db-node uint
+        目标节点数
+  -db-space uint
+        需要的硬盘空间，0 为任意
+  -db-target-miners value
+        目标节点的账号地址(separated by ',')
 
 由于 CovenantSQL 是区块链上的数据库，在真正访问数据库之前你可能需要等待创建请求的执行确认以及在数据库节点上的实际创建。
 示例：
-    cql create -wait-tx-confirm '{&quot;node&quot;: 2}'
+    cql create -wait-tx-confirm -db-node 2
 
 Params:
   -wait-tx-confirm
         等待交易执行确认（或者出现任何错误）后再退出
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="子命令-drop-完整参数"></a><a href="#子命令-drop-完整参数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>子命令 <code>drop</code> 完整参数</h2>
-<pre><code class="hljs">usage: cql drop [通用参数] [-wait-tx-confirm] dsn/dbid
+<pre><code class="hljs">usage: cql drop [通用参数] [-wait-tx-confirm] dsn
 
-通过数据库的连接字符串或账号地址来删除数据库。
+通过数据库的连接字符串来删除数据库。
 示例：
     cql drop covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
 
@@ -180,26 +224,32 @@ Params:
 示例：
     cql drop -wait-tx-confirm covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
 
-Params:
+Drop params:
   -wait-tx-confirm
         等待交易执行确认（或者出现任何错误）后再退出
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="子命令-grant-完整参数"></a><a href="#子命令-grant-完整参数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>子命令 <code>grant</code> 完整参数</h2>
-<pre><code class="hljs">usage: cql grant [通用参数] [-wait-tx-confirm] permission_meta_json
+<pre><code class="hljs">usage: cql grant [通用参数] [-wait-tx-confirm] [-to-user wallet] [-to-dsn dsn] [-perm perm_struct]
 
 为指定账号进行数据库权限授权。
 示例：
-    cql grant '{&quot;chain&quot;: &quot;your_chain_addr&quot;, &quot;user&quot;: &quot;user_addr&quot;, &quot;perm&quot;: &quot;perm_struct&quot;}'
+    cql grant -to-user=43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40 -to-dsn=&quot;covenantsql://xxxx&quot; -perm perm_struct
 
 由于 CovenantSQL 是区块链上的数据库，在授权操作生效之前你可能需要等待授权请求的执行确认以及在数据库节点上的实际更新。
 示例：
-    cql grant -wait-tx-confirm '{&quot;chain&quot;: &quot;your_chain_addr&quot;, &quot;user&quot;: &quot;user_addr&quot;, &quot;perm&quot;: &quot;perm_struct&quot;}'
+    cql grant -wait-tx-confirm -to-user=43602c17adcc96acf2f68964830bb6ebfbca6834961c0eca0915fcc5270e0b40 -to-dsn=&quot;covenantsql://xxxx&quot; -perm perm_struct
 
-Params:
+Grant params:
+  -perm string
+        Permission type struct for grant.
+  -to-dsn string
+        Target database dsn to grant permission.
+  -to-user string
+        Target address of an user account to grant permission.
   -wait-tx-confirm
         等待交易执行确认（或者出现任何错误）后再退出
 </code></pre>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/28/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/cql_wallet"><span class="arrow-prev">← </span><span>钱包管理</span></a><a class="docs-next button" href="/docs/zh-CN/cql_db_access"><span>访问数据库</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#创建数据库">创建数据库</a></li><li><a href="#计费规则">计费规则</a></li><li><a href="#删除数据库"><del>删除数据库</del></a></li><li><a href="#数据库权限管理">数据库权限管理</a><ul class="toc-headings"><li><a href="#访问权限">访问权限</a></li><li><a href="#sql-白名单">SQL 白名单</a></li></ul></li><li><a href="#子命令-create-完整参数">子命令 <code>create</code> 完整参数</a></li><li><a href="#子命令-drop-完整参数">子命令 <code>drop</code> 完整参数</a></li><li><a href="#子命令-grant-完整参数">子命令 <code>grant</code> 完整参数</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019/5/15</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/cql_wallet"><span class="arrow-prev">← </span><span>钱包管理</span></a><a class="docs-next button" href="/docs/zh-CN/cql_db_access"><span>访问数据库</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#创建数据库">创建数据库</a></li><li><a href="#计费规则">计费规则</a></li><li><a href="#删除数据库"><del>删除数据库</del></a></li><li><a href="#数据库权限管理">数据库权限管理</a><ul class="toc-headings"><li><a href="#访问权限">访问权限</a></li><li><a href="#sql-白名单">SQL 白名单</a></li></ul></li><li><a href="#子命令-create-完整参数">子命令 <code>create</code> 完整参数</a></li><li><a href="#子命令-drop-完整参数">子命令 <code>drop</code> 完整参数</a></li><li><a href="#子命令-grant-完整参数">子命令 <code>grant</code> 完整参数</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>账号管理 · CovenantSQL Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;对于 TestNet 环境，我们提供了一个公用的测试账号私钥及配置文件用于快速接入测试，详情请参见 &lt;a href=&quot;quickstart&quot;&gt;CovenantSQL TestNet&lt;/a&gt; 快速上手教程。另外你也可以选择参照如下教程在本地创建新账号。&lt;/p&gt;
-"/><meta name="docsearch:version" content="0.6.0"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="账号管理 · CovenantSQL Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="http://developers.covenantsql.io/index.html"/><meta property="og:description" content="&lt;p&gt;对于 TestNet 环境，我们提供了一个公用的测试账号私钥及配置文件用于快速接入测试，详情请参见 &lt;a href=&quot;quickstart&quot;&gt;CovenantSQL TestNet&lt;/a&gt; 快速上手教程。另外你也可以选择参照如下教程在本地创建新账号。&lt;/p&gt;
-"/><meta property="og:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="https://hm.baidu.com/hm.js?fd1ee4ccc9da39d0cf4c60ad8e6e214b"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/logo.svg" alt="CovenantSQL Docs"/><h2 class="headerTitleWithLogo">CovenantSQL Docs</h2></a><a href="/zh-CN/versions"><h3>0.6.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/zh-CN/intro" target="_self">Docs</a></li><li class=""><a href="/zh-CN/help" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/cql_account">English</a></li></ul></div></li><script>
+"/><meta name="docsearch:version" content="0.6.0"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="账号管理 · CovenantSQL Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="http://developers.covenantsql.io/"/><meta property="og:description" content="&lt;p&gt;对于 TestNet 环境，我们提供了一个公用的测试账号私钥及配置文件用于快速接入测试，详情请参见 &lt;a href=&quot;quickstart&quot;&gt;CovenantSQL TestNet&lt;/a&gt; 快速上手教程。另外你也可以选择参照如下教程在本地创建新账号。&lt;/p&gt;
+"/><meta property="og:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="https://hm.baidu.com/hm.js?fd1ee4ccc9da39d0cf4c60ad8e6e214b"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/logo.svg" alt="CovenantSQL Docs"/><h2 class="headerTitleWithLogo">CovenantSQL Docs</h2></a><a href="/zh-CN/versions"><h3>0.6.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/zh-CN/intro" target="_self">Docs</a></li><li class=""><a href="/zh-CN/help" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/cql_account">English</a></li></ul></div></li><script>
         const languagesMenuItem = document.getElementById("languages-menu");
         const languagesDropDown = document.getElementById("languages-dropdown");
         languagesMenuItem.addEventListener("click", function(event) {
@@ -12,7 +12,30 @@
             languagesDropDown.className = "hide";
           }
         });
-      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>工具</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">简介</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/intro">CovenantSQL 介绍</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/quickstart">快速开始</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">工具</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_intro">简介</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/zh-CN/cql_account">账号管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_wallet">钱包管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_db_manage">数据库管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_db_access">访问数据库</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_server">本地服务</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_advance">高级使用</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_golang">Golang</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/adapter">API 网关</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_java">Java</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_python">Python</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_js">JavaScript</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">高级使用方式</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/advanced_deployment">私有部署</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/advanced_secure_gateway">数据库安全网关</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">实现细节</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch">实现细节</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch_layers">主链和侧链</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch_network">网络传输层</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用案例</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_traditional_app">传统应用</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_dapp">DApp</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_data_analysis">数据分析</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">关于</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/qna">常见问题解答</a></li></ul></div></div></section></div><script>
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>工具</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">简介</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/intro">CovenantSQL 介绍</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/quickstart">快速开始</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_intro">简介</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/zh-CN/cql_account">账号管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_wallet">钱包管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_db_manage">数据库管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_db_access">访问数据库</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_server">本地服务</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_advance">高级使用</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_golang">Golang</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/adapter">API 网关</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_java">Java</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_python">Python</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_js">JavaScript</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">高级使用方式</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/advanced_deployment">私有部署</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/advanced_secure_gateway">数据库安全网关</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">实现细节</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch">实现细节</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch_layers">主链和侧链</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch_network">网络传输层</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用案例</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_traditional_app">传统应用</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_dapp">DApp</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_data_analysis">数据分析</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">关于</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/qna">常见问题解答</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
             document.addEventListener('DOMContentLoaded', function() {
               createToggler('#navToggler', '#docsNav', 'docsSliderActive');
               createToggler('#tocToggler', 'body', 'tocActive');
@@ -42,54 +65,75 @@
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">账号管理</h1></header><article><div><span><p>对于 TestNet 环境，我们提供了一个公用的测试账号私钥及配置文件用于快速接入测试，详情请参见 <a href="quickstart">CovenantSQL TestNet</a> 快速上手教程。另外你也可以选择参照如下教程在本地创建新账号。</p>
 <h2><a class="anchor" aria-hidden="true" id="创建新账号"></a><a href="#创建新账号" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建新账号</h2>
 <p>子命令 <code>generate</code> 在指定目录生成私钥及指向 TestNet 的配置文件，示例：</p>
-<pre><code class="hljs css language-bash">cql generate config
+<pre><code class="hljs css language-bash">cql generate
 </code></pre>
 <blockquote>
 <p>目前默认生成的配置文件指向测试网，还需要提供生成指向 Docker 一键部署网络的配置方法。</p>
 </blockquote>
 <p>指定目录的参数详见<a href="#子命令-generate-完整参数">完整参数说明</a>。</p>
 <p>输出：</p>
-<pre><code class="hljs">Generating key pair...
-Enter master key(press Enter for default: &quot;&quot;): 
-
-Private key file: ~/.cql/private.key
-Public key's hex: 027af3584b8b4736d6ba1e78ace5f0fdefe561f08749c5cac39d23668c3030fe39
-Generated key pair.
+<pre><code class="hljs">Generating private key...
+Please enter password for new private key
+Generated private key.
 Generating nonce...
-INFO[0075] cpu: 4
-INFO[0075] position: 3, shift: 0x0, i: 3
-INFO[0075] position: 1, shift: 0x0, i: 1
-INFO[0075] position: 0, shift: 0x0, i: 0
-INFO[0075] position: 2, shift: 0x0, i: 2
-nonce: {{1056388 0 0 1424219234} 25 000000737633a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01}
-node id: 000000737633a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01
+INFO cpu: 4
+INFO position: 2, shift: 0x0, i: 2
+INFO position: 0, shift: 0x0, i: 0
+INFO position: 3, shift: 0x0, i: 3
+INFO position: 1, shift: 0x0, i: 1
+nonce: {{973366 0 586194564 0} 26 0000002c32aa3ee39e4f461a5f5e7fda50859f597464d81c9618d443c476835b}
+node id: 0000002c32aa3ee39e4f461a5f5e7fda50859f597464d81c9618d443c476835b
 Generated nonce.
 Generating config file...
-Generated nonce.
-</code></pre>
-<h2><a class="anchor" aria-hidden="true" id="获取私钥文件的公钥"></a><a href="#获取私钥文件的公钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获取私钥文件的公钥</h2>
-<p>子命令 <code>generate</code> 也可以用来获取已经存在的私钥文件对应的公钥十六进制串。示例：</p>
-<pre><code class="hljs css language-bash">cql generate public
-</code></pre>
-<p>输出：</p>
-<pre><code class="hljs">Enter master key(press Enter for default: &quot;&quot;): 
+Generated config.
 
-INFO[0011] init config success                           path=/home/levente/.cql/private.key
-INFO[0011] use public key in config file: /home/levente/.cql/config.yaml
-Public key's hex: 02fd4089e7f4ca224f576d4baa573b3e9662153c952fce3f87f9586ffdd11baef6
+Config file:      ~/.cql/config.yaml
+Private key file: ~/.cql/private.key
+Public key's hex: 03f195dfe6237691e724bcf54359d76ef388b0996a3de94a7e782dac69192c96f0
+
+Wallet address: dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
+
+Any further command could costs PTC.
+You can get some free PTC from:
+    https://testnet.covenantsql.io/wallet/dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="私钥文件的公钥"></a><a href="#私钥文件的公钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>私钥文件的公钥</h3>
+<p>子命令 <code>generate</code> 同时打印了私钥文件对应的公钥十六进制串。示例：</p>
+<p>输出：</p>
+<pre><code class="hljs">Public key's hex: 03f195dfe6237691e724bcf54359d76ef388b0996a3de94a7e782dac69192c96f0
 </code></pre>
 <blockquote>
-<p>这一功能实际使用过程中暂时不会用到。</p>
+<p>这一信息实际使用过程中暂时不会用到。</p>
 </blockquote>
+<h3><a class="anchor" aria-hidden="true" id="钱包地址"></a><a href="#钱包地址" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>钱包地址</h3>
+<p>子命令 <code>generate</code> 也打印了钱包地址的十六进制串 (并且保存在了 <code>config.yaml</code> 文件中)。示例：</p>
+<p>输出：</p>
+<pre><code class="hljs">Wallet address: dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
+
+Any further command could costs PTC.
+You can get some free PTC from:
+    https://testnet.covenantsql.io/wallet/dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
+</code></pre>
+<p>拿到一个新的钱包地址之后，你需要按照上面的提示去申请PTC。</p>
 <h2><a class="anchor" aria-hidden="true" id="子命令-generate-完整参数"></a><a href="#子命令-generate-完整参数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>子命令 <code>generate</code> 完整参数</h2>
 <p>通用参数部分参考 <a href="#子命令通用参数">子命令通用参数</a>，以下介绍其他子命令时不再另外说明。</p>
-<p>特殊地，在使用 <code>cql generate config</code> 命令生成新账号配置时，<code>-config</code>、<code>-no-password</code> 和 <code>-password</code> 等参数实际作用于将要生成的新私钥和配置文件，而不是要读取的文件。</p>
-<pre><code class="hljs">usage: cql generate [通用参数] config | public
+<pre><code class="hljs">usage: cql generate [common params] [-source template_file] [-miner] [-private existing_private_key] [dest_path]
 
 生成新私钥及配置文件，或获取指定配置的私钥文件对应的公钥。
+e.g.
+    cql generate
 
-Params:
-  没有额外参数
+or input a passphrase by
+
+    cql generate -with-password
+
+Generate params:
+  -miner string
+        Generate miner config with specified miner address
+  -private string
+        Generate config using an existing private key
+  -source string
+        Generate config using the specified config template
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="计算-node-id"></a><a href="#计算-node-id" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>计算 Node ID</h2>
 <p>子命令 <code>idminer</code> 用于计算指定配置文件（对应的私钥）的 Node ID（Node ID 的相关知识请参考<a href="terms#Node-ID">链接</a>）。示例：</p>
@@ -127,7 +171,7 @@ Params:
   -loop
         循环计算以取得更高难度的 Node ID
 </code></pre>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/23/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/cql_intro"><span class="arrow-prev">← </span><span>简介</span></a><a class="docs-next button" href="/docs/zh-CN/cql_wallet"><span>钱包管理</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#创建新账号">创建新账号</a></li><li><a href="#获取私钥文件的公钥">获取私钥文件的公钥</a></li><li><a href="#子命令-generate-完整参数">子命令 <code>generate</code> 完整参数</a></li><li><a href="#计算-node-id">计算 Node ID</a></li><li><a href="#子命令-idminer-完整参数">子命令 <code>idminer</code> 完整参数</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019/5/15</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/cql_intro"><span class="arrow-prev">← </span><span>简介</span></a><a class="docs-next button" href="/docs/zh-CN/cql_wallet"><span>钱包管理</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#创建新账号">创建新账号</a><ul class="toc-headings"><li><a href="#私钥文件的公钥">私钥文件的公钥</a></li><li><a href="#钱包地址">钱包地址</a></li></ul></li><li><a href="#子命令-generate-完整参数">子命令 <code>generate</code> 完整参数</a></li><li><a href="#计算-node-id">计算 Node ID</a></li><li><a href="#子命令-idminer-完整参数">子命令 <code>idminer</code> 完整参数</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
