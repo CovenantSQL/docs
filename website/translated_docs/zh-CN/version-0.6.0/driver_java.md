@@ -25,7 +25,7 @@ title: 📦 Java
 <repositories>
     <repository>
         <id>mvn-repo</id>
-        <url>https://raw.githack.com/CovenantSQL/covenant-connector/master/covenantsql-java-connector/mvn-repo</url>
+        <url>https://raw.githack.com/CovenantSQL/covenant-connector/mvn-repo</url>
         <releases>
             <enabled>true</enabled>
         </releases>
@@ -51,7 +51,7 @@ title: 📦 Java
 ```gradle
 repositories {
     maven {
-      url 'https://raw.githack.com/CovenantSQL/covenant-connector/master/covenantsql-java-connector/mvn-repo'
+      url 'https://raw.githack.com/CovenantSQL/covenant-connector/mvn-repo'
     }
 }
 
