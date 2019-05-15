@@ -26,7 +26,7 @@ docker run -itd \
 	-v ~/.cql/config.yaml:/app/config.yaml \
 	-v ~/.cql/private.key:/app/private.key \
 	--name cql-adapter -p $adapter_addr:4661 \
-	covenantsql/covenantsql:testnet 0.0.0.0:4661
+	covenantsql/covenantsql:testnet
 ```
 
 ### Create database
