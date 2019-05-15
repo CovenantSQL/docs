@@ -18,13 +18,13 @@ For security, the private key file is usually encrypted with a master key. A mas
 
 The following parameters are commonly used by `cql` sub-commands:
 
-    -bypass-signature
-          Disable signature signing and verifying, for testing only
     -config string
           Config file for covenantsql (Usually no need to set, default is enough.) (default "~/.cql/config.yaml")
-    -no-password
-          Use an empty master key
+    -with-password
+          Use passphrase for private.key
     -password string
           Master key for covenantsql (NOT SAFE, for debugging or script mode only)
+    -help
+    	  Show help message
 
 Note that the private key file path is specified in the config file, and its default value is `./private.key`, indicating that it's located in the same directory of the config. So usually we put the private key file together with config, instead of using an individual parameter to specify the private key file.

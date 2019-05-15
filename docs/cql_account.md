@@ -10,7 +10,7 @@ For the TestNet environment, we provide a public account for quick testing. Chec
 The sub-command `generate` generates a private key file and a config file connecting to the TestNet in the specified directory, e.g.:
 
 ```bash
-cql generate config
+cql generate
 ```
 
 > Currently, the generated config file is pointed to the TestNet, we will provide options to generated config for Docker Environment later.
@@ -19,54 +19,77 @@ For a complete help message, check [Complete Parameters](#sub-command-generate-c
 
 Output:
 
-    Generating key pair...
-    Enter master key(press Enter for default: ""): 
-
-    Private key file: ~/.cql/private.key
-    Public key's hex: 027af3584b8b4736d6ba1e78ace5f0fdefe561f08749c5cac39d23668c3030fe39
-    Generated key pair.
+    Generating private key...
+    Please enter password for new private key
+    Generated private key.
     Generating nonce...
-    INFO[0075] cpu: 4
-    INFO[0075] position: 3, shift: 0x0, i: 3
-    INFO[0075] position: 1, shift: 0x0, i: 1
-    INFO[0075] position: 0, shift: 0x0, i: 0
-    INFO[0075] position: 2, shift: 0x0, i: 2
-    nonce: {{1056388 0 0 1424219234} 25 000000737633a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01}
-    node id: 000000737633a77a39fc5e0a1855ca2c441486fef049ac4069e93dde6e58bb01
+    INFO cpu: 4
+    INFO position: 2, shift: 0x0, i: 2
+    INFO position: 0, shift: 0x0, i: 0
+    INFO position: 3, shift: 0x0, i: 3
+    INFO position: 1, shift: 0x0, i: 1
+    nonce: {{973366 0 586194564 0} 26 0000002c32aa3ee39e4f461a5f5e7fda50859f597464d81c9618d443c476835b}
+    node id: 0000002c32aa3ee39e4f461a5f5e7fda50859f597464d81c9618d443c476835b
     Generated nonce.
     Generating config file...
-    Generated nonce.
+    Generated config.
 
-## Acquiring the Public Key
+    Config file:      ~/.cql/config.yaml
+    Private key file: ~/.cql/private.key
+    Public key's hex: 03f195dfe6237691e724bcf54359d76ef388b0996a3de94a7e782dac69192c96f0
 
-The sub-command `generate` is also used to acquire the public key (in hex string format) of the private key file, e.g.:
+    Wallet address: dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
 
-```bash
-cql generate public
-```
+    Any further command could costs PTC.
+    You can get some free PTC from:
+    	https://testnet.covenantsql.io/wallet/dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
+
+### Public Key
+
+Generate command also print public key (in hex string format) of the private key file, e.g.:
 
 Output：
 
-    Enter master key(press Enter for default: ""): 
+    Public key's hex: 03f195dfe6237691e724bcf54359d76ef388b0996a3de94a7e782dac69192c96f0
 
-    INFO[0011] init config success                           path=/home/levente/.cql/private.key
-    INFO[0011] use public key in config file: /home/levente/.cql/config.yaml
-    Public key's hex: 02fd4089e7f4ca224f576d4baa573b3e9662153c952fce3f87f9586ffdd11baef6
+> This info is usually not used in common scene.
 
-> This functionality is usually not used in common scene.
+### Wallet address
+
+Generate command shows wallet address (in hex string format) and will store in `config.yaml` file, e.g.:
+
+Output：
+
+    Wallet address: dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
+
+    Any further command could costs PTC.
+    You can get some free PTC from:
+    	https://testnet.covenantsql.io/wallet/dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
+
+After get a wallet address, you may need to request PTC as below.
 
 ## Sub-command `generate` Complete Parameters
 
 Also see [Common Parameters for Sub-commands](#common-parameters-for-sub-commands). We will not mention this again in the later sub-command introductions.
 
-    usage: cql generate [common params] config | public
+    usage: cql generate [common params] [-source template_file] [-miner] [-private existing_private_key] [dest_path]
 
     Generate generates private.key and config.yaml for CovenantSQL.
+    You can input a passphrase for local encrypt your private key file by set -with-password
     e.g.
-        cql generate config
+        cql generate
 
-    Params:
-      <No other parameters>
+    or input a passphrase by
+
+        cql generate -with-password
+
+    Generate params:
+      -miner string
+        	Generate miner config with specified miner address
+      -private string
+        	Generate config using an existing private key
+      -source string
+        	Generate config using the specified config template
 
 ## Mine a Node ID
 
