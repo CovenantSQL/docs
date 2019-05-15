@@ -52,12 +52,12 @@ If the problem persists please check out our GitHub page [submit issue](https://
 
 ### Utils
 
-| Tool       | Introduction                                                                                                                                 |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| cql        | CovenantSQL client, `cql console` The command is similar to the `mysql` command and is used to manage the CQL databases, [More](./cql_intro) |
-| cql-fuse   | CovenantSQL's FUSE client, which can mount a CovenantSQL database as a file system                                                           |
-| cql-minerd | CovenantSQL miner client, used to run the database to earn rewards, will open later                                                          |
-| cqld       | CovenantSQL main chain node, mainly run by CovenantLabs and partners in DPoS mode                                                            |
+| Tool       | Introduction                                                                                                                             |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| cql        | CovenantSQL client, `cql console` command is similar to the `mysql` command and is used to manage the CQL databases, [More](./cql_intro) |
+| cql-fuse   | CovenantSQL's FUSE client, which can mount a CovenantSQL database as a file system                                                       |
+| cql-minerd | CovenantSQL miner client, used to run the database to earn rewards, will open later                                                      |
+| cqld       | CovenantSQL main chain node, mainly run by CovenantLabs and partners in DPoS mode                                                        |
 
 > Windows platform we will release later, if there is a need please [submit issue](https://github.com/CovenantSQL/CovenantSQL/issues/new?assignees=&labels=&template=feature_request.md&title=)
 
@@ -80,20 +80,20 @@ chmod 600 ~/.cql/testnet-conf/private.key
 > 
 > The test network is temporarily composed of 3 Miners, so temporarily only supports `create 3` to create a database of 3 nodes.
 
-## Create a database
+## Create a testnet database
 
 ```bash
-cql create -config=~/.cql/testnet-conf/config.yaml -no-password \
--wait-tx-confirm '{"node":1}'
+cql create -config=~/.cql/testnet-conf/config.yaml \
+    -db-node 1 -wait-tx-confirm
 ```
 
-The command execution takes a little long time, and the console outputs after about 30 seconds:
+The command execution takes a little long time, and after about 30 seconds the console outputs something like below:
 
 > covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 
 ​
 
-This means that you submitted the database `0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` creation request to the main chain and created the database to complete.
+This means that you submitted the database(dsn) `covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872` creation request to the main chain and created the database to complete.
 
 > Command execution takes some time, and the general process is:
 > 
@@ -103,11 +103,11 @@ This means that you submitted the database `0a10b74439f2376d828c9a70fd538dac4b69
 > 4. SQLChain Miners builds a database cluster with Kayak
 > 5. All Miners are ready to wait for a database request
 
-## Access the database
+## Access the testnet database
 
 ```bash
-cql console -config=~/.cql/testnet-conf/config.yaml -no-password \
--dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+cql console -config=~/.cql/testnet-conf/config.yaml \
+    -dsn covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
 ```
 
 After connecting to the database, you can manipulate the database on CovenantSQL according to your habit of operating the database. For example, execute `CREATE TABLE` to create a table, `SELECT` query data, and so on.
@@ -129,28 +129,35 @@ Please fill in your database ID in the upper right corner of the page. For examp
 Our test network allows you to create your own account and create a database under your own account. Create an account with the following command (you will be asked to set the master password, you can add `-no-password` to leave blank)：
 
 ```bash
-cql generate -no-password config
+cql generate
 ```
 
 Output：
 
-    INFO[0000] cql build: cql HEAD-48fff30-20190328075135 linux amd64 go1.11.6 
-    "/home/work/.cql" already exists. 
-    Do you want to delete it? (y or n, press Enter for default n):
-    y
-    Generating key pair...
-    Private key file: /home/work/.cql/private.key
-    Public key's hex: 024123d10696cf54fbf2b1e2b507ec4d1cbf2b4e87095774ad5fd6376cdae88e87
-    Generated key pair.
+    Generating private key...
+    Please enter password for new private key
+    Generated private key.
     Generating nonce...
-    INFO[0001] cpu: 2                                       
-    INFO[0001] position: 2, shift: 0x0, i: 1                
-    INFO[0001] position: 0, shift: 0x0, i: 0                
-    nonce: {{2556203225 0 0 0} 24 000000829171cb94b765b4d51f2601aaf2c0f5270827ed97ddbecf0075437dad}
-    node id: 000000829171cb94b765b4d51f2601aaf2c0f5270827ed97ddbecf0075437dad
+    INFO cpu: 4
+    INFO position: 2, shift: 0x0, i: 2
+    INFO position: 0, shift: 0x0, i: 0
+    INFO position: 3, shift: 0x0, i: 3
+    INFO position: 1, shift: 0x0, i: 1
+    nonce: {{973366 0 586194564 0} 26 0000002c32aa3ee39e4f461a5f5e7fda50859f597464d81c9618d443c476835b}
+    node id: 0000002c32aa3ee39e4f461a5f5e7fda50859f597464d81c9618d443c476835b
     Generated nonce.
     Generating config file...
     Generated config.
+    
+    Config file:      ~/.cql/config.yaml
+    Private key file: ~/.cql/private.key
+    Public key's hex: 03f195dfe6237691e724bcf54359d76ef388b0996a3de94a7e782dac69192c96f0
+    
+    Wallet address: dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
+    
+    Any further command could costs PTC.
+    You can get some free PTC from:
+        https://testnet.covenantsql.io/wallet/dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95
     
 
 This command will create a `.cql` directory for you in your `$HOME` directory:
@@ -158,23 +165,14 @@ This command will create a `.cql` directory for you in your `$HOME` directory:
 - `~/.cql/private.key`: The generated private key is stored in the file by the master password encryption, and your account address needs to be created using this file;
 - `~/.cql/config.yaml`: The generated configuration, cql can access the CovenantSQL TestNet with it.
 
-Let's continue to generate the account address (also called the wallet address, CovenantSQL address):
-
-```bash
-cql wallet -no-password
-```
-
-Output：
-
-    wallet address: bc3cba461500f49c2adf6e6e98c1b3513063227063512f0dd6a5160c01de5e3c
-    
+It alse print your wallet address(also called the account address, CovenantSQL address): `Wallet address: dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95`
 
 You can get the test PTC here with the wallet address obtained above: \[Request for PTC\] (https://testnet.covenantsql.io/).
 
-After up to 2 minutes, you can use the cql command line tool to check the balance:
+After up to 2 minutes while requested PTC, you can use the cql command line tool to check the balance:
 
 ```bash
-cql wallet -no-password -balance all
+cql wallet
 ```
 
 output：
