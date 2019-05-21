@@ -25,7 +25,7 @@ title: 📦 Java
 <repositories>
     <repository>
         <id>mvn-repo</id>
-        <url>https://raw.github.com/CovenantSQL/covenant-connector/mvn-repo</url>
+        <url>https://raw.github.com/CovenantSQL/cql-java-driver/mvn-repo</url>
         <releases>
             <enabled>true</enabled>
         </releases>
@@ -51,7 +51,7 @@ title: 📦 Java
 ```gradle
 repositories {
     maven {
-      url 'https://raw.github.com/CovenantSQL/covenant-connector/mvn-repo'
+      url 'https://raw.github.com/CovenantSQL/cql-java-driver/mvn-repo'
     }
 }
 
@@ -62,6 +62,6 @@ dependencies {
 
 ### 示例
 
-1. [JDBC示例](https://github.com/CovenantSQL/covenant-connector/blob/master/covenantsql-java-connector/example/src/main/java/io/covenantsql/connector/example/jdbc/Example.java)
-2. [MyBatis示例](https://github.com/CovenantSQL/covenant-connector/blob/master/covenantsql-java-connector/example/src/main/java/io/covenantsql/connector/example/mybatis/Example.java)
+1. [JDBC示例](https://github.com/CovenantSQL/cql-java-driver/blob/master/example/src/main/java/io/covenantsql/connector/example/jdbc/Example.java)
+2. [MyBatis示例](https://github.com/CovenantSQL/cql-java-driver/blob/master/example/src/main/java/io/covenantsql/connector/example/mybatis/Example.java)
 3. [大型项目示例](https://github.com/CovenantSQL/covenantsql-mybatis-spring-boot-jpetstore)

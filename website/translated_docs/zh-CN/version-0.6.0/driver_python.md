@@ -5,7 +5,7 @@ title: 📦 Python
 
 ## 用 Python 访问 CovenantSQL
 
-开发者可以通过 [PyCovenantSQL](https://github.com/CovenantSQL/python-driver) 来使用 CovenantSQL。
+开发者可以通过 [PyCovenantSQL](https://github.com/CovenantSQL/cql-python-driver) 来使用 CovenantSQL。
 
 ### 兼容性
 

@@ -16,7 +16,7 @@ Quandl 是一个针对金融投资行业的大数据平台，其数据来源包�
 
 现在由于客户端兼容问题， 请直接使用我们的 HTTP 服务来对 Quandl 数据库进行 query，未来兼容现在的 `cql` 客户端后会第一时间更新此文档。
 
-具体通过 HTTP 服务来使用 CovenantSQL 请参考 [Python 驱动文档](https://github.com/CovenantSQL/python-driver/blob/master/README.rst) 和 [NodeJS 驱动文档](https://github.com/CovenantSQL/node-covenantsql/blob/master/README.md)
+具体通过 HTTP 服务来使用 CovenantSQL 请参考 [Python 驱动文档](https://github.com/CovenantSQL/cql-python-driver/blob/master/README.rst) 和 [NodeJS 驱动文档](https://github.com/CovenantSQL/node-covenantsql/blob/master/README.md)
 
 所需参数:
 
