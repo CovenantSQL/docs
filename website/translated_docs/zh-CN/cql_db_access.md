@@ -20,7 +20,7 @@ Output:
     co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=>
     
 
-Or access as `account2` if it has been granted access permission successfully:
+Or access as `account2` (Should been granted access permission and transfered deposit token to the database successfully in last section):
 
 ```bash
 cql console -config "account2/config.yaml" 'covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5'
@@ -58,7 +58,7 @@ Here is an example of using the interactive console:
 
 The sub-command `console` also supports running `adapter` or `explorer` servers in the background. Check [Local Servers](#local-servers) for details.
 
-    usage: cql console [common params] [-command sqlcommand] [-file filename] [-out outputfile] [-no-rc true/false] [-single-transaction] [-variable variables] [-explorer explorer_addr] [-adapter adapter_addr] [dsn]
+    usage: cql console [common params] [Console params] dsn
     
     Console runs an interactive SQL console for CovenantSQL.
     e.g.
