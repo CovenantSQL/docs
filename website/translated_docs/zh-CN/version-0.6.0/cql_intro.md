@@ -10,9 +10,17 @@ CovenantSQL 为终端用户提供 `cql` 命令行工具集，用于对用户账�
 运行 `cql` 依赖私钥文件 `private.key` 和配置文件 `config.yaml`，其中：
 
 - `private.key`：生成用户账户时所分配的私钥，请务必妥善保管好这个私钥
-- `config.yaml`：主要用于配置 `cql` 命令要连接的 CovenantSQL 网络（如 [TestNet](quickstart) 或用户使用 [Docker 一键部署](deployment)的网络）
+- `config.yaml`：主要用于配置 `cql` 命令要连接的 CovenantSQL 网络（如 [TestNet](quickstart) 或用户使用 [私有部署](advanced_deployment)的网络）
 
 出于安全方面的考虑，私钥文件通常需要使用主密码进行加密。主密码在创建账号时由用户输入，之后由用户自行记忆或保管，而不会保存到配置文件中。当需要使用到私钥的时候，`cql` 命令会要求用户输入主密码以解开私钥文件。
+
+### 命令格式
+
+`cql` 命令有十多个子命令，各个子命令都遵从相同的命令格式。例如：
+
+    cql 子命令 [通用参数] [子命令参数] 选项
+
+其中`选项`的内容可能是空，但非空时必须放在命令最后面
 
 ### 子命令通用参数
 

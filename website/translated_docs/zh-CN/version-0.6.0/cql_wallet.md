@@ -55,7 +55,7 @@ cql wallet -token Bitcoin
 
 ## 向其他账号转账
 
-从 [TestNet](quickstart) 获得代币或 [Docker 一键部署](deployment)的网络获得代币后，可以使用 `transfer` 命令来向其他账号转账。转账操作有3个必要的转账信息作为参数，例如：
+从 [TestNet](quickstart) 获得代币或 [私有部署](advanced_deployment) 的网络获得代币后，可以使用 `transfer` 命令来向其他账号转账。转账操作有3个必要的转账信息作为参数，例如：
 
 ```bash
 cql transfer -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 -amount 1000000 -token Particle

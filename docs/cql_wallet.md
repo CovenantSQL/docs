@@ -54,7 +54,7 @@ Output:
 
 ## Transferring Tokens to Another Account
 
-Once you get tokens from [TestNet](quickstart) or [Docker Environment](deployment), you can use the `transfer` sub-command to transfer tokens to another account. The command takes 3 main parameters, e.g.:
+Once you get tokens from [TestNet](quickstart) or [Private Deploy](advanced_deployment), you can use the `transfer` sub-command to transfer tokens to another account. The command takes 3 main parameters, e.g.:
 
 ```bash
 cql transfer -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 -amount 1000000 -token Particle
