@@ -73,7 +73,7 @@ After get a wallet address, you may need to request PTC as above.
 
 ## Sub-command `generate` Complete Parameters
 
-Also see [Common Parameters for Sub-commands](#common-parameters-for-sub-commands). We will not mention this again in the later sub-command introductions.
+Also see [Common Parameters for Sub-commands](cql_intro#common-parameters-for-sub-commands). We will not mention this again in the later sub-command introductions.
 
     usage: cql generate [common params] [-source template_file] [-miner] [-private existing_private_key] [dest_path]
     
