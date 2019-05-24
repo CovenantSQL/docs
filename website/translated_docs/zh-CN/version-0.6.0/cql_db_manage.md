@@ -147,7 +147,7 @@ Cleaning the white list:
           -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
           -perm '
 {
-   "patterns": nil,
+   "patterns": null,
    "role": "Read,Write"
 }
 '
@@ -159,7 +159,7 @@ cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e3
           -perm "Read,Write"
 ```
 
-Either setting the `pattern` field to `nil` or just resetting the user permission directly, will eliminate the white list and give back the access permission to the user.
+Either setting the `pattern` field to `null` or just resetting the user permission directly, will eliminate the white list and give back the access permission to the user.
 
 ## Sub-command `create` Complete Parameters
 
