@@ -145,7 +145,7 @@ cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e3
           -to-user 011f72fea9efa1a49a6663d66e514a34e45e426524c13335cf20bec1b47d10d6 \
           -perm '
 {
-   "patterns": nil,
+   "patterns": null,
    "role": "Read,Write"
 }
 '
@@ -157,7 +157,7 @@ cql grant -to-dsn covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e3
           -perm "Read,Write"
 ```
 
-将 `pattern` 设置为 `nil` 或直接设置用户权限，都可以将用户的白名单限制去掉，设置回可以查询所有内容的读权限。
+将 `pattern` 设置为 `null` 或直接设置用户权限，都可以将用户的白名单限制去掉，设置回可以查询所有内容的读权限。
 
 ## 子命令 `create` 完整参数
 

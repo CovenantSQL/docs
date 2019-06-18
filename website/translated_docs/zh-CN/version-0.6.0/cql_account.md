@@ -72,7 +72,7 @@ cql generate
 
 ## 子命令 `generate` 完整参数
 
-通用参数部分参考 [子命令通用参数](#子命令通用参数)，以下介绍其他子命令时不再另外说明。
+通用参数部分参考 [子命令通用参数](cql_intro#子命令通用参数)，以下介绍其他子命令时不再另外说明。
 
     usage: cql generate [common params] [-source template_file] [-miner] [-private existing_private_key] [dest_path]
 
