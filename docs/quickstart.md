@@ -19,7 +19,7 @@ Please choose the installation method according to the operating system platform
     ```
 
 - non-Homebrew users can run:
-    
+  
     ```bash
     sudo bash -c 'curl -L "https://mac.gridb.io/cql" | \
      tar xzv -C /usr/local/bin/ --strip-components=1'
@@ -62,7 +62,7 @@ If the problem persists please check out our GitHub page [submit issue](https://
 
 ### TestNet
 
-At present, we have released the test network v0.5.0 for everyone to verify and experience the principle. You can choose to quickly perform access testing using the "public account".
+At present, we have released the test network v0.7.0 for everyone to verify and experience the principle. You can choose to quickly perform access testing using the "public account".
 
 The configuration file and private key of the "public account":[config.yaml](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/config.yaml)、[private.key](https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/private.key) (empty password)，or just run：
 
