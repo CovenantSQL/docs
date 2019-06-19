@@ -277,6 +277,102 @@
       },
       "version-0.6.0-usecase": {
         "title": "使用案例"
+      },
+      "version-0.7.0-usecase_data_analysis": {
+        "title": "数据分析"
+      },
+      "version-0.7.0-usecase_dapp": {
+        "title": "DApp"
+      },
+      "version-0.7.0-usecase_traditional_app": {
+        "title": "传统应用"
+      },
+      "version-0.7.0-arch": {
+        "title": "实现细节"
+      },
+      "version-0.7.0-arch_network": {
+        "title": "网络传输层"
+      },
+      "version-0.7.0-arch_layers": {
+        "title": "主链和侧链"
+      },
+      "version-0.7.0-adapter": {
+        "title": "API 网关"
+      },
+      "version-0.7.0-api-json-rpc": {
+        "title": "JSON RPC"
+      },
+      "version-0.7.0-keygen": {
+        "title": "使用 cql-utils 生成密钥与钱包"
+      },
+      "version-0.7.0-cql": {
+        "title": "CQL 客户端"
+      },
+      "version-0.7.0-cql_intro": {
+        "title": "简介"
+      },
+      "version-0.7.0-cql_account": {
+        "title": "账号管理"
+      },
+      "version-0.7.0-cql_wallet": {
+        "title": "钱包管理"
+      },
+      "version-0.7.0-cql_db_manage": {
+        "title": "数据库管理"
+      },
+      "version-0.7.0-cql_db_access": {
+        "title": "访问数据库"
+      },
+      "version-0.7.0-cql_server": {
+        "title": "本地服务"
+      },
+      "version-0.7.0-cql_advance": {
+        "title": "高级使用"
+      },
+      "version-0.7.0-golang-client": {
+        "title": "使用 Golang 驱动访问数据库"
+      },
+      "version-0.7.0-intro": {
+        "title": "CovenantSQL 介绍"
+      },
+      "version-0.7.0-testnet": {
+        "title": "CovenantSQL 测试网快速入门"
+      },
+      "version-0.7.0-guide-zh": {
+        "title": "快速开始"
+      },
+      "version-0.7.0-advanced_deployment": {
+        "title": "私有部署"
+      },
+      "version-0.7.0-advanced_secure_gateway": {
+        "title": "数据库安全网关"
+      },
+      "version-0.7.0-driver_golang": {
+        "title": "Golang"
+      },
+      "version-0.7.0-driver_java": {
+        "title": "Java"
+      },
+      "version-0.7.0-driver_js": {
+        "title": "JavaScript"
+      },
+      "version-0.7.0-driver_python": {
+        "title": "Python"
+      },
+      "version-0.7.0-nav": {
+        "title": "使用导航"
+      },
+      "version-0.7.0-qna": {
+        "title": "常见问题解答"
+      },
+      "version-0.7.0-quandl": {
+        "title": "数据分析"
+      },
+      "version-0.7.0-quickstart": {
+        "title": "快速开始"
+      },
+      "version-0.7.0-usecase": {
+        "title": "使用案例"
       }
     },
     "links": {
