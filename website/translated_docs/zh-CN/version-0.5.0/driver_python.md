@@ -6,7 +6,7 @@ original_id: driver_python
 
 ## Use Python to access CovenantSQL
 
-Developers could use [PyCovenantSQL](https://github.com/CovenantSQL/python-driver) to access CovenantSQL through [Adapter](./adapter).
+Developers could use [PyCovenantSQL](https://github.com/CovenantSQL/cql-python-driver) to access CovenantSQL through [Adapter](./adapter).
 
 ### Compatibility
 
