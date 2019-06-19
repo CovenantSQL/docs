@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>网络传输层 · CovenantSQL Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;dh-rpc-是什么&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#dh-rpc-是什么&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;DH-RPC 是什么&lt;/h2&gt;
+"/><meta name="docsearch:version" content="0.6.0"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="网络传输层 · CovenantSQL Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="http://developers.covenantsql.io/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;dh-rpc-是什么&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#dh-rpc-是什么&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;DH-RPC 是什么&lt;/h2&gt;
+"/><meta property="og:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="https://hm.baidu.com/hm.js?fd1ee4ccc9da39d0cf4c60ad8e6e214b"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/logo.svg" alt="CovenantSQL Docs"/><h2 class="headerTitleWithLogo">CovenantSQL Docs</h2></a><a href="/zh-CN/versions"><h3>0.6.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/zh-CN/0.6.0/intro" target="_self">Docs</a></li><li class=""><a href="/zh-CN/help" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/0.6.0/arch_network">English</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>实现细节</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">简介</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/intro">CovenantSQL 介绍</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/quickstart">快速开始</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">工具</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/cql_intro">简介</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/cql_account">账号管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/cql_wallet">钱包管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/cql_db_manage">数据库管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/cql_db_access">访问数据库</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/cql_server">本地服务</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/cql_advance">高级使用</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/driver_golang">Golang</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/adapter">API 网关</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/driver_java">Java</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/driver_python">Python</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/driver_js">JavaScript</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">高级使用方式</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/advanced_deployment">私有部署</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/advanced_secure_gateway">数据库安全网关</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">实现细节</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/arch">实现细节</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/arch_layers">主链和侧链</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/zh-CN/0.6.0/arch_network">网络传输层</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用案例</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/usecase_traditional_app">传统应用</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/usecase_dapp">DApp</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/usecase_data_analysis">数据分析</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">关于</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-CN/0.6.0/qna">常见问题解答</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">网络传输层</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="dh-rpc-是什么"></a><a href="#dh-rpc-是什么" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DH-RPC 是什么</h2>
+<p>像 TLS 或 SSL 这样的传统密钥交换需要 CA（Certification Authority）来确保密钥交换安全运行。但在 DH-RPC 中，我使用 DHT 来做到这一点。主要思想是使用DHT进行命名和密钥交换，从整个系统中删除 CA Cert。</p>
+<p>DH-RPC 是一个 <code>secp256k1-ECDH-AES</code> 加密的 P2P RPC 框架，用于用 golang 编写的 P2P 应用。</p>
+<p>CovenantSQL 建立在 DH-RPC 之上，包括：</p>
+<ul>
+<li>拜占庭容错共识协议 <a href="https://godoc.org/github.com/CovenantSQL/CovenantSQL/kayak">Kayak</a></li>
+<li>Consistent Secure DHT</li>
+<li>数据库 API</li>
+<li>机器指标信息监控 API</li>
+<li>区块同步</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="特性"></a><a href="#特性" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>特性</h2>
+<ul>
+<li>和 Golang 标准库的 <a href="https://golang.org/pkg/net/rpc/">net/rpc</a> 100% 兼容</li>
+<li>基于 ID 的路由和基于 Secure Enhanced DHT 构建的密钥交换。</li>
+<li>使用 MessagePack 进行序列化，支持大多数类型，而无需编写 <code>Marshal</code> 和 <code>Unmarshal</code>。</li>
+<li>加密选型：
+<ul>
+<li>使用椭圆曲线 Secp256k1 进行非对称加密</li>
+<li>使用 ECDH 进行密钥交换</li>
+<li>使用 PKCS#7 作为 padding</li>
+<li>使用 AES-256-CFB 进行对称加密</li>
+<li>Private key protected by master key</li>
+<li>支持匿名 Node 连接（仅对称加密）</li>
+</ul></li>
+<li>DHT持久层有2个实现:
+<ul>
+<li>SQLite3 based simple traditional DHT</li>
+<li><a href="https://godoc.org/github.com/CovenantSQL/CovenantSQL/kayak">Kayak</a> based 2PC strong consistent DHT</li>
+</ul></li>
+<li>基于 <a href="https://github.com/xtaci/smux">smux</a> 的会话多路复用</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="网络栈"></a><a href="#网络栈" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>网络栈</h2>
+<p><a href="rpc/">DH-RPC</a> := TLS - Cert + DHT</p>
+<table>
+<thead>
+<tr><th style="text-align:left">分层</th><th style="text-align:center">实现</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">RPC</td><td style="text-align:center"><code>net/rpc</code></td></tr>
+<tr><td style="text-align:left">Naming</td><td style="text-align:center"><a href="https://godoc.org/github.com/CovenantSQL/CovenantSQL/consistent"><strong>C</strong>onsistent <strong>S</strong>ecure <strong>DHT</strong></a></td></tr>
+<tr><td style="text-align:left">Pooling</td><td style="text-align:center">Session Pool</td></tr>
+<tr><td style="text-align:left">Multiplex</td><td style="text-align:center"><a href="https://github.com/xtaci/smux">smux</a></td></tr>
+<tr><td style="text-align:left">Transport Security</td><td style="text-align:center"><a href="https://github.com/CovenantSQL/research/wiki/ETLS(Enhanced-Transport-Layer-Security)"><strong>E</strong>nhanced <strong>TLS</strong></a></td></tr>
+<tr><td style="text-align:left">Network</td><td style="text-align:center">TCP or KCP for optional later</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="工作原理"></a><a href="#工作原理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>工作原理</h2>
+<p>我们知道，传统的 TLS/SSL 需要一个层级化的CA系统，类似于一个传销系统的金字塔，根证书（Root CA）给下一层CA签名做签名，最后一层 CA 给网站做签名。</p>
+<p>这样就导致了，如果你能控制一个 CA，那么很多中间人攻击的勾当就可以悄无声息的进行了。参见：</p>
+<ul>
+<li><a href="https://security.googleblog.com/2017/09/chromes-plan-to-distrust-symantec.html">Google决定在Chrome删除赛门铁克的根证书</a></li>
+<li><a href="https://thenextweb.com/insider/2015/04/02/google-to-drop-chinas-cnnic-root-certificate-authority-after-trust-breach/">Google Dropping CNNIC Root CA After Trust Breach</a></li>
+</ul>
+<blockquote>
+<p>人构成的组织，反而成为了最大的漏洞。</p>
+</blockquote>
+<p>继续聊下去之前，我们必须提一下DH算法（<a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Diffie–Hellman key exchange</a>）。我们不关心他的原理，简单来说，这个算法实现了这么一个功能：</p>
+<pre><code class="hljs css language-go">DH(A.Public, B.Private) == DH(B.Public, A.Private)
+</code></pre>
+<p>通过这个几乎可以和 RSA 比肩的伟大发明，Alice 可以仅获取 Bob 的 Public Key 并结合自己的 Private Key 来计算出一个和 Bob 用同样方式计算的相同密钥。</p>
+<p>那么剩下的问题就在于如何防止在获取Bob的Public Key的时候被调包，也就是黑客们常说的 MITM 攻击（Man-in-the-middle attack）。</p>
+<p>CA 在 HTTPS 中的作用主要是作为一个中介，防止 MITM。大致方式就是浏览器或操作系统把常见的CA的公钥放在预先存起来。访问使用 HTTPS 的网站的时候通过相应的根证书进行验证。</p>
+<h2><a class="anchor" aria-hidden="true" id="去中心化"></a><a href="#去中心化" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>去中心化</h2>
+<p>在构建CovenantSQL的时候我们对这个问题进行了思考，于是抛弃了 CA 创造了 DH-RPC。</p>
+<blockquote>
+<p>DH-RPC = DHT + ECDH + RPC</p>
+</blockquote>
+<p>在 DH-RPC 里我们都用 NodeID 来作为 URI（Uniform Resource Identifier），NodeID 是通过 Node 的 Public Key 上一个 256位 的随机数（<code>NodeNonce</code>）做两层不同的哈希生成的。</p>
+<pre><code class="hljs css language-go">NodeID := sha256(blake2b<span class="hljs-number">-512</span>(NodePublicKey + Uint256Nonce))
+</code></pre>
+<p>生成的NodeID大致长这个样子：</p>
+<pre><code class="hljs css language-text">0000000004e249292693ee2eb89e1cfc4b05a211f0b0ff0ecbb9d5bc155c078f
+</code></pre>
+<p>把<code>NodeID:Addr</code> 和 <code>NodeID:PublicKey</code>存储在 DHT 上，为了防止针对 DHT 的各种女巫攻击 和 日食攻击，我们参考 Bitcoin 的思想，把 NodeID 前面连续的<code>0</code>的个数定义为难度，并且可以对允许存储在 DHT 上的 NodeID 难度进行一定的最低限制。</p>
+<p>我们采用了 Bitcoin 使用的 <code>Elliptic Curve Secp256k1</code> 作为非对称加密算法。<code>AES-256-CBC</code> 作为对称加密算法。</p>
+<p>首先，Alice 通过可信途径获取到 Bob 的 NodeID，并在 DHT 上查询出 Bob 的网络地址和公钥。此时 Alice 已经得到了 DH算法 所需的 Alice 的私钥、Bob 的公钥。</p>
+<p>Alice 向 Bob 发起连接，在 RPC 的 TCP 连接建立完成之后，连接发起方（Alice）首先会把一个自己的 <code>NodeID</code>、<code>NodeNonce</code> 发送给对端（Bob）。Bob 收到 Alice 的<code>NodeID</code>之后通过查询 DHT 获取到 Alice 之前存储在 DHT 上的 <code>Alice.PublicKey</code> 并缓存在本地。Bob 通过 Alice 发过来的 <code>NodeNonce</code> 和 DHT 上获取的 <code>Alice.PublicKey</code> 可以验证 Alice 的公钥是否是约定的算法生成的。此时 Bob 也获取到了 DH算法 所需的 Bob 的私钥、Alice 的公钥。此时的 Alice 和 Bob 的通信就是经过高强度加密并且 P2P 的了。</p>
+<p>流程图如下：</p>
+<p><img src="https://github.com/CovenantSQL/CovenantSQL/raw/develop/logo/rpc.png" width=900></p>
+<h2><a class="anchor" aria-hidden="true" id="示例代码及使用"></a><a href="#示例代码及使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>示例代码及使用</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/CovenantSQL/CovenantSQL@cc4aa933d80a5d31738081d13c7b1587ad47cffb/logo/dh-rpc.svg" alt=""></p>
+<p>Alice Client:</p>
+<pre><code class="hljs css language-go"><span class="hljs-comment">// Init Key Management System</span>
+route.InitKMS(PubKeyStoreFile)
+
+<span class="hljs-comment">// Register Node public key, addr to Tracker</span>
+reqA := &amp;proto.PingReq{
+    Node: AliceNode,
+}
+respA := <span class="hljs-built_in">new</span>(proto.PingResp)
+rpc.NewCaller().CallNode(Tracker.NodeID, <span class="hljs-string">"DHT.Ping"</span>, reqA, respA)
+
+pc := rpc.NewPersistentCaller(BobNodeID)
+respSimple := <span class="hljs-built_in">new</span>(<span class="hljs-keyword">string</span>)
+pc.Call(<span class="hljs-string">"Test.Talk"</span>, <span class="hljs-string">"Hi there"</span>, respSimple)
+fmt.Printf(<span class="hljs-string">"Response msg: %s"</span>, *respSimple)
+</code></pre>
+<p>Bob Server:</p>
+<pre><code class="hljs css language-go"><span class="hljs-comment">// RPC logic</span>
+<span class="hljs-comment">// TestService to be register to RPC server</span>
+<span class="hljs-keyword">type</span> TestService <span class="hljs-keyword">struct</span> {}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *TestService)</span> <span class="hljs-title">Talk</span><span class="hljs-params">(msg <span class="hljs-keyword">string</span>, ret *<span class="hljs-keyword">string</span>)</span> <span class="hljs-title">error</span></span> {
+    fmt.Println(msg)
+    resp := fmt.Sprintf(<span class="hljs-string">"got msg %s"</span>, msg)
+    *ret = resp
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+}
+
+<span class="hljs-comment">// Init Key Management System</span>
+route.InitKMS(PubKeyStoreFile)
+
+<span class="hljs-comment">// Register DHT service</span>
+server, err := rpc.NewServerWithService(rpc.ServiceMap{
+    <span class="hljs-string">"Test"</span>: &amp;TestService{},
+})
+
+<span class="hljs-comment">// Init RPC server with an empty master key, which is not recommend</span>
+server.InitRPCServer(<span class="hljs-string">"0.0.0.0:2120"</span>, PrivateKeyFile, <span class="hljs-string">""</span>)
+
+<span class="hljs-comment">// Start Node RPC server</span>
+server.Serve()
+</code></pre>
+<p>Tracker 相关代码参见下面的内容。</p>
+<h2><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h2>
+<p>下面的代码展示了 1 DHT Tracker 和 2 节点的示例</p>
+<p>完整代码参见这里 <a href="https://github.com/CovenantSQL/CovenantSQL/tree/develop/rpc/_example">here</a></p>
+<h4><a class="anchor" aria-hidden="true" id="tracker-代码"></a><a href="#tracker-代码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tracker 代码</h4>
+<pre><code class="hljs css language-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"os"</span>
+
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/conf"</span>
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/consistent"</span>
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/route"</span>
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/rpc"</span>
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/utils/log"</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">//log.SetLevel(log.DebugLevel)</span>
+    conf.GConf, _ = conf.LoadConfig(os.Args[<span class="hljs-number">1</span>])
+    log.Debugf(<span class="hljs-string">"GConf: %#v"</span>, conf.GConf)
+
+    <span class="hljs-comment">// Init Key Management System</span>
+    route.InitKMS(conf.GConf.PubKeyStoreFile)
+
+    <span class="hljs-comment">// Creating DHT RPC with simple persistence layer</span>
+    dht, err := route.NewDHTService(conf.GConf.DHTFileName, <span class="hljs-built_in">new</span>(consistent.KMSStorage), <span class="hljs-literal">true</span>)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatalf(<span class="hljs-string">"init dht failed: %v"</span>, err)
+    }
+
+    <span class="hljs-comment">// Register DHT service</span>
+    server, err := rpc.NewServerWithService(rpc.ServiceMap{route.DHTRPCName: dht})
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatal(err)
+    }
+
+    <span class="hljs-comment">// Init RPC server with an empty master key, which is not recommend</span>
+    addr := conf.GConf.ListenAddr
+    masterKey := []<span class="hljs-keyword">byte</span>(<span class="hljs-string">""</span>)
+    server.InitRPCServer(addr, conf.GConf.PrivateKeyFile, masterKey)
+    server.Serve()
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="node-代码"></a><a href="#node-代码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Node 代码</h4>
+<pre><code class="hljs css language-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"bufio"</span>
+    <span class="hljs-string">"fmt"</span>
+    <span class="hljs-string">"os"</span>
+    <span class="hljs-string">"strings"</span>
+
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/conf"</span>
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/proto"</span>
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/route"</span>
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/rpc"</span>
+    <span class="hljs-string">"github.com/CovenantSQL/CovenantSQL/utils/log"</span>
+)
+
+<span class="hljs-comment">// TestService to be register to RPC server</span>
+<span class="hljs-keyword">type</span> TestService <span class="hljs-keyword">struct</span> {
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewTestService</span><span class="hljs-params">()</span> *<span class="hljs-title">TestService</span></span> {
+    <span class="hljs-keyword">return</span> &amp;TestService{}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *TestService)</span> <span class="hljs-title">Talk</span><span class="hljs-params">(msg <span class="hljs-keyword">string</span>, ret *<span class="hljs-keyword">string</span>)</span> <span class="hljs-title">error</span></span> {
+    fmt.Println(msg)
+    resp := fmt.Sprintf(<span class="hljs-string">"got %s"</span>, msg)
+    *ret = resp
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">//log.SetLevel(log.DebugLevel)</span>
+    conf.GConf, _ = conf.LoadConfig(os.Args[<span class="hljs-number">1</span>])
+    log.Debugf(<span class="hljs-string">"GConf: %#v"</span>, conf.GConf)
+
+    <span class="hljs-comment">// Init Key Management System</span>
+    route.InitKMS(conf.GConf.PubKeyStoreFile)
+
+    <span class="hljs-comment">// Register DHT service</span>
+    server, err := rpc.NewServerWithService(rpc.ServiceMap{
+        <span class="hljs-string">"Test"</span>: NewTestService(),
+    })
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatal(err)
+    }
+
+    <span class="hljs-comment">// Init RPC server with an empty master key, which is not recommend</span>
+    addr := conf.GConf.ListenAddr
+    masterKey := []<span class="hljs-keyword">byte</span>(<span class="hljs-string">""</span>)
+    server.InitRPCServer(addr, conf.GConf.PrivateKeyFile, masterKey)
+
+    <span class="hljs-comment">// Start Node RPC server</span>
+    <span class="hljs-keyword">go</span> server.Serve()
+
+    <span class="hljs-comment">// Register Node public key, addr to Tracker(BP)</span>
+    <span class="hljs-keyword">for</span> _, n := <span class="hljs-keyword">range</span> conf.GConf.KnownNodes {
+        client := rpc.NewCaller()
+        reqA := &amp;proto.PingReq{
+            Node: n,
+        }
+        respA := <span class="hljs-built_in">new</span>(proto.PingResp)
+        err = client.CallNode(conf.GConf.BP.NodeID, <span class="hljs-string">"DHT.Ping"</span>, reqA, respA)
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            log.Fatal(err)
+        }
+        log.Debugf(<span class="hljs-string">"respA: %v"</span>, respA)
+    }
+
+    <span class="hljs-comment">// Read target node and connect to it</span>
+    scanner := bufio.NewScanner(os.Stdin)
+    fmt.Print(<span class="hljs-string">"Input target node ID: "</span>)
+    scanner.Scan()
+    <span class="hljs-keyword">if</span> scanner.Err() == <span class="hljs-literal">nil</span> {
+        target := proto.NodeID(strings.TrimSpace(scanner.Text()))
+        pc := rpc.NewPersistentCaller(target)
+        log.Debugf(<span class="hljs-string">"connecting to %s"</span>, scanner.Text())
+
+        fmt.Print(<span class="hljs-string">"Input msg: "</span>)
+        <span class="hljs-keyword">for</span> scanner.Scan() {
+            input := scanner.Text()
+            log.Debugf(<span class="hljs-string">"get input %s"</span>, input)
+            repSimple := <span class="hljs-built_in">new</span>(<span class="hljs-keyword">string</span>)
+            err = pc.Call(<span class="hljs-string">"Test.Talk"</span>, input, repSimple)
+            <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+                log.Fatal(err)
+            }
+            log.Infof(<span class="hljs-string">"resp msg: %s"</span>, *repSimple)
+        }
+    }
+}
+</code></pre>
+<p>启动 tracker 和 node1, node2</p>
+<pre><code class="hljs css language-bash">$ ./runTracker.sh &amp;
+$ ./runNode2.sh &amp;
+$ ./runNode1.sh
+$ Input target node ID: 000005aa62048f85da4ae9698ed59c14ec0d48a88a07c15a32265634e7e64ade <span class="hljs-comment">#node2</span>
+$ Input msg: abcdefg
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/22/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/0.6.0/arch_layers"><span class="arrow-prev">← </span><span>上一页</span></a><a class="docs-next button" href="/docs/zh-CN/0.6.0/usecase_traditional_app"><span>下一页</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#dh-rpc-是什么">DH-RPC 是什么</a></li><li><a href="#特性">特性</a></li><li><a href="#网络栈">网络栈</a></li><li><a href="#工作原理">工作原理</a></li><li><a href="#去中心化">去中心化</a></li><li><a href="#示例代码及使用">示例代码及使用</a></li><li><a href="#example">Example</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '1b47865e3d00b7996a988bbc155a68e4',
+                indexName: 'covenantsql',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

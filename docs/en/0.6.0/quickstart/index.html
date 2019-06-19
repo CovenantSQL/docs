@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Quick Start · CovenantSQL Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;covenantsql-client&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#covenantsql-client&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CovenantSQL Client&lt;/h2&gt;
+"/><meta name="docsearch:version" content="0.6.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Quick Start · CovenantSQL Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="http://developers.covenantsql.io/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;covenantsql-client&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#covenantsql-client&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CovenantSQL Client&lt;/h2&gt;
+"/><meta property="og:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="https://hm.baidu.com/hm.js?fd1ee4ccc9da39d0cf4c60ad8e6e214b"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/logo.svg" alt="CovenantSQL Docs"/><h2 class="headerTitleWithLogo">CovenantSQL Docs</h2></a><a href="/en/versions"><h3>0.6.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en/0.6.0/intro" target="_self">Docs</a></li><li class=""><a href="/en/help" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/zh-CN/0.6.0/quickstart">中文</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Usage</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/intro">CovenantSQL Intro</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Usage</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/0.6.0/quickstart">Quick Start</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tools</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/cql_intro">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/cql_account">Account Management</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/cql_wallet">Wallet Management</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/cql_db_manage">Database Management</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/cql_db_access">Accessing Database</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/cql_server">Local Servers</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/cql_advance">Advanced Usage</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Drivers</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/driver_golang">Golang</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/adapter">Adapter</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/driver_java">Java</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/driver_python">Python</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/driver_js">JavaScript</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Advanced Usage</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/advanced_deployment">Private Deploy</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/advanced_secure_gateway">Secure Gateway</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">How It Works</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/arch">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/arch_layers">Blockchains</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/arch_network">RPC Framework</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Use Cases</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/usecase_traditional_app">Traditional App</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/usecase_dapp">DApp</a></li><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/usecase_data_analysis">Data Analysis</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">About</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/0.6.0/qna">Q&amp;A</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Quick Start</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="covenantsql-client"></a><a href="#covenantsql-client" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CovenantSQL Client</h2>
+<h3><a class="anchor" aria-hidden="true" id="install"></a><a href="#install" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h3>
+<p>Please choose the installation method according to the operating system platform you use:</p>
+<h4><a class="anchor" aria-hidden="true" id="macos"></a><a href="#macos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MacOS</h4>
+<ul>
+<li><p>🍺 Homebrew users can just run:</p>
+<pre><code class="hljs css language-bash">brew install cql
+</code></pre></li>
+<li><p>non-Homebrew users can run:</p>
+<pre><code class="hljs css language-bash">sudo bash -c <span class="hljs-string">'curl -L "https://mac.gridb.io/cql" | \
+ tar xzv -C /usr/local/bin/ --strip-components=1'</span>
+</code></pre></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="linux"></a><a href="#linux" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Linux</h4>
+<ul>
+<li><p>Just run：</p>
+<pre><code class="hljs css language-bash">sudo bash -c <span class="hljs-string">'curl -L "https://linux.gridb.io/cql" | \
+tar xzv -C /usr/local/bin/ --strip-components=1'</span>
+</code></pre></li>
+</ul>
+<p>After the installation is complete, you can execute the following command to check whether the installation is successful.</p>
+<pre><code class="hljs css language-bash">cql version
+</code></pre>
+<p>If you have any errors on the MacOS or Linux, you can try the following to fix it:</p>
+<pre><code class="hljs css language-bash">sudo chmod a+x /usr/<span class="hljs-built_in">local</span>/bin/cql*         <span class="hljs-comment"># Fix Permission</span>
+sudo ln -s /usr/<span class="hljs-built_in">local</span>/bin/cql* /usr/bin/   <span class="hljs-comment"># Fix if /usr/local/bin not in $PATH</span>
+</code></pre>
+<p>If the problem persists please check out our GitHub page <a href="https://github.com/CovenantSQL/CovenantSQL/issues/new?assignees=&amp;labels=bug&amp;template=bug_report.md&amp;title=%5BBUG%5D">submit issue</a></p>
+<h3><a class="anchor" aria-hidden="true" id="utils"></a><a href="#utils" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Utils</h3>
+<table>
+<thead>
+<tr><th>Tool</th><th>Introduction</th></tr>
+</thead>
+<tbody>
+<tr><td>cql</td><td>CovenantSQL client, <code>cql console</code> command is similar to the <code>mysql</code> command and is used to manage the CQL databases, <a href="./cql_intro">More</a></td></tr>
+<tr><td>cql-fuse</td><td>CovenantSQL's FUSE client, which can mount a CovenantSQL database as a file system</td></tr>
+<tr><td>cql-minerd</td><td>CovenantSQL miner client, used to run the database to earn rewards, will open later</td></tr>
+<tr><td>cqld</td><td>CovenantSQL main chain node, mainly run by CovenantLabs and partners in DPoS mode</td></tr>
+</tbody>
+</table>
+<blockquote>
+<p>Windows platform we will release later, if there is a need please <a href="https://github.com/CovenantSQL/CovenantSQL/issues/new?assignees=&amp;labels=&amp;template=feature_request.md&amp;title=">submit issue</a></p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="testnet"></a><a href="#testnet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TestNet</h3>
+<p>At present, we have released the test network v0.5.0 for everyone to verify and experience the principle. You can choose to quickly perform access testing using the &quot;public account&quot;.</p>
+<p>The configuration file and private key of the &quot;public account&quot;:<a href="https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/config.yaml">config.yaml</a>、<a href="https://raw.githubusercontent.com/CovenantSQL/CovenantSQL/develop/conf/testnet/private.key">private.key</a> (empty password)，or just run：</p>
+<pre><code class="hljs css language-bash">mkdir -p ~/.cql/testnet-conf
+curl -L https://git.io/fhFZe --output ~/.cql/testnet-conf/config.yaml
+curl -L https://git.io/fhFZv --output ~/.cql/testnet-conf/private.key
+chmod 600 ~/.cql/testnet-conf/private.key
+</code></pre>
+<p><strong>TestNet Notes</strong>：</p>
+<blockquote>
+<p>The &quot;public account&quot; is public and only for testing. Please do not store your application information in the database created by the &quot;public account&quot;. We will clean the database data from time to time.</p>
+<p>The test network is temporarily composed of 3 Miners, so temporarily only supports <code>create 3</code> to create a database of 3 nodes.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="create-a-testnet-database"></a><a href="#create-a-testnet-database" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a testnet database</h2>
+<pre><code class="hljs css language-bash">cql create -config=~/.cql/testnet-conf/config.yaml \
+    -db-node 1 -<span class="hljs-built_in">wait</span>-tx-confirm
+</code></pre>
+<p>The command execution takes a little long time, and after about 30 seconds the console outputs something like below:</p>
+<blockquote>
+<p><a href="covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872">covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872</a></p>
+</blockquote>
+<p>​</p>
+<p>This means that you submitted the database(dsn) <code>covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872</code> creation request to the main chain and created the database to complete.</p>
+<blockquote>
+<p>Command execution takes some time, and the general process is:</p>
+<ol>
+<li>The &quot;Block Producer&quot; that received the request performs a match of Miner and database creation requests.</li>
+<li>Database creation request is verified and confirmed at other &quot;Block Producer&quot; nodes</li>
+<li>Eligible Miner on SQLChain receives database task</li>
+<li>SQLChain Miners builds a database cluster with Kayak</li>
+<li>All Miners are ready to wait for a database request</li>
+</ol>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="access-the-testnet-database"></a><a href="#access-the-testnet-database" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access the testnet database</h2>
+<pre><code class="hljs css language-bash">cql console -config=~/.cql/testnet-conf/config.yaml \
+    covenantsql://0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872
+</code></pre>
+<p>After connecting to the database, you can manipulate the database on CovenantSQL according to your habit of operating the database. For example, execute <code>CREATE TABLE</code> to create a table, <code>SELECT</code> query data, and so on.</p>
+<h2><a class="anchor" aria-hidden="true" id="sqlchain-explorer"></a><a href="#sqlchain-explorer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SQLChain Explorer</h2>
+<p>One feature of CovenantSQL is that its query records are <strong>immutable and traceable</strong>, you can query the operation of a database through [Test Web Block Browser] (<a href="https://explorer.dbhub.org/">https://explorer.dbhub.org/</a>) recording.</p>
+<blockquote>
+<p>The TestNet's SQLChain Explorer is currently open-access, and anyone who knows the database ID can manipulate your data using TestNet's public key.</p>
+</blockquote>
+<p>Please fill in your database ID in the upper right corner of the page. For example: <code>0a10b74439f2376d828c9a70fd538dac4b69e0f4065424feebc0f5dbc8b34872</code>. You can see information about all the data created using TestNet's Key:</p>
+<p><img src="https://github.com/CovenantSQL/docs/raw/master/website/static/img/explorer.png" alt="explorer"></p>
+<blockquote>
+<p><strong>If you want to create your own private database, you need to create a new public-private key pair from scratch, please refer to the following section.</strong></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="create-your-own-account"></a><a href="#create-your-own-account" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create your own account</h2>
+<p>Our test network allows you to create your own account and create a database under your own account. Create an account with the following command (default empty passphrase for private.key, you can add <code>-with-password</code> to set passphrase)：</p>
+<pre><code class="hljs css language-bash">cql generate
+</code></pre>
+<p>Output：</p>
+<pre><code class="hljs"><span class="hljs-attr">Generating</span> <span class="hljs-string">private key...</span>
+<span class="hljs-attr">Please</span> <span class="hljs-string">enter password for new private key</span>
+<span class="hljs-attr">Generated</span> <span class="hljs-string">private key.</span>
+<span class="hljs-attr">Generating</span> <span class="hljs-string">nonce...</span>
+<span class="hljs-attr">INFO</span> <span class="hljs-string">cpu: 4</span>
+<span class="hljs-attr">INFO</span> <span class="hljs-string">position: 2, shift: 0x0, i: 2</span>
+<span class="hljs-attr">INFO</span> <span class="hljs-string">position: 0, shift: 0x0, i: 0</span>
+<span class="hljs-attr">INFO</span> <span class="hljs-string">position: 3, shift: 0x0, i: 3</span>
+<span class="hljs-attr">INFO</span> <span class="hljs-string">position: 1, shift: 0x0, i: 1</span>
+<span class="hljs-attr">nonce</span>: <span class="hljs-string">{{973366 0 586194564 0} 26 0000002c32aa3ee39e4f461a5f5e7fda50859f597464d81c9618d443c476835b}</span>
+<span class="hljs-attr">node</span> <span class="hljs-string">id: 0000002c32aa3ee39e4f461a5f5e7fda50859f597464d81c9618d443c476835b</span>
+<span class="hljs-attr">Generated</span> <span class="hljs-string">nonce.</span>
+<span class="hljs-attr">Generating</span> <span class="hljs-string">config file...</span>
+<span class="hljs-attr">Generated</span> <span class="hljs-string">config.</span>
+
+<span class="hljs-attr">Config</span> <span class="hljs-string">file:      ~/.cql/config.yaml</span>
+<span class="hljs-attr">Private</span> <span class="hljs-string">key file: ~/.cql/private.key</span>
+<span class="hljs-attr">Public</span> <span class="hljs-string">key's hex: 03f195dfe6237691e724bcf54359d76ef388b0996a3de94a7e782dac69192c96f0</span>
+
+<span class="hljs-attr">Wallet</span> <span class="hljs-string">address: dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95</span>
+
+<span class="hljs-attr">Any</span> <span class="hljs-string">further command could costs PTC.</span>
+<span class="hljs-attr">You</span> <span class="hljs-string">can get some free PTC from:</span>
+    <span class="hljs-attr">https</span>:<span class="hljs-string">//testnet.covenantsql.io/wallet/dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95</span>
+</code></pre>
+<p>This command will create a <code>.cql</code> directory for you in your <code>$HOME</code> directory:</p>
+<ul>
+<li><code>~/.cql/private.key</code>: The generated private key is stored in the file by the master password encryption, and your account address needs to be created using this file;</li>
+<li><code>~/.cql/config.yaml</code>: The generated configuration, cql can access the CovenantSQL TestNet with it.</li>
+</ul>
+<p>It alse print your wallet address(also called the account address, CovenantSQL address): <code>Wallet address: dbb7d1ee90452b8ee9cf514540b8d14fe5b7a750cc0c2f3824db6c8b284ada95</code></p>
+<p>You can get the test PTC here with the wallet address obtained above: [Request for PTC] (<a href="https://testnet.covenantsql.io/">https://testnet.covenantsql.io/</a>).</p>
+<p>After up to 2 minutes while requested PTC, you can use the cql command line tool to check the balance:</p>
+<pre><code class="hljs css language-bash">cql wallet
+</code></pre>
+<p>output：</p>
+<pre><code class="hljs">Particle balance <span class="hljs-keyword">is</span>: <span class="hljs-number">10000000</span>
+Wave balance <span class="hljs-keyword">is</span>: <span class="hljs-number">0</span>
+</code></pre>
+<p>Congratulations, you have received our PTC stable currency, and you can start using CovenantSQL now. You can refer to <a href="./driver_golang">Golang uses CovenantSQL documentation</a> for development.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 5/15/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/0.6.0/intro"><span class="arrow-prev">← </span><span class="function-name-prevnext">CovenantSQL Intro</span></a><a class="docs-next button" href="/docs/en/0.6.0/cql_intro"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#covenantsql-client">CovenantSQL Client</a><ul class="toc-headings"><li><a href="#install">Install</a></li><li><a href="#utils">Utils</a></li><li><a href="#testnet">TestNet</a></li></ul></li><li><a href="#create-a-testnet-database">Create a testnet database</a></li><li><a href="#access-the-testnet-database">Access the testnet database</a></li><li><a href="#sqlchain-explorer">SQLChain Explorer</a></li><li><a href="#create-your-own-account">Create your own account</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '1b47865e3d00b7996a988bbc155a68e4',
+                indexName: 'covenantsql',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
