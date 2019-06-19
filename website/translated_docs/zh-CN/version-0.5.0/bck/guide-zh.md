@@ -38,8 +38,8 @@ original_id: guide-zh
 ### 使用数据库驱动访问数据库
 
 - [Go](./development-golang-client-zh.md)
-- [Java](https://github.com/CovenantSQL/covenant-connector)
-- [Python](https://github.com/CovenantSQL/python-driver)
+- [Java](https://github.com/CovenantSQL/cql-java-driver)
+- [Python](https://github.com/CovenantSQL/cql-python-driver)
 - [Javascript（开发中）](https://github.com/CovenantSQL/cql.js)
 
 ## 通过区块浏览器查看您的数据库操作记录
