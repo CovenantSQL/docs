@@ -24,6 +24,7 @@
     ],
     "Advanced Usage": [
       "advanced_deployment",
+      "deploy_miner",
       "advanced_secure_gateway"
     ],
     "How It Works": [
