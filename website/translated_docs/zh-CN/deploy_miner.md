@@ -1,3 +1,9 @@
+* * *
+
+id: deploy_miner title: Deploy custom miner
+
+* * *
+
 ## 部署 CovenantSQL Miner 节点
 
 文档对应版本：
