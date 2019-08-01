@@ -86,8 +86,8 @@ You can get some free PTC from:
 
 ```shell
 mkdir -v ./testnet/
-curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql:latest/develop/conf/testnet/config.yaml' -o ./testnet/config.yaml
-curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql:latest/develop/conf/testnet/private.key' -o ./testnet/private.key
+curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql/develop/conf/testnet/config.yaml' -o ./testnet/config.yaml
+curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql/develop/conf/testnet/private.key' -o ./testnet/private.key
 
 docker run -it --rm -v $(pwd)/testnet/:/app/config/ \
   --entrypoint /app/cql covenantsql/covenantsql:latest -- \
