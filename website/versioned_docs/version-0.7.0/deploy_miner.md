@@ -1,6 +1,7 @@
 ---
-id: deploy_miner
+id: version-0.7.0-deploy_miner
 title: Deploy custom miner
+original_id: deploy_miner
 ---
 
 ## 部署 CovenantSQL Miner 节点

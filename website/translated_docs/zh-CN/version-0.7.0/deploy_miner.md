@@ -1,3 +1,8 @@
+---
+id: deploy_miner
+title: 部署 CovenantSQL Miner 节点
+---
+
 ## 部署 CovenantSQL Miner 节点
 
 文档对应版本：
