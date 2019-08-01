@@ -121,8 +121,8 @@ covenantsql/covenantsql 1601418d1aef
 <p>请将命令中的 <code>miner_wallet_address</code> 替换成上一步中生成的 miner 的钱包地址，例如上例中的 <code>eb46e59dbc4eac17b51762f051937a0082ff7423742866e4baff6c6053719451</code></p>
 </blockquote>
 <pre><code class="hljs css language-shell">mkdir -v ./testnet/
-curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql:latest/develop/conf/testnet/config.yaml' -o ./testnet/config.yaml
-curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql:latest/develop/conf/testnet/private.key' -o ./testnet/private.key
+curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql/develop/conf/testnet/config.yaml' -o ./testnet/config.yaml
+curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql/develop/conf/testnet/private.key' -o ./testnet/private.key
 
 docker run -it --rm -v $(pwd)/testnet/:/app/config/ \
   --entrypoint /app/cql covenantsql/covenantsql:latest -- \
