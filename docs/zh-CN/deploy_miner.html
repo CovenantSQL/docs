@@ -1,0 +1,368 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Deploy custom miner · CovenantSQL Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;部署-covenantsql-miner-节点&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#部署-covenantsql-miner-节点&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;部署 CovenantSQL Miner 节点&lt;/h2&gt;
+"/><meta name="docsearch:version" content="0.7.0"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="Deploy custom miner · CovenantSQL Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="http://developers.covenantsql.io/"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;部署-covenantsql-miner-节点&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#部署-covenantsql-miner-节点&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;部署 CovenantSQL Miner 节点&lt;/h2&gt;
+"/><meta property="og:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://developers.covenantsql.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="https://hm.baidu.com/hm.js?fd1ee4ccc9da39d0cf4c60ad8e6e214b"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/logo.svg" alt="CovenantSQL Docs"/><h2 class="headerTitleWithLogo">CovenantSQL Docs</h2></a><a href="/zh-CN/versions"><h3>0.7.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/zh-CN/intro" target="_self">Docs</a></li><li class=""><a href="/zh-CN/help" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/deploy_miner">English</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>高级使用方式</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">简介</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/intro">CovenantSQL 介绍</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/quickstart">快速开始</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_intro">简介</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_account">账号管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_wallet">钱包管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_db_manage">数据库管理</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_db_access">访问数据库</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_server">本地服务</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/cql_advance">高级使用</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_golang">Golang</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/adapter">API 网关</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_java">Java</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_python">Python</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/driver_js">JavaScript</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">高级使用方式</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/advanced_deployment">私有部署</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/zh-CN/deploy_miner">Deploy custom miner</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/advanced_secure_gateway">数据库安全网关</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">实现细节</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch">实现细节</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch_layers">主链和侧链</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch_network">网络传输层</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用案例</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_traditional_app">传统应用</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_dapp">DApp</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/usecase_data_analysis">数据分析</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">关于</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/qna">常见问题解答</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Deploy custom miner</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="部署-covenantsql-miner-节点"></a><a href="#部署-covenantsql-miner-节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署 CovenantSQL Miner 节点</h2>
+<p>文档对应版本：</p>
+<pre><code class="hljs">cql HEAD-f0e4e13d-2019080103005
+covenantsql/covenantsql 1601418d1aef
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="环境依赖"></a><a href="#环境依赖" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>环境依赖</h3>
+<h4><a class="anchor" aria-hidden="true" id="机器配置"></a><a href="#机器配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>机器配置</h4>
+<p>推荐运行服务在 AWS 的 <code>c5.2xlarge</code> 型机器或其他同等配置的机器上 (8 核, 16 GB 内存)。</p>
+<p>另外建议单独挂载数据盘用于 DB 存储。</p>
+<h4><a class="anchor" aria-hidden="true" id="docker"></a><a href="#docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker</h4>
+<p>CovenantSQL 使用 docker 来简化部署，可通过 Docker 的 <a href="https://docs.docker.com/install/">官方文档</a> 来进行安装。</p>
+<h4><a class="anchor" aria-hidden="true" id="docker-镜像"></a><a href="#docker-镜像" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker 镜像</h4>
+<p>使用 docker 获取 CovenantSQL 的服务镜像以提供数据存储节点服务</p>
+<pre><code class="hljs css language-shell">docker pull covenantsql/covenantsql:latest
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="配置服务"></a><a href="#配置服务" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配置服务</h3>
+<h4><a class="anchor" aria-hidden="true" id="生成-miner-配置文件"></a><a href="#生成-miner-配置文件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生成 Miner 配置文件</h4>
+<p>执行以下命令在当前目录中创建一个 config 目录，并生成 Miner 启动所需的配置文件 <code>config.yaml</code> 和 私钥 <code>private.key</code></p>
+<blockquote>
+<p>请将命令中的 <code>miner_external_ip</code> 和 <code>miner_listen_port</code> 替换成实际 miner 运行时对外提供服务的 ip 或域名以及端口号；需要注意的是，之后使用者的命令行客户端或 Adapter 都将使用这个地址连接 Miner，请确保这个地址在使用者的机器上可以访问（没有被云平台或其他防火墙限制访问）。可以使用 telnet 或者 nc 的形式在 Miner 启动后检查服务的可用性</p>
+</blockquote>
+<pre><code class="hljs css language-shell">docker run -it --rm -v $(pwd)/config/:/app/config/ \
+  --entrypoint /app/cql covenantsql/covenantsql:latest -- \
+  generate -miner "&lt;miner_external_ip&gt;:&lt;miner_listen_port&gt;" /app/config/
+</code></pre>
+<p>命令将会生成一个 miner 的配置文件和私钥，并在命令行中输出 Miner 的节点 id、公钥 hex 和 钱包地址，例如：</p>
+<pre><code class="hljs css language-shel"><span class="hljs-string">Generated</span> <span class="hljs-string">private</span> <span class="hljs-string">key.</span>
+<span class="hljs-string">Generating</span> <span class="hljs-string">nonce...</span>
+<span class="hljs-string">INFO</span> <span class="hljs-attr">cpu:</span> <span class="hljs-number">8</span>
+<span class="hljs-string">INFO</span> <span class="hljs-attr">position:</span> <span class="hljs-number">3</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x20</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">7</span>
+<span class="hljs-string">INFO</span> <span class="hljs-attr">position:</span> <span class="hljs-number">1</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x20</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">3</span>
+<span class="hljs-string">INFO</span> <span class="hljs-attr">position:</span> <span class="hljs-number">3</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x0</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">6</span>
+<span class="hljs-string">INFO</span> <span class="hljs-attr">position:</span> <span class="hljs-number">2</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x0</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">4</span>
+<span class="hljs-string">INFO</span> <span class="hljs-attr">position:</span> <span class="hljs-number">2</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x20</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">5</span>
+<span class="hljs-string">INFO</span> <span class="hljs-attr">position:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x0</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">0</span>
+<span class="hljs-string">INFO</span> <span class="hljs-attr">position:</span> <span class="hljs-number">1</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x0</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">2</span>
+<span class="hljs-string">INFO</span> <span class="hljs-attr">position:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span> <span class="hljs-attr">shift:</span> <span class="hljs-number">0x20</span><span class="hljs-string">,</span> <span class="hljs-attr">i:</span> <span class="hljs-number">1</span>
+<span class="hljs-attr">nonce:</span> <span class="hljs-string">{{2677734</span> <span class="hljs-number">0</span> <span class="hljs-number">6632872946</span> <span class="hljs-number">0</span><span class="hljs-string">}</span> <span class="hljs-number">26</span> <span class="hljs-number">0000003e2</span><span class="hljs-string">c8d0b39711edf19ef266a44996b93f7f830149f5d01491a6b7da99d}</span>
+<span class="hljs-string">node</span> <span class="hljs-attr">id:</span> <span class="hljs-number">0000003e2</span><span class="hljs-string">c8d0b39711edf19ef266a44996b93f7f830149f5d01491a6b7da99d</span>
+<span class="hljs-string">Generated</span> <span class="hljs-string">nonce.</span>
+<span class="hljs-string">Generating</span> <span class="hljs-string">config</span> <span class="hljs-string">file...</span>
+<span class="hljs-string">Generated</span> <span class="hljs-string">config.</span>
+
+<span class="hljs-string">Config</span> <span class="hljs-attr">file:</span>      <span class="hljs-string">/Users/xq262144/.cql/config.yaml</span>
+<span class="hljs-string">Private</span> <span class="hljs-string">key</span> <span class="hljs-attr">file:</span> <span class="hljs-string">/Users/xq262144/.cql/private.key</span>
+<span class="hljs-string">Public</span> <span class="hljs-string">key's</span> <span class="hljs-attr">hex:</span> <span class="hljs-number">0338816967</span><span class="hljs-string">be3c24bd490f841de57f2c42daf024dd7f462305aab9a601c423ab8d</span>
+<span class="hljs-string">Wallet</span> <span class="hljs-attr">address:</span> <span class="hljs-string">eb46e59dbc4eac17b51762f051937a0082ff7423742866e4baff6c6053719451</span>
+
+<span class="hljs-string">Any</span> <span class="hljs-string">further</span> <span class="hljs-string">command</span> <span class="hljs-string">could</span> <span class="hljs-string">costs</span> <span class="hljs-string">PTC.</span>
+<span class="hljs-string">You</span> <span class="hljs-string">can</span> <span class="hljs-string">get</span> <span class="hljs-string">some</span> <span class="hljs-string">free</span> <span class="hljs-string">PTC</span> <span class="hljs-attr">from:</span>
+<span class="hljs-attr">    https:</span><span class="hljs-string">//testnet.covenantsql.io/wallet/eb46e59dbc4eac17b51762f051937a0082ff7423742866e4baff6c6053719451</span>
+</code></pre>
+<p>可以得到 miner 的钱包地址：<code>eb46e59dbc4eac17b51762f051937a0082ff7423742866e4baff6c6053719451</code></p>
+<h4><a class="anchor" aria-hidden="true" id="给-miner-帐户充值"></a><a href="#给-miner-帐户充值" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>给 Miner 帐户充值</h4>
+<p>执行以下命令将会给 miner 的钱包地址转入 <code>10000000000</code> 个 <code>Particle</code></p>
+<blockquote>
+<p>请将命令中的 <code>miner_wallet_address</code> 替换成上一步中生成的 miner 的钱包地址，例如上例中的 <code>eb46e59dbc4eac17b51762f051937a0082ff7423742866e4baff6c6053719451</code></p>
+</blockquote>
+<pre><code class="hljs css language-shell">mkdir -v ./testnet/
+curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql:latest/develop/conf/testnet/config.yaml' -o ./testnet/config.yaml
+curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql:latest/develop/conf/testnet/private.key' -o ./testnet/private.key
+
+docker run -it --rm -v $(pwd)/testnet/:/app/config/ \
+  --entrypoint /app/cql covenantsql/covenantsql:latest -- \
+  transfer -config /app/config/config.yaml \
+  -wait-tx-confirm -to-user "&lt;miner_wallet_address&gt;" \
+  -amount 10000000000 \
+  -token Particle
+</code></pre>
+<p>命令将会从测试网帐户中划转金额给 miner 使用，miner 后续将会使用这笔费用作为押金来提供服务，将会得到类似以下的输出：</p>
+<pre><code class="hljs css language-shell">INFO[0000] Geting bp address from dns: bp04.testnet.gridb.io
+INFO[0002] Register self to blockproducer: 00000000000589366268c274fdc11ec8bdb17e668d2f619555a2e9c1a29c91d8
+INFO init config success                           path=/app/config/config.yaml
+
+
+INFO wait transaction confirmation                 error="&lt;nil&gt;" tx_hash=09001b9904194400e85018984c5428616000669e5de0efac0dc65c72f11950a2 tx_state=Confirmed
+INFO succeed in sending transaction to CovenantSQL
+</code></pre>
+<p>查询 miner 的账户余额以确定转账成功</p>
+<pre><code class="hljs css language-shell">docker run -it --rm -v $(pwd)/config/:/app/config/ \
+  --entrypoint /app/cql covenantsql/covenantsql:latest -- \
+  wallet -config ./config/config.yaml
+</code></pre>
+<p>将会得到类似以下的输出：</p>
+<pre><code class="hljs css language-shell">INFO[0000] Geting bp address from dns: bp05.testnet.gridb.io
+INFO[0002] Register self to blockproducer: 0000000000293f7216362791b6b1c9772184d6976cb34310c42547735410186c
+INFO init config success                           path=/app/config/config.yaml
+
+
+wallet address: eb46e59dbc4eac17b51762f051937a0082ff7423742866e4baff6c6053719451
+Particle balance is: 100000000
+Wave balance is: 0
+</code></pre>
+<p>Particle balance 这行输出中可以看到转账的金额，这样 miner 就可以提供服务了。</p>
+<h4><a class="anchor" aria-hidden="true" id="添加-miner-可服务的用户限制"></a><a href="#添加-miner-可服务的用户限制" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>添加 Miner 可服务的用户限制</h4>
+<p>在默认启动的情况下，Miner 是面向全网用户提供服务的。如果只希望给指定的 Miner 提供服务，需要在 Miner 上设置 TargetUsers 配置，并指定需要服务的用户的钱包地址。</p>
+<p>修改 <code>miner</code> 的配置文件 <code>./config/config.yaml</code>，在 <code>Miner</code> 配置段下添加 <code>TargetUsers</code> 配置，指定一个需要服务的用户的 List，例如如下修改：</p>
+<pre><code class="hljs css language-diff"><span class="hljs-comment">--- old.yaml    2019-05-14 00:12:33.000000000 +0800</span>
+<span class="hljs-comment">+++ new.yaml    2019-05-14 00:12:19.000000000 +0800</span>
+<span class="hljs-meta">@@ -1,4 +1,5 @@</span>
+ Miner:
+   RootDir: './data'
+   MaxReqTimeGap: '5m'
+   ProvideServiceInterval: '10s'
+<span class="hljs-addition">+  TargetUsers: ['eb46e59dbc4eac17b51762f051937a0082ff7423742866e4baff6c6053719451']</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="启动-miner-服务"></a><a href="#启动-miner-服务" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动 Miner 服务</h3>
+<h4><a class="anchor" aria-hidden="true" id="创建-container"></a><a href="#创建-container" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建 Container</h4>
+<p>执行以下命令以创建 miner 的</p>
+<blockquote>
+<p>请将下述命令中的 <code>miner_name</code>  替换成所需的 miner docker container 名用于管理；<code>data_disk_dir</code> 替换成用于存放 miner 数据的目录的绝对地址(推荐挂载一个盘用于提供服务)；<code>miner_listen_port</code> 替换成miner 对外提供服务的端口号</p>
+</blockquote>
+<pre><code class="hljs css language-shell">docker create --name "&lt;miner_name&gt;" \
+  --restart always \
+  -v $(pwd)/config/:/app/config/ \
+  -v "&lt;data_disk_dir&gt;:/app/config/data/" \
+  -e COVENANT_ROLE=miner \
+  -e COVENANT_CONF=/app/config/config.yaml \
+  -e METRIC_WEB_ADDR=0.0.0.0:4665 \
+  --log-driver "json-file" \
+  --log-opt "max-size=1g" \
+  --log-opt "max-file=3" \
+  -p "&lt;miner_listen_port&gt;:4661" \
+  covenantsql/covenantsql:latest
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="启动-miner"></a><a href="#启动-miner" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动 Miner</h4>
+<blockquote>
+<p>同样，请将 <code>miner_name</code>  替换为实际使用的 miner container 名</p>
+</blockquote>
+<pre><code class="hljs css language-shell">docker start "&lt;miner_name&gt;"
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="检查-miner-状态"></a><a href="#检查-miner-状态" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>检查 Miner 状态</h4>
+<blockquote>
+<p>同样，请将 <code>miner_name</code>  替换为实际使用的 miner container 名</p>
+</blockquote>
+<pre><code class="hljs css language-shell">docker ps -a -f "name = &lt;miner_name&gt;"
+docker logs --tail=10 -f "&lt;miner_name&gt;"
+</code></pre>
+<p>在单台或多台机器上重复上述步骤，启动多个实例，可以提供至多对应节点数量的 DB SideChain 服务。</p>
+<h4><a class="anchor" aria-hidden="true" id="服务升级"></a><a href="#服务升级" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>服务升级</h4>
+<p>执行以下命令更新镜像，然后重复 <strong>创建 Container</strong> 步骤 和 <strong>启动 Miner</strong> 步骤</p>
+<pre><code class="hljs css language-shell"> docker pull covenantsql/covenantsql:latest
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="使用"></a><a href="#使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用</h3>
+<h4><a class="anchor" aria-hidden="true" id="使用者账户和配置"></a><a href="#使用者账户和配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用者账户和配置</h4>
+<p>使用 CovenantSQL 需要创建一个 DB 使用者的账户。这个账户必须与提供服务的 Miner 节点的账号不同，与此同时一个 Miner 账户也不能同时启动多个 Miner 服务，否则将会导致 Miner 或 DB 使用者的 Transaction 执行异常，用户不能正确创建 DB 或 Miner 不能正确上报使用者的费用信息等。</p>
+<h5><a class="anchor" aria-hidden="true" id="生成使用者账户配置"></a><a href="#生成使用者账户配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生成使用者账户配置</h5>
+<p>执行如下命令将在 <code>./client_config</code> 目录下生成使用者账户的私钥和配置</p>
+<pre><code class="hljs css language-shell">docker run -it --rm -v $(pwd)/client_config/:/app/config/ \
+  --entrypoint /app/cql covenantsql/covenantsql:latest -- \
+  generate /app/config/
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="向使用者账户中充值"></a><a href="#向使用者账户中充值" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>向使用者账户中充值</h5>
+<p>类似向 Miner 账户充值，请执行如下命令：</p>
+<blockquote>
+<p>请将 <code>client_wallet_address</code> 替换为创建的使用者账号的钱包地址</p>
+</blockquote>
+<pre><code class="hljs css language-shell">docker run -it --rm -v $(pwd)/testnet/:/app/config/ \
+  --entrypoint /app/cql covenantsql/covenantsql:latest -- \
+  transfer -config /app/config/config.yaml \
+  -wait-tx-confirm -to-user "&lt;client_wallet_address&gt;" \
+  -amount 10000000000 \
+  -token Particle
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="创建-db-和使用"></a><a href="#创建-db-和使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建 DB 和使用</h4>
+<p>由于需要在指定的 Miner 上创建 DB，需要在创建 DB 时指定提供服务的 Miner 列表</p>
+<blockquote>
+<p><code>create</code> 命令接受一个 DB 实例的 json 描述；将 <code>node_count</code> 替换为所需的节点数量，例如 1 代表创建一个节点的 DB SideChain；<code>targetminers</code> 提供指定 miner 的钱包地址列表；另外需要格外注意的时，所需创建的 DB SideChain 的节点数量需要小于或等于提供的指定 miner 数量，否则 CovenantSQL 会在指定 miner 之外的公用 miner 中随机分配节点以满足用户所需节点数量要求。</p>
+</blockquote>
+<pre><code class="hljs css language-shell">docker run -it --rm -v $(pwd)/client_config/:/app/config/ \
+  --entrypoint /app/cql covenantsql/covenantsql:latest -- \
+  create -config /app/config/config.yaml -wait-tx-confirm \
+  '{"node": &lt;node_count&gt;, "targetminers": ["&lt;miner1_wallet_address&gt;", "&lt;miner2_wallet_address&gt;" ...]}'
+</code></pre>
+<p>命令执行完成后将会有类似如下的输出：</p>
+<pre><code class="hljs css language-shell">time="2019-05-07T03:41:03Z" level=info msg="Geting bp address from dns: bp04.testnet.gridb.io"
+time="2019-05-07T03:41:05Z" level=info msg="Register self to blockproducer: 00000000003b2bd120a7d07f248b181fc794ba8b278f07f9a780e61eb77f6abb"
+level=info msg="init config success" path=/root/.cql/config.yaml
+level=info msg="create database requested"
+The newly created database is: "covenantsql://163193957a22fccf165ad754ee514f13972c0eadee6455203b17b7bba76028df"
+The connecting string beginning with 'covenantsql://' could be used as a dsn for `cql console`
+ or any command, or be used in website like https://web.covenantsql.io
+</code></pre>
+<p>其中 <code>covenantsql://163193957a22fccf165ad754ee514f13972c0eadee6455203b17b7bba76028df</code> 是数据库的连接串，可以在各类 SDK 或命令行工具中使用这个连接串访问数据库服务</p>
+<h4><a class="anchor" aria-hidden="true" id="使用命令行工具连接数据库服务"></a><a href="#使用命令行工具连接数据库服务" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用命令行工具连接数据库服务</h4>
+<p>可以是用 <code>cql</code> 工具提供的命令行功能访问数据库</p>
+<blockquote>
+<p>将命令行中的 <code>dsn</code> 替换为上一步生成的数据库连接串</p>
+</blockquote>
+<pre><code class="hljs css language-shell">docker run -it --rm -v $(pwd)/client_config/:/app/config/ \
+  --entrypoint /app/cql covenantsql/covenantsql:latest -- \
+  console -config /app/config/config.yaml "&lt;dsn&gt;"
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="启动-adapter"></a><a href="#启动-adapter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动 Adapter</h4>
+<p>Java SDK 因为CovenantSQL 的 RPC 和网络连接协议的限制，不能直接访问 Miner 或 BlockProducer 节点，需要通过 Adapter 进行协议转换来访问。实际运行时，Java SDK/Adapter/Miner 是以如下图所示的形式交互的：</p>
+<pre><code class="hljs css language-sequence">J<span class="hljs-function"><span class="hljs-title">ava</span> SDK -&gt;</span>Adapter: HTTP(s) Request
+A<span class="hljs-function"><span class="hljs-title">dapter</span>-&gt;</span>Miner: ETLS RPC Request
+M<span class="hljs-function"><span class="hljs-title">iner</span>-&gt;</span>Adapter: ETLS RPC Response
+A<span class="hljs-function"><span class="hljs-title">dapter</span>-&gt;</span>Java SDK: HTTP(s) <span class="hljs-keyword">with</span> JSON Response
+</code></pre>
+<p>可以通过如下命令启动 Adapter：</p>
+<blockquote>
+<p>请将命令中的 <code>adapter_name</code> 替换为所需的 adapter 的 docker container 名，将 <code>adapter_listen_port</code> 替换为所需暴露在物理机器上的端口号</p>
+</blockquote>
+<pre><code class="hljs css language-shell">docker run -d -v $(pwd)/client_config/:/app/config/ \
+  -e COVENANT_ROLE=adapter \
+  -e COVENANT_CONF=/app/config/config.yaml \
+  -e COVENANTSQL_ADAPTER_ADDR=0.0.0.0:4661 \
+  --name "&lt;adapter_name&gt;" \
+  --restart always \
+  --log-driver "json-file" \
+  --log-opt "max-size=1g" \
+  --log-opt "max-file=3" \
+  -p "&lt;adapter_listen_port&gt;:4661" \
+  covenantsql/covenantsql:latest
+</code></pre>
+<p>启动后如果 adapter 的 docker container 运行正常，将可以通过 <code>http://localhost:&lt;adapter_listen_port&gt;/</code> 访问 adapter 并获取到 adapter 的版本信息</p>
+<h4><a class="anchor" aria-hidden="true" id="使用-java-sdk"></a><a href="#使用-java-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用 Java SDK</h4>
+<p>参考 <a href="https://github.com/CovenantSQL/covenant-connector/tree/master/covenantsql-java-connector">CovenantSQL Java SDK Github</a> 和 <a href="https://developers.covenantsql.io/docs/en/driver_java">CovenantSQL Java SDK 使用文档</a> 通过 Adapter 访问</p>
+<blockquote>
+<p>上一步启动的 Adapter 是运行在非 TLS 模式下的开发权限服务，任何访问 Adapter 的人都将以 Adapter 启动的账户（也就是 <code>./client_config</code> 中的私钥与配置）的权限访问数据库服务。</p>
+<p>在 Java SDK 中设置配置 <code>ssl=false</code>（因为 Adapter 运行在了非 TLS 模式下提供的 http 服务），并以 <code>jdbc:covenantsql://&lt;adapter_host&gt;:&lt;adapter_listen_port&gt;/&lt;database_id&gt;</code> 即可访问（请将 <code>adapter_host</code> 替换为实际的运行机器的域名或 IP，将 <code>adapter_listen_port</code> 替换为上一步中的监听端口号，<code>database_id</code> 替换为创建 DB 后返回的 <code>dsn</code> 中去除 <code>covenantsql://</code> scheme 的 hex 串部分，例如：<code>jdbc:covenantsql://127.0.0.1:11151/163193957a22fccf165ad754ee514f13972c0eadee6455203b17b7bba76028df</code>）</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="获取-miner-节点的-metric-信息"></a><a href="#获取-miner-节点的-metric-信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获取 Miner 节点的 metric 信息</h4>
+<p>Miner 提供了 metric 数据的导出接口，可以通过下述命令访问和导出：</p>
+<blockquote>
+<p>讲命令中的 <code>miner_name</code> 替换为 启动 miner 的 container 名</p>
+</blockquote>
+<pre><code class="hljs css language-shell">miner_internal_ip=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "&lt;miner_name&gt;" | head -1)
+curl -s "http://${miner_internal_ip}:4665/debug/vars"
+</code></pre>
+<p>metric 信息对应表</p>
+<table>
+<thead>
+<tr><th>字段名</th><th>含义</th></tr>
+</thead>
+<tbody>
+<tr><td>service:miner:addr</td><td>可访问的 Miner 的外部地址和端口（配置中的 ListenAddr）</td></tr>
+<tr><td>service:miner:node</td><td>Miner 的 DHT 网络节点 ID</td></tr>
+<tr><td>service:miner:wallet</td><td>Miner 的 钱包地址</td></tr>
+<tr><td>service:miner:disk:root</td><td>Miner 的 数据目录地址</td></tr>
+<tr><td>service:miner:disk:usage</td><td>Miner 使用的磁盘空间（KB）</td></tr>
+<tr><td>service:miner:db:count</td><td>Miner 上正在提供服务的 ShardChain 数量</td></tr>
+<tr><td>service:miner:chain</td><td>Miner 上所有 ShardChain 统计信息，类型是一个 Map Map 的 key 是 ShardChain 的 DatabaseID</td></tr>
+</tbody>
+</table>
+<p>针对每个 ShardChain 的统计信息，有如下字段</p>
+<table>
+<thead>
+<tr><th>字段</th><th>含义</th></tr>
+</thead>
+<tbody>
+<tr><td>head:count</td><td>Chain 最新 Block 的编号（第几个块）</td></tr>
+<tr><td>head:height</td><td>Chain 最新 Block 的 Epoch（第几个出块周期）</td></tr>
+<tr><td>head:hash</td><td>Chain 最新 Block 的 Hash</td></tr>
+<tr><td>head:timestamp</td><td>Chain 最新 Block 的产生时间（UTC）</td></tr>
+<tr><td>requests:count</td><td>最近 5 分钟统计范围内，1m 的请求数的平均值</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="查看-miner-节点上某个-db-chain-的块信息"></a><a href="#查看-miner-节点上某个-db-chain-的块信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查看 Miner 节点上某个 DB Chain 的块信息</h4>
+<p>CovenantSQL 提供了一个方便的 Explorer 来展示数据库子链上的块信息，可以在通过如下命令启动 Explorer：</p>
+<blockquote>
+<p>其中替换 <code>explorer_name</code> 为想要运行 explorer 的 docker container 名，<code>explorer_listen_port</code> 替换为所需暴露在物理机器上的端口号</p>
+</blockquote>
+<pre><code class="hljs css language-shell">docker run -d -v $(pwd)/client_config/:/app/config/ \
+  -e COVENANT_ROLE=observer \
+  -e COVENANT_CONF=/app/config/config.yaml \
+  -e COVENANTSQL_OBSERVER_ADDR=0.0.0.0:4661 \
+  --name "&lt;explorer_name&gt;" \
+  --restart always \
+  --log-driver "json-file" \
+  --log-opt "max-size=1g" \
+  --log-opt "max-file=3" \
+  -p "&lt;explorer_listen_port&gt;:4661" \
+  covenantsql/covenantsql:latest
+</code></pre>
+<p>启动在浏览器里访问 <code>http://&lt;explorer_external_address&gt;:&lt;explorer_listen_port&gt;/dbs/&lt;database_id&gt;</code></p>
+<blockquote>
+<p>其中 <code>explorer_external_address</code> 替换为物理机的外网 IP，<code>explorer_listen_port</code> 替换为上一步中指定的端口， <code>database_id</code> 替换为创建 DB 后返回的 <code>dsn</code> 中去除 <code>covenantsql://</code> scheme 的 hex 串部分，例如：<code>http://miner_machine:11106/dbs/163193957a22fccf165ad754ee514f13972c0eadee6455203b17b7bba76028df</code></p>
+</blockquote>
+<p>稍后等待块同步，即可在页面中看到历史产生的 Block，点击 Block 可以看到 Block 上承载的历史查询过的 Query 情况（如果没有自动出现块的信息，可以尝试手动刷新）</p>
+<blockquote>
+<p>CovenantSQL 有严格的权限控制，需要对数据库有读权限的人才能使用 Explorer 看到这些 Query 历史和 Block 信息</p>
+</blockquote>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019/8/1</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/advanced_deployment"><span class="arrow-prev">← </span><span>上一页</span></a><a class="docs-next button" href="/docs/zh-CN/advanced_secure_gateway"><span>下一页</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#部署-covenantsql-miner-节点">部署 CovenantSQL Miner 节点</a><ul class="toc-headings"><li><a href="#环境依赖">环境依赖</a></li><li><a href="#配置服务">配置服务</a></li><li><a href="#启动-miner-服务">启动 Miner 服务</a></li><li><a href="#使用">使用</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo.svg" alt="CovenantSQL Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/intro">Getting Started</a><a href="/docs/api-json-rpc">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/search?q=covenantsql" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/CovenantSQL/CovenantSQL">Gitter Chat</a><a href="https://twitter.com/CovenantLabs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://medium.com/@covenant_labs">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/CovenantSQL/CovenantSQL" data-icon="octicon-star" data-count-href="/CovenantSQL/CovenantSQL/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://covenantsql.io" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/horizontal_logo.svg" alt="CovenantSQL" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Covenant Labs</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '1b47865e3d00b7996a988bbc155a68e4',
+                indexName: 'covenantsql',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
