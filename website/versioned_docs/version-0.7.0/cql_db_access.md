@@ -1,15 +1,16 @@
 ---
-id: cql_db_access
-title: 访问数据库
+id: version-0.7.0-cql_db_access
+title: Accessing Database
+original_id: cql_db_access
 ---
 
-完成数据库的创建后，就可以使用 `console` 子命令来对数据库进行交互式的命令行访问了：
+Once your database is successfully created, you can use the `console` sub-command to access it in an interactive console:
 
 ```bash
 cql console 'covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5'
 ```
 
-输出：
+Output:
 
     INFO[0000] Geting bp address from dns: bp05.testnet.gridb.io
     INFO[0010] init config success                           path=~/.cql/config.yaml
@@ -19,13 +20,13 @@ cql console 'covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332
 
     co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=>
 
-或者使用以授权的账号来连接 (需要完成上一节的授权和给数据库充值的操作)：
+Or access as `account2` (Should been granted access permission and transfered deposit token to the database successfully in last section):
 
 ```bash
 cql console -config "account2/config.yaml" 'covenantsql://4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5'
 ```
 
-输出：
+Output:
 
     INFO[0000] Geting bp address from dns: bp05.testnet.gridb.io
     INFO[0010] init config success                           path=~/.config/cql/account2/config.yaml
@@ -35,7 +36,7 @@ cql console -config "account2/config.yaml" 'covenantsql://4bc27a06ae52a7b8b1747f
 
     co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=>
 
-交互式访问示例：
+Here is an example of using the interactive console:
 
     co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=> create table t1 (c1 int);
     CREATE TABLE
@@ -51,31 +52,31 @@ cql console -config "account2/config.yaml" 'covenantsql://4bc27a06ae52a7b8b1747f
 
     co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=> 
 
-## 子命令 `console` 完整参数
+## Sub-command `console` Complete Parameters
 
-子命令 `console` 同时也支持在后台启动 `adapter` 和 `explorer` 服务，关于这些服务的相关说明请参考 [本地服务](#本地服务) 的相关章节。
+The sub-command `console` also supports running `adapter` or `explorer` servers in the background. Check [Local Servers](#local-servers) for details.
 
-    usage: cql console [通用参数] [Console 参数] dsn
+    usage: cql console [common params] [Console params] dsn
 
-    为 CovenantSQL 运行交互式的命令行访问。
-    示例：
+    Console runs an interactive SQL console for CovenantSQL.
+    e.g.
         cql console covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
 
-    另外也可以通过 -command 参数来直接运行 SQL 查询语句。或者通过文件重定向，如在命令最后加入 '< filename.sql' 来从文件读取SQL语句。
-    在指定了这些参数的情况下 `console` 子命令将会直接执行命令后退出，而不会进入交互式的命令行模式。
-    示例：
+    There is also a -command param for SQL script, and you can add "< file.sql" at end of command for executing a SQL file.
+    If those params are set, it will run SQL script and exit without staying console mode.
+    e.g.
         cql console -command "create table test1(test2 int);" covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
 
-    Console 参数:
+    Console params:
       -adapter string
-            指定数据库子链的 adapter 服务器的监听地址
+        	Address to serve a database chain adapter, e.g. :7784
       -command string
-            执行单条 SQL 语句并退出
+        	Run only single command (SQL or usql internal command) and exit
       -explorer string
-            指定数据库子链的 explorer 服务器监听地址
+        	Address serve a database chain explorer, e.g. :8546
       -out string
-            指定输出文件
+        	Record stdout to file
       -single-transaction
-            在非交互模式下使用单个事务执行所有语句
+        	Execute as a single transaction (if non-interactive)
       -variable value
-            设置环境变量
+        	Set variable

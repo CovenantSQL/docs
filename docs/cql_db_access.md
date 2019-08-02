@@ -61,7 +61,7 @@ The sub-command `console` also supports running `adapter` or `explorer` servers 
     e.g.
         cql console covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
 
-    There is also a -command param for SQL script, and a -file param for reading SQL in a file.
+    There is also a -command param for SQL script, and you can add "< file.sql" at end of command for executing a SQL file.
     If those params are set, it will run SQL script and exit without staying console mode.
     e.g.
         cql console -command "create table test1(test2 int);" covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
@@ -73,10 +73,6 @@ The sub-command `console` also supports running `adapter` or `explorer` servers 
         	Run only single command (SQL or usql internal command) and exit
       -explorer string
         	Address serve a database chain explorer, e.g. :8546
-      -file string
-        	Execute commands from file and exit
-      -no-rc
-        	Do not read start up file
       -out string
         	Record stdout to file
       -single-transaction
