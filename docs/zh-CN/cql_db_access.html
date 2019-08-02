@@ -109,7 +109,7 @@ co:4bc27a06ae52a7b8b1747f3808dda786ddd188627bafe8e34a332626e7232ba5=&gt;
 示例：
     cql console covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
 
-另外也可以通过 -command 参数来直接运行 SQL 查询语句或通过 -file 参数来从文件读取查询语句。
+另外也可以通过 -command 参数来直接运行 SQL 查询语句。或者通过文件重定向，如在命令最后加入 '&lt; filename.sql' 来从文件读取SQL语句。
 在指定了这些参数的情况下 `console` 子命令将会直接执行命令后退出，而不会进入交互式的命令行模式。
 示例：
     cql console -command &quot;create table test1(test2 int);&quot; covenantsql://4119ef997dedc585bfbcfae00ab6b87b8486fab323a8e107ea1fd4fc4f7eba5c
@@ -121,10 +121,6 @@ Console 参数:
         执行单条 SQL 语句并退出
   -explorer string
         指定数据库子链的 explorer 服务器监听地址
-  -file string
-        执行 SQL 脚本中的语句并退出
-  -no-rc
-        启动时不加载 .rc 初始脚本
   -out string
         指定输出文件
   -single-transaction
