@@ -67,7 +67,7 @@
 <ol>
 <li>Miner will automatically register with the MainChain after startup. The registration information includes: &quot;Minimum acceptable Gas price&quot;, &quot;System metrics&quot;, &quot;External IP and port&quot;, etc.</li>
 <li>Miner subscribes to and pays attention to information related to themselves through ChainBus;</li>
-<li>The client runs <code>cql create '{&quot;node&quot;:2}'</code> to send a signed database creation request to any BP (Block Producer) in the MainChain;</li>
+<li>The client runs <code>cql create -db-node 2</code> to send a signed database creation request to any BP (Block Producer) in the MainChain;</li>
 <li>The BP that received the request performs a match of Miner and database creation request in the process of producing the block (see: [MainChain Produce Block] (#mainchain-produce-block));</li>
 <li>Database creation requests and matching results are verified and confirmed at other BP nodes;</li>
 <li>The Miner subscription receives the database task;</li>

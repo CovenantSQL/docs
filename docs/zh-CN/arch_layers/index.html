@@ -67,7 +67,7 @@
 <ol>
 <li>&quot;矿工&quot; 启动后会自动向主链注册，注册信息包括：&quot;最低可以接受的 Gas 价格&quot;、&quot;系统配置信息&quot;、&quot;对外 IP 及端口&quot; 等；</li>
 <li>&quot;矿工&quot; 通过 ChainBus 订阅并关注和自己相关的信息；</li>
-<li>客户端运行 <code>cql create '{&quot;node&quot;:2}'</code> ，向主链的任一 &quot;出块节点&quot;（BP: Block Producer）发送经过签名的数据库创建请求；</li>
+<li>客户端运行 <code>cql create -db-node 2</code> ，向主链的任一 &quot;出块节点&quot;（BP: Block Producer）发送经过签名的数据库创建请求；</li>
 <li>收到请求的 BP 在出块的过程（详见：<a href="#主链出块流程">主链出块流程</a>）中进行 &quot;矿工&quot; 和数据库创建请求的撮合；</li>
 <li>数据库创建请求 和 撮合结果 在 其它 BP 节点进行验证和确认；</li>
 <li>&quot;矿工&quot; 订阅收到数据库任务；</li>
