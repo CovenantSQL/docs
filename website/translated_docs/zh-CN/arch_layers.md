@@ -10,7 +10,7 @@ CQL uses a layered architecture for database creation and operation. A typical d
 
 1. Miner will automatically register with the MainChain after startup. The registration information includes: "Minimum acceptable Gas price", "System metrics", "External IP and port", etc.
 2. Miner subscribes to and pays attention to information related to themselves through ChainBus;
-3. The client runs `cql create '{"node":2}'` to send a signed database creation request to any BP (Block Producer) in the MainChain;
+3. The client runs `cql create -db-node 2` to send a signed database creation request to any BP (Block Producer) in the MainChain;
 4. The BP that received the request performs a match of Miner and database creation request in the process of producing the block (see: \[MainChain Produce Block\] (#mainchain-produce-block));
 5. Database creation requests and matching results are verified and confirmed at other BP nodes;
 6. The Miner subscription receives the database task;
