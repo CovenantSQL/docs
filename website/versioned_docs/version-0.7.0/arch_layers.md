@@ -1,6 +1,7 @@
 ---
-id: arch_layers
+id: version-0.7.0-arch_layers
 title: Blockchains
+original_id: arch_layers
 ---
 
 

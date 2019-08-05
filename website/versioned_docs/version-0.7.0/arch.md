@@ -1,6 +1,7 @@
 ---
-id: arch
+id: version-0.7.0-arch
 title: Architecture
+original_id: arch
 ---
 
 ## 3 Layers Arch

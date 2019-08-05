@@ -27,7 +27,7 @@ CQL 支持两种共识算法：
 1. DPoS (委任权益证明) 应用在数据库的 `最终一致性` 和 Block Producer 所在的 `第一层 (全局共识层)` ，CQL 的矿工在客户端将所有SQL查询及其签名打包成块，从而形成整个区块链，我们把这个算法命名为 [`Xenomint`](https://github.com/CovenantSQL/CovenantSQL/tree/develop/xenomint)
 2. BFT-Raft (拜占庭容错算法)<sup>[bft-raft](#bft-raft)</sup> 应用于数据库的 `强一致性`。我们把这个实现命名为 [`Kayak`](https://github.com/CovenantSQL/CovenantSQL/tree/develop/kayak).  矿工 leader 会基于 `Kayak` 做 `两阶段提交` 来支持 `Transaction`.<sup>[transaction](#transaction)</sup>
 
-可以用命令行  `cql create '{"UseEventualConsistency": true, "Node": 3}'` 来创建 `最终一致性` CQL 数据库
+可以用命令行  `cql create -db-eventual-consistency -db-node 3` 来创建 `最终一致性` CQL 数据库
 
 
 ## 项目对比

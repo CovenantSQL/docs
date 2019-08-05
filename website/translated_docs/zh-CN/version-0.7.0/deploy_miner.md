@@ -233,13 +233,13 @@ docker run -it --rm -v $(pwd)/testnet/:/app/config/ \
 
 由于需要在指定的 Miner 上创建 DB，需要在创建 DB 时指定提供服务的 Miner 列表
 
-> `create` 命令接受一个 DB 实例的 json 描述；将 `node_count` 替换为所需的节点数量，例如 1 代表创建一个节点的 DB SideChain；`targetminers` 提供指定 miner 的钱包地址列表；另外需要格外注意的时，所需创建的 DB SideChain 的节点数量需要小于或等于提供的指定 miner 数量，否则 CovenantSQL 会在指定 miner 之外的公用 miner 中随机分配节点以满足用户所需节点数量要求。
+> `create` 命令接收一系列描述 DB 实例的参数，可以用 `cql help create` 查看详细参数；将 `node_count` 替换为所需的节点数量，例如 1 代表创建一个节点的 DB SideChain；`miner1_wallet_address, miner2_wallet_address ` 等替换为指定 miner 的钱包地址列表；另外需要格外注意的时，所需创建的 DB SideChain 的节点数量需要小于或等于提供的指定 miner 数量，否则 CovenantSQL 会在指定 miner 之外的公用 miner 中随机分配节点以满足用户所需节点数量要求。
 
 ```shell
 docker run -it --rm -v $(pwd)/client_config/:/app/config/ \
   --entrypoint /app/cql covenantsql/covenantsql:latest -- \
   create -config /app/config/config.yaml -wait-tx-confirm \
-  '{"node": <node_count>, "targetminers": ["<miner1_wallet_address>", "<miner2_wallet_address>" ...]}'
+  -db-node <node_count> -db-target-miners "<miner1_wallet_address>, <miner2_wallet_address>, ..."
 ```
 
 命令执行完成后将会有类似如下的输出：
