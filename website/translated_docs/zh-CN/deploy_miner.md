@@ -359,7 +359,7 @@ docker run -d -v $(pwd)/client_config/:/app/config/ \
   --log-driver "json-file" \
   --log-opt "max-size=1g" \
   --log-opt "max-file=3" \
-  -p "<explorer_listen_port>:4661" \
+  -p "<explorer_listen_port>:<explorer_listen_port>" \
   covenantsql/covenantsql:latest
 ```
 
