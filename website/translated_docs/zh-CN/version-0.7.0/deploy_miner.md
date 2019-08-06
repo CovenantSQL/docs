@@ -167,7 +167,7 @@ docker create --name "<miner_name>" \
   --log-driver "json-file" \
   --log-opt "max-size=1g" \
   --log-opt "max-file=3" \
-  -p "<miner_listen_port>:4661" \
+  -p "<miner_listen_port>:<miner_listen_port>" \
   covenantsql/covenantsql:latest
 ```
 
