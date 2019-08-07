@@ -1,6 +1,7 @@
 ---
-id: quickstart
+id: version-0.8.0-quickstart
 title: Quick Start
+original_id: quickstart
 ---
 
 
