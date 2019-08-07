@@ -7,7 +7,6 @@ title: Deploy custom miner
 
 文档对应版本：
 	
-	cql HEAD-f0e4e13d-2019080103005
 	covenantsql/covenantsql 84b7da393152
 
 本教程可以为中国测试网(testnet cn)或者国外测试网(testnet w) 部署 miner 节点，注意区分网络环境。
