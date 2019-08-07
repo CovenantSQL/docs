@@ -1,0 +1,44 @@
+{
+  "version-0.8.0-docs": {
+    "Overview": [
+      "version-0.8.0-intro"
+    ],
+    "Usage": [
+      "version-0.8.0-quickstart"
+    ],
+    "Tools": [
+      "version-0.8.0-cql_intro",
+      "version-0.8.0-cql_account",
+      "version-0.8.0-cql_wallet",
+      "version-0.8.0-cql_db_manage",
+      "version-0.8.0-cql_db_access",
+      "version-0.8.0-cql_server",
+      "version-0.8.0-cql_advance"
+    ],
+    "Drivers": [
+      "version-0.8.0-driver_golang",
+      "version-0.8.0-adapter",
+      "version-0.8.0-driver_java",
+      "version-0.8.0-driver_python",
+      "version-0.8.0-driver_js"
+    ],
+    "Advanced Usage": [
+      "version-0.8.0-advanced_deployment",
+      "version-0.8.0-deploy_miner",
+      "version-0.8.0-advanced_secure_gateway"
+    ],
+    "How It Works": [
+      "version-0.8.0-arch",
+      "version-0.8.0-arch_layers",
+      "version-0.8.0-arch_network"
+    ],
+    "Use Cases": [
+      "version-0.8.0-usecase_traditional_app",
+      "version-0.8.0-usecase_dapp",
+      "version-0.8.0-usecase_data_analysis"
+    ],
+    "About": [
+      "version-0.8.0-qna"
+    ]
+  }
+}

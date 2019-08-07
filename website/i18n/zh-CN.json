@@ -466,11 +466,11 @@
     "categories": {
       "Overview": "简介",
       "Usage": "使用",
-      "Drivers": "开发",
       "Tools": "工具",
-      "Use Cases": "使用案例",
+      "Drivers": "开发",
       "Advanced Usage": "高级使用方式",
       "How It Works": "实现细节",
+      "Use Cases": "使用案例",
       "About": "关于"
     }
   },
