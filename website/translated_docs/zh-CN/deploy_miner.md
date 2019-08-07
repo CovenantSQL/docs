@@ -8,9 +8,19 @@ id: deploy_miner title: Deploy custom miner
 
 文档对应版本：
 
-    cql HEAD-f0e4e13d-2019080103005
-    covenantsql/covenantsql 1601418d1aef
+    covenantsql/covenantsql 84b7da393152
     
+
+本教程可以为中国测试网(testnet cn)或者国外测试网(testnet w) 部署 miner 节点，注意区分网络环境。
+
+本教程在当前目录(`$PWD`) 会产生三个目录，分别是：
+
+    miner_config:         您自己的 miner 节点配置
+    super_client_config:  测试网超级客户端配置
+    client_config:        您 miner 的使用者客户端配置
+    
+
+各个命令都会使用上述配置之一，代表了命令的执行角色。
 
 ### 环境依赖
 
@@ -36,19 +46,24 @@ docker pull covenantsql/covenantsql:latest
 
 #### 生成 Miner 配置文件
 
-执行以下命令在当前目录中创建一个 config 目录，并生成 Miner 启动所需的配置文件 `config.yaml` 和 私钥 `private.key`
+执行以下命令在当前目录中创建一个 miner_config 目录，并生成 Miner 启动所需的配置文件 `config.yaml` 和 私钥 `private.key`
 
 > 请将命令中的 `miner_external_ip` 和 `miner_listen_port` 替换成实际 miner 运行时对外提供服务的 ip 或域名以及端口号；需要注意的是，之后使用者的命令行客户端或 Adapter 都将使用这个地址连接 Miner，请确保这个地址在使用者的机器上可以访问（没有被云平台或其他防火墙限制访问）。可以使用 telnet 或者 nc 的形式在 Miner 启动后检查服务的可用性
 
 ```shell
-docker run -it --rm -v $(pwd)/config/:/app/config/ \
+mkdir -v ./miner_config
+
+docker run -it --rm -v $(pwd)/miner_config/:/app/config/ \
   --entrypoint /app/cql covenantsql/covenantsql:latest -- \
   generate -miner "<miner_external_ip>:<miner_listen_port>" /app/config/
 ```
 
+> 如果需要生成国外区测试网配置，将上述命令的 `generate` 后面增加 `-testnet w` 参数。并且注意下述第一行输出会变成 `Generating testnet w config`
+
 命令将会生成一个 miner 的配置文件和私钥，并在命令行中输出 Miner 的节点 id、公钥 hex 和 钱包地址，例如：
 
-```shel
+```shell
+Generating testnet cn config
 Generated private key.
 Generating nonce...
 INFO cpu: 8
@@ -66,8 +81,8 @@ Generated nonce.
 Generating config file...
 Generated config.
 
-Config file:      /Users/xq262144/.cql/config.yaml
-Private key file: /Users/xq262144/.cql/private.key
+Config file:      /app/config/config.yaml
+Private key file: /app/config/private.key
 Public key's hex: 0338816967be3c24bd490f841de57f2c42daf024dd7f462305aab9a601c423ab8d
 Wallet address: eb46e59dbc4eac17b51762f051937a0082ff7423742866e4baff6c6053719451
 
@@ -80,16 +95,30 @@ You can get some free PTC from:
 
 #### 给 Miner 帐户充值
 
+为了大家使用方便，我们创建了一个公共使用的超级客户端节点，拥有大量测试余额，首先需要下载这个超级客户端节点的配置：
+
+国内测试网：
+
+```shell
+mkdir -v ./super_client_config/
+curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql/develop/conf/testnet/config.yaml' -o ./super_client_config/config.yaml
+curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql/develop/conf/testnet/private.key' -o ./super_client_config/private.key
+```
+
+国外测试网：
+
+```shell
+mkdir -v ./super_client_config/
+curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql/develop/conf/testnet/w/config.yaml' -o ./super_client_config/config.yaml
+curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql/develop/conf/testnet/w/private.key' -o ./super_client_config/private.key
+```
+
 执行以下命令将会给 miner 的钱包地址转入 `10000000000` 个 `Particle`
 
 > 请将命令中的 `miner_wallet_address` 替换成上一步中生成的 miner 的钱包地址，例如上例中的 `eb46e59dbc4eac17b51762f051937a0082ff7423742866e4baff6c6053719451`
 
 ```shell
-mkdir -v ./testnet/
-curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql/develop/conf/testnet/config.yaml' -o ./testnet/config.yaml
-curl -kL -# 'https://raw.githubusercontent.com/covenantsql/covenantsql/develop/conf/testnet/private.key' -o ./testnet/private.key
-
-docker run -it --rm -v $(pwd)/testnet/:/app/config/ \
+docker run -it --rm -v $(pwd)/super_client_config/:/app/config/ \
   --entrypoint /app/cql covenantsql/covenantsql:latest -- \
   transfer -config /app/config/config.yaml \
   -wait-tx-confirm -to-user "<miner_wallet_address>" \
@@ -112,7 +141,7 @@ INFO succeed in sending transaction to CovenantSQL
 查询 miner 的账户余额以确定转账成功
 
 ```shell
-docker run -it --rm -v $(pwd)/config/:/app/config/ \
+docker run -it --rm -v $(pwd)/miner_config/:/app/config/ \
   --entrypoint /app/cql covenantsql/covenantsql:latest -- \
   wallet -config ./config/config.yaml
 ```
@@ -136,7 +165,7 @@ Particle balance 这行输出中可以看到转账的金额，这样 miner 就�
 
 在默认启动的情况下，Miner 是面向全网用户提供服务的。如果只希望给指定的 Miner 提供服务，需要在 Miner 上设置 TargetUsers 配置，并指定需要服务的用户的钱包地址。
 
-修改 `miner` 的配置文件 `./config/config.yaml`，在 `Miner` 配置段下添加 `TargetUsers` 配置，指定一个需要服务的用户的 List，例如如下修改：
+修改 `miner` 的配置文件 `./miner_config/config.yaml`，在 `Miner` 配置段下添加 `TargetUsers` 配置，指定一个需要服务的用户的 List，例如如下修改：
 
 ```diff
 --- old.yaml    2019-05-14 00:12:33.000000000 +0800
@@ -160,7 +189,7 @@ Particle balance 这行输出中可以看到转账的金额，这样 miner 就�
 ```shell
 docker create --name "<miner_name>" \
   --restart always \
-  -v $(pwd)/config/:/app/config/ \
+  -v $(pwd)/miner_config/:/app/config/ \
   -v "<data_disk_dir>:/app/config/data/" \
   -e COVENANT_ROLE=miner \
   -e COVENANT_CONF=/app/config/config.yaml \
@@ -168,7 +197,7 @@ docker create --name "<miner_name>" \
   --log-driver "json-file" \
   --log-opt "max-size=1g" \
   --log-opt "max-file=3" \
-  -p "<miner_listen_port>:4661" \
+  -p "<miner_listen_port>:<miner_listen_port>" \
   covenantsql/covenantsql:latest
 ```
 
@@ -209,11 +238,17 @@ docker logs --tail=10 -f "<miner_name>"
 
 执行如下命令将在 `./client_config` 目录下生成使用者账户的私钥和配置
 
+> 如果需要生成国外区测试网配置，将上述命令的 `generate` 后面增加 `-testnet w` 参数。并且注意第一行输出会变成 `Generating testnet w config`
+
 ```shell
+mkdir -v client_config
+
 docker run -it --rm -v $(pwd)/client_config/:/app/config/ \
   --entrypoint /app/cql covenantsql/covenantsql:latest -- \
   generate /app/config/
 ```
+
+命令最后一行会显示 wallet address，注意需要将此 wallet address 加入到 miner 的 `TargetUsers` 配置中，并重启 miner。
 
 ##### 向使用者账户中充值
 
@@ -222,7 +257,7 @@ docker run -it --rm -v $(pwd)/client_config/:/app/config/ \
 > 请将 `client_wallet_address` 替换为创建的使用者账号的钱包地址
 
 ```shell
-docker run -it --rm -v $(pwd)/testnet/:/app/config/ \
+docker run -it --rm -v $(pwd)/super_client_config/:/app/config/ \
   --entrypoint /app/cql covenantsql/covenantsql:latest -- \
   transfer -config /app/config/config.yaml \
   -wait-tx-confirm -to-user "<client_wallet_address>" \
@@ -359,7 +394,7 @@ docker run -d -v $(pwd)/client_config/:/app/config/ \
   --log-driver "json-file" \
   --log-opt "max-size=1g" \
   --log-opt "max-file=3" \
-  -p "<explorer_listen_port>:<explorer_listen_port>" \
+  -p "<explorer_listen_port>:4661" \
   covenantsql/covenantsql:latest
 ```
 
