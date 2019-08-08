@@ -8,7 +8,7 @@ id: deploy_miner title: Deploy custom miner
 
 文档对应版本：
 
-    covenantsql/covenantsql 84b7da393152
+    covenantsql/covenantsql e87bfd412293
     
 
 本教程可以为中国测试网(testnet cn)或者国外测试网(testnet w) 部署 miner 节点，注意区分网络环境。
@@ -386,7 +386,7 @@ CovenantSQL 提供了一个方便的 Explorer 来展示数据库子链上的块�
 
 ```shell
 docker run -d -v $(pwd)/client_config/:/app/config/ \
-  -e COVENANT_ROLE=observer \
+  -e COVENANT_ROLE=explorer \
   -e COVENANT_CONF=/app/config/config.yaml \
   -e COVENANTSQL_OBSERVER_ADDR=0.0.0.0:4661 \
   --name "<explorer_name>" \
