@@ -22,26 +22,11 @@ Now you can use `jdbc:covenantsql://<adapter_endpoint>/<database_id>` uri，repl
 #### Maven
 
 ```xml
-<repositories>
-    <repository>
-        <id>mvn-repo</id>
-        <url>https://raw.github.com/CovenantSQL/cql-java-driver/mvn-repo</url>
-        <releases>
-            <enabled>true</enabled>
-        </releases>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
-    </repository>
-</repositories>
-```
-
-```xml
 <dependencies>
     <dependency>
         <groupId>io.covenantsql</groupId>
-        <artifactId>covenantsql-java-connector</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <artifactId>cql-java-connector</artifactId>
+        <version>1.0.1</version>
     </dependency>
 </dependencies>
 ```
