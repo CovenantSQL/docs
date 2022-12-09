@@ -11,7 +11,7 @@
     "crowdin-download": "crowdin --config ../crowdin.yaml download -b master"
   },
   "devDependencies": {
-    "docusaurus": "^1.6.2"
+    "docusaurus": "^1.14.7"
   },
   "license": "MIT",
   "version": "0.0.6"
